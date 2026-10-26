@@ -1,0 +1,259 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>How to Export Twitter Analytics Data to CSV (2026)</title>
+  <meta name="description" content="Learn how to export Twitter analytics data from X to a CSV file, the 30-day and 3,000-post limits, other export routes and how to open it in Google Sheets." />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <link rel="canonical" href="https://kakahaja07.github.io/xvision/guides/export-twitter-analytics-data.html" />
+  <meta name="theme-color" content="#f6f6f8" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#0a0a0c" media="(prefers-color-scheme: dark)" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="XVision" />
+  <meta property="og:url" content="https://kakahaja07.github.io/xvision/guides/export-twitter-analytics-data.html" />
+  <meta property="og:title" content="How to Export Twitter Analytics Data (CSV Guide for X)" />
+  <meta property="og:description" content="Learn how to export Twitter analytics data from X to a CSV file, the 30-day and 3,000-post limits, other export routes and how to open it in Google Sheets." />
+  <meta property="og:image" content="https://kakahaja07.github.io/xvision/assets/og-card.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="How to Export Twitter Analytics Data (CSV Guide for X)" />
+  <meta name="twitter:description" content="Learn how to export Twitter analytics data from X to a CSV file, the 30-day and 3,000-post limits, other export routes and how to open it in Google Sheets." />
+  <meta name="twitter:image" content="https://kakahaja07.github.io/xvision/assets/og-card.jpg" />
+  <link rel="icon" type="image/png" href="../assets/logo-64.png" />
+  <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png" />
+  <link rel="stylesheet" href="../assets/site.css" />
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "@id": "https://kakahaja07.github.io/xvision/guides/export-twitter-analytics-data.html#article",
+      "headline": "How to Export Twitter Analytics Data (CSV Guide for X)",
+      "description": "Learn how to export Twitter analytics data from X to a CSV file, the 30-day and 3,000-post limits, other export routes and how to open it in Google Sheets.",
+      "url": "https://kakahaja07.github.io/xvision/guides/export-twitter-analytics-data.html",
+      "mainEntityOfPage": "https://kakahaja07.github.io/xvision/guides/export-twitter-analytics-data.html",
+      "image": "https://kakahaja07.github.io/xvision/assets/og-card.jpg",
+      "datePublished": "2026-10-26",
+      "dateModified": "2026-10-26",
+      "wordCount": 1313,
+      "articleSection": "Analytics",
+      "keywords": "how to export twitter analytics data",
+      "timeRequired": "PT6M",
+      "inLanguage": "en",
+      "author": {
+        "@type": "Person",
+        "@id": "https://kakahaja07.github.io/xvision/#author",
+        "name": "Prashant Sharma",
+        "url": "https://github.com/Kakahaja07"
+      },
+      "publisher": {
+        "@type": "Person",
+        "@id": "https://kakahaja07.github.io/xvision/#author",
+        "name": "Prashant Sharma",
+        "url": "https://github.com/Kakahaja07"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "XVision",
+          "item": "https://kakahaja07.github.io/xvision/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Guides",
+          "item": "https://kakahaja07.github.io/xvision/guides/index.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "How to Export Twitter Analytics Data (CSV Guide for X)",
+          "item": "https://kakahaja07.github.io/xvision/guides/export-twitter-analytics-data.html"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How do you export Twitter analytics data?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "To export Twitter analytics data, open X's Post Activity Dashboard through ads.x.com (Analytics, then Post activity), choose a date range, and click Export to download a CSV file. Each export covers up to 30 days and 3,000 posts, in UTC time. Third-party guides say X Premium's account analytics page offers a content CSV too."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is exporting X analytics data free?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Exporting from the Post Activity Dashboard is described as free by X's ads help center, and it needs only an ads account at ads.x.com. The newer account analytics page at x.com/i/account_analytics is reported to require a paid X plan, so any export from that page would need one too."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why does my X analytics export stop at 3,000 posts?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The X analytics export stops at 3,000 posts because the Post Activity Dashboard caps each CSV file at 3,000 posts and 30 days. Accounts that reply a lot can hit the post cap early. Split the date range into smaller pieces, such as one or two weeks, and export each piece separately."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What columns are in the X analytics CSV?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The Post Activity Dashboard CSV includes post-level data with permalinks, split into organic and promoted metrics. X's help page lists metrics such as impressions, engagements, engagement rate, likes, replies, reposts, link clicks and profile clicks. Column names have changed between versions, so check the header row before reusing old formulas."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What time zone does the X analytics export use?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The X analytics export uses UTC/GMT, according to X's Post Activity Dashboard help page. Convert the timestamps to your own time zone before studying posting times. In Google Sheets, subtract the hour difference from each time, for example five hours for New York during standard time."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I export X analytics data with the API?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, X analytics data can be pulled with the X API. Public metrics such as impressions, likes, replies and reposts work for any post. Private metrics like link clicks need user authorization and, according to X's API documentation, are only available for posts created within the last 30 days."
+          }
+        }
+      ],
+      "@id": "https://kakahaja07.github.io/xvision/guides/export-twitter-analytics-data.html#faq"
+    }
+  ]
+}
+  </script>
+</head>
+<body>
+  <div class="wrap">
+    <nav>
+      <a class="wordmark" href="../index.html" aria-label="XVision home"><img src="../assets/logo-64.png" alt="" width="28" height="28" />Vision</a>
+      <div class="navlinks">
+        <a href="../guides/index.html" aria-current="page">Guides</a>
+        <a href="../tools/index.html">Tools</a>
+        <a class="opt" href="../index.html#install">Install</a>
+        <a href="https://github.com/Kakahaja07/xvision">GitHub</a>
+      </div>
+    </nav>
+  </div>
+  <main class="wrap narrow">
+    <header class="page-head">
+      <div class="crumbs"><a href="index.html">Guides</a> › <a href="index.html#analytics">Analytics</a></div>
+      <h1>How to Export Twitter Analytics Data (CSV Guide for X)</h1>
+      <div class="byline">By Prashant Sharma · <time datetime="2026-10-26">Oct 26, 2026</time> · 6 min read</div>
+    </header>
+    <article>
+
+<h3>How do you export Twitter analytics data?</h3>
+<p>To export Twitter analytics data, open X's Post Activity Dashboard through ads.x.com (Analytics, then Post activity), choose a date range, and click Export to download a CSV file. Each export covers up to 30 days and 3,000 posts, in UTC time. Third-party guides say X Premium's account analytics page offers a content CSV too.</p>
+
+<p>Here's a moment that catches a lot of people out. You've been posting for a year, you want to see what worked, and the dashboard only lets you look back so far. The history you needed is hard to reach. Exporting your data regularly fixes that for good.</p>
+
+<p>Exporting means downloading your X (formerly Twitter) stats as a CSV file. A CSV is a plain spreadsheet file that opens in Google Sheets, Excel or Numbers. Once your data lives in a sheet, you can sort it, chart it, and keep it as long as you like. This is simpler than it sounds.</p>
+
+<h2>How do you export from the Post Activity Dashboard?</h2>
+<p>The Post Activity Dashboard is X's documented export route. Open ads.x.com, choose Analytics, then Post activity, set your date range, and click Export. You'll get a CSV with one row per post.</p>
+<p>Here are the steps from X's <a href="https://business.x.com/en/help/campaign-measurement-and-analytics/tweet-activity-dashboard">Post and Video Activity Dashboards help page</a>, at the time of writing (October 2026):</p>
+<ol>
+<li>Sign in to ads.x.com. X describes the dashboard as a free feature for anyone with an ads account.</li>
+<li>Click the Analytics menu and choose Post activity.</li>
+<li>The dashboard shows the last 28 days by default. Change the date range in the top-right corner.</li>
+<li>Click Export to receive a .CSV file.</li>
+</ol>
+<p>The file includes "all post-level data and permalinks, broken down by organic vs. promoted metrics." A permalink is the direct link to each post, which makes it easy to jump back and look at the post itself.</p>
+<p>A fair warning. I couldn't test this route while signed in, and X's help page carries no date. It also still mentions registering at analytics.x.com, which now redirects to the paid account analytics page. If you don't see Post activity under the Analytics menu in ads.x.com, the route may have changed.</p>
+
+<h2>What are the export limits?</h2>
+<p>Each Post Activity Dashboard export covers up to 30 days and up to 3,000 posts. The time zone is fixed to UTC/GMT. For longer history, export one month at a time.</p>
+<p>X's help page puts it this way: "You can export up to 30 days of data at a time and there is a 3,000 post cap per .CSV export." If you reply a lot, you might hit the post cap before 30 days. In that case, split the range into two-week or one-week chunks.</p>
+<p>The UTC time zone matters if you study posting times. If you're in New York, for example, UTC is four or five hours ahead depending on daylight saving time. Convert the times before you decide your best hour to post.</p>
+<p>One more thing: fresh numbers move. X says its systems "take up to 36 hours to stabilize." I'd wait two days after the end of a month before exporting it.</p>
+
+<h2>Can you export from X's account analytics page?</h2>
+<p>Possibly, if you pay for a plan that includes analytics. Third-party guides describe an export control on x.com/i/account_analytics that downloads a content CSV, but X's help center doesn't document it at the time of writing.</p>
+<p>OpenTweet, which makes a CSV analysis tool, tells users to open that page, set a date range and download the content CSV. It also notes that X has changed the column names in this export over time, for example "Impressions" in one version and "Views" in another. So if you build formulas on top of an export, check the headers each time.</p>
+<p>Not sure how to reach that page? The walkthrough in <a href="use-twitter-analytics-in-2026.html">how to use Twitter analytics in 2026</a> covers it.</p>
+
+<h2>What other ways can you export X data?</h2>
+<p>You can also export campaign data from X Ads, pull metrics through the X API, or use a third-party tool that offers CSV downloads. Each one suits a different need.</p>
+<ul>
+<li><strong>Ads campaign CSV:</strong> for paid campaigns only. X's <a href="https://help.x.com/en/business-and-advertising/export-csv-definitions">Export CSV Definitions</a> page says to use the Export button in the upper right of your campaign dashboard, and that the Post Activity Dashboard is for organic post data.</li>
+<li><strong>X API:</strong> for developers. The <a href="https://docs.x.com/x-api/fundamentals/metrics">X API metrics docs</a> list public metrics like impression_count and like_count. Private metrics such as link clicks need your account's permission and are "only available for posts created within the last 30 days."</li>
+<li><strong>Third-party tools:</strong> as of October 2026, Typefully's help center says any analytics chart has a download button for CSV, Sprout Social offers CSV export of raw data, and Hootsuite exports reports as .csv, .xlsx, .pdf or .ppt. Buffer keeps exports for paid plans.</li>
+</ul>
+<p>For a fuller look at these tools, see <a href="best-x-analytics-tools-for-creators.html">the best X analytics tools for creators</a>.</p>
+
+<h2>How do you open the CSV in Google Sheets?</h2>
+<p>In Google Sheets, open File, choose Import, upload the CSV, and pick whether to make a new spreadsheet or add a new sheet. That's it. Your data is now sortable.</p>
+<p>Google's <a href="https://support.google.com/docs/answer/40608">import help page</a> lists .csv as a supported type and lets you set the separator character. Leave it on automatic detection for X exports.</p>
+<p>A tidy setup I'd suggest:</p>
+<ul>
+<li>One tab per month, named like "2026-10".</li>
+<li>One "All posts" tab where you paste every month underneath the last.</li>
+<li>Freeze the header row so column names stay visible as you scroll.</li>
+</ul>
+<p>From there, you can sort by impressions to <a href="find-your-best-performing-tweets.html">find your best performing tweets</a>, or chart your weekly totals to <a href="track-twitter-impressions-over-time.html">track Twitter impressions over time</a>. If you want a full dashboard with formulas, follow <a href="build-a-twitter-analytics-dashboard.html">how to build a Twitter analytics dashboard</a>.</p>
+
+<h2>Build a monthly export habit</h2>
+<p>Exporting Twitter analytics data takes five minutes once you know the route. Use the Post Activity Dashboard, export in 30-day chunks, and keep everything in one sheet. Set a reminder for the second day of each month. In a year, you'll have a complete record of your growth that no dashboard limit can take away.</p>
+
+<h2>Frequently Asked Questions</h2>
+
+<h3>Is exporting X analytics data free?</h3>
+<p>Exporting from the Post Activity Dashboard is described as free by X's ads help center, and it needs only an ads account at ads.x.com. The newer account analytics page at x.com/i/account_analytics is reported to require a paid X plan, so any export from that page would need one too.</p>
+
+<h3>Why does my X analytics export stop at 3,000 posts?</h3>
+<p>The X analytics export stops at 3,000 posts because the Post Activity Dashboard caps each CSV file at 3,000 posts and 30 days. Accounts that reply a lot can hit the post cap early. Split the date range into smaller pieces, such as one or two weeks, and export each piece separately.</p>
+
+<h3>What columns are in the X analytics CSV?</h3>
+<p>The Post Activity Dashboard CSV includes post-level data with permalinks, split into organic and promoted metrics. X's help page lists metrics such as impressions, engagements, engagement rate, likes, replies, reposts, link clicks and profile clicks. Column names have changed between versions, so check the header row before reusing old formulas.</p>
+
+<h3>What time zone does the X analytics export use?</h3>
+<p>The X analytics export uses UTC/GMT, according to X's Post Activity Dashboard help page. Convert the timestamps to your own time zone before studying posting times. In Google Sheets, subtract the hour difference from each time, for example five hours for New York during standard time.</p>
+
+<h3>Can I export X analytics data with the API?</h3>
+<p>Yes, X analytics data can be pulled with the X API. Public metrics such as impressions, likes, replies and reposts work for any post. Private metrics like link clicks need user authorization and, according to X's API documentation, are only available for posts created within the last 30 days.</p>
+    </article>
+    <aside class="related">
+      <h2>Keep reading</h2>
+      <ul>
+        <li><a href="track-twitter-follower-growth.html">How to Track Twitter Follower Growth on X</a></li>
+        <li><a href="calculate-twitter-engagement-rate.html">How to Calculate Twitter Engagement Rate (Formulas and Examples)</a></li>
+        <li><a href="measure-x-account-performance.html">How to Measure X Account Performance (KPIs and Scorecard)</a></li>
+        <li><a href="twitter-analytics-alternatives-for-beginners.html">Twitter Analytics Alternatives for Beginners (Free and Simple)</a></li>
+      </ul>
+    </aside>
+    <aside class="cta">
+      <b>See these numbers right on X.</b>
+      <span>XVision is a free Chrome extension that shows follower counts, follow-back badges and viral posts on your timeline.</span>
+      <a class="btn primary small" href="../index.html">Get XVision free</a>
+    </aside>
+  </main>
+  <footer>
+    <div class="wrap">
+      <div class="footlinks">
+        <a href="../index.html">XVision extension</a>
+        <a href="../guides/index.html">Guides</a>
+        <a href="../tools/index.html">Free tools</a>
+        <a href="../tools/video-downloader.html">Twitter video downloader</a>
+        <a href="../privacy-policy.html">Privacy</a>
+      </div>
+      <span>Built by Prashant Sharma · Inspired by XRay by fayazara · Not affiliated with X Corp.</span>
+    </div>
+  </footer>
+
+</body>
+</html>

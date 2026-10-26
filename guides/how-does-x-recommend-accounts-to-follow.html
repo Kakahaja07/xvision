@@ -1,0 +1,256 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>How Does X Recommend Accounts to Follow? The Code Explained</title>
+  <meta name="description" content="How does X recommend accounts to follow? What the open-source Follow Recommendations Service shows about mutual follows, contacts, location and ranking." />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <link rel="canonical" href="https://kakahaja07.github.io/xvision/guides/how-does-x-recommend-accounts-to-follow.html" />
+  <meta name="theme-color" content="#f6f6f8" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#0a0a0c" media="(prefers-color-scheme: dark)" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="XVision" />
+  <meta property="og:url" content="https://kakahaja07.github.io/xvision/guides/how-does-x-recommend-accounts-to-follow.html" />
+  <meta property="og:title" content="How Does X Recommend Accounts to Follow? What the Open-Source Code Shows" />
+  <meta property="og:description" content="How does X recommend accounts to follow? What the open-source Follow Recommendations Service shows about mutual follows, contacts, location and ranking." />
+  <meta property="og:image" content="https://kakahaja07.github.io/xvision/assets/og-card.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="How Does X Recommend Accounts to Follow? What the Open-Source Code Shows" />
+  <meta name="twitter:description" content="How does X recommend accounts to follow? What the open-source Follow Recommendations Service shows about mutual follows, contacts, location and ranking." />
+  <meta name="twitter:image" content="https://kakahaja07.github.io/xvision/assets/og-card.jpg" />
+  <link rel="icon" type="image/png" href="../assets/logo-64.png" />
+  <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png" />
+  <link rel="stylesheet" href="../assets/site.css" />
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "@id": "https://kakahaja07.github.io/xvision/guides/how-does-x-recommend-accounts-to-follow.html#article",
+      "headline": "How Does X Recommend Accounts to Follow? What the Open-Source Code Shows",
+      "description": "How does X recommend accounts to follow? What the open-source Follow Recommendations Service shows about mutual follows, contacts, location and ranking.",
+      "url": "https://kakahaja07.github.io/xvision/guides/how-does-x-recommend-accounts-to-follow.html",
+      "mainEntityOfPage": "https://kakahaja07.github.io/xvision/guides/how-does-x-recommend-accounts-to-follow.html",
+      "image": "https://kakahaja07.github.io/xvision/assets/og-card.jpg",
+      "datePublished": "2026-10-26",
+      "dateModified": "2026-10-26",
+      "wordCount": 1280,
+      "articleSection": "The X algorithm",
+      "keywords": "how does x recommend accounts to follow",
+      "timeRequired": "PT6M",
+      "inLanguage": "en",
+      "author": {
+        "@type": "Person",
+        "@id": "https://kakahaja07.github.io/xvision/#author",
+        "name": "Prashant Sharma",
+        "url": "https://github.com/Kakahaja07"
+      },
+      "publisher": {
+        "@type": "Person",
+        "@id": "https://kakahaja07.github.io/xvision/#author",
+        "name": "Prashant Sharma",
+        "url": "https://github.com/Kakahaja07"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "XVision",
+          "item": "https://kakahaja07.github.io/xvision/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Guides",
+          "item": "https://kakahaja07.github.io/xvision/guides/index.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "How Does X Recommend Accounts to Follow? What the Open-Source Code Shows",
+          "item": "https://kakahaja07.github.io/xvision/guides/how-does-x-recommend-accounts-to-follow.html"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How does X recommend accounts to follow?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "X recommends accounts to follow through its Follow Recommendations Service, according to the 2023 open-source code. The service gathers candidates from signals like likely mutual follows, synced contacts, popular accounts near you and accounts you interact with, then ranks them by the predicted chance you'll follow and engage afterward."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why does X suggest people from my contacts?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "X's 2023 code includes an address book candidate source that suggests your phone and email contacts. Its README says it only works when you've synced your address book with the service. If you never synced contacts, this source shouldn't have your contacts to work with."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Are some Who to follow suggestions ads?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Some can be. The 2023 Follow Recommendations Service README lists advertisements among the places it serves, and its candidate sources include a folder named promoted_accounts. So an account suggestion may sometimes be paid placement rather than a pure match based on your activity."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does X recommend accounts based on location?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, location can play a part. The 2023 code includes a Pop Geo candidate source that suggests the most followed or quality followed accounts in a country or geolocation over the past 2 weeks. A quality follow is one that leads to visible engagement."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is the 2023 follow recommendation code still used today?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "X hasn't confirmed whether the 2023 Follow Recommendations Service still runs the same way. The January 2026 open-source release covers the For You feed, not account suggestions. Treat the 2023 code as a strong guide to the design, not a guaranteed description of today."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How can I get recommended to more people on X?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Interact consistently with people in one niche, earn mutual follows, and post things that make people want to follow. The 2026 For You code gives a predicted follow of the author a default weight of 4.0, so strong posts work as account recommendations too."
+          }
+        }
+      ],
+      "@id": "https://kakahaja07.github.io/xvision/guides/how-does-x-recommend-accounts-to-follow.html#faq"
+    }
+  ]
+}
+  </script>
+</head>
+<body>
+  <div class="wrap">
+    <nav>
+      <a class="wordmark" href="../index.html" aria-label="XVision home"><img src="../assets/logo-64.png" alt="" width="28" height="28" />Vision</a>
+      <div class="navlinks">
+        <a href="../guides/index.html" aria-current="page">Guides</a>
+        <a href="../tools/index.html">Tools</a>
+        <a class="opt" href="../index.html#install">Install</a>
+        <a href="https://github.com/Kakahaja07/xvision">GitHub</a>
+      </div>
+    </nav>
+  </div>
+  <main class="wrap narrow">
+    <header class="page-head">
+      <div class="crumbs"><a href="index.html">Guides</a> › <a href="index.html#algorithm">The X algorithm</a></div>
+      <h1>How Does X Recommend Accounts to Follow? What the Open-Source Code Shows</h1>
+      <div class="byline">By Prashant Sharma · <time datetime="2026-10-26">Oct 26, 2026</time> · 6 min read</div>
+    </header>
+    <article>
+
+<h3>How does X recommend accounts to follow?</h3>
+<p>X recommends accounts to follow through its Follow Recommendations Service, according to the 2023 open-source code. The service gathers candidates from signals like likely mutual follows, synced contacts, popular accounts near you and accounts you interact with, then ranks them by the predicted chance you'll follow and engage afterward.</p>
+
+<p>You follow one person in a niche, and soon the "Who to follow" box fills with three more just like them. It can feel a little spooky. Here's something most people don't know: the logic behind that box was published, folder by folder, in 2023.</p>
+
+<p>I went through the parts of that code that have readable documentation. What I find interesting is how much of it is about friendship patterns, not fame. Let me explain what's documented, what's only hinted at, and what X hasn't confirmed for today.</p>
+
+<h2>What is the Follow Recommendations Service?</h2>
+<p>The Follow Recommendations Service (FRS) is the part of X's 2023 code that suggests accounts for you to follow. Its README says it powers "Who to follow" recommendations across several parts of the app, and also helps pick posts from accounts you might want to follow later.</p>
+<p>The <a href="https://github.com/twitter/the-algorithm/blob/main/follow-recommendations-service/README.md">Follow Recommendations Service README</a> names the places it serves: the Who-To-Follow module, the new-user experience after sign-up, advertisements, and "FutureGraph" posts. That last one means posts from accounts the system thinks you'll want to follow in the future.</p>
+<p>One important caution. This code comes from the March 2023 release. X hasn't confirmed that account recommendations still work the same way in 2026. The newer 2026 repository covers the For You feed, not the Who to follow box.</p>
+
+<h2>How does X find accounts to suggest?</h2>
+<p>X finds accounts to suggest using many separate "candidate sources," each with its own method. The 2023 code has more than a dozen folders of candidate sources, covering mutual-follow patterns, contacts, location, engagement and more.</p>
+<p>I read the documentation for four of them. Here's what each one says:</p>
+<div class="table-scroll"><table>
+<tr><th>Candidate source</th><th>What its README says</th></tr>
+<tr><td>Strong Tie Prediction (STP)</td><td>Predicts the chance two users will follow each other, and suggests accounts with a high chance of a mutual follow</td></tr>
+<tr><td>Triangular loops</td><td>Looks for follow loops of the form u to v to w to u, and suggests closing the loop</td></tr>
+<tr><td>Pop Geo</td><td>Suggests the most followed or "quality followed" accounts in your country or area over the past 2 weeks</td></tr>
+<tr><td>Address book</td><td>Suggests your phone and email contacts, only if you've synced your address book</td></tr>
+</table></div>
+<p>The other folders, listed in the <a href="https://github.com/twitter/the-algorithm/tree/main/follow-recommendations-service/common/src/main/scala/com/twitter/follow_recommendations/common/candidate_sources">candidate sources directory</a>, have names like real_graph, recent_engagement, sims, two_hop_random_walk and promoted_accounts. The names hint at what they do, but I'm not going to guess at details their files don't explain. Promoted accounts are worth noting, though: some suggestions can be ads.</p>
+
+<h2>What is Real Graph and why does it matter?</h2>
+<p>Real Graph is a model from the 2023 code that predicts how likely one user is to interact with another. It counts interactions between pairs of accounts, which makes it a natural signal for who you'd want to follow.</p>
+<p>The <a href="https://github.com/twitter/the-algorithm/blob/main/src/scala/com/twitter/interaction_graph/README.md">Real Graph README</a> lists public signals like likes, reposts and follows. It also lists private ones like profile views and post clicks, plus whether a user has another user in their address book, which requires opting in to share contacts. It keeps daily counts and a decayed total for each pair, so recent interactions matter more than old ones.</p>
+<p>What this means for you: the people you interact with, and who interact with you, shape the suggestions on both sides.</p>
+
+<h2>How are suggested accounts ranked?</h2>
+<p>Suggested accounts are ranked by a machine learning model that combines two predictions: the chance you'll follow the account, and the chance you'll engage positively with it after following. The 2023 README calls the final score a weighted sum of those two.</p>
+<p>Before and after ranking, filters remove low-quality or unhealthy candidates. Heavier filters usually run after ranking. Then the list is cleaned up: duplicates are removed, and "social proof" is added. That's the "Followed by" line you see under a suggestion.</p>
+<p>The design makes sense. A suggestion you follow but never engage with isn't a good suggestion, so the system tries to predict both.</p>
+
+<h2>Do posts in For You lead to follows too?</h2>
+<p>Yes. The 2026 For You code predicts whether a viewer will follow the author of a post, and it gives that action a default weight of 4.0. So a post can work as a recommendation of its author.</p>
+<p>That comes from the <a href="https://github.com/xai-org/x-algorithm">2026 xai-org repository</a>, which lists "follow author" among the actions its Phoenix model predicts. For most growing accounts, this is the bigger path. People discover you through a post, tap your name, and decide. My guide on <a href="get-on-the-x-for-you-page.html">getting on the X For You page</a> covers how posts reach non-followers.</p>
+
+<h2>What this means for your growth</h2>
+<p>To show up in more follow suggestions, build real connections inside one community. Mutual follows, repeated interactions and steady engagement are the signals the 2023 code is built around.</p>
+<ul>
+<li><strong>Engage with the same people over time.</strong> Real Graph tracks interactions between pairs of accounts.</li>
+<li><strong>Stay in one niche.</strong> Mutual-follow patterns like STP and triangular loops work best inside tight groups. My guide on <a href="find-my-target-audience-on-twitter.html">finding your target audience on Twitter</a> helps you pick that group.</li>
+<li><strong>Make your profile convert.</strong> A suggestion only helps if people follow. See <a href="turn-profile-visits-into-followers.html">turning profile visits into followers</a>.</li>
+</ul>
+<p>Based on what I've seen, small accounts that act like part of a community get suggested more than accounts that broadcast to nobody. That's my opinion, and X hasn't published data on it. For the bigger picture of how ranking works, see <a href="how-does-the-x-algorithm-work-in-2026.html">how the X algorithm works in 2026</a>.</p>
+
+<h2>The short version</h2>
+<p>X recommends accounts to follow by looking at who you know, who your friends know, who's popular near you and who you interact with, then predicting whether you'll follow and stay engaged. The details may have changed since 2023, but the idea holds up well. Be a real, active part of a community, and the suggestions start pointing toward you.</p>
+
+<h2>Frequently Asked Questions</h2>
+
+<h3>Why does X suggest people from my contacts?</h3>
+<p>X's 2023 code includes an address book candidate source that suggests your phone and email contacts. Its README says it only works when you've synced your address book with the service. If you never synced contacts, this source shouldn't have your contacts to work with.</p>
+
+<h3>Are some Who to follow suggestions ads?</h3>
+<p>Some can be. The 2023 Follow Recommendations Service README lists advertisements among the places it serves, and its candidate sources include a folder named promoted_accounts. So an account suggestion may sometimes be paid placement rather than a pure match based on your activity.</p>
+
+<h3>Does X recommend accounts based on location?</h3>
+<p>Yes, location can play a part. The 2023 code includes a Pop Geo candidate source that suggests the most followed or quality followed accounts in a country or geolocation over the past 2 weeks. A quality follow is one that leads to visible engagement.</p>
+
+<h3>Is the 2023 follow recommendation code still used today?</h3>
+<p>X hasn't confirmed whether the 2023 Follow Recommendations Service still runs the same way. The January 2026 open-source release covers the For You feed, not account suggestions. Treat the 2023 code as a strong guide to the design, not a guaranteed description of today.</p>
+
+<h3>How can I get recommended to more people on X?</h3>
+<p>Interact consistently with people in one niche, earn mutual follows, and post things that make people want to follow. The 2026 For You code gives a predicted follow of the author a default weight of 4.0, so strong posts work as account recommendations too.</p>
+    </article>
+    <aside class="related">
+      <h2>Keep reading</h2>
+      <ul>
+        <li><a href="twitter-algorithm-explained-for-beginners.html">Twitter Algorithm Explained for Beginners: How X Picks What You See</a></li>
+        <li><a href="what-affects-twitter-post-visibility.html">What Affects Twitter Post Visibility? The Factors X's Code Actually Uses</a></li>
+        <li><a href="improve-twitter-algorithm-ranking.html">How to Improve Twitter Algorithm Ranking: 7 Steps Based on X's Code</a></li>
+        <li><a href="why-are-my-posts-not-showing-on-x.html">Why Are My Posts Not Showing on X? 8 Common Causes and How to Fix Them</a></li>
+      </ul>
+    </aside>
+    <aside class="cta">
+      <b>See these numbers right on X.</b>
+      <span>XVision is a free Chrome extension that shows follower counts, follow-back badges and viral posts on your timeline.</span>
+      <a class="btn primary small" href="../index.html">Get XVision free</a>
+    </aside>
+  </main>
+  <footer>
+    <div class="wrap">
+      <div class="footlinks">
+        <a href="../index.html">XVision extension</a>
+        <a href="../guides/index.html">Guides</a>
+        <a href="../tools/index.html">Free tools</a>
+        <a href="../tools/video-downloader.html">Twitter video downloader</a>
+        <a href="../privacy-policy.html">Privacy</a>
+      </div>
+      <span>Built by Prashant Sharma · Inspired by XRay by fayazara · Not affiliated with X Corp.</span>
+    </div>
+  </footer>
+
+</body>
+</html>

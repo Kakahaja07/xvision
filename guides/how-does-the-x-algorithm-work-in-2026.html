@@ -1,0 +1,275 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>How Does the X Algorithm Work in 2026? What the Code Shows</title>
+  <meta name="description" content="How does the X algorithm work in 2026? A plain guide to the Phoenix ranking model, the open-source code, its weights, filters and what X hasn&#x27;t confirmed." />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <link rel="canonical" href="https://kakahaja07.github.io/xvision/guides/how-does-the-x-algorithm-work-in-2026.html" />
+  <meta name="theme-color" content="#f6f6f8" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#0a0a0c" media="(prefers-color-scheme: dark)" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="XVision" />
+  <meta property="og:url" content="https://kakahaja07.github.io/xvision/guides/how-does-the-x-algorithm-work-in-2026.html" />
+  <meta property="og:title" content="How Does the X Algorithm Work in 2026? A Plain Walkthrough of the Code" />
+  <meta property="og:description" content="How does the X algorithm work in 2026? A plain guide to the Phoenix ranking model, the open-source code, its weights, filters and what X hasn&#x27;t confirmed." />
+  <meta property="og:image" content="https://kakahaja07.github.io/xvision/assets/og-card.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="How Does the X Algorithm Work in 2026? A Plain Walkthrough of the Code" />
+  <meta name="twitter:description" content="How does the X algorithm work in 2026? A plain guide to the Phoenix ranking model, the open-source code, its weights, filters and what X hasn&#x27;t confirmed." />
+  <meta name="twitter:image" content="https://kakahaja07.github.io/xvision/assets/og-card.jpg" />
+  <link rel="icon" type="image/png" href="../assets/logo-64.png" />
+  <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png" />
+  <link rel="stylesheet" href="../assets/site.css" />
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "@id": "https://kakahaja07.github.io/xvision/guides/how-does-the-x-algorithm-work-in-2026.html#article",
+      "headline": "How Does the X Algorithm Work in 2026? A Plain Walkthrough of the Code",
+      "description": "How does the X algorithm work in 2026? A plain guide to the Phoenix ranking model, the open-source code, its weights, filters and what X hasn't confirmed.",
+      "url": "https://kakahaja07.github.io/xvision/guides/how-does-the-x-algorithm-work-in-2026.html",
+      "mainEntityOfPage": "https://kakahaja07.github.io/xvision/guides/how-does-the-x-algorithm-work-in-2026.html",
+      "image": "https://kakahaja07.github.io/xvision/assets/og-card.jpg",
+      "datePublished": "2026-10-26",
+      "dateModified": "2026-10-26",
+      "wordCount": 1479,
+      "articleSection": "The X algorithm",
+      "keywords": "how does the x algorithm work in 2026",
+      "timeRequired": "PT6M",
+      "inLanguage": "en",
+      "author": {
+        "@type": "Person",
+        "@id": "https://kakahaja07.github.io/xvision/#author",
+        "name": "Prashant Sharma",
+        "url": "https://github.com/Kakahaja07"
+      },
+      "publisher": {
+        "@type": "Person",
+        "@id": "https://kakahaja07.github.io/xvision/#author",
+        "name": "Prashant Sharma",
+        "url": "https://github.com/Kakahaja07"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "XVision",
+          "item": "https://kakahaja07.github.io/xvision/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Guides",
+          "item": "https://kakahaja07.github.io/xvision/guides/index.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "How Does the X Algorithm Work in 2026? A Plain Walkthrough of the Code",
+          "item": "https://kakahaja07.github.io/xvision/guides/how-does-the-x-algorithm-work-in-2026.html"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How does the X algorithm work in 2026?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The X algorithm in 2026 builds each For You feed by pulling posts from accounts you follow and from accounts you don't, then ranking them with Phoenix, a transformer model X called Grok-based in January 2026. Phoenix predicts actions like replies, reposts and blocks, and X adds those predictions into one score. Filters then remove posts that can't be shown."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is the X algorithm open source in 2026?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, most of the For You ranking code is public. X published it on GitHub as xai-org/x-algorithm in January 2026 under the Apache 2.0 license. The README says a limited set of files stays private, such as some prompts and rule files, so the public code is not the complete system."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does Grok decide what I see on X?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Partly, yes. When X published its For You code in January 2026, it described the Phoenix ranking model as Grok-based. In late November 2025, Elon Musk also announced that the Following feed is ranked by Grok by default, and said a chronological view is still available."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Are the 2023 algorithm weights still used?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No, the 2023 weights are not the current defaults. The 2023 heavy ranker gave replies 13.5 and likes 0.5. The 2026 param.rs file lists replies at 5.0 and likes at 0.66. X can change production values at any time, so both sets are snapshots."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How long does a post stay eligible for For You?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The 2026 code includes an AgeFilter that removes posts older than 48 hours from For You candidates. That means most of a post's For You reach happens within two days. Older posts can still appear on your profile, in search, and when someone shares a link."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does X Premium boost posts in the For You feed?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The 2026 For You README makes no statement about a For You ranking boost for Premium accounts. Replies are different: X's Help Center says replies from verified accounts get a slight preference in reply ranking, and that it is testing those levels. X hasn't published any For You multiplier."
+          }
+        }
+      ],
+      "@id": "https://kakahaja07.github.io/xvision/guides/how-does-the-x-algorithm-work-in-2026.html#faq"
+    }
+  ]
+}
+  </script>
+</head>
+<body>
+  <div class="wrap">
+    <nav>
+      <a class="wordmark" href="../index.html" aria-label="XVision home"><img src="../assets/logo-64.png" alt="" width="28" height="28" />Vision</a>
+      <div class="navlinks">
+        <a href="../guides/index.html" aria-current="page">Guides</a>
+        <a href="../tools/index.html">Tools</a>
+        <a class="opt" href="../index.html#install">Install</a>
+        <a href="https://github.com/Kakahaja07/xvision">GitHub</a>
+      </div>
+    </nav>
+  </div>
+  <main class="wrap narrow">
+    <header class="page-head">
+      <div class="crumbs"><a href="index.html">Guides</a> › <a href="index.html#algorithm">The X algorithm</a></div>
+      <h1>How Does the X Algorithm Work in 2026? A Plain Walkthrough of the Code</h1>
+      <div class="byline">By Prashant Sharma · <time datetime="2026-10-26">Oct 26, 2026</time> · 6 min read</div>
+    </header>
+    <article>
+
+<h3>How does the X algorithm work in 2026?</h3>
+<p>The X algorithm in 2026 builds each For You feed by pulling posts from accounts you follow and from accounts you don't, then ranking them with Phoenix, a transformer model X called Grok-based in January 2026. Phoenix predicts actions like replies, reposts and blocks, and X adds those predictions into one score. Filters then remove posts that can't be shown.</p>
+
+<p>For years, advice about the X algorithm was guesswork. Then, in January 2026, X put the code for its new For You feed on GitHub. I read it to see what changed since 2023, keeping what's clear apart from what's still hidden.</p>
+
+<h2>Where does the 2026 information come from?</h2>
+<p>The information comes from three places of unequal strength. Published code is strongest, official announcements come second, and executive posts or creator theories come last.</p>
+<ul>
+<li><strong>What the code shows.</strong> The <a href="https://github.com/xai-org/x-algorithm">xai-org/x-algorithm repository</a> went up in January 2026 and holds the core For You code. An August 13, 2026 update added configuration values and visibility code.</li>
+<li><strong>What X says officially.</strong> <a href="https://help.x.com/en/using-x/x-timeline">X's Help Center page on timelines</a> says For You mixes posts from accounts and Topics you follow with recommended posts, picked using signals like popularity and how people in your network interact with them.</li>
+<li><strong>What executives said.</strong> In late November 2025, Elon Musk announced that posts from people you follow "are now ranked by Grok," and said a chronological view is still available. In October 2025, he posted that Grok would "read every post and watch every video" and that X aimed to delete all heuristics (hand-written rules) within 4 to 6 weeks. That's a goal stated in a post, not a documented result.</li>
+</ul>
+<p>One caution: the README says some files, such as certain prompts and rules, are not published. So it's a real look inside, not the full picture.</p>
+
+<h2>What are the main steps of the X algorithm in 2026?</h2>
+<p>The X algorithm in 2026 runs in four main steps: find candidate posts, add details to them, score them, and filter them. A service called Home Mixer runs the whole thing every time you open For You.</p>
+<ol>
+<li><strong>Find candidates.</strong> Thunder keeps recent posts from accounts you follow in memory. Phoenix retrieval finds other posts by turning you and each post into numbers (embeddings) and picking close matches. SimClusters and a popular-posts list add more.</li>
+<li><strong>Add details.</strong> The system fetches each post's text and author details.</li>
+<li><strong>Score.</strong> Phoenix predicts how likely you are to take each action on each post.</li>
+<li><strong>Filter and order.</strong> Posts that break rules or that you shouldn't see get removed. The rest get ordered by score, with a few adjustments.</li>
+</ol>
+<p>What I find interesting is how much the model leans on you. The README calls your recent engagement history "the main input to the model." What you liked, replied to and skipped shapes your feed most.</p>
+
+<h2>How does Phoenix score a post?</h2>
+<p>Phoenix scores a post by predicting the chance of many separate actions, then adding them up with weights. Good actions get positive weights. Bad actions, like blocking or reporting, get negative weights that pull a post down.</p>
+<p>The README lists the predicted actions. They include likes, replies, reposts, quotes, shares, clicks, video views, time spent reading (dwell) and following the author. On the negative side it predicts "not interested," mute, block, report and "not dwelled" (scrolling straight past).</p>
+<p>The default weights sit in a file called <a href="https://github.com/xai-org/x-algorithm/blob/main/home-mixer/params/param.rs">param.rs in the 2026 repo</a>. As of October 2026, a few of them read like this (the file changes often):</p>
+<div class="table-scroll"><table>
+<tr><th>Predicted action</th><th>Default weight in param.rs</th></tr>
+<tr><td>Like (FavoriteWeight)</td><td>0.66</td></tr>
+<tr><td>Repost (RetweetWeight)</td><td>1.0</td></tr>
+<tr><td>Reply (ReplyWeight)</td><td>5.0</td></tr>
+<tr><td>Quote (QuoteWeight)</td><td>5.0</td></tr>
+<tr><td>Share via copy link</td><td>20.0</td></tr>
+<tr><td>Follow the author</td><td>4.0</td></tr>
+<tr><td>Not interested</td><td>-52.272</td></tr>
+<tr><td>Mute author</td><td>-58.8</td></tr>
+<tr><td>Report</td><td>-234.0</td></tr>
+</table></div>
+<p>One trap: these weights multiply predicted probabilities, not raw counts. A report's big weight doesn't mean one report wipes out hundreds of likes. X says a report is far less likely than a like to begin with, which is why its weight is larger.</p>
+
+<h2>What changed from the 2023 X algorithm?</h2>
+<p>The biggest change from 2023 is the ranking model. The 2023 release used a neural network that read about 6,000 features per post, while the 2026 code uses Phoenix, a transformer that reads your recent engagement history. The overall shape, candidates then ranking then filters, stayed the same.</p>
+<p>The <a href="https://github.com/twitter/the-algorithm-ml/blob/main/projects/home/recap/README.md">2023 heavy ranker README</a> listed weights set on April 5, 2023. A reply was 13.5, a like was 0.5, and a reply that the author then engaged with was 75.0. A report was -369.0. Those numbers came from the 2023 release, and you shouldn't treat them as today's values.</p>
+<p>The wording changed too. When the repo first went up in January 2026, its README called the ranker a "Grok-based transformer" and claimed X had eliminated every hand-engineered feature. The current README just says "a transformer model," and the code still has filters, discounts and boosts.</p>
+<p>For a gentler version, my <a href="twitter-algorithm-explained-for-beginners.html">beginner's explanation of the Twitter algorithm</a> skips the code.</p>
+
+<h2>What adjustments happen after the score?</h2>
+<p>After scoring, X applies three adjustments: author diversity, an out-of-network discount, and a new-author boost. Then filters decide whether each post can be shown at all.</p>
+<ul>
+<li><strong>Author diversity.</strong> Each extra post from the same author in one feed gets a shrinking multiplier, down to a floor.</li>
+<li><strong>Out-of-network discount.</strong> Posts from accounts you don't follow get multiplied by a factor below 1. A stranger's post has to score higher to beat a friend's.</li>
+<li><strong>New-author boost.</strong> Posts from authors with impressions below a threshold get lifted toward a target position. The README doesn't publish the threshold.</li>
+</ul>
+<p>The filter list is long. One removes posts older than 48 hours. Others remove duplicates, blocked or muted accounts, your muted words, and posts you've already seen. The visibility system then allows a post, adds a notice, puts it behind a tap-through screen, or drops it. My guide on <a href="what-affects-twitter-post-visibility.html">what affects Twitter post visibility</a> goes through each one.</p>
+
+<h2>What this means for you</h2>
+<p>For you as a poster, the 2026 X algorithm rewards posts that start real conversations and get shared, and it punishes posts that make people mute or report. That part is in the code, not a theory.</p>
+<p>Three habits follow from it:</p>
+<ul>
+<li>Write posts people want to answer. A reply's default weight is 5.0, a like's is 0.66. My guide to <a href="get-more-replies-on-x.html">getting more replies on X</a> has practical prompts.</li>
+<li>Don't annoy people. Mute and "not interested" sit near -52 to -59. Annoying bait works against you.</li>
+<li>Stay on a clear topic. Retrieval works by matching your posts to people with similar engagement history, so a focused account is easier to match. My notes on <a href="get-on-the-x-for-you-page.html">getting on the X For You page</a> cover this.</li>
+</ul>
+
+<h2>The honest takeaway on the 2026 X algorithm</h2>
+<p>The X algorithm in 2026 is more open than ever, and that's good news for anyone trying to grow. You can read the real weights instead of trusting rumors. Musk himself called it "dumb" on release day, Gizmodo reported, and said it would improve each month. So check the repo now and then, and keep writing for real people. That's the one strategy every version of the code has rewarded.</p>
+
+<h2>Frequently Asked Questions</h2>
+
+<h3>Is the X algorithm open source in 2026?</h3>
+<p>Yes, most of the For You ranking code is public. X published it on GitHub as xai-org/x-algorithm in January 2026 under the Apache 2.0 license. The README says a limited set of files stays private, such as some prompts and rule files, so the public code is not the complete system.</p>
+
+<h3>Does Grok decide what I see on X?</h3>
+<p>Partly, yes. When X published its For You code in January 2026, it described the Phoenix ranking model as Grok-based. In late November 2025, Elon Musk also announced that the Following feed is ranked by Grok by default, and said a chronological view is still available.</p>
+
+<h3>Are the 2023 algorithm weights still used?</h3>
+<p>No, the 2023 weights are not the current defaults. The 2023 heavy ranker gave replies 13.5 and likes 0.5. The 2026 param.rs file lists replies at 5.0 and likes at 0.66. X can change production values at any time, so both sets are snapshots.</p>
+
+<h3>How long does a post stay eligible for For You?</h3>
+<p>The 2026 code includes an AgeFilter that removes posts older than 48 hours from For You candidates. That means most of a post's For You reach happens within two days. Older posts can still appear on your profile, in search, and when someone shares a link.</p>
+
+<h3>Does X Premium boost posts in the For You feed?</h3>
+<p>The 2026 For You README makes no statement about a For You ranking boost for Premium accounts. Replies are different: X's Help Center says replies from verified accounts get a slight preference in reply ranking, and that it is testing those levels. X hasn't published any For You multiplier.</p>
+    </article>
+    <aside class="related">
+      <h2>Keep reading</h2>
+      <ul>
+        <li><a href="improve-twitter-algorithm-ranking.html">How to Improve Twitter Algorithm Ranking: 7 Steps Based on X's Code</a></li>
+        <li><a href="why-are-my-posts-not-showing-on-x.html">Why Are My Posts Not Showing on X? 8 Common Causes and How to Fix Them</a></li>
+        <li><a href="does-posting-frequency-affect-twitter-reach.html">Does Posting Frequency Affect Twitter Reach? What the Code and Data Say</a></li>
+        <li><a href="how-does-x-recommend-accounts-to-follow.html">How Does X Recommend Accounts to Follow? What the Open-Source Code Shows</a></li>
+      </ul>
+    </aside>
+    <aside class="cta">
+      <b>See these numbers right on X.</b>
+      <span>XVision is a free Chrome extension that shows follower counts, follow-back badges and viral posts on your timeline.</span>
+      <a class="btn primary small" href="../index.html">Get XVision free</a>
+    </aside>
+  </main>
+  <footer>
+    <div class="wrap">
+      <div class="footlinks">
+        <a href="../index.html">XVision extension</a>
+        <a href="../guides/index.html">Guides</a>
+        <a href="../tools/index.html">Free tools</a>
+        <a href="../tools/video-downloader.html">Twitter video downloader</a>
+        <a href="../privacy-policy.html">Privacy</a>
+      </div>
+      <span>Built by Prashant Sharma · Inspired by XRay by fayazara · Not affiliated with X Corp.</span>
+    </div>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,277 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>How to Build a Twitter Analytics Dashboard in Google Sheets</title>
+  <meta name="description" content="Learn how to build a Twitter analytics dashboard in Google Sheets: three tabs, exact columns, copy-paste formulas, sparklines and charts to track your X growth." />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <link rel="canonical" href="https://kakahaja07.github.io/xvision/guides/build-a-twitter-analytics-dashboard.html" />
+  <meta name="theme-color" content="#f6f6f8" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#0a0a0c" media="(prefers-color-scheme: dark)" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="XVision" />
+  <meta property="og:url" content="https://kakahaja07.github.io/xvision/guides/build-a-twitter-analytics-dashboard.html" />
+  <meta property="og:title" content="How to Build a Twitter Analytics Dashboard in Google Sheets" />
+  <meta property="og:description" content="Learn how to build a Twitter analytics dashboard in Google Sheets: three tabs, exact columns, copy-paste formulas, sparklines and charts to track your X growth." />
+  <meta property="og:image" content="https://kakahaja07.github.io/xvision/assets/og-card.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="How to Build a Twitter Analytics Dashboard in Google Sheets" />
+  <meta name="twitter:description" content="Learn how to build a Twitter analytics dashboard in Google Sheets: three tabs, exact columns, copy-paste formulas, sparklines and charts to track your X growth." />
+  <meta name="twitter:image" content="https://kakahaja07.github.io/xvision/assets/og-card.jpg" />
+  <link rel="icon" type="image/png" href="../assets/logo-64.png" />
+  <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png" />
+  <link rel="stylesheet" href="../assets/site.css" />
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "@id": "https://kakahaja07.github.io/xvision/guides/build-a-twitter-analytics-dashboard.html#article",
+      "headline": "How to Build a Twitter Analytics Dashboard in Google Sheets",
+      "description": "Learn how to build a Twitter analytics dashboard in Google Sheets: three tabs, exact columns, copy-paste formulas, sparklines and charts to track your X growth.",
+      "url": "https://kakahaja07.github.io/xvision/guides/build-a-twitter-analytics-dashboard.html",
+      "mainEntityOfPage": "https://kakahaja07.github.io/xvision/guides/build-a-twitter-analytics-dashboard.html",
+      "image": "https://kakahaja07.github.io/xvision/assets/og-card.jpg",
+      "datePublished": "2026-10-26",
+      "dateModified": "2026-10-26",
+      "wordCount": 1413,
+      "articleSection": "Analytics",
+      "keywords": "how to build a twitter analytics dashboard",
+      "timeRequired": "PT6M",
+      "inLanguage": "en",
+      "author": {
+        "@type": "Person",
+        "@id": "https://kakahaja07.github.io/xvision/#author",
+        "name": "Prashant Sharma",
+        "url": "https://github.com/Kakahaja07"
+      },
+      "publisher": {
+        "@type": "Person",
+        "@id": "https://kakahaja07.github.io/xvision/#author",
+        "name": "Prashant Sharma",
+        "url": "https://github.com/Kakahaja07"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "XVision",
+          "item": "https://kakahaja07.github.io/xvision/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Guides",
+          "item": "https://kakahaja07.github.io/xvision/guides/index.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "How to Build a Twitter Analytics Dashboard in Google Sheets",
+          "item": "https://kakahaja07.github.io/xvision/guides/build-a-twitter-analytics-dashboard.html"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How do you build a Twitter analytics dashboard?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "To build a Twitter analytics dashboard, make a Google Sheet with three tabs: Posts for one row per post, Weekly for follower and impression totals, and Dashboard for charts. Paste in data from X's CSV export or type it by hand, then add formulas for engagement rate, growth rate and score versus your median."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I connect X analytics to Google Sheets automatically?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Not directly. X's help pages don't describe a built-in Google Sheets connection, so most people import a CSV export or type numbers in weekly. Developers can pull metrics with the X API, which shares public metrics like impressions and likes, but that route needs a developer account and some coding."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the best chart for a Twitter analytics dashboard?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A line chart of weekly impressions and weekly followers is the best starting chart for a Twitter analytics dashboard. It shows the trend clearly without daily noise. Add small SPARKLINE charts in single cells for quick checks, and use a sorted list of your top five posts instead of a chart for content."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why use the median instead of the average for posts?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The median is better because one viral post can pull the average far up and make every normal post look weak. The median is the middle value, so it reflects your typical post. Dividing each post's impressions by the median gives a fair score, where 1.0 means an ordinary result."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I build this dashboard in Excel instead?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, most of this dashboard works in Microsoft Excel. IFERROR, SUMIFS, COUNTIFS, MEDIAN and INDEX behave the same way. Two parts differ: SPARKLINE and SORTN are Google Sheets functions, so in Excel use its built-in sparklines from the Insert menu and a sorted table for top posts."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How often should I update my Twitter analytics dashboard?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Update a Twitter analytics dashboard once a week, on the same day, for about 10 minutes. Weekly updates smooth out daily swings and match how the Weekly tab is built. If you can use X's Post Activity Dashboard, add a monthly CSV export as a backup, since each export covers up to 30 days."
+          }
+        }
+      ],
+      "@id": "https://kakahaja07.github.io/xvision/guides/build-a-twitter-analytics-dashboard.html#faq"
+    }
+  ]
+}
+  </script>
+</head>
+<body>
+  <div class="wrap">
+    <nav>
+      <a class="wordmark" href="../index.html" aria-label="XVision home"><img src="../assets/logo-64.png" alt="" width="28" height="28" />Vision</a>
+      <div class="navlinks">
+        <a href="../guides/index.html" aria-current="page">Guides</a>
+        <a href="../tools/index.html">Tools</a>
+        <a class="opt" href="../index.html#install">Install</a>
+        <a href="https://github.com/Kakahaja07/xvision">GitHub</a>
+      </div>
+    </nav>
+  </div>
+  <main class="wrap narrow">
+    <header class="page-head">
+      <div class="crumbs"><a href="index.html">Guides</a> › <a href="index.html#analytics">Analytics</a></div>
+      <h1>How to Build a Twitter Analytics Dashboard in Google Sheets</h1>
+      <div class="byline">By Prashant Sharma · <time datetime="2026-10-26">Oct 26, 2026</time> · 6 min read</div>
+    </header>
+    <article>
+
+<h3>How do you build a Twitter analytics dashboard?</h3>
+<p>To build a Twitter analytics dashboard, make a Google Sheet with three tabs: Posts for one row per post, Weekly for follower and impression totals, and Dashboard for charts. Paste in data from X's CSV export or type it by hand, then add formulas for engagement rate, growth rate and score versus your median.</p>
+
+<p>Dashboards in paid tools look impressive. Lots of colors, lots of charts. But when you ask "what should I post next week?", many of them can't answer. A plain spreadsheet you built yourself often can, because every number in it is one you chose on purpose.</p>
+
+<p>A Twitter analytics dashboard is one page that shows how your X (formerly Twitter) account is doing at a glance: followers, reach, engagement and your top posts. Building it in Google Sheets is free, takes about an hour, and you own the data forever. Here's the good news: you don't need to be a spreadsheet expert. You'll copy a few formulas, and that's most of the work.</p>
+
+<h2>What should a Twitter analytics dashboard track?</h2>
+<p>Track four things: follower growth, impressions, engagement rate and your top posts. Those four answer the questions that matter. Am I growing, am I reaching people, do they care, and what's working?</p>
+<p>Anything else is optional. Link clicks matter if you send traffic to a site. Profile visits matter if you're working on your bio. Start small. You can add columns later, but a cluttered sheet is one you'll stop opening. For a wider view of which numbers to pick, see <a href="measure-x-account-performance.html">how to measure X account performance</a>.</p>
+
+<h2>How do you set up the Posts tab?</h2>
+<p>The Posts tab holds one row per post with its date, link, topic, format and raw numbers. Three formula columns then calculate engagements, engagement rate and a score against your typical post.</p>
+<p>Create a new Google Sheet, rename the first tab "Posts", and add these headers in row 1:</p>
+<div class="table-scroll"><table>
+<tr><th>Column</th><th>Header</th><th>What goes in it</th></tr>
+<tr><td>A</td><td>Date</td><td>Date posted</td></tr>
+<tr><td>B</td><td>Link</td><td>The post's URL</td></tr>
+<tr><td>C</td><td>Topic</td><td>Your own label, like "tips" or "story"</td></tr>
+<tr><td>D</td><td>Format</td><td>Single, thread, image, video, poll</td></tr>
+<tr><td>E</td><td>Impressions</td><td>Views or impressions</td></tr>
+<tr><td>F</td><td>Likes</td><td>Number</td></tr>
+<tr><td>G</td><td>Replies</td><td>Number</td></tr>
+<tr><td>H</td><td>Reposts</td><td>Number</td></tr>
+<tr><td>I</td><td>Follows</td><td>Follows from the post, if you have it</td></tr>
+<tr><td>J</td><td>Engagements</td><td>=F2+G2+H2</td></tr>
+<tr><td>K</td><td>Eng. rate</td><td>=IFERROR(J2/E2, 0)</td></tr>
+<tr><td>L</td><td>Score</td><td>=IFERROR(E2/MEDIAN(E$2:E), 0)</td></tr>
+</table></div>
+<p>Copy J2 to L2 down the column. Format K as a percent. The score in column L compares each post with your median impressions, so 2.0 means twice your usual reach. The engagement rate here uses public interactions only. For why that's lower than X's own number, see <a href="calculate-twitter-engagement-rate.html">how to calculate Twitter engagement rate</a>.</p>
+
+<h2>Where does the data come from?</h2>
+<p>The data comes from a CSV export or from typing numbers in by hand. Exports are faster for big accounts, if you can reach one. Manual entry works fine if you post a few times a week.</p>
+<p>To import a CSV, use File, then Import in Google Sheets. Google's <a href="https://support.google.com/docs/answer/40608">import help page</a> lists .csv as a supported file type. Import it into a new tab, then copy the columns you need into Posts. X's ads help center says its Post Activity Dashboard export covers up to 30 days and 3,000 posts at a time, and the full steps are in <a href="export-twitter-analytics-data.html">how to export Twitter analytics data</a>.</p>
+<p>If you type numbers by hand, wait two or three days after posting so the stats settle. I'd do it once a week in one sitting.</p>
+
+<h2>How do you set up the Weekly tab?</h2>
+<p>The Weekly tab has one row per week. You type in your follower count, and formulas pull posts, impressions and engagements from the Posts tab automatically.</p>
+<p>Add a tab named "Weekly" with these headers, and put each week's Monday date in column A:</p>
+<ul>
+<li><strong>A Week start:</strong> a date, like 2026-10-05.</li>
+<li><strong>B Followers:</strong> type your follower count each Monday.</li>
+<li><strong>C Net change</strong> (from row 3): =B3-B2</li>
+<li><strong>D Growth rate</strong> (from row 3): =IFERROR(C3/B2, 0)</li>
+<li><strong>E Posts:</strong> =COUNTIFS(Posts!$A:$A, "&gt;="&amp;A2, Posts!$A:$A, "&lt;"&amp;A2+7)</li>
+<li><strong>F Impressions:</strong> =SUMIFS(Posts!$E:$E, Posts!$A:$A, "&gt;="&amp;A2, Posts!$A:$A, "&lt;"&amp;A2+7)</li>
+<li><strong>G Engagements:</strong> =SUMIFS(Posts!$J:$J, Posts!$A:$A, "&gt;="&amp;A2, Posts!$A:$A, "&lt;"&amp;A2+7)</li>
+<li><strong>H Eng. rate:</strong> =IFERROR(G2/F2, 0)</li>
+</ul>
+<p>Notice column H divides total engagements by total impressions. That's the honest weekly rate, because big posts count more than small ones. The follower side of this tab is covered in more depth in <a href="track-twitter-follower-growth.html">how to track Twitter follower growth</a>.</p>
+
+<h2>How do you build the Dashboard tab?</h2>
+<p>The Dashboard tab shows your latest numbers, small trend lines, one chart and your top five posts. It reads everything from the other two tabs, so you never type into it.</p>
+<p>Add a tab named "Dashboard" and fill in these cells:</p>
+<ol>
+<li><strong>Current followers:</strong> =INDEX(Weekly!B2:B, COUNTA(Weekly!B2:B))</li>
+<li><strong>Follower trend:</strong> =SPARKLINE(Weekly!B2:B). Google's <a href="https://support.google.com/docs/answer/3093289">SPARKLINE help page</a> describes it as a "miniature chart contained within a single cell."</li>
+<li><strong>Weekly impressions trend:</strong> =SPARKLINE(Weekly!F2:F, {"charttype","column"})</li>
+<li><strong>Top five posts by score:</strong> =SORTN(Posts!A2:L, 5, 0, 12, FALSE)</li>
+</ol>
+<p>For a bigger chart, select the Week start and Impressions columns in Weekly, then use Insert, then Chart, as shown on Google's <a href="https://support.google.com/docs/answer/63824">chart help page</a>. A line chart works well for weekly trends.</p>
+<p>Last touch: highlight standout posts. Select column L in Posts, open Format, then Conditional formatting, and set "Greater than or equal to" 2 with a green fill. Every post that doubled your usual reach now jumps out.</p>
+
+<h2>How do you keep the dashboard useful?</h2>
+<p>Update it on the same day each week and change only one thing about your posting at a time. A dashboard is only as good as the habit around it.</p>
+<p>Here's the routine I'd follow. Every Monday, type in your follower count and last week's posts. Look at the sparklines. Then read the top five list and ask one question: what do these posts have in common? Write the answer in a notes column. Over time, those notes become your content plan, which pairs well with <a href="create-a-twitter-content-calendar.html">a Twitter content calendar</a>.</p>
+<p>A side note. I built a free extension, XVision, that shows daily follower gains and rates each post against your usual views right on x.com. It doesn't export data, so you'd still type numbers into the sheet, but it makes the weekly check quicker. If you'd rather have a tool that builds dashboards for you, see <a href="ai-powered-twitter-analytics-dashboard.html">AI-powered Twitter analytics dashboards</a>.</p>
+
+<h2>Your data, your dashboard</h2>
+<p>Building a Twitter analytics dashboard in Google Sheets is one of the best hours you can spend on your X account. Three tabs, a dozen formulas, one weekly habit. It costs nothing, it never locks you out, and it answers the question that matters most: what should I post next? Start with a blank sheet today.</p>
+
+<h2>Frequently Asked Questions</h2>
+
+<h3>Can I connect X analytics to Google Sheets automatically?</h3>
+<p>Not directly. X's help pages don't describe a built-in Google Sheets connection, so most people import a CSV export or type numbers in weekly. Developers can pull metrics with the X API, which shares public metrics like impressions and likes, but that route needs a developer account and some coding.</p>
+
+<h3>What is the best chart for a Twitter analytics dashboard?</h3>
+<p>A line chart of weekly impressions and weekly followers is the best starting chart for a Twitter analytics dashboard. It shows the trend clearly without daily noise. Add small SPARKLINE charts in single cells for quick checks, and use a sorted list of your top five posts instead of a chart for content.</p>
+
+<h3>Why use the median instead of the average for posts?</h3>
+<p>The median is better because one viral post can pull the average far up and make every normal post look weak. The median is the middle value, so it reflects your typical post. Dividing each post's impressions by the median gives a fair score, where 1.0 means an ordinary result.</p>
+
+<h3>Can I build this dashboard in Excel instead?</h3>
+<p>Yes, most of this dashboard works in Microsoft Excel. IFERROR, SUMIFS, COUNTIFS, MEDIAN and INDEX behave the same way. Two parts differ: SPARKLINE and SORTN are Google Sheets functions, so in Excel use its built-in sparklines from the Insert menu and a sorted table for top posts.</p>
+
+<h3>How often should I update my Twitter analytics dashboard?</h3>
+<p>Update a Twitter analytics dashboard once a week, on the same day, for about 10 minutes. Weekly updates smooth out daily swings and match how the Weekly tab is built. If you can use X's Post Activity Dashboard, add a monthly CSV export as a backup, since each export covers up to 30 days.</p>
+    </article>
+    <aside class="related">
+      <h2>Keep reading</h2>
+      <ul>
+        <li><a href="use-twitter-analytics-in-2026.html">How to Use Twitter Analytics in 2026 (X Analytics Guide)</a></li>
+        <li><a href="best-x-analytics-tools-for-creators.html">Best X Analytics Tools for Creators in 2026</a></li>
+        <li><a href="find-your-best-performing-tweets.html">How to Find Your Best Performing Tweets on X</a></li>
+        <li><a href="twitter-analytics-alternatives-for-beginners.html">Twitter Analytics Alternatives for Beginners (Free and Simple)</a></li>
+      </ul>
+    </aside>
+    <aside class="cta">
+      <b>See these numbers right on X.</b>
+      <span>XVision is a free Chrome extension that shows follower counts, follow-back badges and viral posts on your timeline.</span>
+      <a class="btn primary small" href="../index.html">Get XVision free</a>
+    </aside>
+  </main>
+  <footer>
+    <div class="wrap">
+      <div class="footlinks">
+        <a href="../index.html">XVision extension</a>
+        <a href="../guides/index.html">Guides</a>
+        <a href="../tools/index.html">Free tools</a>
+        <a href="../tools/video-downloader.html">Twitter video downloader</a>
+        <a href="../privacy-policy.html">Privacy</a>
+      </div>
+      <span>Built by Prashant Sharma · Inspired by XRay by fayazara · Not affiliated with X Corp.</span>
+    </div>
+  </footer>
+
+</body>
+</html>
