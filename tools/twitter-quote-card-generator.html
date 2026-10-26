@@ -1,0 +1,530 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Free Twitter Quote Card Generator: Quote Images for X</title>
+  <meta name="description" content="Twitter quote card generator: turn a quote into a clean 1:1, 4:5 or 16:9 image with four themes and auto-fit text. Export PNG or JPEG. Free, no sign-up." />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <link rel="canonical" href="https://kakahaja07.github.io/xvision/tools/twitter-quote-card-generator.html" />
+  <meta name="theme-color" content="#f6f6f8" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#0a0a0c" media="(prefers-color-scheme: dark)" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="XVision" />
+  <meta property="og:url" content="https://kakahaja07.github.io/xvision/tools/twitter-quote-card-generator.html" />
+  <meta property="og:title" content="Twitter Quote Card Generator" />
+  <meta property="og:description" content="Twitter quote card generator: turn a quote into a clean 1:1, 4:5 or 16:9 image with four themes and auto-fit text. Export PNG or JPEG. Free, no sign-up." />
+  <meta property="og:image" content="https://kakahaja07.github.io/xvision/assets/og-card.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Twitter Quote Card Generator" />
+  <meta name="twitter:description" content="Twitter quote card generator: turn a quote into a clean 1:1, 4:5 or 16:9 image with four themes and auto-fit text. Export PNG or JPEG. Free, no sign-up." />
+  <meta name="twitter:image" content="https://kakahaja07.github.io/xvision/assets/og-card.jpg" />
+  <link rel="icon" type="image/png" href="../assets/logo-64.png" />
+  <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png" />
+  <script src="../assets/site.js"></script>
+  <link rel="stylesheet" href="../assets/site.css" />
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "name": "Twitter Quote Card Generator",
+      "description": "Twitter quote card generator: turn a quote into a clean 1:1, 4:5 or 16:9 image with four themes and auto-fit text. Export PNG or JPEG. Free, no sign-up.",
+      "url": "https://kakahaja07.github.io/xvision/tools/twitter-quote-card-generator.html",
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "Any",
+      "browserRequirements": "Requires JavaScript",
+      "isAccessibleForFree": true,
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "author": {
+        "@type": "Person",
+        "@id": "https://kakahaja07.github.io/xvision/#author",
+        "name": "Prashant Sharma",
+        "url": "https://github.com/Kakahaja07"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "XVision",
+          "item": "https://kakahaja07.github.io/xvision/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Free tools",
+          "item": "https://kakahaja07.github.io/xvision/tools/index.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Twitter Quote Card Generator",
+          "item": "https://kakahaja07.github.io/xvision/tools/twitter-quote-card-generator.html"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How do you make a quote card for Twitter?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A Twitter quote card generator turns a short quote and a name into a clean image you can post on X. Type the quote, add the speaker and an optional @handle, then pick a theme, font and size such as 1:1 (1080 x 1080 pixels). Download a PNG or JPEG. It is free and runs in your browser."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is this Twitter quote card generator free?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, the Twitter quote card generator is free with no sign-up and no watermark. You can make as many cards as you like in 1:1, 4:5 or 16:9 sizes and download each one as a PNG or JPEG file. Everything runs in your browser, so there is no account, upload or usage limit to worry about."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Are my quotes uploaded anywhere?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No, your quote never leaves your device. The card is drawn on an HTML canvas inside your browser, and the PNG or JPEG file is created locally when you click download. There is no server step, so you can safely design cards with unreleased product lines, client quotes or drafts you are not ready to share yet."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I post a quote card with someone else's words?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, as long as the quote is accurate and credited to the right person. Check the original source, such as a book, interview or post, and copy the exact wording. Short credited quotes are common, but rules differ by country, so check the source's terms before using long passages or anything sold as paid content."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I add alt text to a quote card on X?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "On the X app, tap the +Alt button on the attached image, type the description and tap Done. On x.com, click Add description instead. X's help center lists a 1,000 character limit as of October 2026. For a quote card, type the full quote and the speaker's name so screen reader users get the same words."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why does the text get smaller when I type more?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The generator auto-fits the quote to the card. It starts with large text and steps the font size down until every line fits between the quote mark and the name. If the text reaches the smallest readable size and still does not fit, the tool shows a warning so you can shorten the quote or pick 16:9."
+          }
+        }
+      ],
+      "@id": "https://kakahaja07.github.io/xvision/tools/twitter-quote-card-generator.html#faq"
+    }
+  ]
+}
+  </script>
+  <style>
+.t-twitter-quote-card-generator .seg { flex-wrap: wrap; max-width: 100%; justify-self: start; }
+.t-twitter-quote-card-generator textarea { min-height: 120px; }
+.t-twitter-quote-card-generator .canvas-wrap { padding: 12px; }
+.t-twitter-quote-card-generator .canvas-wrap canvas { max-height: 520px; width: auto; border-radius: 6px; box-shadow: 0 1px 3px rgba(0, 0, 0, .12); }
+.t-twitter-quote-card-generator .qc-warn { color: var(--red); }
+</style>
+</head>
+<body>
+  <header class="site-nav">
+    <div class="wrap nav-in">
+      <a class="wordmark" href="../index.html" aria-label="XVision home"><img src="../assets/logo-64.png" alt="" width="26" height="26" />Vision</a>
+      <nav class="navlinks" id="site-menu" aria-label="Main">
+        <a class="opt" href="../index.html#features">Features</a>
+        <a class="opt" href="../index.html#install">How it works</a>
+        <a href="../guides/index.html">Guides</a>
+        <a href="../tools/index.html" aria-current="page">Tools</a>
+        <a class="opt" href="../index.html#faq">FAQ</a>
+      </nav>
+      <div class="nav-cta">
+        <button class="theme-toggle" type="button" aria-label="Dark mode" aria-pressed="false"><svg class="sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.9 4.9l1.4 1.4m11.4 11.4 1.4 1.4M2 12h2m16 0h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg><svg class="moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 14.3A8.5 8.5 0 1 1 9.7 3.5a7 7 0 0 0 10.8 10.8Z"/></svg></button>
+        <a class="btn ghost small" href="https://github.com/Kakahaja07/xvision">GitHub</a>
+        <a class="btn primary small" href="../index.html#install">Get it free</a>
+        <button class="menu-toggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="site-menu"><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+  <main class="wrap tool-page">
+    <header class="page-head">
+      <div class="crumbs"><a href="index.html">Tools</a> › <a href="index.html#media">Media and utilities</a></div>
+      <h1>Twitter Quote Card Generator</h1>
+      <p>Type a quote and a name, pick a theme, size and font, and download a clean quote image for X. The text resizes itself to fit.</p>
+    </header>
+    <section class="tool t-twitter-quote-card-generator">
+  <div class="tool-grid">
+    <div class="fields">
+      <div class="field-group">
+        <label for="qc-quote">Quote</label>
+        <textarea id="qc-quote" rows="5" maxlength="700">The best time to share what you are learning is while you are still learning it.</textarea>
+        <span class="hint" id="qc-count"></span>
+      </div>
+      <div class="fields-2">
+        <div class="field-group">
+          <label for="qc-name">Attribution</label>
+          <input type="text" id="qc-name" maxlength="60" value="Your Name">
+        </div>
+        <div class="field-group">
+          <label for="qc-handle">X handle (optional)</label>
+          <input type="text" id="qc-handle" maxlength="16" placeholder="@yourhandle" autocomplete="off" spellcheck="false">
+        </div>
+      </div>
+      <div class="field-group">
+        <span class="field-label" id="qc-theme-label">Theme</span>
+        <div class="seg" role="group" aria-labelledby="qc-theme-label" id="qc-theme">
+          <button type="button" data-v="light" aria-pressed="true">Light</button>
+          <button type="button" data-v="dark" aria-pressed="false">Dark</button>
+          <button type="button" data-v="paper" aria-pressed="false">Paper</button>
+          <button type="button" data-v="bold" aria-pressed="false">Bold</button>
+        </div>
+      </div>
+      <div class="field-group">
+        <span class="field-label" id="qc-size-label">Size</span>
+        <div class="seg" role="group" aria-labelledby="qc-size-label" id="qc-size">
+          <button type="button" data-v="1080x1080" aria-pressed="true">1:1</button>
+          <button type="button" data-v="1080x1350" aria-pressed="false">4:5</button>
+          <button type="button" data-v="1600x900" aria-pressed="false">16:9</button>
+        </div>
+        <span class="hint" id="qc-size-hint">1080 x 1080 px</span>
+      </div>
+      <div class="fields-2">
+        <div class="field-group">
+          <label for="qc-font">Font</label>
+          <select id="qc-font">
+            <option value="geomini">Geomini (site font)</option>
+            <option value="familjen">Familjen (site font)</option>
+            <option value="serif">Georgia (serif)</option>
+            <option value="system">System sans</option>
+            <option value="mono">Monospace</option>
+          </select>
+        </div>
+        <div class="field-group">
+          <label for="qc-align">Text alignment</label>
+          <select id="qc-align">
+            <option value="left">Left</option>
+            <option value="center">Center</option>
+          </select>
+        </div>
+      </div>
+      <p class="hint">Only put a name on a quote if you can point to where that person said those exact words. When in doubt, credit yourself or write "paraphrased".</p>
+    </div>
+    <div>
+      <div class="canvas-wrap"><canvas id="qc-canvas" width="1080" height="1080" role="img" aria-label="Quote card preview"></canvas></div>
+      <div class="row">
+        <button type="button" class="btn primary small" id="qc-png">Download PNG</button>
+        <button type="button" class="btn ghost small" id="qc-jpg">Download JPEG</button>
+      </div>
+      <p class="hint" id="qc-status" aria-live="polite"></p>
+    </div>
+  </div>
+</section>
+    <p class="privacy-note">Runs in your browser. Nothing you enter is uploaded.</p>
+    <article class="tool-article"><h2>How do you make a quote card for Twitter?</h2>
+<p>A Twitter quote card generator turns a short quote and a name into a clean image you can post on X. Type the quote, add the speaker and an optional @handle, then pick a theme, font and size such as 1:1 (1080 x 1080 pixels). Download a PNG or JPEG. It is free and runs in your browser.</p>
+<p>Here's the thing about good lines: in a busy feed they slide past. On a calm card, people pause for a second.</p>
+
+<h2>How to use the Twitter quote card generator</h2>
+<ol>
+<li>Type the quote. Keep it to one idea.</li>
+<li>Add the attribution: the person who said it, or your own name.</li>
+<li>Add an X handle if you want one, with or without the @.</li>
+<li>Pick a theme (Light, Dark, Paper or Bold), a size, a font and the alignment.</li>
+<li>Watch the preview. The text shrinks until it fits. If the tool warns that the quote is too long, cut a few words.</li>
+<li>Click Download PNG or Download JPEG, then attach the image to your post on X.</li>
+</ol>
+
+<h2>Which size should you pick for X?</h2>
+<p>Pick 1:1 or 4:5 for most quote cards, and 16:9 when the quote is longer or you want a wide, slide-like look. X's help page on <a href="https://help.x.com/en/using-x/posting-gifs-and-pictures">posting photos and GIFs</a> says a single photo with a standard aspect ratio between 2:1 and 3:4 shows in full in the post (as of October 2026). All three sizes here sit inside that range.</p>
+<table>
+<thead><tr><th>Size</th><th>Pixels</th><th>Good for</th></tr></thead>
+<tbody>
+<tr><td>1:1 square</td><td>1080 x 1080</td><td>Short quotes, the safe default</td></tr>
+<tr><td>4:5 portrait</td><td>1080 x 1350</td><td>Taking up more of a phone screen</td></tr>
+<tr><td>16:9 wide</td><td>1600 x 900</td><td>Longer quotes in fewer lines, talk or slide quotes</td></tr>
+</tbody>
+</table>
+<p>The pixel sizes are common recommendations, not X rules. The 2:1 to 3:4 range is the part X documents. If you need a different size for another platform, the <a href="twitter-image-resizer.html">Twitter image resizer</a> can reframe the PNG afterward.</p>
+
+<h2>What makes a quote card easy to read?</h2>
+<p>A readable quote card has one short idea, strong contrast and plenty of empty space. Most good cards hold about 10 to 30 words. Past that, the text gets small on a phone and people scroll on.</p>
+<ul>
+<li><strong>Cut the warm-up.</strong> Start the quote where the point starts.</li>
+<li><strong>Pick contrast over style.</strong> Light and Dark are the easiest to read. Paper feels softer. Bold works for punchy one-liners.</li>
+<li><strong>Add context in the post text.</strong> Say why the line matters to you. A card with no words around it gives people nothing to reply to.</li>
+</ul>
+
+<h2>How should you attribute a quote correctly?</h2>
+<p>Only put a person's name on a card if you can point to where they said those exact words. Misquotes travel fast on X, and a wrong name hurts your credibility more than a missing one. Check the original source before you design anything.</p>
+<ul>
+<li>Quote the exact words. If you shortened them, write "paraphrased" in the post.</li>
+<li>For your own words, use your name and handle.</li>
+<li>For a customer or teammate, ask before you put their name and words on a public image.</li>
+</ul>
+
+<h2>Quote card examples you can copy</h2>
+<p>These are made-up examples to show the format. The names are fictional.</p>
+<ul>
+<li><strong>Founder lesson (4:5, Dark):</strong> "Ship the small version first. The big version needs feedback you don't have yet." Credited to the founder's own name and handle.</li>
+<li><strong>Customer quote (1:1, Paper):</strong> "Setup took ten minutes, not ten days." Credited to "Priya, beta user", with her permission.</li>
+</ul>
+
+<h2>Common quote card mistakes</h2>
+<ul>
+<li><strong>Too many words.</strong> If the text drops to a small size, cut it in half rather than switching fonts.</li>
+<li><strong>Wrong or invented attribution.</strong> Famous names attract fake quotes. Verify first.</li>
+<li><strong>No alt text.</strong> People using screen readers can't read text inside an image. Put the full quote and the name in the image description.</li>
+</ul>
+
+<h2>When should you use a related tool instead?</h2>
+<p>Use the quote card generator for one short line. For a long note or a full paragraph, the <a href="twitter-text-to-image-converter.html">Twitter text to image converter</a> splits text across several pages. To show a real post as an image, try the <a href="twitter-post-screenshot-maker.html">Twitter post screenshot maker</a>. Write the image description with the <a href="twitter-alt-text-generator.html">Twitter alt text generator</a>, and check the post copy with the <a href="post-length.html">Twitter character counter</a>.</p>
+<p>If you want to know where images fit in your content mix, read about the <a href="../guides/best-content-formats-for-x-growth.html">best content formats for X growth</a>. For getting a good card shared, see <a href="../guides/get-more-reposts-on-twitter.html">how to get more reposts on Twitter</a> and <a href="../guides/write-posts-people-read.html">how to write engaging Twitter posts</a>.</p>
+
+<h2>Frequently Asked Questions</h2>
+<h3>Is this Twitter quote card generator free?</h3>
+<p>Yes, the Twitter quote card generator is free with no sign-up and no watermark. You can make as many cards as you like in 1:1, 4:5 or 16:9 sizes and download each one as a PNG or JPEG file. Everything runs in your browser, so there is no account, upload or usage limit to worry about.</p>
+<h3>Are my quotes uploaded anywhere?</h3>
+<p>No, your quote never leaves your device. The card is drawn on an HTML canvas inside your browser, and the PNG or JPEG file is created locally when you click download. There is no server step, so you can safely design cards with unreleased product lines, client quotes or drafts you are not ready to share yet.</p>
+<h3>Can I post a quote card with someone else's words?</h3>
+<p>Yes, as long as the quote is accurate and credited to the right person. Check the original source, such as a book, interview or post, and copy the exact wording. Short credited quotes are common, but rules differ by country, so check the source's terms before using long passages or anything sold as paid content.</p>
+<h3>How do I add alt text to a quote card on X?</h3>
+<p>On the X app, tap the +Alt button on the attached image, type the description and tap Done. On x.com, click Add description instead. X's help center lists a 1,000 character limit as of October 2026. For a quote card, type the full quote and the speaker's name so screen reader users get the same words.</p>
+<h3>Why does the text get smaller when I type more?</h3>
+<p>The generator auto-fits the quote to the card. It starts with large text and steps the font size down until every line fits between the quote mark and the name. If the text reaches the smallest readable size and still does not fit, the tool shows a warning so you can shorten the quote or pick 16:9.</p>
+    </article>
+    <aside class="related">
+      <h2>More free tools</h2>
+      <ul>
+        <li><a href="post-length.html">Twitter Character Counter</a></li>
+        <li><a href="twitter-image-resizer.html">Twitter Image Resizer</a></li>
+        <li><a href="twitter-image-compressor.html">Twitter Image Compressor</a></li>
+        <li><a href="twitter-banner-crop-preview.html">Twitter Banner Crop Preview</a></li>
+      </ul>
+    </aside>
+    <aside class="cta">
+      <b>Grow on X with real signals.</b>
+      <span>XVision is a free Chrome extension that shows follower counts, follow-back badges and viral posts right on your timeline.</span>
+      <a class="btn light small" href="../index.html">Get XVision free</a>
+    </aside>
+  </main>
+  <footer class="site-footer">
+    <img class="foot-mark" src="../assets/logo.png" alt="" width="320" height="320" loading="lazy" />
+    <div class="wrap">
+      <div class="foot-top">
+        <div class="foot-brand">
+          <a class="wordmark" href="../index.html"><img src="../assets/logo-64.png" alt="" width="26" height="26" />Vision</a>
+          <p>A free Chrome extension, guides and tools for growing on X. Private by design.</p>
+          <div class="foot-social"><a href="https://github.com/Kakahaja07/xvision" aria-label="XVision on GitHub"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.9 1.2 1.9 1.2 1.1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-6 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17.3 4.7 18.3 5 18.3 5c.7 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .5Z"/></svg></a></div>
+        </div>
+        <div class="foot-cols">
+          <div><h3>Product</h3><ul><li><a href="../index.html#features">Features</a></li><li><a href="../index.html#install">How it works</a></li><li><a href="../index.html#pricing">Pricing</a></li><li><a href="../index.html#faq">FAQ</a></li></ul></div>
+          <div><h3>Guides</h3><ul><li><a href="../guides/index.html#grow">Grow on X</a></li><li><a href="../guides/index.html#algorithm">The X algorithm</a></li><li><a href="../guides/index.html#money">Make money on X</a></li><li><a href="../guides/index.html">All guides</a></li></ul></div>
+          <div><h3>Free tools</h3><ul><li><a href="../tools/twitter-bio-generator.html">Twitter bio generator</a></li><li><a href="../tools/video-downloader.html">Twitter video downloader</a></li><li><a href="../tools/thread-maker.html">Thread splitter</a></li><li><a href="../tools/index.html">All 51 tools</a></li></ul></div>
+          <div><h3>Project</h3><ul><li><a href="https://github.com/Kakahaja07/xvision">GitHub</a></li><li><a href="../privacy-policy.html">Privacy policy</a></li><li><a href="../LICENSE">MIT License</a></li><li><a href="../sitemap.xml">Sitemap</a></li></ul></div>
+        </div>
+      </div>
+      <div class="foot-bottom">
+        <span>© 2026 XVision · Built by Prashant Sharma · Inspired by XRay by fayazara</span>
+        <span>Not affiliated with X Corp.</span>
+      </div>
+    </div>
+  </footer>
+  <script src="../assets/x-text.js"></script>
+  <script src="../assets/tool-kit.js"></script>
+  <script>(function () {
+  var $ = function (id) { return document.getElementById(id); };
+  var canvas = $('qc-canvas');
+  var ctx = canvas.getContext('2d');
+  var state = { theme: 'light', size: '1080x1080' };
+
+  var THEMES = {
+    light: { bg: '#ffffff', fg: '#0b0b0c', muted: '#64646c', mark: '#d6d6db', rule: '#0b0b0c' },
+    dark: { bg: '#0f0f11', fg: '#f3f3f4', muted: '#a0a0a8', mark: '#34343a', rule: '#f3f3f4' },
+    paper: { bg: '#f3ede1', fg: '#2a251f', muted: '#7a6f62', mark: '#d9cbb3', rule: '#a1866f' },
+    bold: { bg: '#0b0b0c', fg: '#ffffff', muted: '#c4c4cc', mark: '#ffd60a', rule: '#ffd60a' }
+  };
+  var FONTS = {
+    geomini: { family: 'Geomini, Familjen, sans-serif', weight: 600, bold: 750 },
+    familjen: { family: 'Familjen, sans-serif', weight: 500, bold: 700 },
+    serif: { family: 'Georgia, "Times New Roman", serif', weight: 400, bold: 700 },
+    system: { family: 'system-ui, -apple-system, "Segoe UI", Roboto, sans-serif', weight: 500, bold: 700 },
+    mono: { family: 'ui-monospace, "Cascadia Mono", Consolas, monospace', weight: 400, bold: 700 }
+  };
+
+  // Split text into lines that fit maxW; keeps line breaks and cuts words that are too long.
+  function wrap(text, maxW) {
+    var lines = [];
+    text.split('\n').forEach(function (para) {
+      var words = para.split(/\s+/).filter(Boolean);
+      if (!words.length) { lines.push(''); return; }
+      var cur = '';
+      words.forEach(function (word) {
+        while (ctx.measureText(word).width > maxW) {
+          var chars = Array.from(word), n = chars.length;
+          while (n > 1 && ctx.measureText(chars.slice(0, n).join('')).width > maxW) n--;
+          if (cur) { lines.push(cur); cur = ''; }
+          lines.push(chars.slice(0, n).join(''));
+          word = chars.slice(n).join('');
+        }
+        if (!word) return;
+        var next = cur ? cur + ' ' + word : word;
+        if (ctx.measureText(next).width <= maxW) cur = next;
+        else { lines.push(cur); cur = word; }
+      });
+      if (cur) lines.push(cur);
+    });
+    while (lines.length && !lines[lines.length - 1]) lines.pop();
+    return lines;
+  }
+
+  function cleanHandle(v) {
+    return v.trim().replace(/^@+/, '');
+  }
+
+  function draw() {
+    var dims = state.size.split('x').map(Number), W = dims[0], H = dims[1];
+    var t = THEMES[state.theme], f = FONTS[$('qc-font').value];
+    var weight = state.theme === 'bold' ? f.bold : f.weight;
+    var align = $('qc-align').value;
+    var quote = $('qc-quote').value.trim() || 'Your quote goes here.';
+    var name = $('qc-name').value.trim();
+    var handle = cleanHandle($('qc-handle').value);
+    var badHandle = handle && !/^[A-Za-z0-9_]{1,15}$/.test(handle);
+    var unit = Math.min(W, H);
+    var pad = Math.round(unit * 0.09);
+
+    canvas.width = W;
+    canvas.height = H;
+    ctx.fillStyle = t.bg;
+    ctx.fillRect(0, 0, W, H);
+    if (state.theme === 'paper') {
+      ctx.strokeStyle = t.mark;
+      ctx.lineWidth = Math.max(2, unit * 0.003);
+      var inset = Math.round(pad * 0.45);
+      ctx.strokeRect(inset, inset, W - inset * 2, H - inset * 2);
+    }
+
+    // Big opening quote mark.
+    var markSize = Math.round(unit * 0.2);
+    ctx.fillStyle = t.mark;
+    ctx.textBaseline = 'top';
+    ctx.textAlign = align === 'center' ? 'center' : 'left';
+    ctx.font = '700 ' + markSize + 'px Georgia, "Times New Roman", serif';
+    ctx.fillText('“', align === 'center' ? W / 2 : pad - markSize * 0.04, pad - markSize * 0.12);
+
+    // Footer: rule, name and handle.
+    var nameSize = Math.round(unit * 0.036);
+    var handleSize = Math.round(nameSize * 0.82);
+    var footerH = (name ? nameSize * 1.3 : 0) + (handle && !badHandle ? handleSize * 1.4 : 0);
+    var footerTop = H - pad - footerH;
+
+    // Auto-fit the quote between the mark and the footer.
+    var top = pad + markSize * 0.62;
+    var bottom = footerTop - (footerH ? unit * 0.06 : 0);
+    var maxW = W - pad * 2;
+    var size = Math.round(unit * 0.085), min = Math.round(unit * 0.03), lines, lineH;
+    for (; size >= min; size -= 2) {
+      ctx.font = weight + ' ' + size + 'px ' + f.family;
+      lines = wrap(quote, maxW);
+      lineH = size * 1.3;
+      if (lines.length * lineH <= bottom - top) break;
+    }
+    var tooLong = size < min;
+    if (tooLong) {
+      size = min;
+      ctx.font = weight + ' ' + size + 'px ' + f.family;
+      lineH = size * 1.3;
+      lines = wrap(quote, maxW).slice(0, Math.max(1, Math.floor((bottom - top) / lineH)));
+    }
+    var blockH = lines.length * lineH;
+    var y = top + Math.max(0, (bottom - top - blockH) / 2);
+    var x = align === 'center' ? W / 2 : pad;
+    ctx.fillStyle = t.fg;
+    lines.forEach(function (line, i) { ctx.fillText(line, x, y + i * lineH + size * 0.12); });
+
+    if (name) {
+      var ruleW = Math.round(nameSize * 1.4), ruleH = Math.max(2, Math.round(nameSize * 0.09));
+      ctx.font = '600 ' + nameSize + 'px ' + FONTS.familjen.family;
+      var nameW = ctx.measureText(name).width;
+      var startX = align === 'center' ? (W - (ruleW + nameSize * 0.5 + nameW)) / 2 : pad;
+      ctx.fillStyle = t.rule;
+      ctx.fillRect(startX, footerTop + nameSize * 0.55, ruleW, ruleH);
+      ctx.fillStyle = t.fg;
+      ctx.textAlign = 'left';
+      ctx.fillText(name, startX + ruleW + nameSize * 0.5, footerTop + nameSize * 0.05);
+    }
+    if (handle && !badHandle) {
+      ctx.font = '500 ' + handleSize + 'px ' + FONTS.familjen.family;
+      ctx.fillStyle = t.muted;
+      ctx.textAlign = align === 'center' ? 'center' : 'left';
+      var hx = align === 'center' ? W / 2 : pad + (name ? Math.round(nameSize * 1.9) : 0);
+      ctx.fillText('@' + handle, hx, footerTop + (name ? nameSize * 1.3 : 0) + handleSize * 0.2);
+    }
+
+    $('qc-size-hint').textContent = W + ' x ' + H + ' px';
+    var n = Array.from($('qc-quote').value.trim()).length;
+    $('qc-count').textContent = n + ' characters. Short quotes (about 10 to 30 words) read best.';
+    var status = $('qc-status');
+    status.className = 'hint';
+    if (badHandle) {
+      status.textContent = 'Handles use letters, numbers and underscores only, up to 15 characters. The handle is hidden until it is valid.';
+      status.className = 'hint qc-warn';
+    } else if (tooLong) {
+      status.textContent = 'This quote is too long to fit at a readable size, so the end is cut off. Shorten it or try the 16:9 size.';
+      status.className = 'hint qc-warn';
+    } else {
+      status.textContent = 'Text size: ' + size + ' px on a ' + W + ' x ' + H + ' card.';
+    }
+  }
+
+  // Load the chosen font before drawing so the canvas does not fall back to a default font.
+  function render() {
+    var f = FONTS[$('qc-font').value];
+    var spec = (state.theme === 'bold' ? f.bold : f.weight) + ' 40px ' + f.family;
+    draw();
+    if (document.fonts && document.fonts.load) {
+      Promise.all([document.fonts.load(spec), document.fonts.load('600 40px Familjen')]).then(draw, draw);
+    }
+  }
+
+  function seg(id, key) {
+    $(id).addEventListener('click', function (e) {
+      var b = e.target.closest('button');
+      if (!b) return;
+      $(id).querySelectorAll('button').forEach(function (x) { x.setAttribute('aria-pressed', String(x === b)); });
+      state[key] = b.dataset.v;
+      render();
+    });
+  }
+  seg('qc-theme', 'theme');
+  seg('qc-size', 'size');
+  ['qc-quote', 'qc-name', 'qc-handle'].forEach(function (id) { $(id).addEventListener('input', XTool.debounce(render, 80)); });
+  ['qc-font', 'qc-align'].forEach(function (id) { $(id).addEventListener('change', render); });
+
+  function save(type, ext, btn) {
+    draw();
+    XTool.canvasToBlob(canvas, type, 0.92).then(function (blob) {
+      if (!blob) return;
+      XTool.download(blob, 'quote-card-' + canvas.width + 'x' + canvas.height + '.' + ext, type);
+      XTool.flash(btn, 'Saved');
+    });
+  }
+  $('qc-png').addEventListener('click', function () { save('image/png', 'png', this); });
+  $('qc-jpg').addEventListener('click', function () { save('image/jpeg', 'jpg', this); });
+
+  render();
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(draw);
+})();</script>
+</body>
+</html>

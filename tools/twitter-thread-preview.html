@@ -1,0 +1,464 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Free Twitter Thread Preview: See Your Thread Before Posting</title>
+  <meta name="description" content="Twitter thread preview: paste your thread and see it as an X-style mock with your name, handle and a live 280 count on every post. Free, no sign-up." />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <link rel="canonical" href="https://kakahaja07.github.io/xvision/tools/twitter-thread-preview.html" />
+  <meta name="theme-color" content="#f6f6f8" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#0a0a0c" media="(prefers-color-scheme: dark)" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="XVision" />
+  <meta property="og:url" content="https://kakahaja07.github.io/xvision/tools/twitter-thread-preview.html" />
+  <meta property="og:title" content="Twitter Thread Preview" />
+  <meta property="og:description" content="Twitter thread preview: paste your thread and see it as an X-style mock with your name, handle and a live 280 count on every post. Free, no sign-up." />
+  <meta property="og:image" content="https://kakahaja07.github.io/xvision/assets/og-card.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Twitter Thread Preview" />
+  <meta name="twitter:description" content="Twitter thread preview: paste your thread and see it as an X-style mock with your name, handle and a live 280 count on every post. Free, no sign-up." />
+  <meta name="twitter:image" content="https://kakahaja07.github.io/xvision/assets/og-card.jpg" />
+  <link rel="icon" type="image/png" href="../assets/logo-64.png" />
+  <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png" />
+  <script src="../assets/site.js"></script>
+  <link rel="stylesheet" href="../assets/site.css" />
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "name": "Twitter Thread Preview",
+      "description": "Twitter thread preview: paste your thread and see it as an X-style mock with your name, handle and a live 280 count on every post. Free, no sign-up.",
+      "url": "https://kakahaja07.github.io/xvision/tools/twitter-thread-preview.html",
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "Any",
+      "browserRequirements": "Requires JavaScript",
+      "isAccessibleForFree": true,
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "author": {
+        "@type": "Person",
+        "@id": "https://kakahaja07.github.io/xvision/#author",
+        "name": "Prashant Sharma",
+        "url": "https://github.com/Kakahaja07"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "XVision",
+          "item": "https://kakahaja07.github.io/xvision/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Free tools",
+          "item": "https://kakahaja07.github.io/xvision/tools/index.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Twitter Thread Preview",
+          "item": "https://kakahaja07.github.io/xvision/tools/twitter-thread-preview.html"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How can you preview a Twitter thread before posting?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A Twitter thread preview shows your posts stacked the way X displays a thread, before you publish anything. Paste your thread into this free tool, split posts with blank lines or a line of three dashes, and you get an X-style mock with your name, handle, connector line and a live 280-character count on every post."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does the Twitter thread preview look exactly like X?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No, the Twitter thread preview is a close mock, not a pixel-perfect copy of X. It shows the stacked layout, avatar, name, handle, connector line, links and line breaks the way a thread reads. Fonts, spacing and buttons vary by device and app version, so always glance at the real post too."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I separate posts in the preview?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Separate posts with one blank line. If a single post needs blank lines inside it, put a line with three dashes between posts instead, and the preview will split only on those dashes. A numbering line like 2/6 that sits alone after a blank line stays with the post above it."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is the thread preview tool private?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, the thread preview tool is private. Everything runs in your browser, and the text, name and handle you type are never uploaded or saved on a server. It doesn't connect to your X account either, so you can test drafts freely before you post them for real."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why does my post show more characters than I typed?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Your post shows more characters because X weights some characters. Every link counts as 23 characters no matter its length, emoji count as 2, and most Chinese, Japanese and Korean characters count as 2. The preview follows the open-source twitter-text rules Twitter published, so its count should closely match X's own composer."
+          }
+        }
+      ],
+      "@id": "https://kakahaja07.github.io/xvision/tools/twitter-thread-preview.html#faq"
+    }
+  ]
+}
+  </script>
+  <style>
+.t-twitter-thread-preview textarea { min-height: 260px; }
+.t-twitter-thread-preview .tp-mock {
+  --x-bg: #ffffff; --x-fg: #0f1419; --x-muted: #536471; --x-line: #cfd9de; --x-link: #1d9bf0; --x-av: #e7ecf0; --x-red: #f4212e; --x-red-soft: rgba(244, 33, 46, .14);
+  border: 1px solid var(--x-line); border-radius: 16px; background: var(--x-bg); color: var(--x-fg); overflow: hidden;
+  font: 15px/1.38 -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  transition: background-color 200ms ease, color 200ms ease;
+}
+.t-twitter-thread-preview .tp-mock[data-theme="dark"] {
+  --x-bg: #000000; --x-fg: #e7e9ea; --x-muted: #71767b; --x-line: #2f3336; --x-av: #202327; --x-red-soft: rgba(244, 33, 46, .24);
+}
+.t-twitter-thread-preview .tp-post { display: grid; grid-template-columns: 40px minmax(0, 1fr); column-gap: 12px; padding: 0 16px; }
+.t-twitter-thread-preview .tp-post:first-child { padding-top: 14px; }
+.t-twitter-thread-preview .tp-side { display: flex; flex-direction: column; align-items: center; }
+.t-twitter-thread-preview .tp-av { display: grid; place-items: center; width: 40px; height: 40px; flex: none; border-radius: 50%; background: var(--x-av); color: var(--x-fg); font-size: 14px; font-weight: 700; letter-spacing: .02em; }
+.t-twitter-thread-preview .tp-line { flex: 1; width: 2px; margin-top: 4px; border-radius: 1px; background: var(--x-line); }
+.t-twitter-thread-preview .tp-main { min-width: 0; padding-bottom: 16px; }
+.t-twitter-thread-preview .tp-head { display: flex; flex-wrap: wrap; gap: 0 5px; align-items: baseline; }
+.t-twitter-thread-preview .tp-name { font-weight: 700; overflow-wrap: anywhere; }
+.t-twitter-thread-preview .tp-handle { color: var(--x-muted); overflow-wrap: anywhere; }
+.t-twitter-thread-preview .tp-text { margin-top: 2px; white-space: pre-wrap; overflow-wrap: anywhere; }
+.t-twitter-thread-preview .tp-link { color: var(--x-link); }
+.t-twitter-thread-preview .tp-overflow { border-radius: 3px; background: var(--x-red-soft); }
+.t-twitter-thread-preview .tp-count { margin-top: 8px; color: var(--x-muted); font-size: 13px; font-variant-numeric: tabular-nums; }
+.t-twitter-thread-preview .tp-count b { color: var(--x-red); font-weight: 600; }
+.t-twitter-thread-preview .tp-empty { padding: 28px 16px; color: var(--x-muted); text-align: center; }
+.t-twitter-thread-preview .tp-bar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px; margin-bottom: 12px; }
+.t-twitter-thread-preview .stats { margin-top: 14px; }
+.t-twitter-thread-preview .stat b { font-size: 22px; }
+.t-twitter-thread-preview .note:empty { display: none; }
+</style>
+</head>
+<body>
+  <header class="site-nav">
+    <div class="wrap nav-in">
+      <a class="wordmark" href="../index.html" aria-label="XVision home"><img src="../assets/logo-64.png" alt="" width="26" height="26" />Vision</a>
+      <nav class="navlinks" id="site-menu" aria-label="Main">
+        <a class="opt" href="../index.html#features">Features</a>
+        <a class="opt" href="../index.html#install">How it works</a>
+        <a href="../guides/index.html">Guides</a>
+        <a href="../tools/index.html" aria-current="page">Tools</a>
+        <a class="opt" href="../index.html#faq">FAQ</a>
+      </nav>
+      <div class="nav-cta">
+        <button class="theme-toggle" type="button" aria-label="Dark mode" aria-pressed="false"><svg class="sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.9 4.9l1.4 1.4m11.4 11.4 1.4 1.4M2 12h2m16 0h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg><svg class="moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 14.3A8.5 8.5 0 1 1 9.7 3.5a7 7 0 0 0 10.8 10.8Z"/></svg></button>
+        <a class="btn ghost small" href="https://github.com/Kakahaja07/xvision">GitHub</a>
+        <a class="btn primary small" href="../index.html#install">Get it free</a>
+        <button class="menu-toggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="site-menu"><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+  <main class="wrap tool-page">
+    <header class="page-head">
+      <div class="crumbs"><a href="index.html">Tools</a> › <a href="index.html#create">Content creation</a></div>
+      <h1>Twitter Thread Preview</h1>
+      <p>Paste a thread and see it stacked like it will appear on X, with your name, handle, connector line and a 280-character check on every post.</p>
+    </header>
+    <section class="tool t-twitter-thread-preview">
+  <div class="tool-grid">
+    <div class="fields">
+      <div class="field-group">
+        <label for="tp-src">Your thread</label>
+        <textarea id="tp-src" spellcheck="true">I posted on X every weekday for a month. Here is what changed.
+
+1. Writing got easier after week two. The first ten posts were the hardest.
+
+2. Short posts were not low effort. Cutting a post down to one idea often took longer than writing it.
+
+3. Replies mattered more than I expected. Most new conversations started in someone else's replies.
+
+I kept my notes here: example.com/notes
+
+That's it. What would you add?</textarea>
+        <span class="hint" id="tp-mode">Separate posts with a blank line, or with a line of three dashes (---).</span>
+      </div>
+      <div class="fields-2">
+        <div class="field-group">
+          <label for="tp-name">Display name</label>
+          <input type="text" id="tp-name" value="Your Name" maxlength="50" autocomplete="off">
+        </div>
+        <div class="field-group">
+          <label for="tp-handle">Handle</label>
+          <input type="text" id="tp-handle" value="yourhandle" maxlength="16" autocomplete="off">
+        </div>
+      </div>
+      <div class="stats" aria-live="polite">
+        <div class="stat"><b id="tp-n">0</b><span>Posts</span></div>
+        <div class="stat"><b id="tp-long">0</b><span>Longest</span></div>
+        <div class="stat"><b id="tp-over">0</b><span>Over 280</span></div>
+      </div>
+    </div>
+    <div>
+      <div class="tp-bar">
+        <span class="field-label" id="tp-theme-label">Preview</span>
+        <div class="seg" role="group" aria-labelledby="tp-theme-label">
+          <button type="button" data-theme="light" aria-pressed="true">Light</button>
+          <button type="button" data-theme="dark" aria-pressed="false">Dark</button>
+        </div>
+      </div>
+      <div class="tp-mock" id="tp-mock" data-theme="light" aria-live="polite"></div>
+      <p class="note" id="tp-note"></p>
+    </div>
+  </div>
+  <p class="privacy-note">Runs in your browser. Nothing you type is uploaded.</p>
+</section>
+    
+    <article class="tool-article"><h2>How can you preview a Twitter thread before posting?</h2>
+<p>A Twitter thread preview shows your posts stacked the way X displays a thread, before you publish anything. Paste your thread into this free tool, split posts with blank lines or a line of three dashes, and you get an X-style mock with your name, handle, connector line and a live 280-character count on every post.</p>
+<p>Here's why I preview. A thread can look fine in a notes app and still feel wrong on X. Line breaks land differently, one post runs long, or the hook gets buried. Seeing it in a timeline-style layout catches those problems in seconds.</p>
+
+<h2>How to use the Twitter Thread Preview</h2>
+<p>The preview updates as you type, so you can edit and check in one place.</p>
+<ol>
+<li>Paste your thread into the text box.</li>
+<li>Separate posts with a blank line. If your posts have blank lines inside them, put a line with three dashes (---) between posts instead.</li>
+<li>Type your display name and @handle so the mock looks like your account.</li>
+<li>Switch between Light and Dark to see both themes.</li>
+<li>Fix any post marked in red, then copy your final text back into X or your scheduler.</li>
+</ol>
+<p>A numbering line like 3/7 that sits alone after a blank line stays attached to its post. That means threads from the <a href="thread-maker.html">Twitter Thread Splitter</a> preview correctly.</p>
+
+<h2>What does the preview show?</h2>
+<p>Each post in the mock shows the same parts readers see on X, plus a counter they don't see.</p>
+<table>
+<thead><tr><th>Part</th><th>What it tells you</th></tr></thead>
+<tbody>
+<tr><td>Avatar and connector line</td><td>Which posts belong to the thread, and in what order</td></tr>
+<tr><td>Name and @handle</td><td>How the thread reads with your identity on it</td></tr>
+<tr><td>Blue text</td><td>Links, @mentions and #hashtags, so you can spot them fast</td></tr>
+<tr><td>Count (like 212 / 280)</td><td>X's weighted character count for that post</td></tr>
+<tr><td>Red highlight</td><td>The exact text that runs past 280 characters</td></tr>
+<tr><td>Stats</td><td>Number of posts, the longest post and how many are over</td></tr>
+</tbody>
+</table>
+
+<h2>How does the 280-character check work?</h2>
+<p>The counter uses X's weighting rules. As of October 2026, a standard post allows 280 characters, every link counts as 23 and emoji count as 2. Any post over 280 turns red, and the part past the limit gets highlighted, so you know exactly how much to cut.</p>
+<p>Paid X plans can write longer single posts, but X's help pages give different caps (25,000 on one page, 4,000 on another). The preview flags anything over 280 because that is the limit every account shares.</p>
+
+<h2>Why does the first post matter so much?</h2>
+<p>The first post decides whether anyone opens the rest. X's <a href="https://help.x.com/en/using-x/create-a-thread">thread help page</a> says threads of 4 or more posts get cut short on timelines with a "Show this thread" link. On a timeline, most people see your hook and little else.</p>
+<p>When your thread reaches 4 posts, the preview reminds you of that. Look at post 1 by itself. Does it make a clear promise? If not, test a few openings from the <a href="twitter-hook-generator.html">Twitter Hook Generator</a>.</p>
+
+<h2>Tips for a thread that reads well</h2>
+<p>Small layout choices change how easy a thread feels on a phone.</p>
+<ul>
+<li><strong>One idea per post.</strong> Each post should still make sense if someone shares it alone.</li>
+<li><strong>Short lines and white space.</strong> Walls of text look heavier on a small screen.</li>
+<li><strong>Links where they belong.</strong> Put a link in the post it supports. Each one costs 23 characters.</li>
+<li><strong>One clear ask at the end.</strong> A single question beats three requests.</li>
+</ul>
+<p>A fictional example: a 6-post thread about learning to bake bread. In the preview, post 3 shows 301 / 280, with its last sentence in red. Cutting the filler phrase "at the end of the day" and one extra adjective fixed it in a single edit.</p>
+
+<h2>What mistakes does the preview catch?</h2>
+<p>Most thread problems are small, and they're easy to miss in a plain text box.</p>
+<ul>
+<li>A post that is over the limit by a few characters, often because of a link or emoji.</li>
+<li>Two posts that merged because a blank line was missing.</li>
+<li>A post that ends mid-thought because it was split in the wrong place.</li>
+<li>A hook that only makes sense after you see post 2.</li>
+</ul>
+
+<h2>When should you use a related tool?</h2>
+<p>Need to write the thread first? Build one from bullet points with the <a href="twitter-thread-generator.html">Twitter Thread Generator</a>. Want an image of a single post to share somewhere else? Try the <a href="twitter-post-screenshot-maker.html">Twitter Post Screenshot Maker</a>. To check one post on its own, use the <a href="post-length.html">Twitter Character Counter</a>.</p>
+<p>For strategy, read <a href="../guides/write-viral-twitter-threads.html">how to write viral Twitter threads</a> and <a href="../guides/schedule-twitter-posts-in-advance.html">how to schedule Twitter posts in advance</a>.</p>
+
+<h2>Frequently Asked Questions</h2>
+<h3>Does the Twitter thread preview look exactly like X?</h3>
+<p>No, the Twitter thread preview is a close mock, not a pixel-perfect copy of X. It shows the stacked layout, avatar, name, handle, connector line, links and line breaks the way a thread reads. Fonts, spacing and buttons vary by device and app version, so always glance at the real post too.</p>
+<h3>How do I separate posts in the preview?</h3>
+<p>Separate posts with one blank line. If a single post needs blank lines inside it, put a line with three dashes between posts instead, and the preview will split only on those dashes. A numbering line like 2/6 that sits alone after a blank line stays with the post above it.</p>
+<h3>Is the thread preview tool private?</h3>
+<p>Yes, the thread preview tool is private. Everything runs in your browser, and the text, name and handle you type are never uploaded or saved on a server. It doesn't connect to your X account either, so you can test drafts freely before you post them for real.</p>
+<h3>Why does my post show more characters than I typed?</h3>
+<p>Your post shows more characters because X weights some characters. Every link counts as 23 characters no matter its length, emoji count as 2, and most Chinese, Japanese and Korean characters count as 2. The preview follows the open-source twitter-text rules Twitter published, so its count should closely match X's own composer.</p>
+    </article>
+    <aside class="related">
+      <h2>More free tools</h2>
+      <ul>
+        <li><a href="tweet-generator.html">Tweet Generator</a></li>
+        <li><a href="twitter-thread-generator.html">Twitter Thread Generator</a></li>
+        <li><a href="thread-maker.html">Twitter Thread Splitter</a></li>
+        <li><a href="twitter-hook-generator.html">Twitter Hook Generator</a></li>
+      </ul>
+    </aside>
+    <aside class="cta">
+      <b>Grow on X with real signals.</b>
+      <span>XVision is a free Chrome extension that shows follower counts, follow-back badges and viral posts right on your timeline.</span>
+      <a class="btn light small" href="../index.html">Get XVision free</a>
+    </aside>
+  </main>
+  <footer class="site-footer">
+    <img class="foot-mark" src="../assets/logo.png" alt="" width="320" height="320" loading="lazy" />
+    <div class="wrap">
+      <div class="foot-top">
+        <div class="foot-brand">
+          <a class="wordmark" href="../index.html"><img src="../assets/logo-64.png" alt="" width="26" height="26" />Vision</a>
+          <p>A free Chrome extension, guides and tools for growing on X. Private by design.</p>
+          <div class="foot-social"><a href="https://github.com/Kakahaja07/xvision" aria-label="XVision on GitHub"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.9 1.2 1.9 1.2 1.1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-6 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17.3 4.7 18.3 5 18.3 5c.7 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .5Z"/></svg></a></div>
+        </div>
+        <div class="foot-cols">
+          <div><h3>Product</h3><ul><li><a href="../index.html#features">Features</a></li><li><a href="../index.html#install">How it works</a></li><li><a href="../index.html#pricing">Pricing</a></li><li><a href="../index.html#faq">FAQ</a></li></ul></div>
+          <div><h3>Guides</h3><ul><li><a href="../guides/index.html#grow">Grow on X</a></li><li><a href="../guides/index.html#algorithm">The X algorithm</a></li><li><a href="../guides/index.html#money">Make money on X</a></li><li><a href="../guides/index.html">All guides</a></li></ul></div>
+          <div><h3>Free tools</h3><ul><li><a href="../tools/twitter-bio-generator.html">Twitter bio generator</a></li><li><a href="../tools/video-downloader.html">Twitter video downloader</a></li><li><a href="../tools/thread-maker.html">Thread splitter</a></li><li><a href="../tools/index.html">All 51 tools</a></li></ul></div>
+          <div><h3>Project</h3><ul><li><a href="https://github.com/Kakahaja07/xvision">GitHub</a></li><li><a href="../privacy-policy.html">Privacy policy</a></li><li><a href="../LICENSE">MIT License</a></li><li><a href="../sitemap.xml">Sitemap</a></li></ul></div>
+        </div>
+      </div>
+      <div class="foot-bottom">
+        <span>© 2026 XVision · Built by Prashant Sharma · Inspired by XRay by fayazara</span>
+        <span>Not affiliated with X Corp.</span>
+      </div>
+    </div>
+  </footer>
+  <script src="../assets/x-text.js"></script>
+  <script src="../assets/tool-kit.js"></script>
+  <script>(function () {
+  var $ = function (id) { return document.getElementById(id); };
+  var src = $('tp-src'), nameEl = $('tp-name'), handleEl = $('tp-handle'), mock = $('tp-mock'), note = $('tp-note'), mode = $('tp-mode');
+  var LIMIT = XText.LIMIT;
+  var DASH_LINE = /^[ \t]*-{3,}[ \t]*$/m;
+  var NUM_ONLY = /^\(?\d{1,3}\s*\/\s*\d{0,3}\)?$/;
+  var RICH = /(https?:\/\/[^\s]+|\b(?:[a-z0-9-]+\.)+(?:com|org|net|io|co|dev|app|ai|me|xyz|gg|so|ly|in|uk)(?:\/[^\s]*)?|(?<![\w@])@\w{1,15}|(?<![\w#&])#[\p{L}\p{N}_]+)/giu;
+
+  function splitPosts(raw) {
+    raw = raw.replace(/\r/g, '');
+    if (DASH_LINE.test(raw)) {
+      return { by: 'dashes', posts: raw.split(/^[ \t]*-{3,}[ \t]*$/m).map(function (p) { return p.trim(); }).filter(Boolean) };
+    }
+    var posts = [];
+    raw.split(/\n\s*\n/).map(function (p) { return p.trim(); }).filter(Boolean).forEach(function (chunk) {
+      if (NUM_ONLY.test(chunk) && posts.length) posts[posts.length - 1] += '\n\n' + chunk;
+      else posts.push(chunk);
+    });
+    return { by: 'blank', posts: posts };
+  }
+
+  function initials(name) {
+    var words = name.trim().split(/\s+/).filter(Boolean).slice(0, 2);
+    var s = words.map(function (w) { return Array.from(w)[0] || ''; }).join('').toUpperCase();
+    return s || 'X';
+  }
+
+  // Index (in UTF-16 units) where the text first passes the limit.
+  function overflowAt(text) {
+    if (XText.weightedLength(text) <= LIMIT) return -1;
+    var chars = Array.from(text), lo = 0, hi = chars.length;
+    while (lo < hi) {
+      var mid = (lo + hi + 1) >> 1;
+      if (XText.weightedLength(chars.slice(0, mid).join('')) <= LIMIT) lo = mid; else hi = mid - 1;
+    }
+    return chars.slice(0, lo).join('').length;
+  }
+
+  function appendRich(parent, text) {
+    var last = 0;
+    text.replace(RICH, function (m, _g, offset) {
+      if (offset > last) parent.append(document.createTextNode(text.slice(last, offset)));
+      var span = document.createElement('span');
+      span.className = 'tp-link';
+      span.textContent = m;
+      parent.append(span);
+      last = offset + m.length;
+      return m;
+    });
+    if (last < text.length) parent.append(document.createTextNode(text.slice(last)));
+  }
+
+  function el(tag, cls, text) {
+    var e = document.createElement(tag);
+    if (cls) e.className = cls;
+    if (text != null) e.textContent = text;
+    return e;
+  }
+
+  function render() {
+    var res = splitPosts(src.value);
+    var posts = res.posts;
+    var name = nameEl.value.trim() || 'Your Name';
+    var handle = '@' + (handleEl.value.replace(/^@+/, '').replace(/[^A-Za-z0-9_]/g, '').slice(0, 15) || 'yourhandle');
+    mode.textContent = res.by === 'dashes'
+      ? 'Splitting on lines of three dashes (---). Blank lines stay inside posts.'
+      : 'Separate posts with a blank line, or with a line of three dashes (---).';
+    mock.replaceChildren();
+    var longest = 0, over = 0;
+    if (!posts.length) mock.append(el('div', 'tp-empty', 'Paste a thread to see the preview.'));
+    posts.forEach(function (text, i) {
+      var n = XText.weightedLength(text);
+      longest = Math.max(longest, n);
+      var row = el('div', 'tp-post');
+      var side = el('div', 'tp-side');
+      var av = el('div', 'tp-av', initials(name));
+      av.setAttribute('aria-hidden', 'true');
+      side.append(av);
+      if (i < posts.length - 1) side.append(el('div', 'tp-line'));
+      var main = el('div', 'tp-main');
+      var head = el('div', 'tp-head');
+      head.append(el('span', 'tp-name', name), el('span', 'tp-handle', handle));
+      var body = el('div', 'tp-text');
+      var cut = overflowAt(text);
+      if (cut < 0) appendRich(body, text);
+      else {
+        over++;
+        appendRich(body, text.slice(0, cut));
+        var extra = el('span', 'tp-overflow');
+        appendRich(extra, text.slice(cut));
+        body.append(extra);
+      }
+      var count = el('div', 'tp-count', 'Post ' + (i + 1) + ' of ' + posts.length + ' · ' + n + ' / ' + LIMIT);
+      if (n > LIMIT) {
+        count.append(document.createTextNode(' · '));
+        count.append(el('b', '', (n - LIMIT) + ' over the limit'));
+      }
+      main.append(head, body, count);
+      row.append(side, main);
+      mock.append(row);
+    });
+    $('tp-n').textContent = posts.length;
+    $('tp-long').textContent = longest;
+    $('tp-over').textContent = over;
+    $('tp-over').className = over ? 'over' : '';
+    note.textContent = posts.length >= 4
+      ? 'On timelines, X cuts threads of 4 or more posts short with a "Show this thread" link, so post 1 has to stand on its own.'
+      : '';
+  }
+
+  var segBtns = Array.prototype.slice.call(document.querySelectorAll('.t-twitter-thread-preview .seg button'));
+  function setTheme(t) {
+    mock.dataset.theme = t;
+    segBtns.forEach(function (b) { b.setAttribute('aria-pressed', String(b.dataset.theme === t)); });
+  }
+  segBtns.forEach(function (b) { b.addEventListener('click', function () { setTheme(b.dataset.theme); }); });
+  var siteTheme = document.documentElement.getAttribute('data-theme');
+  if (siteTheme ? siteTheme === 'dark' : window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) setTheme('dark');
+
+  var later = XTool.debounce(render, 100);
+  [src, nameEl, handleEl].forEach(function (e) { e.addEventListener('input', later); });
+  render();
+})();</script>
+</body>
+</html>

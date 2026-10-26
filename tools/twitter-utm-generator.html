@@ -1,0 +1,464 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Free Twitter UTM Generator: Tag Links You Share on X</title>
+  <meta name="description" content="Twitter UTM generator: add utm_source, utm_medium and utm_campaign tags to links you share on X, with checks for case and spaces. Free, no sign-up, no tracking." />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <link rel="canonical" href="https://kakahaja07.github.io/xvision/tools/twitter-utm-generator.html" />
+  <meta name="theme-color" content="#f6f6f8" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#0a0a0c" media="(prefers-color-scheme: dark)" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="XVision" />
+  <meta property="og:url" content="https://kakahaja07.github.io/xvision/tools/twitter-utm-generator.html" />
+  <meta property="og:title" content="Twitter UTM Generator" />
+  <meta property="og:description" content="Twitter UTM generator: add utm_source, utm_medium and utm_campaign tags to links you share on X, with checks for case and spaces. Free, no sign-up, no tracking." />
+  <meta property="og:image" content="https://kakahaja07.github.io/xvision/assets/og-card.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Twitter UTM Generator" />
+  <meta name="twitter:description" content="Twitter UTM generator: add utm_source, utm_medium and utm_campaign tags to links you share on X, with checks for case and spaces. Free, no sign-up, no tracking." />
+  <meta name="twitter:image" content="https://kakahaja07.github.io/xvision/assets/og-card.jpg" />
+  <link rel="icon" type="image/png" href="../assets/logo-64.png" />
+  <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png" />
+  <script src="../assets/site.js"></script>
+  <link rel="stylesheet" href="../assets/site.css" />
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "name": "Twitter UTM Generator",
+      "description": "Twitter UTM generator: add utm_source, utm_medium and utm_campaign tags to links you share on X, with checks for case and spaces. Free, no sign-up, no tracking.",
+      "url": "https://kakahaja07.github.io/xvision/tools/twitter-utm-generator.html",
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "Any",
+      "browserRequirements": "Requires JavaScript",
+      "isAccessibleForFree": true,
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "author": {
+        "@type": "Person",
+        "@id": "https://kakahaja07.github.io/xvision/#author",
+        "name": "Prashant Sharma",
+        "url": "https://github.com/Kakahaja07"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "XVision",
+          "item": "https://kakahaja07.github.io/xvision/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Free tools",
+          "item": "https://kakahaja07.github.io/xvision/tools/index.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Twitter UTM Generator",
+          "item": "https://kakahaja07.github.io/xvision/tools/twitter-utm-generator.html"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How do you add UTM parameters to a Twitter link?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "To add UTM parameters to a Twitter link, attach tags like utm_source=x, utm_medium=social and utm_campaign=your_campaign to the end of the page URL. A Twitter UTM generator builds and checks the tagged link for you. Google Analytics then shows which X posts, bios or ads sent each visitor to your site."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Should I use x or twitter as the utm_source?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Either works, as long as you use the same value every time. This Twitter UTM generator defaults to \"x\" because the platform is called X today. If your old reports already use \"twitter\", keep it so your history stays in one row. Mixing both splits the same traffic into two sources."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do UTM parameters affect how my post looks on X?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No, UTM parameters do not change how the link preview looks in most cases, because the card comes from the page itself. X shortens links with t.co, so the long tagged URL does not use extra characters in your post. The tags only matter once someone lands on your site."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Are my links saved or sent anywhere?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No, nothing leaves your browser. The Twitter UTM generator builds links on your device, and the saved list exists only in memory for this tab. Close or refresh the page and the list is gone, so use Copy all to keep your links in a doc or spreadsheet before you leave."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Which UTM parameters are required?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Google Analytics says to always use utm_source, utm_medium and utm_campaign together. Those three answer where the visit came from, which channel brought it and which campaign it belongs to. utm_content and utm_term are optional. On X, utm_content is the most useful extra because it tells apart links in one campaign."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I use UTM links in my X bio?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, you can use a UTM link in your X bio website field or in the bio text. Tag it with something like utm_content=bio_link so you can see how many visits your profile sends. Use the same campaign name as your other always-on links, like evergreen."
+          }
+        }
+      ],
+      "@id": "https://kakahaja07.github.io/xvision/tools/twitter-utm-generator.html#faq"
+    }
+  ]
+}
+  </script>
+  <style>
+.t-twitter-utm-generator .out { min-height: 0; font-family: ui-monospace, "Cascadia Mono", Consolas, monospace; font-size: 14px; line-height: 1.5; }
+.t-twitter-utm-generator .ut-req { color: var(--muted); font-weight: 500; }
+.t-twitter-utm-generator .ut-msgs { margin: 12px 0 0; padding-left: 18px; font-size: 14px; color: var(--muted); }
+.t-twitter-utm-generator .ut-msgs li { margin: 3px 0; }
+.t-twitter-utm-generator .ut-msgs li.ut-err { color: var(--red); }
+.t-twitter-utm-generator .ut-saved-head { display: flex; align-items: center; justify-content: space-between; gap: 10px; flex-wrap: wrap; margin: 0 0 10px; }
+.t-twitter-utm-generator .ut-saved-head b { font-size: 15px; }
+.t-twitter-utm-generator .result p { font-family: ui-monospace, "Cascadia Mono", Consolas, monospace; font-size: 13.5px; }
+.t-twitter-utm-generator .result-foot .row, .t-twitter-utm-generator .ut-saved-head .row { margin: 0; gap: 8px; }
+.t-twitter-utm-generator a.btn[aria-disabled="true"], .t-twitter-utm-generator button:disabled { opacity: .45; pointer-events: none; }
+</style>
+</head>
+<body>
+  <header class="site-nav">
+    <div class="wrap nav-in">
+      <a class="wordmark" href="../index.html" aria-label="XVision home"><img src="../assets/logo-64.png" alt="" width="26" height="26" />Vision</a>
+      <nav class="navlinks" id="site-menu" aria-label="Main">
+        <a class="opt" href="../index.html#features">Features</a>
+        <a class="opt" href="../index.html#install">How it works</a>
+        <a href="../guides/index.html">Guides</a>
+        <a href="../tools/index.html" aria-current="page">Tools</a>
+        <a class="opt" href="../index.html#faq">FAQ</a>
+      </nav>
+      <div class="nav-cta">
+        <button class="theme-toggle" type="button" aria-label="Dark mode" aria-pressed="false"><svg class="sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.9 4.9l1.4 1.4m11.4 11.4 1.4 1.4M2 12h2m16 0h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg><svg class="moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 14.3A8.5 8.5 0 1 1 9.7 3.5a7 7 0 0 0 10.8 10.8Z"/></svg></button>
+        <a class="btn ghost small" href="https://github.com/Kakahaja07/xvision">GitHub</a>
+        <a class="btn primary small" href="../index.html#install">Get it free</a>
+        <button class="menu-toggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="site-menu"><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+  <main class="wrap tool-page">
+    <header class="page-head">
+      <div class="crumbs"><a href="index.html">Tools</a> › <a href="index.html#media">Media and utilities</a></div>
+      <h1>Twitter UTM Generator</h1>
+      <p>Add clean UTM tags to the links you share on X, so your analytics shows which posts, bios and ads actually send visitors to your site.</p>
+    </header>
+    <section class="tool t-twitter-utm-generator">
+  <div class="tool-grid">
+    <div class="fields">
+      <div class="field-group">
+        <label for="ut-url">Page URL <span class="ut-req">(required)</span></label>
+        <input type="url" id="ut-url" placeholder="https://example.com/pricing" autocomplete="off" spellcheck="false">
+      </div>
+      <div class="fields-2">
+        <div class="field-group">
+          <label for="ut-source">utm_source <span class="ut-req">(required)</span></label>
+          <input type="text" id="ut-source" value="x" autocomplete="off" spellcheck="false">
+        </div>
+        <div class="field-group">
+          <label for="ut-medium">utm_medium <span class="ut-req">(required)</span></label>
+          <input type="text" id="ut-medium" value="social" autocomplete="off" spellcheck="false">
+        </div>
+      </div>
+      <div class="chips" aria-label="Common utm_medium values">
+        <button type="button" class="chip" data-medium="social" aria-pressed="true">social</button>
+        <button type="button" class="chip" data-medium="paid_social" aria-pressed="false">paid_social</button>
+      </div>
+      <div class="field-group">
+        <label for="ut-campaign">utm_campaign <span class="ut-req">(required)</span></label>
+        <input type="text" id="ut-campaign" placeholder="spring_launch" autocomplete="off" spellcheck="false">
+      </div>
+      <div class="fields-2">
+        <div class="field-group">
+          <label for="ut-content">utm_content</label>
+          <input type="text" id="ut-content" placeholder="pinned_post" autocomplete="off" spellcheck="false">
+        </div>
+        <div class="field-group">
+          <label for="ut-term">utm_term</label>
+          <input type="text" id="ut-term" placeholder="paid keyword" autocomplete="off" spellcheck="false">
+        </div>
+      </div>
+      <div class="fields-2">
+        <div class="field-group">
+          <label for="ut-spaces">Spaces in values</label>
+          <select id="ut-spaces">
+            <option value="_">Replace with _</option>
+            <option value="-">Replace with -</option>
+            <option value="keep">Keep (encoded as %20)</option>
+          </select>
+        </div>
+        <div class="field-group">
+          <label for="ut-case">Letter case</label>
+          <select id="ut-case">
+            <option value="lower">Make lowercase</option>
+            <option value="keep">Keep as typed</option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="field-label">Tagged link</div>
+      <div class="out" id="ut-out" aria-live="polite" data-empty="Add a page URL and a campaign name to build your link."></div>
+      <div class="row">
+        <button type="button" class="btn primary small" id="ut-copy">Copy link</button>
+        <button type="button" class="btn ghost small" id="ut-save">Save to list</button>
+        <a class="btn ghost small" id="ut-open" target="_blank" rel="noopener noreferrer">Test link</a>
+      </div>
+      <ul class="ut-msgs" id="ut-msgs" aria-live="polite"></ul>
+      <hr>
+      <div class="ut-saved-head">
+        <b id="ut-saved-title">Saved links (0)</b>
+        <div class="row">
+          <button type="button" class="btn ghost small" id="ut-copyall" disabled>Copy all</button>
+          <button type="button" class="btn ghost small" id="ut-clear" disabled>Clear</button>
+        </div>
+      </div>
+      <div class="results" id="ut-saved"></div>
+      <p class="hint">Saved links live only in this tab. Nothing is stored or sent anywhere, so copy them before you close the page.</p>
+    </div>
+  </div>
+</section>
+    <p class="privacy-note">Runs in your browser. Nothing you enter is uploaded.</p>
+    <article class="tool-article"><h2>How do you add UTM parameters to a Twitter link?</h2>
+<p>To add UTM parameters to a Twitter link, attach tags like utm_source=x, utm_medium=social and utm_campaign=your_campaign to the end of the page URL. A Twitter UTM generator builds and checks the tagged link for you. Google Analytics then shows which X posts, bios or ads sent each visitor to your site.</p>
+<p>Without tags, traffic from X often shows up as one vague referral line. I learned that the hard way after a launch week, when I couldn't tell if visits came from the pinned post, the bio link or a reply. Tagging each link took two minutes and fixed it.</p>
+
+<h2>How to use the Twitter UTM generator</h2>
+<ol>
+<li>Paste the page URL you want to share, like your pricing page or a blog post.</li>
+<li>Keep utm_source as "x", or type the name your team already uses.</li>
+<li>Pick utm_medium: "social" for normal posts, "paid_social" for ads.</li>
+<li>Name the campaign, like "spring_launch".</li>
+<li>Optionally add utm_content to tell links apart, like "bio_link" or "pinned_post".</li>
+<li>Choose how to handle spaces and capitals, then copy the tagged link.</li>
+<li>Click Save to list to keep several versions side by side while you work.</li>
+</ol>
+
+<h2>What does each UTM parameter mean?</h2>
+<p>Each UTM parameter answers one question about a visit: where it came from, which channel, which campaign and which link. Google's help page on <a href="https://support.google.com/analytics/answer/10917952">collecting campaign data with custom URLs</a> says to always use utm_source, utm_medium and utm_campaign.</p>
+<table>
+<thead><tr><th>Parameter</th><th>Answers</th><th>Example for X</th></tr></thead>
+<tbody>
+<tr><td>utm_source</td><td>Which site sent the visit?</td><td>x</td></tr>
+<tr><td>utm_medium</td><td>Which marketing channel?</td><td>social or paid_social</td></tr>
+<tr><td>utm_campaign</td><td>Which campaign or promo?</td><td>spring_launch</td></tr>
+<tr><td>utm_content</td><td>Which link or creative?</td><td>pinned_post</td></tr>
+<tr><td>utm_term</td><td>Which paid keyword?</td><td>Usually blank on X</td></tr>
+</tbody>
+</table>
+<p>Google's page also lists utm_id and a few newer fields for ad platforms. For everyday posts, the five above are enough.</p>
+
+<h2>Why should UTM values be lowercase?</h2>
+<p>UTM values should be lowercase because Google Analytics treats them as case sensitive. Its help page says utm_source=google and utm_source=Google count as two different values, and it recommends lowercase as a standard. So "X", "x" and "Twitter" would split your X traffic into three rows.</p>
+<p>That is why the generator lowercases values and replaces spaces by default. Spaces turn into %20 in a URL, which looks messy and is easy to mistype later. An underscore or a hyphen is cleaner. Pick one style and stick with it.</p>
+
+<h2>UTM naming examples for X</h2>
+<p>These are made-up examples for a fictional app called Tallybook.</p>
+<ul>
+<li><strong>Bio link:</strong> utm_source=x, utm_medium=social, utm_campaign=evergreen, utm_content=bio_link</li>
+<li><strong>Launch thread:</strong> utm_source=x, utm_medium=social, utm_campaign=v2_launch, utm_content=thread_post_1</li>
+<li><strong>Promoted post:</strong> utm_source=x, utm_medium=paid_social, utm_campaign=v2_launch, utm_content=video_ad_a</li>
+</ul>
+<p>Keeping the campaign name the same across organic posts and ads lets you compare them in one report. X shortens links with t.co, so a long tagged URL does not eat extra room in your post.</p>
+
+<h2>Common UTM mistakes</h2>
+<ul>
+<li><strong>Mixing names.</strong> "x", "twitter" and "X.com" in the same report. Write your naming rules down.</li>
+<li><strong>Tagging links to x.com.</strong> UTM tags only report on sites where you run analytics.</li>
+<li><strong>Tagging internal links.</strong> Links between pages on your own site should stay untagged.</li>
+<li><strong>Doubling tags.</strong> Pasting a URL that already has UTM tags and adding more. The generator replaces old tags instead.</li>
+</ul>
+
+<h2>When should you use a related tool?</h2>
+<p>Turn a tagged link into a ready share link with the <a href="twitter-link-builder.html">Twitter link builder</a>. Once visits and sales come in, run the numbers with the <a href="twitter-campaign-roi-calculator.html">Twitter campaign ROI calculator</a>. For post performance on X itself, try the <a href="twitter-analytics-csv-analyzer.html">Twitter analytics CSV analyzer</a>.</p>
+<p>To turn that traffic into results, read <a href="../guides/generate-leads-from-twitter.html">how to generate leads from Twitter</a>, <a href="../guides/turn-x-followers-into-customers.html">how to turn X followers into customers</a> and <a href="../guides/measure-x-account-performance.html">how to measure X account performance</a>.</p>
+
+<h2>Frequently Asked Questions</h2>
+<h3>Should I use x or twitter as the utm_source?</h3>
+<p>Either works, as long as you use the same value every time. This Twitter UTM generator defaults to "x" because the platform is called X today. If your old reports already use "twitter", keep it so your history stays in one row. Mixing both splits the same traffic into two sources.</p>
+<h3>Do UTM parameters affect how my post looks on X?</h3>
+<p>No, UTM parameters do not change how the link preview looks in most cases, because the card comes from the page itself. X shortens links with t.co, so the long tagged URL does not use extra characters in your post. The tags only matter once someone lands on your site.</p>
+<h3>Are my links saved or sent anywhere?</h3>
+<p>No, nothing leaves your browser. The Twitter UTM generator builds links on your device, and the saved list exists only in memory for this tab. Close or refresh the page and the list is gone, so use Copy all to keep your links in a doc or spreadsheet before you leave.</p>
+<h3>Which UTM parameters are required?</h3>
+<p>Google Analytics says to always use utm_source, utm_medium and utm_campaign together. Those three answer where the visit came from, which channel brought it and which campaign it belongs to. utm_content and utm_term are optional. On X, utm_content is the most useful extra because it tells apart links in one campaign.</p>
+<h3>Can I use UTM links in my X bio?</h3>
+<p>Yes, you can use a UTM link in your X bio website field or in the bio text. Tag it with something like utm_content=bio_link so you can see how many visits your profile sends. Use the same campaign name as your other always-on links, like evergreen.</p>
+    </article>
+    <aside class="related">
+      <h2>More free tools</h2>
+      <ul>
+        <li><a href="post-length.html">Twitter Character Counter</a></li>
+        <li><a href="twitter-image-resizer.html">Twitter Image Resizer</a></li>
+        <li><a href="twitter-image-compressor.html">Twitter Image Compressor</a></li>
+        <li><a href="twitter-banner-crop-preview.html">Twitter Banner Crop Preview</a></li>
+      </ul>
+    </aside>
+    <aside class="cta">
+      <b>Grow on X with real signals.</b>
+      <span>XVision is a free Chrome extension that shows follower counts, follow-back badges and viral posts right on your timeline.</span>
+      <a class="btn light small" href="../index.html">Get XVision free</a>
+    </aside>
+  </main>
+  <footer class="site-footer">
+    <img class="foot-mark" src="../assets/logo.png" alt="" width="320" height="320" loading="lazy" />
+    <div class="wrap">
+      <div class="foot-top">
+        <div class="foot-brand">
+          <a class="wordmark" href="../index.html"><img src="../assets/logo-64.png" alt="" width="26" height="26" />Vision</a>
+          <p>A free Chrome extension, guides and tools for growing on X. Private by design.</p>
+          <div class="foot-social"><a href="https://github.com/Kakahaja07/xvision" aria-label="XVision on GitHub"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.9 1.2 1.9 1.2 1.1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-6 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17.3 4.7 18.3 5 18.3 5c.7 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .5Z"/></svg></a></div>
+        </div>
+        <div class="foot-cols">
+          <div><h3>Product</h3><ul><li><a href="../index.html#features">Features</a></li><li><a href="../index.html#install">How it works</a></li><li><a href="../index.html#pricing">Pricing</a></li><li><a href="../index.html#faq">FAQ</a></li></ul></div>
+          <div><h3>Guides</h3><ul><li><a href="../guides/index.html#grow">Grow on X</a></li><li><a href="../guides/index.html#algorithm">The X algorithm</a></li><li><a href="../guides/index.html#money">Make money on X</a></li><li><a href="../guides/index.html">All guides</a></li></ul></div>
+          <div><h3>Free tools</h3><ul><li><a href="../tools/twitter-bio-generator.html">Twitter bio generator</a></li><li><a href="../tools/video-downloader.html">Twitter video downloader</a></li><li><a href="../tools/thread-maker.html">Thread splitter</a></li><li><a href="../tools/index.html">All 51 tools</a></li></ul></div>
+          <div><h3>Project</h3><ul><li><a href="https://github.com/Kakahaja07/xvision">GitHub</a></li><li><a href="../privacy-policy.html">Privacy policy</a></li><li><a href="../LICENSE">MIT License</a></li><li><a href="../sitemap.xml">Sitemap</a></li></ul></div>
+        </div>
+      </div>
+      <div class="foot-bottom">
+        <span>© 2026 XVision · Built by Prashant Sharma · Inspired by XRay by fayazara</span>
+        <span>Not affiliated with X Corp.</span>
+      </div>
+    </div>
+  </footer>
+  <script src="../assets/x-text.js"></script>
+  <script src="../assets/tool-kit.js"></script>
+  <script>(function () {
+  var $ = function (id) { return document.getElementById(id); };
+  var KEYS = ['source', 'medium', 'campaign', 'content', 'term'];
+  var saved = [];
+  var current = '';
+
+  function clean(v) {
+    v = v.trim();
+    if ($('ut-case').value === 'lower') v = v.toLowerCase();
+    var sp = $('ut-spaces').value;
+    if (sp !== 'keep') v = v.replace(/\s+/g, sp);
+    return v;
+  }
+
+  function build() {
+    var msgs = [], raw = $('ut-url').value.trim(), base;
+    if (!raw) return { msgs: [] };
+    if (!/^[a-z][a-z0-9+.-]*:/i.test(raw) && /^[\w-]+(\.[\w-]+)+/.test(raw)) {
+      raw = 'https://' + raw;
+      msgs.push(['tip', 'Added https:// to the start of your URL.']);
+    }
+    try { base = new URL(raw); } catch (e) { return { msgs: [['err', 'That URL is not valid. Use a full address like https://example.com/page.']] }; }
+    if (base.protocol !== 'https:' && base.protocol !== 'http:') return { msgs: [['err', 'The URL must start with http:// or https://.']] };
+
+    var vals = {};
+    KEYS.forEach(function (k) { vals[k] = clean($('ut-' + k).value); });
+    ['source', 'medium', 'campaign'].forEach(function (k) {
+      if (!vals[k]) msgs.push(['err', 'utm_' + k + ' is required. Google Analytics asks you to always set source, medium and campaign.']);
+    });
+
+    // Replace any utm_ tags already on the URL instead of doubling them.
+    var had = [];
+    Array.from(base.searchParams.keys()).forEach(function (k) { if (/^utm_/i.test(k) && had.indexOf(k) < 0) had.push(k); });
+    had.forEach(function (k) { base.searchParams.delete(k); });
+    if (had.length) msgs.push(['tip', 'Replaced the UTM tags that were already on the URL (' + had.join(', ') + ').']);
+
+    var ours = KEYS.filter(function (k) { return vals[k]; }).map(function (k) { return 'utm_' + k + '=' + encodeURIComponent(vals[k]); });
+    var keep = base.search.replace(/^\?/, '');
+    var url = base.origin + base.pathname + '?' + (keep ? keep + '&' : '') + ours.join('&') + base.hash;
+
+    KEYS.forEach(function (k) {
+      if (vals[k] && /[^a-z0-9_.\-]/i.test(vals[k].replace(/ /g, ''))) msgs.push(['tip', 'utm_' + k + ' has symbols. Letters, numbers, - and _ keep reports tidy.']);
+      if ($('ut-case').value === 'keep' && /[A-Z]/.test(vals[k])) msgs.push(['tip', 'utm_' + k + ' has capitals. Values are case sensitive, so "X" and "x" show up as two sources.']);
+    });
+    if (vals.source && vals.source !== 'x' && /^(twitter|x\.com|tw)$/i.test(vals.source)) msgs.push(['tip', 'Pick one source name for X (for example "x") and use it on every link.']);
+    if (/(^|\.)(x|twitter)\.com$/i.test(base.hostname)) msgs.push(['tip', 'UTM tags only help on your own site. Links to x.com do not report them to your analytics.']);
+    return { url: msgs.some(function (m) { return m[0] === 'err'; }) ? '' : url, msgs: msgs, vals: vals };
+  }
+
+  function render() {
+    var r = build();
+    current = r.url || '';
+    $('ut-out').textContent = current;
+    var ul = $('ut-msgs');
+    ul.innerHTML = '';
+    (r.msgs || []).forEach(function (m) {
+      var li = document.createElement('li');
+      li.textContent = m[1];
+      if (m[0] === 'err') li.className = 'ut-err';
+      ul.append(li);
+    });
+    var open = $('ut-open');
+    if (current) { open.href = current; open.removeAttribute('aria-disabled'); }
+    else { open.removeAttribute('href'); open.setAttribute('aria-disabled', 'true'); }
+    $('ut-copy').disabled = !current;
+    $('ut-save').disabled = !current;
+    document.querySelectorAll('.t-twitter-utm-generator [data-medium]').forEach(function (c) {
+      c.setAttribute('aria-pressed', String(c.dataset.medium === $('ut-medium').value.trim().toLowerCase()));
+    });
+    return r;
+  }
+
+  function renderSaved() {
+    var box = $('ut-saved');
+    box.innerHTML = '';
+    saved.forEach(function (s, i) {
+      var el = document.createElement('div');
+      el.className = 'result';
+      el.innerHTML = '<p></p><div class="result-foot"><span></span><div class="row"><button type="button" class="btn ghost small">Copy</button><button type="button" class="btn ghost small">Remove</button></div></div>';
+      el.querySelector('p').textContent = s.url;
+      el.querySelector('span').textContent = s.label;
+      var b = el.querySelectorAll('button');
+      b[0].addEventListener('click', function () { XTool.copy(s.url, this); });
+      b[1].addEventListener('click', function () { saved.splice(i, 1); renderSaved(); });
+      box.append(el);
+    });
+    $('ut-saved-title').textContent = 'Saved links (' + saved.length + ')';
+    $('ut-copyall').disabled = $('ut-clear').disabled = !saved.length;
+  }
+
+  KEYS.concat(['url']).forEach(function (k) { $('ut-' + k).addEventListener('input', XTool.debounce(render, 100)); });
+  ['ut-spaces', 'ut-case'].forEach(function (id) { $(id).addEventListener('change', render); });
+  document.querySelectorAll('.t-twitter-utm-generator [data-medium]').forEach(function (c) {
+    c.addEventListener('click', function () { $('ut-medium').value = c.dataset.medium; render(); });
+  });
+  $('ut-copy').addEventListener('click', function () { if (current) XTool.copy(current, this); });
+  $('ut-save').addEventListener('click', function () {
+    var r = render();
+    if (!r.url) return;
+    if (saved.some(function (s) { return s.url === r.url; })) { XTool.flash(this, 'Already saved'); return; }
+    saved.unshift({ url: r.url, label: [r.vals.campaign, r.vals.content].filter(Boolean).join(' / ') });
+    renderSaved();
+    XTool.flash(this, 'Saved');
+  });
+  $('ut-copyall').addEventListener('click', function () {
+    XTool.copy(saved.map(function (s) { return s.url; }).join('\n'), this);
+  });
+  $('ut-clear').addEventListener('click', function () { saved = []; renderSaved(); });
+  render();
+  renderSaved();
+})();</script>
+</body>
+</html>

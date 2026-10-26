@@ -1,0 +1,509 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Free Twitter Profile Picture Resizer: 400x400 Crop</title>
+  <meta name="description" content="Twitter profile picture resizer that crops any photo to a 400x400 square with zoom, drag and a circle preview, then saves PNG or JPEG. Free, no sign-up." />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <link rel="canonical" href="https://kakahaja07.github.io/xvision/tools/twitter-profile-picture-resizer.html" />
+  <meta name="theme-color" content="#f6f6f8" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#0a0a0c" media="(prefers-color-scheme: dark)" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="XVision" />
+  <meta property="og:url" content="https://kakahaja07.github.io/xvision/tools/twitter-profile-picture-resizer.html" />
+  <meta property="og:title" content="Twitter Profile Picture Resizer" />
+  <meta property="og:description" content="Twitter profile picture resizer that crops any photo to a 400x400 square with zoom, drag and a circle preview, then saves PNG or JPEG. Free, no sign-up." />
+  <meta property="og:image" content="https://kakahaja07.github.io/xvision/assets/og-card.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Twitter Profile Picture Resizer" />
+  <meta name="twitter:description" content="Twitter profile picture resizer that crops any photo to a 400x400 square with zoom, drag and a circle preview, then saves PNG or JPEG. Free, no sign-up." />
+  <meta name="twitter:image" content="https://kakahaja07.github.io/xvision/assets/og-card.jpg" />
+  <link rel="icon" type="image/png" href="../assets/logo-64.png" />
+  <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png" />
+  <script src="../assets/site.js"></script>
+  <link rel="stylesheet" href="../assets/site.css" />
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "name": "Twitter Profile Picture Resizer",
+      "description": "Twitter profile picture resizer that crops any photo to a 400x400 square with zoom, drag and a circle preview, then saves PNG or JPEG. Free, no sign-up.",
+      "url": "https://kakahaja07.github.io/xvision/tools/twitter-profile-picture-resizer.html",
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "Any",
+      "browserRequirements": "Requires JavaScript",
+      "isAccessibleForFree": true,
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "author": {
+        "@type": "Person",
+        "@id": "https://kakahaja07.github.io/xvision/#author",
+        "name": "Prashant Sharma",
+        "url": "https://github.com/Kakahaja07"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "XVision",
+          "item": "https://kakahaja07.github.io/xvision/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Free tools",
+          "item": "https://kakahaja07.github.io/xvision/tools/index.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Twitter Profile Picture Resizer",
+          "item": "https://kakahaja07.github.io/xvision/tools/twitter-profile-picture-resizer.html"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What size should a Twitter profile picture be?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A Twitter profile picture should be 400 x 400 pixels, the size X recommends, saved as a JPG, PNG or GIF under 2MB. This free Twitter profile picture resizer crops any photo into that square, shows a circle preview, and exports a 400 x 400 PNG or JPEG right in your browser."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why is my Twitter profile picture blurry?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A Twitter profile picture usually looks blurry when the original photo is too small or was cropped from a tiny part of a bigger image. Start with a photo at least 400 pixels on its shortest side, crop it to 400 x 400 with this resizer, and avoid zooming in so far that the source runs out of detail."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is my Twitter profile picture a circle or a square?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Most accounts on X show the profile picture as a circle, but you always upload a square image. That's why this tool crops to a 400 x 400 square and shows a round preview. Keep your face or logo in the middle and leave the corners plain, since the circle cuts them off."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does this profile picture resizer upload my photo?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No, this profile picture resizer never uploads your photo. The file is read, cropped and resized by your own browser using a canvas element, and the download is created on your device. You can even disconnect from the internet after the page loads and the tool will keep working."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I use a GIF as my X profile picture?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "You can upload a GIF file as your X profile picture, but X doesn't support animated GIFs for profile photos, so only a still image will show. This tool reads a GIF's first frame and saves it as a PNG or JPEG, which is the simplest way to get a clean result."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the maximum file size for an X profile photo?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The maximum file size for an X profile photo is 2MB, according to X's help center as of October 2026. A 400 x 400 image from this tool is usually well under that limit. The tool shows the exact file size before you download, and warns you if a file goes over 2MB."
+          }
+        }
+      ],
+      "@id": "https://kakahaja07.github.io/xvision/tools/twitter-profile-picture-resizer.html#faq"
+    }
+  ]
+}
+  </script>
+  <style>
+.t-twitter-profile-picture-resizer .stage { max-width: 420px; margin: 0 auto; }
+.t-twitter-profile-picture-resizer .stage canvas { width: 100%; aspect-ratio: 1; cursor: grab; touch-action: none; }
+.t-twitter-profile-picture-resizer .stage canvas:active { cursor: grabbing; }
+.t-twitter-profile-picture-resizer .previews { display: flex; align-items: flex-end; gap: 16px; margin-bottom: 18px; }
+.t-twitter-profile-picture-resizer .previews figure { display: grid; justify-items: center; gap: 6px; margin: 0; color: var(--muted); font-size: 13px; }
+.t-twitter-profile-picture-resizer .previews canvas { display: block; border-radius: 50%; background: var(--soft); border: 1px solid var(--line); }
+.t-twitter-profile-picture-resizer .seg { justify-self: start; }
+.t-twitter-profile-picture-resizer .color-row { display: flex; align-items: center; gap: 10px; }
+.t-twitter-profile-picture-resizer .privacy-note::before { flex: none; }
+.t-twitter-profile-picture-resizer [hidden] { display: none; }
+.t-twitter-profile-picture-resizer .btn:disabled { opacity: .45; cursor: not-allowed; transform: none; }
+</style>
+</head>
+<body>
+  <header class="site-nav">
+    <div class="wrap nav-in">
+      <a class="wordmark" href="../index.html" aria-label="XVision home"><img src="../assets/logo-64.png" alt="" width="26" height="26" />Vision</a>
+      <nav class="navlinks" id="site-menu" aria-label="Main">
+        <a class="opt" href="../index.html#features">Features</a>
+        <a class="opt" href="../index.html#install">How it works</a>
+        <a href="../guides/index.html">Guides</a>
+        <a href="../tools/index.html" aria-current="page">Tools</a>
+        <a class="opt" href="../index.html#faq">FAQ</a>
+      </nav>
+      <div class="nav-cta">
+        <button class="theme-toggle" type="button" aria-label="Dark mode" aria-pressed="false"><svg class="sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.9 4.9l1.4 1.4m11.4 11.4 1.4 1.4M2 12h2m16 0h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg><svg class="moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 14.3A8.5 8.5 0 1 1 9.7 3.5a7 7 0 0 0 10.8 10.8Z"/></svg></button>
+        <a class="btn ghost small" href="https://github.com/Kakahaja07/xvision">GitHub</a>
+        <a class="btn primary small" href="../index.html#install">Get it free</a>
+        <button class="menu-toggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="site-menu"><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+  <main class="wrap tool-page">
+    <header class="page-head">
+      <div class="crumbs"><a href="index.html">Tools</a> › <a href="index.html#profile">Profile and branding</a></div>
+      <h1>Twitter Profile Picture Resizer</h1>
+      <p>Drop in a photo, drag and zoom to frame your face inside the circle, and download a 400 x 400 PNG or JPEG ready for your X profile.</p>
+    </header>
+    <section class="tool t-twitter-profile-picture-resizer">
+  <div class="tool-grid">
+    <div class="fields">
+      <div class="drop" id="pp-drop">
+        <input type="file" id="pp-file" accept="image/png,image/jpeg,image/gif,image/webp" aria-label="Choose a photo">
+        <span><b>Drop a photo here</b> or click to choose one</span>
+        <span class="hint">JPG, PNG, GIF or WebP. It stays on your device.</span>
+      </div>
+      <div id="pp-editor" hidden>
+        <div class="canvas-wrap stage">
+          <canvas id="pp-stage" width="640" height="640" aria-label="Crop area. Drag to move the photo."></canvas>
+        </div>
+        <p class="hint">Drag the photo to move it. The circle shows what X displays on most profiles.</p>
+        <div class="fields">
+          <div class="field-group">
+            <label for="pp-zoom">Zoom</label>
+            <input type="range" id="pp-zoom" min="1" max="4" step="0.01" value="1">
+          </div>
+          <div class="fields-2">
+            <div class="field-group">
+              <label for="pp-x">Left / right</label>
+              <input type="range" id="pp-x" min="0" max="100" step="0.5" value="50">
+            </div>
+            <div class="field-group">
+              <label for="pp-y">Up / down</label>
+              <input type="range" id="pp-y" min="0" max="100" step="0.5" value="50">
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <button type="button" class="btn ghost small" id="pp-reset">Reset crop</button>
+          <button type="button" class="btn ghost small" id="pp-new">Choose another photo</button>
+        </div>
+      </div>
+    </div>
+    <div class="fields">
+      <div class="previews" aria-hidden="true">
+        <figure><canvas id="pp-big" width="128" height="128"></canvas><figcaption>Profile</figcaption></figure>
+        <figure><canvas id="pp-small" width="40" height="40"></canvas><figcaption>In posts</figcaption></figure>
+      </div>
+      <div class="field-group">
+        <span class="field-label" id="pp-format-label">Format</span>
+        <div class="seg" role="group" aria-labelledby="pp-format-label" id="pp-format">
+          <button type="button" data-type="image/png" aria-pressed="true">PNG</button>
+          <button type="button" data-type="image/jpeg" aria-pressed="false">JPEG</button>
+        </div>
+      </div>
+      <div class="field-group" id="pp-jpeg" hidden>
+        <label for="pp-quality">JPEG quality: <span id="pp-qval">92</span>%</label>
+        <input type="range" id="pp-quality" min="60" max="100" step="1" value="92">
+        <div class="color-row">
+          <input type="color" id="pp-bg" value="#ffffff" aria-describedby="pp-bg-hint">
+          <span class="hint" id="pp-bg-hint">Fill color for transparent areas (JPEG has no transparency)</span>
+        </div>
+      </div>
+      <table class="kv" aria-live="polite">
+        <tr><td>Output size</td><td>400 x 400 px</td></tr>
+        <tr><td>File size</td><td id="pp-size">-</td></tr>
+        <tr><td>X profile photo limit</td><td id="pp-limit">2MB</td></tr>
+      </table>
+      <div class="row">
+        <button type="button" class="btn primary" id="pp-download" disabled>Download 400 x 400</button>
+      </div>
+    </div>
+  </div>
+  <p class="privacy-note">Everything happens in your browser. Your photo is never uploaded.</p>
+</section>
+    
+    <article class="tool-article"><h2>What size should a Twitter profile picture be?</h2>
+<p>A Twitter profile picture should be 400 x 400 pixels, the size X recommends, saved as a JPG, PNG or GIF under 2MB. This free Twitter profile picture resizer crops any photo into that square, shows a circle preview, and exports a 400 x 400 PNG or JPEG right in your browser.</p>
+<p>Your profile photo shows up next to every post, reply and DM you send. It's tiny in most places, so a photo that looks great full size can turn into a blurry blob. Getting the crop right takes a minute and pays off every time someone sees your name.</p>
+
+<h2>How to use the Twitter profile picture resizer</h2>
+<ol>
+<li>Drop a photo onto the box, or click it to choose one from your device.</li>
+<li>Drag the photo inside the square to move it. Use the Zoom slider to get closer.</li>
+<li>Fine-tune with the Left / right and Up / down sliders if dragging feels fiddly on a phone.</li>
+<li>Check the two round previews. The small one is close to how you look in a busy feed.</li>
+<li>Pick PNG or JPEG. For JPEG, set the quality and a fill color for any transparent areas.</li>
+<li>Press Download, then upload the file on X under Edit profile.</li>
+</ol>
+<p>Your photo never leaves your device. The cropping and resizing happen on a canvas inside this page.</p>
+
+<h2>What are X's profile photo requirements?</h2>
+<p>X recommends a 400 x 400 pixel profile photo and accepts JPEG, GIF and PNG files up to 2MB, as of October 2026. Animated GIFs aren't supported for profile or header photos.</p>
+<table>
+<thead><tr><th>Requirement</th><th>Profile photo</th><th>Header photo</th></tr></thead>
+<tbody>
+<tr><td>Recommended size</td><td>400 x 400 px</td><td>1500 x 500 px</td></tr>
+<tr><td>File types</td><td>JPEG, GIF, PNG</td><td>JPEG, GIF, PNG</td></tr>
+<tr><td>Animated GIF</td><td>No</td><td>No</td></tr>
+</tbody>
+</table>
+<p>These come from <a href="https://help.x.com/en/managing-your-account/common-issues-when-uploading-profile-photo">X's help page on uploading a profile photo</a> and its <a href="https://help.x.com/en/managing-your-account/how-to-customize-your-profile">guide to customizing your profile</a>. A 400 x 400 PNG is almost always far below 2MB, but the tool shows the real file size so you don't have to guess.</p>
+<p>WebP files work as input here, but the download is always PNG or JPEG, since those are formats X lists.</p>
+
+<h2>PNG or JPEG: which format should you pick?</h2>
+<p>Pick PNG for logos, illustrations and anything with flat colors or sharp text. Pick JPEG for regular photos of people or places.</p>
+<p>PNG keeps edges crisp and supports transparency. JPEG makes smaller files for photos, but it has no transparency, so the tool fills empty areas with the color you choose. A quality around 90% is a good place to start for headshots. If your logo has a transparent background, keep in mind that X may show it on a light or dark theme, so a solid background color is often the safer choice.</p>
+
+<h2>Tips for a profile photo people recognize</h2>
+<p>A good profile photo is a clear face or a simple logo that still reads at the size of a thumbnail. Here's what I look for:</p>
+<ul>
+<li><strong>Fill the circle.</strong> Zoom in until your face takes up most of the space. Head and shoulders is plenty.</li>
+<li><strong>Keep the corners empty.</strong> Most profiles show the photo as a circle, so anything in the corners gets cut.</li>
+<li><strong>Use contrast.</strong> A plain background behind you makes your face stand out at small sizes.</li>
+<li><strong>Check the tiny preview.</strong> If you can't tell it's you at 40 pixels, zoom in more.</li>
+<li><strong>Use a real photo of you.</strong> X's <a href="https://help.x.com/en/rules-and-policies/authenticity">authenticity policy</a> lists stock or stolen profile photos, used to deceive, as signs of a fake persona.</li>
+</ul>
+
+<h2>Common profile picture mistakes</h2>
+<p>The most common mistake is uploading a wide group or landscape photo and letting X crop the middle. You end up as a speck in the center. Cropping it yourself avoids that.</p>
+<ul>
+<li>Uploading a tiny image, like 100 x 100, and stretching it. Start with a photo at least 400 pixels on its short side.</li>
+<li>Putting text in a personal photo. It's unreadable at feed size.</li>
+<li>Changing the photo often. People recognize you by your photo before your name. If you have a blue checkmark, X also removes it for a while after a photo change until the account is reviewed again.</li>
+</ul>
+
+<h2>What other image tools help with your profile?</h2>
+<p>Your photo sits on top of your header, so design both together. The <a href="twitter-header-maker.html">Twitter Header Maker</a> builds a 1500 x 500 banner, and the <a href="twitter-banner-crop-preview.html">Twitter Banner Crop Preview</a> shows what gets cut. For post images, use the <a href="twitter-image-resizer.html">Twitter Image Resizer</a> or shrink big files with the <a href="twitter-image-compressor.html">Twitter Image Compressor</a>. Then check the whole look in the <a href="twitter-profile-preview.html">Twitter Profile Preview</a>.</p>
+<p>For more profile help, see <a href="../guides/make-your-x-profile-stand-out.html">how to make your X profile stand out</a> and this <a href="../guides/twitter-profile-optimization-checklist.html">Twitter profile optimization checklist</a>.</p>
+
+<h2>Frequently Asked Questions</h2>
+<h3>Why is my Twitter profile picture blurry?</h3>
+<p>A Twitter profile picture usually looks blurry when the original photo is too small or was cropped from a tiny part of a bigger image. Start with a photo at least 400 pixels on its shortest side, crop it to 400 x 400 with this resizer, and avoid zooming in so far that the source runs out of detail.</p>
+<h3>Is my Twitter profile picture a circle or a square?</h3>
+<p>Most accounts on X show the profile picture as a circle, but you always upload a square image. That's why this tool crops to a 400 x 400 square and shows a round preview. Keep your face or logo in the middle and leave the corners plain, since the circle cuts them off.</p>
+<h3>Does this profile picture resizer upload my photo?</h3>
+<p>No, this profile picture resizer never uploads your photo. The file is read, cropped and resized by your own browser using a canvas element, and the download is created on your device. You can even disconnect from the internet after the page loads and the tool will keep working.</p>
+<h3>Can I use a GIF as my X profile picture?</h3>
+<p>You can upload a GIF file as your X profile picture, but X doesn't support animated GIFs for profile photos, so only a still image will show. This tool reads a GIF's first frame and saves it as a PNG or JPEG, which is the simplest way to get a clean result.</p>
+<h3>What is the maximum file size for an X profile photo?</h3>
+<p>The maximum file size for an X profile photo is 2MB, according to X's help center as of October 2026. A 400 x 400 image from this tool is usually well under that limit. The tool shows the exact file size before you download, and warns you if a file goes over 2MB.</p>
+    </article>
+    <aside class="related">
+      <h2>More free tools</h2>
+      <ul>
+        <li><a href="twitter-bio-generator.html">Twitter Bio Generator</a></li>
+        <li><a href="twitter-username-generator.html">Twitter Username Generator</a></li>
+        <li><a href="twitter-display-name-generator.html">Twitter Display Name Generator</a></li>
+        <li><a href="twitter-header-maker.html">Twitter Header Maker</a></li>
+      </ul>
+    </aside>
+    <aside class="cta">
+      <b>Grow on X with real signals.</b>
+      <span>XVision is a free Chrome extension that shows follower counts, follow-back badges and viral posts right on your timeline.</span>
+      <a class="btn light small" href="../index.html">Get XVision free</a>
+    </aside>
+  </main>
+  <footer class="site-footer">
+    <img class="foot-mark" src="../assets/logo.png" alt="" width="320" height="320" loading="lazy" />
+    <div class="wrap">
+      <div class="foot-top">
+        <div class="foot-brand">
+          <a class="wordmark" href="../index.html"><img src="../assets/logo-64.png" alt="" width="26" height="26" />Vision</a>
+          <p>A free Chrome extension, guides and tools for growing on X. Private by design.</p>
+          <div class="foot-social"><a href="https://github.com/Kakahaja07/xvision" aria-label="XVision on GitHub"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.9 1.2 1.9 1.2 1.1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-6 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17.3 4.7 18.3 5 18.3 5c.7 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .5Z"/></svg></a></div>
+        </div>
+        <div class="foot-cols">
+          <div><h3>Product</h3><ul><li><a href="../index.html#features">Features</a></li><li><a href="../index.html#install">How it works</a></li><li><a href="../index.html#pricing">Pricing</a></li><li><a href="../index.html#faq">FAQ</a></li></ul></div>
+          <div><h3>Guides</h3><ul><li><a href="../guides/index.html#grow">Grow on X</a></li><li><a href="../guides/index.html#algorithm">The X algorithm</a></li><li><a href="../guides/index.html#money">Make money on X</a></li><li><a href="../guides/index.html">All guides</a></li></ul></div>
+          <div><h3>Free tools</h3><ul><li><a href="../tools/twitter-bio-generator.html">Twitter bio generator</a></li><li><a href="../tools/video-downloader.html">Twitter video downloader</a></li><li><a href="../tools/thread-maker.html">Thread splitter</a></li><li><a href="../tools/index.html">All 51 tools</a></li></ul></div>
+          <div><h3>Project</h3><ul><li><a href="https://github.com/Kakahaja07/xvision">GitHub</a></li><li><a href="../privacy-policy.html">Privacy policy</a></li><li><a href="../LICENSE">MIT License</a></li><li><a href="../sitemap.xml">Sitemap</a></li></ul></div>
+        </div>
+      </div>
+      <div class="foot-bottom">
+        <span>© 2026 XVision · Built by Prashant Sharma · Inspired by XRay by fayazara</span>
+        <span>Not affiliated with X Corp.</span>
+      </div>
+    </div>
+  </footer>
+  <script src="../assets/x-text.js"></script>
+  <script src="../assets/tool-kit.js"></script>
+  <script>(function () {
+  const root = document.querySelector('.t-twitter-profile-picture-resizer');
+  const $ = (s) => root.querySelector(s);
+  const OUT = 400, MAX_BYTES = 2 * 1024 * 1024;
+  const stage = $('#pp-stage'), sctx = stage.getContext('2d');
+  const state = { img: null, name: 'profile-photo', zoom: 1, px: 0.5, py: 0.5, type: 'image/png', blob: null };
+  const clamp = (v, a, b) => Math.min(b, Math.max(a, v));
+
+  // The square area of the source image we keep, in source pixels.
+  function crop() {
+    const w = state.img.naturalWidth, h = state.img.naturalHeight;
+    const side = Math.min(w, h) / state.zoom;
+    return { sx: (w - side) * state.px, sy: (h - side) * state.py, side, w, h };
+  }
+
+  function paint(ctx, size) {
+    const { sx, sy, side } = crop();
+    ctx.clearRect(0, 0, size, size);
+    if (state.type === 'image/jpeg') {
+      ctx.fillStyle = $('#pp-bg').value;
+      ctx.fillRect(0, 0, size, size);
+    }
+    ctx.imageSmoothingQuality = 'high';
+    ctx.drawImage(state.img, sx, sy, side, side, 0, 0, size, size);
+  }
+
+  // Downscale in halving steps so big photos stay sharp at 400 x 400.
+  function exportCanvas() {
+    let { sx, sy, side } = crop();
+    let src = state.img;
+    while (side / 2 >= OUT * 1.5) {
+      const step = document.createElement('canvas');
+      step.width = step.height = Math.round(side / 2);
+      const c = step.getContext('2d');
+      c.imageSmoothingQuality = 'high';
+      c.drawImage(src, sx, sy, side, side, 0, 0, step.width, step.height);
+      src = step; sx = 0; sy = 0; side = step.width;
+    }
+    const out = document.createElement('canvas');
+    out.width = out.height = OUT;
+    const ctx = out.getContext('2d');
+    if (state.type === 'image/jpeg') {
+      ctx.fillStyle = $('#pp-bg').value;
+      ctx.fillRect(0, 0, OUT, OUT);
+    }
+    ctx.imageSmoothingQuality = 'high';
+    ctx.drawImage(src, sx, sy, side, side, 0, 0, OUT, OUT);
+    return out;
+  }
+
+  function drawStage() {
+    const S = stage.width;
+    paint(sctx, S);
+    // Dim everything outside the circle.
+    sctx.save();
+    sctx.fillStyle = 'rgba(0, 0, 0, 0.45)';
+    sctx.beginPath();
+    sctx.rect(0, 0, S, S);
+    sctx.arc(S / 2, S / 2, S / 2, 0, Math.PI * 2, true);
+    sctx.fill('evenodd');
+    sctx.strokeStyle = 'rgba(255, 255, 255, 0.9)';
+    sctx.lineWidth = 2;
+    sctx.beginPath();
+    sctx.arc(S / 2, S / 2, S / 2 - 1, 0, Math.PI * 2);
+    sctx.stroke();
+    sctx.restore();
+    for (const id of ['#pp-big', '#pp-small']) {
+      const c = $(id), dpr = Math.min(window.devicePixelRatio || 1, 3), css = Number(c.getAttribute('width'));
+      if (!c.dataset.css) {
+        c.dataset.css = css;
+        c.style.width = c.style.height = css + 'px';
+        c.width = c.height = Math.round(css * dpr);
+      }
+      paint(c.getContext('2d'), c.width);
+    }
+  }
+
+  const updateSize = XTool.debounce(async () => {
+    if (!state.img) return;
+    const q = Number($('#pp-quality').value) / 100;
+    state.blob = await XTool.canvasToBlob(exportCanvas(), state.type, q);
+    const kb = state.blob.size / 1024;
+    $('#pp-size').textContent = kb < 1024 ? `${XTool.fmt(kb)} KB` : `${XTool.fmt(kb / 1024, 2)} MB`;
+    const ok = state.blob.size <= MAX_BYTES;
+    $('#pp-limit').textContent = ok ? 'Under 2MB' : 'Over 2MB, lower the quality';
+    $('#pp-limit').className = ok ? 'ok' : 'over';
+  }, 200);
+
+  function render() {
+    drawStage();
+    updateSize();
+  }
+
+  function syncSliders() {
+    $('#pp-zoom').value = state.zoom;
+    $('#pp-x').value = state.px * 100;
+    $('#pp-y').value = state.py * 100;
+  }
+
+  async function load(files) {
+    const file = files.find((f) => f.type.startsWith('image/'));
+    if (!file) return;
+    try {
+      state.img = await XTool.loadImage(file);
+    } catch (e) {
+      $('#pp-size').textContent = e.message;
+      return;
+    }
+    state.name = file.name.replace(/\.[^.]+$/, '').replace(/[^\w-]+/g, '-').slice(0, 40) || 'profile-photo';
+    Object.assign(state, { zoom: 1, px: 0.5, py: 0.5 });
+    syncSliders();
+    $('#pp-drop').hidden = true;
+    $('#pp-editor').hidden = false;
+    $('#pp-download').disabled = false;
+    render();
+  }
+
+  XTool.dropZone($('#pp-drop'), load);
+  $('#pp-new').addEventListener('click', () => $('#pp-file').click());
+
+  $('#pp-zoom').addEventListener('input', (e) => { state.zoom = Number(e.target.value); render(); });
+  $('#pp-x').addEventListener('input', (e) => { state.px = Number(e.target.value) / 100; render(); });
+  $('#pp-y').addEventListener('input', (e) => { state.py = Number(e.target.value) / 100; render(); });
+  $('#pp-reset').addEventListener('click', () => { Object.assign(state, { zoom: 1, px: 0.5, py: 0.5 }); syncSliders(); render(); });
+
+  // Drag to pan: convert screen pixels into source pixels for the current zoom.
+  let drag = null;
+  stage.addEventListener('pointerdown', (e) => {
+    if (!state.img || drag) return;
+    stage.setPointerCapture(e.pointerId);
+    const c = crop();
+    drag = { id: e.pointerId, x: e.clientX, y: e.clientY, sx: c.sx, sy: c.sy };
+  });
+  stage.addEventListener('pointermove', (e) => {
+    if (!drag || e.pointerId !== drag.id) return;
+    const c = crop(), scale = c.side / stage.getBoundingClientRect().width;
+    const sx = drag.sx - (e.clientX - drag.x) * scale, sy = drag.sy - (e.clientY - drag.y) * scale;
+    state.px = c.w > c.side ? clamp(sx / (c.w - c.side), 0, 1) : 0.5;
+    state.py = c.h > c.side ? clamp(sy / (c.h - c.side), 0, 1) : 0.5;
+    syncSliders();
+    drawStage();
+  });
+  const endDrag = (e) => { if (drag && e.pointerId === drag.id) { drag = null; updateSize(); } };
+  stage.addEventListener('pointerup', endDrag);
+  stage.addEventListener('pointercancel', endDrag);
+
+  root.querySelectorAll('#pp-format button').forEach((b) => b.addEventListener('click', () => {
+    root.querySelectorAll('#pp-format button').forEach((x) => x.setAttribute('aria-pressed', String(x === b)));
+    state.type = b.dataset.type;
+    $('#pp-jpeg').hidden = state.type !== 'image/jpeg';
+    if (state.img) render();
+  }));
+  $('#pp-quality').addEventListener('input', (e) => { $('#pp-qval').textContent = e.target.value; updateSize(); });
+  $('#pp-bg').addEventListener('input', () => state.img && render());
+
+  $('#pp-download').addEventListener('click', async () => {
+    if (!state.img) return;
+    const q = Number($('#pp-quality').value) / 100;
+    const blob = await XTool.canvasToBlob(exportCanvas(), state.type, q);
+    const ext = state.type === 'image/png' ? 'png' : 'jpg';
+    XTool.download(blob, `${state.name}-400x400.${ext}`);
+  });
+})();</script>
+</body>
+</html>

@@ -1,0 +1,464 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Free Twitter Engagement Comparison Tool: Rank 2 to 5 Posts</title>
+  <meta name="description" content="Twitter engagement comparison tool: compare 2 to 5 posts or accounts side by side and rank engagement rate per impression and per follower. Free, no sign-up." />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <link rel="canonical" href="https://kakahaja07.github.io/xvision/tools/twitter-engagement-comparison-tool.html" />
+  <meta name="theme-color" content="#f6f6f8" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#0a0a0c" media="(prefers-color-scheme: dark)" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="XVision" />
+  <meta property="og:url" content="https://kakahaja07.github.io/xvision/tools/twitter-engagement-comparison-tool.html" />
+  <meta property="og:title" content="Twitter Engagement Comparison Tool" />
+  <meta property="og:description" content="Twitter engagement comparison tool: compare 2 to 5 posts or accounts side by side and rank engagement rate per impression and per follower. Free, no sign-up." />
+  <meta property="og:image" content="https://kakahaja07.github.io/xvision/assets/og-card.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Twitter Engagement Comparison Tool" />
+  <meta name="twitter:description" content="Twitter engagement comparison tool: compare 2 to 5 posts or accounts side by side and rank engagement rate per impression and per follower. Free, no sign-up." />
+  <meta name="twitter:image" content="https://kakahaja07.github.io/xvision/assets/og-card.jpg" />
+  <link rel="icon" type="image/png" href="../assets/logo-64.png" />
+  <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png" />
+  <script src="../assets/site.js"></script>
+  <link rel="stylesheet" href="../assets/site.css" />
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "name": "Twitter Engagement Comparison Tool",
+      "description": "Twitter engagement comparison tool: compare 2 to 5 posts or accounts side by side and rank engagement rate per impression and per follower. Free, no sign-up.",
+      "url": "https://kakahaja07.github.io/xvision/tools/twitter-engagement-comparison-tool.html",
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "Any",
+      "browserRequirements": "Requires JavaScript",
+      "isAccessibleForFree": true,
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "author": {
+        "@type": "Person",
+        "@id": "https://kakahaja07.github.io/xvision/#author",
+        "name": "Prashant Sharma",
+        "url": "https://github.com/Kakahaja07"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "XVision",
+          "item": "https://kakahaja07.github.io/xvision/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Free tools",
+          "item": "https://kakahaja07.github.io/xvision/tools/index.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Twitter Engagement Comparison Tool",
+          "item": "https://kakahaja07.github.io/xvision/tools/twitter-engagement-comparison-tool.html"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How do I compare engagement between Twitter posts or accounts?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Compare engagement rates, not raw likes. Divide each post's engagements by its impressions, or each account's engagements by its followers, then rank the results. The Twitter Engagement Comparison Tool does both for 2 to 5 posts or accounts and shows two separate rankings, because the two rates measure different things."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Which engagement rate should I use to compare accounts?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Use engagement rate per follower to compare accounts of different sizes, since it scales activity to audience size. If you can see each account's impressions, add the per-impression rate too. The Twitter Engagement Comparison Tool shows both side by side, and each one gets its own separate ranking."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I compare my posts with a competitor's posts?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, but usually only on the per-follower rate. Anyone can see likes, replies, reposts and view counts on public posts, plus follower counts on profiles. Full engagement counts, which include clicks and expands, are private to the author, so use likes plus replies plus reposts for every row to keep it fair."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why does my best post rank differently on each list?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A post can rank high per impression and low per follower when it reached many people outside your followers, or the other way around. That is normal. It tells you whether a post won on quality of reaction or on size of reach, which is more useful than a single score."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is a good engagement rate on X?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "There is no single good engagement rate on X, because it depends on the formula. Rival IQ's 2026 report put X's median at 0.03% per follower per post for brands. Per-impression rates are much higher by design. Compare yourself with your own past posts first, then with peers using the same formula."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does the tool save the numbers I enter?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No, the Twitter Engagement Comparison Tool does not save or send anything. All math runs inside your browser on this page, and the numbers disappear when you close or reload the tab. Use the copy button if you want to keep a comparison for later."
+          }
+        }
+      ],
+      "@id": "https://kakahaja07.github.io/xvision/tools/twitter-engagement-comparison-tool.html#faq"
+    }
+  ]
+}
+  </script>
+  <style>
+.t-twitter-engagement-comparison-tool [hidden] { display: none !important; }
+.t-twitter-engagement-comparison-tool .ec-rows { display: grid; gap: 10px; }
+.t-twitter-engagement-comparison-tool .ec-row { padding: 12px 14px; border: 1px solid var(--line); border-radius: 14px; background: var(--bg); }
+.t-twitter-engagement-comparison-tool .ec-row-head { display: flex; align-items: flex-end; gap: 8px; margin-bottom: 10px; }
+.t-twitter-engagement-comparison-tool .ec-row-head .field-group { flex: 1; min-width: 0; }
+.t-twitter-engagement-comparison-tool .ec-row .fields-3 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
+.t-twitter-engagement-comparison-tool .ec-row label { font-size: 13px; }
+.t-twitter-engagement-comparison-tool .ec-row input { height: 40px; padding: 0 10px; font-size: 15px; }
+.t-twitter-engagement-comparison-tool .ec-remove { flex: none; height: 40px; }
+.t-twitter-engagement-comparison-tool .ec-panel + .ec-panel { margin-top: 18px; }
+.t-twitter-engagement-comparison-tool .ec-sub { margin: 0 0 4px; font-size: 15px; font-weight: 650; }
+.t-twitter-engagement-comparison-tool .ec-formula { margin: 0 0 10px; color: var(--muted); font-size: 13.5px; }
+.t-twitter-engagement-comparison-tool .ec-list { display: grid; gap: 10px; margin: 0; padding: 0; list-style: none; }
+.t-twitter-engagement-comparison-tool .ec-list li { display: grid; grid-template-columns: 22px minmax(0, 1fr) auto; align-items: center; gap: 4px 10px; font-size: 14.5px; font-variant-numeric: tabular-nums; }
+.t-twitter-engagement-comparison-tool .ec-rank { color: var(--muted); font-weight: 600; }
+.t-twitter-engagement-comparison-tool .ec-name { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.t-twitter-engagement-comparison-tool .ec-val { font-weight: 650; }
+.t-twitter-engagement-comparison-tool .ec-track { grid-column: 2 / 4; height: 8px; border-radius: 999px; background: var(--soft); overflow: hidden; }
+.t-twitter-engagement-comparison-tool .ec-track i { display: block; height: 100%; border-radius: inherit; background: var(--fg); transition: width 200ms var(--ease-out); }
+.t-twitter-engagement-comparison-tool .ec-skip { margin: 8px 0 0; color: var(--muted); font-size: 13.5px; }
+.t-twitter-engagement-comparison-tool .ec-msg { margin: 0; color: var(--muted); }
+.t-twitter-engagement-comparison-tool .ec-warn { margin: 8px 0 0; color: var(--muted); font-size: 14px; }
+</style>
+</head>
+<body>
+  <header class="site-nav">
+    <div class="wrap nav-in">
+      <a class="wordmark" href="../index.html" aria-label="XVision home"><img src="../assets/logo-64.png" alt="" width="26" height="26" />Vision</a>
+      <nav class="navlinks" id="site-menu" aria-label="Main">
+        <a class="opt" href="../index.html#features">Features</a>
+        <a class="opt" href="../index.html#install">How it works</a>
+        <a href="../guides/index.html">Guides</a>
+        <a href="../tools/index.html" aria-current="page">Tools</a>
+        <a class="opt" href="../index.html#faq">FAQ</a>
+      </nav>
+      <div class="nav-cta">
+        <button class="theme-toggle" type="button" aria-label="Dark mode" aria-pressed="false"><svg class="sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.9 4.9l1.4 1.4m11.4 11.4 1.4 1.4M2 12h2m16 0h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg><svg class="moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 14.3A8.5 8.5 0 1 1 9.7 3.5a7 7 0 0 0 10.8 10.8Z"/></svg></button>
+        <a class="btn ghost small" href="https://github.com/Kakahaja07/xvision">GitHub</a>
+        <a class="btn primary small" href="../index.html#install">Get it free</a>
+        <button class="menu-toggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="site-menu"><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+  <main class="wrap tool-page">
+    <header class="page-head">
+      <div class="crumbs"><a href="index.html">Tools</a> › <a href="index.html#analytics">Analytics and growth</a></div>
+      <h1>Twitter Engagement Comparison Tool</h1>
+      <p>Put 2 to 5 posts or accounts side by side and rank them by engagement rate per impression and per follower, with bars and formulas.</p>
+    </header>
+    <section class="tool t-twitter-engagement-comparison-tool">
+  <div class="tool-grid">
+    <div class="fields">
+      <div class="field-group">
+        <span class="field-label" id="ec-mode-label">Compare</span>
+        <div class="seg" role="group" aria-labelledby="ec-mode-label">
+          <button type="button" data-mode="posts" aria-pressed="true">Posts</button>
+          <button type="button" data-mode="accounts" aria-pressed="false">Accounts</button>
+        </div>
+        <span class="hint" id="ec-mode-hint"></span>
+      </div>
+      <div class="ec-rows" id="ec-rows"></div>
+      <div class="row" style="margin-top:0">
+        <button type="button" class="btn ghost small" id="ec-add">Add row</button>
+        <button type="button" class="btn ghost small" id="ec-reset">Reset example</button>
+      </div>
+    </div>
+    <div aria-live="polite">
+      <p class="ec-msg" id="ec-msg" hidden></p>
+      <div id="ec-out">
+        <div class="ec-panel">
+          <p class="ec-sub">Engagement rate per impression</p>
+          <p class="ec-formula">engagements / impressions x 100. Shows how well the content worked for the people who saw it.</p>
+          <ol class="ec-list" id="ec-imp"></ol>
+          <p class="ec-skip" id="ec-imp-skip" hidden></p>
+        </div>
+        <div class="ec-panel">
+          <p class="ec-sub">Engagement rate per follower</p>
+          <p class="ec-formula">engagements / followers x 100. Shows activity relative to audience size.</p>
+          <ol class="ec-list" id="ec-fol"></ol>
+          <p class="ec-skip" id="ec-fol-skip" hidden></p>
+        </div>
+        <div id="ec-warn"></div>
+        <p class="note">Rank each list on its own. The two rates use different denominators, so a 3% per impression and a 3% per follower are not the same thing.</p>
+        <div class="row">
+          <button type="button" class="btn ghost small" id="ec-copy">Copy comparison</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+    <p class="privacy-note">Runs in your browser. Nothing you enter is uploaded.</p>
+    <article class="tool-article"><h2>How do I compare engagement between Twitter posts or accounts?</h2>
+<p>Compare engagement rates, not raw likes. Divide each post's engagements by its impressions, or each account's engagements by its followers, then rank the results. The Twitter Engagement Comparison Tool does both for 2 to 5 posts or accounts and shows two separate rankings, because the two rates measure different things.</p>
+<p>Raw numbers fool people all the time. A post with 210 engagements looks like a winner next to one with 95, until you notice it was seen six times as often. Rates level the field.</p>
+
+<h2>How to use the Twitter Engagement Comparison Tool</h2>
+<ol>
+<li>Pick "Posts" or "Accounts."</li>
+<li>Give each row a name you'll recognize.</li>
+<li>Enter impressions, engagements and followers for each row. For accounts, use totals from the same date range.</li>
+<li>Add rows up to 5, or remove them down to 2.</li>
+<li>Read the two ranked lists. Each one has its own bars and its own winner.</li>
+<li>Copy the comparison if you want to keep it in your notes.</li>
+</ol>
+
+<h2>What is the difference between the two engagement rates?</h2>
+<p>Engagement rate per impression tells you how well content worked for the people who saw it. Engagement rate per follower tells you how active an account is relative to its audience size. They use different denominators, so their numbers can't be mixed or compared with each other.</p>
+<div class="table-scroll"><table>
+<thead><tr><th>Rate</th><th>Formula</th><th>Best for</th></tr></thead>
+<tbody>
+<tr><td>Per impression</td><td>engagements / impressions x 100</td><td>Judging content quality</td></tr>
+<tr><td>Per follower</td><td>engagements / followers x 100</td><td>Comparing accounts of different sizes</td></tr>
+</tbody>
+</table></div>
+<p>X itself uses the per-impression version. Its <a href="https://help.x.com/en/business-and-advertising/export-csv-definitions">CSV definitions page</a> defines engagement rate as engagements divided by total impressions. Many benchmark reports use the per-follower version. The <a href="https://www.quid.com/knowledge-hub/resource-library/blog/2026-social-media-industry-benchmark-report">Rival IQ 2026 benchmark report</a> divides interactions by follower count and puts X's median at 0.03% per post for 2025 data.</p>
+<p>Here's where people go wrong. They take a 2% per-impression rate from their analytics, compare it with that 0.03% per-follower benchmark, and decide they're crushing it. Different formula, different scale. Compare like with like.</p>
+
+<h2>What does a real comparison look like?</h2>
+<p>The two rankings often disagree, and that disagreement is useful. In this fictional example, three posts come from accounts of different sizes:</p>
+<div class="table-scroll"><table>
+<thead><tr><th>Post</th><th>Impressions</th><th>Engagements</th><th>Followers</th><th>Per impression</th><th>Per follower</th></tr></thead>
+<tbody>
+<tr><td>Post A</td><td>4,200</td><td>126</td><td>1,800</td><td>3.00%</td><td>7.00%</td></tr>
+<tr><td>Post B</td><td>12,500</td><td>210</td><td>9,400</td><td>1.68%</td><td>2.23%</td></tr>
+<tr><td>Post C</td><td>2,100</td><td>95</td><td>620</td><td>4.52%</td><td>15.32%</td></tr>
+</tbody>
+</table></div>
+<p>Post B has the most engagements but ranks last on both rates. It reached many people who didn't care much. Post C is small but sharp: few people saw it, and lots of them reacted. If I were Post C's author, I'd study that post and try to get the same idea in front of more people.</p>
+
+<h2>Tips for fair engagement comparisons</h2>
+<p>A fair comparison changes only one thing at a time. Keep everything else as close as you can.</p>
+<ul>
+<li><strong>Use the same time window.</strong> Compare posts at a similar age, ideally 2 or more days old, so late engagement has landed.</li>
+<li><strong>Use the same engagement definition.</strong> X's own "engagements" count includes clicks and expands. Likes plus replies plus reposts is a smaller number.</li>
+<li><strong>Use follower counts from the same moment.</strong> For older posts, an estimate is fine. Just be consistent.</li>
+<li><strong>Compare similar formats.</strong> Buffer's March 2026 format study found text posts had the highest median engagement rate on X, ahead of images, video and links, so mixing formats can blur the lesson.</li>
+</ul>
+
+<h2>Common mistakes when comparing engagement</h2>
+<p>Most mistakes come from mixing numbers that don't belong together:</p>
+<ul>
+<li>Ranking by raw likes instead of a rate.</li>
+<li>Putting a per-impression rate next to a per-follower rate.</li>
+<li>Comparing a 2-hour-old post with a week-old one.</li>
+<li>Reading too much into tiny samples. A post with 50 impressions and 5 likes shows 10%, but it proves little.</li>
+</ul>
+
+<h2>When should you use a different tool?</h2>
+<p>For a single post, the <a href="engagement-rate.html">Twitter Engagement Rate Calculator</a> is faster. To rank a whole month of posts at once, drop your export into the <a href="twitter-analytics-csv-analyzer.html">Twitter Analytics CSV Analyzer</a>. To score one post against your own averages, try the <a href="twitter-post-performance-score.html">Twitter Post Performance Score</a>. For the background, read <a href="../guides/calculate-twitter-engagement-rate.html">how to calculate Twitter engagement rate</a> and <a href="../guides/twitter-impressions-vs-engagement-explained.html">Twitter impressions vs engagement explained</a>.</p>
+
+<h2>Frequently Asked Questions</h2>
+<h3>Which engagement rate should I use to compare accounts?</h3>
+<p>Use engagement rate per follower to compare accounts of different sizes, since it scales activity to audience size. If you can see each account's impressions, add the per-impression rate too. The Twitter Engagement Comparison Tool shows both side by side, and each one gets its own separate ranking.</p>
+<h3>Can I compare my posts with a competitor's posts?</h3>
+<p>Yes, but usually only on the per-follower rate. Anyone can see likes, replies, reposts and view counts on public posts, plus follower counts on profiles. Full engagement counts, which include clicks and expands, are private to the author, so use likes plus replies plus reposts for every row to keep it fair.</p>
+<h3>Why does my best post rank differently on each list?</h3>
+<p>A post can rank high per impression and low per follower when it reached many people outside your followers, or the other way around. That is normal. It tells you whether a post won on quality of reaction or on size of reach, which is more useful than a single score.</p>
+<h3>What is a good engagement rate on X?</h3>
+<p>There is no single good engagement rate on X, because it depends on the formula. Rival IQ's 2026 report put X's median at 0.03% per follower per post for brands. Per-impression rates are much higher by design. Compare yourself with your own past posts first, then with peers using the same formula.</p>
+<h3>Does the tool save the numbers I enter?</h3>
+<p>No, the Twitter Engagement Comparison Tool does not save or send anything. All math runs inside your browser on this page, and the numbers disappear when you close or reload the tab. Use the copy button if you want to keep a comparison for later.</p>
+    </article>
+    <aside class="related">
+      <h2>More free tools</h2>
+      <ul>
+        <li><a href="engagement-rate.html">Twitter Engagement Rate Calculator</a></li>
+        <li><a href="twitter-follower-growth-calculator.html">Twitter Follower Growth Calculator</a></li>
+        <li><a href="twitter-impressions-calculator.html">Twitter Impressions Calculator</a></li>
+        <li><a href="twitter-post-performance-score.html">Twitter Post Performance Score</a></li>
+      </ul>
+    </aside>
+    <aside class="cta">
+      <b>Grow on X with real signals.</b>
+      <span>XVision is a free Chrome extension that shows follower counts, follow-back badges and viral posts right on your timeline.</span>
+      <a class="btn light small" href="../index.html">Get XVision free</a>
+    </aside>
+  </main>
+  <footer class="site-footer">
+    <img class="foot-mark" src="../assets/logo.png" alt="" width="320" height="320" loading="lazy" />
+    <div class="wrap">
+      <div class="foot-top">
+        <div class="foot-brand">
+          <a class="wordmark" href="../index.html"><img src="../assets/logo-64.png" alt="" width="26" height="26" />Vision</a>
+          <p>A free Chrome extension, guides and tools for growing on X. Private by design.</p>
+          <div class="foot-social"><a href="https://github.com/Kakahaja07/xvision" aria-label="XVision on GitHub"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.9 1.2 1.9 1.2 1.1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-6 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17.3 4.7 18.3 5 18.3 5c.7 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .5Z"/></svg></a></div>
+        </div>
+        <div class="foot-cols">
+          <div><h3>Product</h3><ul><li><a href="../index.html#features">Features</a></li><li><a href="../index.html#install">How it works</a></li><li><a href="../index.html#pricing">Pricing</a></li><li><a href="../index.html#faq">FAQ</a></li></ul></div>
+          <div><h3>Guides</h3><ul><li><a href="../guides/index.html#grow">Grow on X</a></li><li><a href="../guides/index.html#algorithm">The X algorithm</a></li><li><a href="../guides/index.html#money">Make money on X</a></li><li><a href="../guides/index.html">All guides</a></li></ul></div>
+          <div><h3>Free tools</h3><ul><li><a href="../tools/twitter-bio-generator.html">Twitter bio generator</a></li><li><a href="../tools/video-downloader.html">Twitter video downloader</a></li><li><a href="../tools/thread-maker.html">Thread splitter</a></li><li><a href="../tools/index.html">All 51 tools</a></li></ul></div>
+          <div><h3>Project</h3><ul><li><a href="https://github.com/Kakahaja07/xvision">GitHub</a></li><li><a href="../privacy-policy.html">Privacy policy</a></li><li><a href="../LICENSE">MIT License</a></li><li><a href="../sitemap.xml">Sitemap</a></li></ul></div>
+        </div>
+      </div>
+      <div class="foot-bottom">
+        <span>© 2026 XVision · Built by Prashant Sharma · Inspired by XRay by fayazara</span>
+        <span>Not affiliated with X Corp.</span>
+      </div>
+    </div>
+  </footer>
+  <script src="../assets/x-text.js"></script>
+  <script src="../assets/tool-kit.js"></script>
+  <script>(function () {
+  var root = document.querySelector('.t-twitter-engagement-comparison-tool');
+  var $ = function (s) { return root.querySelector(s); };
+  var fmt = function (n, d) { return XTool.fmt(n, d || 0); };
+  var esc = XTool.escapeHtml;
+  var pct = function (n) { return Number(n).toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + '%'; };
+  var EXAMPLES = {
+    posts: [
+      { name: 'Post A (mine)', imp: 4200, eng: 126, fol: 1800 },
+      { name: 'Post B (peer)', imp: 12500, eng: 210, fol: 9400 },
+      { name: 'Post C (peer)', imp: 2100, eng: 95, fol: 620 }
+    ],
+    accounts: [
+      { name: 'Account A', imp: 85000, eng: 1900, fol: 2400 },
+      { name: 'Account B', imp: 240000, eng: 3100, fol: 15000 }
+    ]
+  };
+  var HINTS = {
+    posts: 'One row per post. Followers = the author\'s follower count when the post went out.',
+    accounts: 'Totals for the same period (for example the last 28 days) for each account.'
+  };
+  var mode = 'posts';
+  var uid = 0;
+  var text = '';
+
+  function rowHTML(r) {
+    var id = 'ec' + (++uid);
+    var v = function (x) { return x === undefined || x === null ? '' : x; };
+    return '<div class="ec-row" data-row>' +
+      '<div class="ec-row-head"><div class="field-group"><label for="' + id + 'n">Name</label><input type="text" id="' + id + 'n" data-f="name" maxlength="60" value="' + esc(v(r.name)) + '"></div>' +
+      '<button type="button" class="btn ghost small ec-remove" data-remove aria-label="Remove this row">Remove</button></div>' +
+      '<div class="fields-3">' +
+      '<div class="field-group"><label for="' + id + 'i">Impressions</label><input type="number" id="' + id + 'i" data-f="imp" min="0" step="1" inputmode="numeric" value="' + v(r.imp) + '"></div>' +
+      '<div class="field-group"><label for="' + id + 'e">Engagements</label><input type="number" id="' + id + 'e" data-f="eng" min="0" step="1" inputmode="numeric" value="' + v(r.eng) + '"></div>' +
+      '<div class="field-group"><label for="' + id + 'f">Followers</label><input type="number" id="' + id + 'f" data-f="fol" min="0" step="1" inputmode="numeric" value="' + v(r.fol) + '"></div>' +
+      '</div></div>';
+  }
+
+  function setRows(list) {
+    $('#ec-rows').innerHTML = list.map(rowHTML).join('');
+    $('#ec-mode-hint').textContent = HINTS[mode];
+    render();
+  }
+
+  function read() {
+    return Array.prototype.map.call(root.querySelectorAll('[data-row]'), function (el, i) {
+      var g = function (f) { var x = el.querySelector('[data-f="' + f + '"]').value.trim(); return x === '' ? NaN : parseFloat(x); };
+      var name = el.querySelector('[data-f="name"]').value.trim() || (mode === 'posts' ? 'Post ' : 'Account ') + (i + 1);
+      return { name: name, imp: g('imp'), eng: g('eng'), fol: g('fol') };
+    });
+  }
+
+  function list(rows, key, target, skipEl, missingLabel) {
+    var ok = rows.filter(function (r) { return isFinite(r[key]); }).sort(function (a, b) { return b[key] - a[key]; });
+    var skipped = rows.filter(function (r) { return !isFinite(r[key]); });
+    var max = ok.length ? ok[0][key] : 0;
+    $(target).innerHTML = ok.map(function (r, i) {
+      var w = max > 0 ? r[key] / max * 100 : 0;
+      return '<li><span class="ec-rank">' + (i + 1) + '</span><span class="ec-name" title="' + esc(r.name) + '">' + esc(r.name) + '</span><span class="ec-val">' + pct(r[key]) + '</span>' +
+        '<span class="ec-track"><i style="width:' + w.toFixed(1) + '%"></i></span></li>';
+    }).join('');
+    var skip = $(skipEl);
+    skip.hidden = !skipped.length;
+    skip.textContent = skipped.length ? 'Not ranked: ' + skipped.map(function (r) { return r.name + ' (no ' + (isFinite(r.eng) ? missingLabel : 'engagements') + ')'; }).join(', ') + '.' : '';
+    return ok;
+  }
+
+  function render() {
+    var count = root.querySelectorAll('[data-row]').length;
+    $('#ec-add').disabled = count >= 5;
+    root.querySelectorAll('[data-remove]').forEach(function (b) { b.disabled = count <= 2; });
+    var rows = read();
+    if (rows.some(function (r) { return r.imp < 0 || r.eng < 0 || r.fol < 0; })) return fail('Numbers can\'t be negative.');
+    rows.forEach(function (r) {
+      r.perImp = r.imp > 0 ? r.eng / r.imp * 100 : NaN;
+      r.perFol = r.fol > 0 ? r.eng / r.fol * 100 : NaN;
+    });
+    $('#ec-msg').hidden = true;
+    $('#ec-out').hidden = false;
+    var a = list(rows, 'perImp', '#ec-imp', '#ec-imp-skip', 'impressions');
+    var b = list(rows, 'perFol', '#ec-fol', '#ec-fol-skip', 'followers');
+
+    var warns = [];
+    rows.forEach(function (r) {
+      if (r.imp > 0 && r.eng > r.imp) warns.push(r.name + ' has more engagements than impressions. Check the numbers.');
+    });
+    if (a.length && b.length && a[0] !== b[0]) warns.push('The leaders differ: ' + a[0].name + ' wins per impression, ' + b[0].name + ' wins per follower. That usually means reach and audience size are pulling in different directions.');
+    $('#ec-warn').innerHTML = warns.map(function (w) { return '<p class="ec-warn">' + esc(w) + '</p>'; }).join('');
+
+    text = 'Engagement comparison (' + mode + ')\n\nPer impression:\n' +
+      (a.map(function (r, i) { return (i + 1) + '. ' + r.name + ': ' + pct(r.perImp); }).join('\n') || 'n/a') +
+      '\n\nPer follower:\n' + (b.map(function (r, i) { return (i + 1) + '. ' + r.name + ': ' + pct(r.perFol); }).join('\n') || 'n/a');
+  }
+
+  function fail(msg) {
+    $('#ec-msg').textContent = msg;
+    $('#ec-msg').hidden = false;
+    $('#ec-out').hidden = true;
+    text = '';
+  }
+
+  root.querySelectorAll('.seg button').forEach(function (b) {
+    b.addEventListener('click', function () {
+      if (b.dataset.mode === mode) return;
+      mode = b.dataset.mode;
+      root.querySelectorAll('.seg button').forEach(function (x) { x.setAttribute('aria-pressed', String(x === b)); });
+      setRows(EXAMPLES[mode]);
+    });
+  });
+  $('#ec-rows').addEventListener('input', render);
+  $('#ec-rows').addEventListener('click', function (e) {
+    var btn = e.target.closest('[data-remove]');
+    if (!btn || root.querySelectorAll('[data-row]').length <= 2) return;
+    btn.closest('[data-row]').remove();
+    render();
+  });
+  $('#ec-add').addEventListener('click', function () {
+    if (root.querySelectorAll('[data-row]').length >= 5) return;
+    var n = root.querySelectorAll('[data-row]').length + 1;
+    $('#ec-rows').insertAdjacentHTML('beforeend', rowHTML({ name: (mode === 'posts' ? 'Post ' : 'Account ') + n }));
+    render();
+    var inputs = root.querySelectorAll('[data-row]:last-child input[data-f="imp"]');
+    if (inputs.length) inputs[0].focus();
+  });
+  $('#ec-reset').addEventListener('click', function () { setRows(EXAMPLES[mode]); });
+  $('#ec-copy').addEventListener('click', function (e) { if (text) XTool.copy(text, e.currentTarget); });
+  setRows(EXAMPLES[mode]);
+})();</script>
+</body>
+</html>

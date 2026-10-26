@@ -1,0 +1,467 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Free Twitter Campaign ROI Calculator: ROI, ROAS and CPL</title>
+  <meta name="description" content="Twitter campaign ROI calculator: add ad spend, content, tools and time, then see ROI, ROAS, cost per click, lead and customer, and break-even. Free, no sign-up." />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <link rel="canonical" href="https://kakahaja07.github.io/xvision/tools/twitter-campaign-roi-calculator.html" />
+  <meta name="theme-color" content="#f6f6f8" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#0a0a0c" media="(prefers-color-scheme: dark)" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="XVision" />
+  <meta property="og:url" content="https://kakahaja07.github.io/xvision/tools/twitter-campaign-roi-calculator.html" />
+  <meta property="og:title" content="Twitter Campaign ROI Calculator" />
+  <meta property="og:description" content="Twitter campaign ROI calculator: add ad spend, content, tools and time, then see ROI, ROAS, cost per click, lead and customer, and break-even. Free, no sign-up." />
+  <meta property="og:image" content="https://kakahaja07.github.io/xvision/assets/og-card.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Twitter Campaign ROI Calculator" />
+  <meta name="twitter:description" content="Twitter campaign ROI calculator: add ad spend, content, tools and time, then see ROI, ROAS, cost per click, lead and customer, and break-even. Free, no sign-up." />
+  <meta name="twitter:image" content="https://kakahaja07.github.io/xvision/assets/og-card.jpg" />
+  <link rel="icon" type="image/png" href="../assets/logo-64.png" />
+  <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png" />
+  <script src="../assets/site.js"></script>
+  <link rel="stylesheet" href="../assets/site.css" />
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "name": "Twitter Campaign ROI Calculator",
+      "description": "Twitter campaign ROI calculator: add ad spend, content, tools and time, then see ROI, ROAS, cost per click, lead and customer, and break-even. Free, no sign-up.",
+      "url": "https://kakahaja07.github.io/xvision/tools/twitter-campaign-roi-calculator.html",
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "Any",
+      "browserRequirements": "Requires JavaScript",
+      "isAccessibleForFree": true,
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "author": {
+        "@type": "Person",
+        "@id": "https://kakahaja07.github.io/xvision/#author",
+        "name": "Prashant Sharma",
+        "url": "https://github.com/Kakahaja07"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "XVision",
+          "item": "https://kakahaja07.github.io/xvision/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Free tools",
+          "item": "https://kakahaja07.github.io/xvision/tools/index.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Twitter Campaign ROI Calculator",
+          "item": "https://kakahaja07.github.io/xvision/tools/twitter-campaign-roi-calculator.html"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How do I calculate ROI for a Twitter campaign?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Campaign ROI is net return divided by cost. Add every cost (ads, content, tools and your time), subtract the total from the revenue the campaign brought in, then divide by the total. Spending 980 to earn 2,400 gives an ROI of about 145%. The Twitter Campaign ROI Calculator also shows ROAS and cost per lead."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is a good ROI for a Twitter campaign?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "There is no official benchmark for a good Twitter campaign ROI. Any ROI above 0% means the campaign earned back more than it cost. The useful test is comparison: if X returns 60% and email returns 200% for the same effort, email deserves more budget. Track several campaigns before deciding."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the difference between ROI and ROAS?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "ROI compares net return with the full campaign cost, including content, tools and time. ROAS compares revenue with ad spend only. A ROAS of 3x means each unit of ad spend brought back three in revenue, but ROI can still be negative once margin and other costs are counted."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I calculate ROI for an organic Twitter campaign?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, you can calculate ROI for an organic Twitter campaign with the same formula. Set ad spend to 0 and enter your time, content and tool costs. ROAS will show n/a because there's no ad spend, but ROI, cost per lead and break-even still work, and time is usually the biggest cost."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I know which sales came from X?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Use tracked links with UTM tags, a discount code only shared on X, or a \"how did you hear about us\" question at checkout. Your site analytics then groups X traffic and sales. None of these are perfect, so treat the result as a close estimate rather than an exact count."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is there a minimum budget for X Ads?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No, as of October 2026 X's ads pricing page says there is no minimum spend for X Ads. Prices are set by auction and depend on your bid, audience size, competition and engagement. You set a daily budget, and X says it will not spend more than that amount."
+          }
+        }
+      ],
+      "@id": "https://kakahaja07.github.io/xvision/tools/twitter-campaign-roi-calculator.html#faq"
+    }
+  ]
+}
+  </script>
+  <style>
+.t-twitter-campaign-roi-calculator [hidden] { display: none !important; }
+.t-twitter-campaign-roi-calculator .stats { grid-template-columns: 1fr 1fr; }
+.t-twitter-campaign-roi-calculator .stat b { font-size: 21px; overflow-wrap: anywhere; }
+.t-twitter-campaign-roi-calculator .roi-head { padding: 16px; border: 1px solid var(--line); border-radius: 14px; background: var(--bg); }
+.t-twitter-campaign-roi-calculator .roi-head span { display: block; margin-top: 6px; color: var(--muted); font-size: 14px; }
+.t-twitter-campaign-roi-calculator .roi-msg { margin: 0; color: var(--muted); }
+.t-twitter-campaign-roi-calculator .roi-sub { margin: 18px 0 4px; font-size: 14px; font-weight: 600; }
+.t-twitter-campaign-roi-calculator .roi-f { display: grid; gap: 8px; margin: 0; padding: 14px 16px; border: 1px solid var(--line); border-radius: 14px; background: var(--bg); font-size: 14px; line-height: 1.5; }
+.t-twitter-campaign-roi-calculator .roi-f p { margin: 0; overflow-wrap: anywhere; }
+.t-twitter-campaign-roi-calculator .roi-f b { font-weight: 600; }
+.t-twitter-campaign-roi-calculator .roi-warn { margin: 8px 0 0; color: var(--muted); font-size: 14px; }
+</style>
+</head>
+<body>
+  <header class="site-nav">
+    <div class="wrap nav-in">
+      <a class="wordmark" href="../index.html" aria-label="XVision home"><img src="../assets/logo-64.png" alt="" width="26" height="26" />Vision</a>
+      <nav class="navlinks" id="site-menu" aria-label="Main">
+        <a class="opt" href="../index.html#features">Features</a>
+        <a class="opt" href="../index.html#install">How it works</a>
+        <a href="../guides/index.html">Guides</a>
+        <a href="../tools/index.html" aria-current="page">Tools</a>
+        <a class="opt" href="../index.html#faq">FAQ</a>
+      </nav>
+      <div class="nav-cta">
+        <button class="theme-toggle" type="button" aria-label="Dark mode" aria-pressed="false"><svg class="sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.9 4.9l1.4 1.4m11.4 11.4 1.4 1.4M2 12h2m16 0h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg><svg class="moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 14.3A8.5 8.5 0 1 1 9.7 3.5a7 7 0 0 0 10.8 10.8Z"/></svg></button>
+        <a class="btn ghost small" href="https://github.com/Kakahaja07/xvision">GitHub</a>
+        <a class="btn primary small" href="../index.html#install">Get it free</a>
+        <button class="menu-toggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="site-menu"><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+  <main class="wrap tool-page">
+    <header class="page-head">
+      <div class="crumbs"><a href="index.html">Tools</a> › <a href="index.html#analytics">Analytics and growth</a></div>
+      <h1>Twitter Campaign ROI Calculator</h1>
+      <p>Add up what an X campaign really cost, including your time, and see ROI, ROAS, cost per result and break-even, with every formula shown.</p>
+    </header>
+    <section class="tool t-twitter-campaign-roi-calculator">
+  <div class="tool-grid">
+    <div class="fields">
+      <div class="field-group">
+        <label for="roi-cur">Currency</label>
+        <select id="roi-cur">
+          <option value="USD">USD, US dollar</option>
+          <option value="EUR">EUR, euro</option>
+          <option value="GBP">GBP, British pound</option>
+          <option value="INR">INR, Indian rupee</option>
+          <option value="CAD">CAD, Canadian dollar</option>
+          <option value="AUD">AUD, Australian dollar</option>
+          <option value="JPY">JPY, Japanese yen</option>
+          <option value="BRL">BRL, Brazilian real</option>
+          <option value="MXN">MXN, Mexican peso</option>
+          <option value="ZAR">ZAR, South African rand</option>
+        </select>
+      </div>
+      <p class="tool-title" style="margin:6px 0 0">Costs</p>
+      <div class="fields-2">
+        <div class="field-group"><label for="roi-ads">Ad spend</label><input type="number" id="roi-ads" min="0" step="any" value="500" inputmode="decimal"></div>
+        <div class="field-group"><label for="roi-content">Content and design</label><input type="number" id="roi-content" min="0" step="any" value="200" inputmode="decimal"></div>
+      </div>
+      <div class="fields-2">
+        <div class="field-group"><label for="roi-tools">Tools and software</label><input type="number" id="roi-tools" min="0" step="any" value="30" inputmode="decimal"></div>
+        <div class="field-group"><label for="roi-hours">Hours spent</label><input type="number" id="roi-hours" min="0" step="any" value="10" inputmode="decimal"></div>
+      </div>
+      <div class="field-group">
+        <label for="roi-rate">Value of one hour of your time</label>
+        <input type="number" id="roi-rate" min="0" step="any" value="25" inputmode="decimal">
+      </div>
+      <p class="tool-title" style="margin:6px 0 0">Results</p>
+      <div class="fields-2">
+        <div class="field-group"><label for="roi-clicks">Clicks</label><input type="number" id="roi-clicks" min="0" step="1" value="1200" inputmode="numeric"></div>
+        <div class="field-group"><label for="roi-leads">Leads</label><input type="number" id="roi-leads" min="0" step="1" value="60" inputmode="numeric"></div>
+      </div>
+      <div class="field-group"><label for="roi-cust">Customers</label><input type="number" id="roi-cust" min="0" step="1" value="8" inputmode="numeric"></div>
+      <div class="field-group">
+        <span class="field-label" id="roi-mode-label">Measure return by</span>
+        <div class="seg" role="group" aria-labelledby="roi-mode-label">
+          <button type="button" data-mode="revenue" aria-pressed="true">Revenue</button>
+          <button type="button" data-mode="lead" aria-pressed="false">Value per lead</button>
+        </div>
+      </div>
+      <div class="fields-2">
+        <div class="field-group" id="roi-rev-wrap"><label for="roi-rev">Revenue from the campaign</label><input type="number" id="roi-rev" min="0" step="any" value="2400" inputmode="decimal"></div>
+        <div class="field-group" id="roi-vpl-wrap" hidden><label for="roi-vpl">Value per lead</label><input type="number" id="roi-vpl" min="0" step="any" value="40" inputmode="decimal"></div>
+        <div class="field-group"><label for="roi-margin">Gross margin %</label><input type="number" id="roi-margin" min="0" max="100" step="any" value="100" inputmode="decimal"></div>
+      </div>
+      <span class="hint">Leave margin at 100% for ROI on revenue. Enter your real margin for ROI on profit.</span>
+    </div>
+
+    <div aria-live="polite">
+      <p class="roi-msg" id="roi-msg" hidden></p>
+      <div id="roi-out">
+        <div class="roi-head">
+          <div class="big-number" id="roi-big">0%</div>
+          <span id="roi-big-label">Return on investment</span>
+        </div>
+        <div class="stats">
+          <div class="stat"><b id="roi-roas">0</b><span>ROAS</span></div>
+          <div class="stat"><b id="roi-profit">0</b><span>Net return</span></div>
+          <div class="stat"><b id="roi-total">0</b><span>Total cost</span></div>
+          <div class="stat"><b id="roi-cpc">0</b><span>Cost per click</span></div>
+          <div class="stat"><b id="roi-cpl">0</b><span>Cost per lead</span></div>
+          <div class="stat"><b id="roi-cpa">0</b><span>Cost per customer</span></div>
+        </div>
+        <p class="roi-sub">Break-even and conversion</p>
+        <table class="kv" id="roi-kv"></table>
+        <div id="roi-warn"></div>
+        <p class="roi-sub">Formulas with your numbers</p>
+        <div class="roi-f" id="roi-f"></div>
+        <div class="row">
+          <button type="button" class="btn ghost small" id="roi-copy">Copy summary</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <p class="note">Cost per click, lead and customer use the all-in total cost, not ad spend alone, so they will be higher than the numbers in an ads dashboard.</p>
+</section>
+    <p class="privacy-note">Runs in your browser. Nothing you enter is uploaded.</p>
+    <article class="tool-article"><h2>How do I calculate ROI for a Twitter campaign?</h2>
+<p>Campaign ROI is net return divided by cost. Add every cost (ads, content, tools and your time), subtract the total from the revenue the campaign brought in, then divide by the total. Spending 980 to earn 2,400 gives an ROI of about 145%. The Twitter Campaign ROI Calculator also shows ROAS and cost per lead.</p>
+<p>I've seen plenty of campaigns called a "win" because the ads dashboard looked good. Then someone added the design work and the hours spent replying, and the win got a lot smaller. That's why this calculator starts with the full cost.</p>
+
+<h2>How to use the Twitter Campaign ROI Calculator</h2>
+<ol>
+<li>Pick your currency.</li>
+<li>Enter your costs: ad spend, content and design, tools, and the hours you or your team spent.</li>
+<li>Put a value on one hour of time. Use what you'd pay someone else, or what your time earns elsewhere.</li>
+<li>Enter results: clicks, leads and customers.</li>
+<li>Choose how to measure return. Use revenue if you can track sales. Use value per lead if you sell later, offline or through a sales team.</li>
+<li>Set your gross margin if you want ROI on profit instead of revenue.</li>
+</ol>
+
+<h2>What do ROI, ROAS and cost per lead mean?</h2>
+<p>ROI tells you whether the whole campaign made money. ROAS tells you how hard the ad budget alone worked. Cost per result tells you what each click, lead or customer cost. They answer different questions, so read them together.</p>
+<div class="table-scroll"><table>
+<thead><tr><th>Metric</th><th>Formula</th><th>Answers</th></tr></thead>
+<tbody>
+<tr><td>ROI</td><td>(return - total cost) / total cost</td><td>Did the whole campaign pay off?</td></tr>
+<tr><td>ROAS</td><td>revenue / ad spend</td><td>How much revenue each unit of ad spend brought</td></tr>
+<tr><td>Cost per lead</td><td>total cost / leads</td><td>What one lead cost, all-in</td></tr>
+<tr><td>Break-even revenue</td><td>total cost / margin</td><td>The revenue you need before you profit</td></tr>
+</tbody>
+</table></div>
+<p>A ROAS of 4x can still mean a loss. If your margin is 30% and you spent a lot of time on content, the ad money came back but the campaign didn't. That's the gap ROI catches.</p>
+
+<h2>What does a full campaign calculation look like?</h2>
+<p>A full calculation counts every cost, not only the ad bill. Here's a fictional example. A small online course spends 500 on X ads, 200 on design, 30 on a tool and 10 hours of work valued at 25 an hour. The total cost is 980.</p>
+<p>The campaign brings 1,200 clicks, 60 email sign-ups and 8 sales worth 2,400. ROI is (2,400 - 980) / 980, about 145%. ROAS is 2,400 / 500, or 4.8x. Each lead cost about 16.33 and each customer 122.50. If the course has an 80% margin, the return drops to 1,920 and ROI to about 96%. Still good, but a different story.</p>
+
+<h2>How does X Ads pricing affect your numbers?</h2>
+<p>X Ads uses an auction, so your cost per result moves with competition. As of October 2026, X's <a href="https://help.x.com/en/business-and-advertising/ads-pricing">ads pricing page</a> says there's no minimum spend and prices depend on your bid, audience size, competition and how people engage with your ad. With the Engagements objective you pay only when someone engages.</p>
+<p>X's <a href="https://help.x.com/en/business-and-advertising/campaigns-101">campaigns 101 page</a> says you set a daily budget and X won't go over it. That makes ad spend the easiest cost to know. Time and content are the costs people forget.</p>
+
+<h2>Tips for measuring campaign ROI</h2>
+<p>Good ROI numbers start before launch, with tracking.</p>
+<ul>
+<li><strong>Tag every link.</strong> Add UTM tags with the <a href="twitter-utm-generator.html">Twitter UTM Generator</a> so your site analytics can tell X traffic apart.</li>
+<li><strong>Count leads where they land.</strong> Your email tool or CRM knows how many sign-ups came in. Use that, not a guess.</li>
+<li><strong>Use a value per lead for long sales cycles.</strong> If one in ten leads usually buys a 400 product, a lead is worth about 40.</li>
+<li><strong>Check the profile path too.</strong> Many people visit your profile before they click. The <a href="twitter-profile-conversion-calculator.html">Twitter Profile Conversion Calculator</a> shows how well that step works.</li>
+</ul>
+
+<h2>Common ROI mistakes</h2>
+<p>Most ROI errors make a campaign look better than it was.</p>
+<ul>
+<li>Leaving out your own time because you didn't pay for it.</li>
+<li>Using revenue when you meant profit. Set a margin.</li>
+<li>Counting sales that would have happened anyway, like repeat customers.</li>
+<li>Judging too early. Some leads buy weeks later.</li>
+</ul>
+
+<h2>When should you use a different tool?</h2>
+<p>Use this calculator once you have results. Before launch, the <a href="twitter-impressions-calculator.html">Twitter Impressions Calculator</a> helps you estimate reach, and the <a href="twitter-link-builder.html">Twitter Link Builder</a> helps you prepare share links. For strategy, read <a href="../guides/generate-leads-from-twitter.html">how to generate leads from Twitter</a> and <a href="../guides/turn-x-followers-into-customers.html">how to turn X followers into customers</a>.</p>
+
+<h2>Frequently Asked Questions</h2>
+<h3>What is a good ROI for a Twitter campaign?</h3>
+<p>There is no official benchmark for a good Twitter campaign ROI. Any ROI above 0% means the campaign earned back more than it cost. The useful test is comparison: if X returns 60% and email returns 200% for the same effort, email deserves more budget. Track several campaigns before deciding.</p>
+<h3>What is the difference between ROI and ROAS?</h3>
+<p>ROI compares net return with the full campaign cost, including content, tools and time. ROAS compares revenue with ad spend only. A ROAS of 3x means each unit of ad spend brought back three in revenue, but ROI can still be negative once margin and other costs are counted.</p>
+<h3>Can I calculate ROI for an organic Twitter campaign?</h3>
+<p>Yes, you can calculate ROI for an organic Twitter campaign with the same formula. Set ad spend to 0 and enter your time, content and tool costs. ROAS will show n/a because there's no ad spend, but ROI, cost per lead and break-even still work, and time is usually the biggest cost.</p>
+<h3>How do I know which sales came from X?</h3>
+<p>Use tracked links with UTM tags, a discount code only shared on X, or a "how did you hear about us" question at checkout. Your site analytics then groups X traffic and sales. None of these are perfect, so treat the result as a close estimate rather than an exact count.</p>
+<h3>Is there a minimum budget for X Ads?</h3>
+<p>No, as of October 2026 X's ads pricing page says there is no minimum spend for X Ads. Prices are set by auction and depend on your bid, audience size, competition and engagement. You set a daily budget, and X says it will not spend more than that amount.</p>
+    </article>
+    <aside class="related">
+      <h2>More free tools</h2>
+      <ul>
+        <li><a href="engagement-rate.html">Twitter Engagement Rate Calculator</a></li>
+        <li><a href="twitter-follower-growth-calculator.html">Twitter Follower Growth Calculator</a></li>
+        <li><a href="twitter-impressions-calculator.html">Twitter Impressions Calculator</a></li>
+        <li><a href="twitter-post-performance-score.html">Twitter Post Performance Score</a></li>
+      </ul>
+    </aside>
+    <aside class="cta">
+      <b>Grow on X with real signals.</b>
+      <span>XVision is a free Chrome extension that shows follower counts, follow-back badges and viral posts right on your timeline.</span>
+      <a class="btn light small" href="../index.html">Get XVision free</a>
+    </aside>
+  </main>
+  <footer class="site-footer">
+    <img class="foot-mark" src="../assets/logo.png" alt="" width="320" height="320" loading="lazy" />
+    <div class="wrap">
+      <div class="foot-top">
+        <div class="foot-brand">
+          <a class="wordmark" href="../index.html"><img src="../assets/logo-64.png" alt="" width="26" height="26" />Vision</a>
+          <p>A free Chrome extension, guides and tools for growing on X. Private by design.</p>
+          <div class="foot-social"><a href="https://github.com/Kakahaja07/xvision" aria-label="XVision on GitHub"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.9 1.2 1.9 1.2 1.1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-6 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17.3 4.7 18.3 5 18.3 5c.7 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .5Z"/></svg></a></div>
+        </div>
+        <div class="foot-cols">
+          <div><h3>Product</h3><ul><li><a href="../index.html#features">Features</a></li><li><a href="../index.html#install">How it works</a></li><li><a href="../index.html#pricing">Pricing</a></li><li><a href="../index.html#faq">FAQ</a></li></ul></div>
+          <div><h3>Guides</h3><ul><li><a href="../guides/index.html#grow">Grow on X</a></li><li><a href="../guides/index.html#algorithm">The X algorithm</a></li><li><a href="../guides/index.html#money">Make money on X</a></li><li><a href="../guides/index.html">All guides</a></li></ul></div>
+          <div><h3>Free tools</h3><ul><li><a href="../tools/twitter-bio-generator.html">Twitter bio generator</a></li><li><a href="../tools/video-downloader.html">Twitter video downloader</a></li><li><a href="../tools/thread-maker.html">Thread splitter</a></li><li><a href="../tools/index.html">All 51 tools</a></li></ul></div>
+          <div><h3>Project</h3><ul><li><a href="https://github.com/Kakahaja07/xvision">GitHub</a></li><li><a href="../privacy-policy.html">Privacy policy</a></li><li><a href="../LICENSE">MIT License</a></li><li><a href="../sitemap.xml">Sitemap</a></li></ul></div>
+        </div>
+      </div>
+      <div class="foot-bottom">
+        <span>© 2026 XVision · Built by Prashant Sharma · Inspired by XRay by fayazara</span>
+        <span>Not affiliated with X Corp.</span>
+      </div>
+    </div>
+  </footer>
+  <script src="../assets/x-text.js"></script>
+  <script src="../assets/tool-kit.js"></script>
+  <script>(function () {
+  var root = document.querySelector('.t-twitter-campaign-roi-calculator');
+  var $ = function (s) { return root.querySelector(s); };
+  var mode = 'revenue';
+  var summary = '';
+
+  function num(id) { var v = parseFloat($(id).value); return isFinite(v) ? v : 0; }
+  function bad(id) { var v = $(id).value.trim(); return v !== '' && !(parseFloat(v) >= 0); }
+  function fmt(n, d) { return XTool.fmt(n, d || 0); }
+  function money(n) {
+    if (!isFinite(n)) return 'n/a';
+    try {
+      var code = $('#roi-cur').value;
+      var d = code === 'JPY' || Math.abs(n) >= 1000 ? 0 : 2;
+      return new Intl.NumberFormat(undefined, { style: 'currency', currency: code, minimumFractionDigits: d, maximumFractionDigits: d }).format(n);
+    } catch (e) { return fmt(n, 2); }
+  }
+  function pct(n) { return isFinite(n) ? fmt(n, Math.abs(n) < 10 ? 1 : 0) + '%' : 'n/a'; }
+  function div(a, b) { return b > 0 ? a / b : NaN; }
+  function esc(s) { return XTool.escapeHtml(s); }
+
+  function fail(msg) {
+    $('#roi-msg').textContent = msg;
+    $('#roi-msg').hidden = false;
+    $('#roi-out').hidden = true;
+    summary = '';
+  }
+
+  function render() {
+    var ids = ['#roi-ads', '#roi-content', '#roi-tools', '#roi-hours', '#roi-rate', '#roi-clicks', '#roi-leads', '#roi-cust', '#roi-rev', '#roi-vpl', '#roi-margin'];
+    if (ids.some(bad)) return fail('Costs and results can\'t be negative. Check the numbers you entered.');
+    var ads = num('#roi-ads'), content = num('#roi-content'), tools = num('#roi-tools');
+    var hours = num('#roi-hours'), rate = num('#roi-rate');
+    var clicks = num('#roi-clicks'), leads = num('#roi-leads'), cust = num('#roi-cust');
+    var margin = Math.min(100, num('#roi-margin')) / 100;
+    var time = hours * rate;
+    var total = ads + content + tools + time;
+    if (!(total > 0)) return fail('Enter at least one cost to calculate ROI.');
+    var revenue = mode === 'revenue' ? num('#roi-rev') : leads * num('#roi-vpl');
+    $('#roi-msg').hidden = true;
+    $('#roi-out').hidden = false;
+
+    var ret = revenue * margin;
+    var net = ret - total;
+    var roi = net / total * 100;
+    var roas = div(revenue, ads);
+    var be = margin > 0 ? total / margin : NaN;
+    var perCust = div(revenue, cust);
+    var beCust = isFinite(perCust) && perCust > 0 && isFinite(be) ? Math.ceil(be / perCust - 1e-9) : NaN;
+
+    var big = $('#roi-big');
+    big.textContent = (roi > 0 ? '+' : '') + pct(roi);
+    big.className = 'big-number ' + (roi >= 0 ? 'ok' : 'over');
+    $('#roi-big-label').textContent = roi >= 0 ? 'Return on investment: the campaign paid for itself' : 'Return on investment: the campaign has not broken even yet';
+    $('#roi-roas').textContent = isFinite(roas) ? fmt(roas, 2) + 'x' : 'n/a';
+    $('#roi-profit').textContent = money(net);
+    $('#roi-total').textContent = money(total);
+    $('#roi-cpc').textContent = money(div(total, clicks));
+    $('#roi-cpl').textContent = money(div(total, leads));
+    $('#roi-cpa').textContent = money(div(total, cust));
+
+    var rows = [
+      ['Revenue needed to break even', money(be)],
+      ['Customers needed to break even', isFinite(beCust) ? fmt(beCust) : 'n/a'],
+      ['Break-even ROAS', ads > 0 && isFinite(be) ? fmt(be / ads, 2) + 'x' : 'n/a'],
+      ['Click to lead rate', pct(div(leads, clicks) * 100)],
+      ['Lead to customer rate', pct(div(cust, leads) * 100)]
+    ];
+    $('#roi-kv').innerHTML = rows.map(function (r) { return '<tr><td>' + esc(r[0]) + '</td><td>' + esc(r[1]) + '</td></tr>'; }).join('');
+
+    var warns = [];
+    if (leads > clicks && clicks > 0) warns.push('You have more leads than clicks. That can happen if leads came from DMs or replies, but double-check your numbers.');
+    if (cust > leads && leads > 0) warns.push('You have more customers than leads. Some customers may have skipped the lead step.');
+    if (ads === 0) warns.push('ROAS needs ad spend above 0. For organic campaigns, use ROI.');
+    if (margin === 0) warns.push('With a 0% margin the campaign can never break even.');
+    $('#roi-warn').innerHTML = warns.map(function (w) { return '<p class="roi-warn">' + esc(w) + '</p>'; }).join('');
+
+    var revLine = mode === 'revenue' ? money(revenue) : fmt(leads) + ' leads x ' + money(num('#roi-vpl')) + ' = ' + money(revenue);
+    var f = [
+      ['Total cost', 'ads + content + tools + hours x hourly value = ' + money(ads) + ' + ' + money(content) + ' + ' + money(tools) + ' + ' + fmt(hours, 2) + ' x ' + money(rate) + ' = ' + money(total)],
+      ['Return', (mode === 'revenue' ? 'revenue' : 'leads x value per lead') + ' x margin = ' + revLine + ' x ' + fmt(margin * 100, 1) + '% = ' + money(ret)],
+      ['ROI', '(return - total cost) / total cost x 100 = (' + money(ret) + ' - ' + money(total) + ') / ' + money(total) + ' x 100 = ' + pct(roi)],
+      ['ROAS', 'revenue / ad spend = ' + money(revenue) + ' / ' + money(ads) + ' = ' + (isFinite(roas) ? fmt(roas, 2) + 'x' : 'n/a')],
+      ['Cost per lead', 'total cost / leads = ' + money(total) + ' / ' + fmt(leads) + ' = ' + money(div(total, leads))],
+      ['Break-even revenue', 'total cost / margin = ' + money(total) + ' / ' + fmt(margin * 100, 1) + '% = ' + money(be)]
+    ];
+    $('#roi-f').innerHTML = f.map(function (r) { return '<p><b>' + esc(r[0]) + ':</b> ' + esc(r[1]) + '</p>'; }).join('');
+
+    summary = 'X campaign ROI summary\nTotal cost: ' + money(total) + '\nRevenue: ' + money(revenue) + '\nROI: ' + pct(roi) +
+      '\nROAS: ' + (isFinite(roas) ? fmt(roas, 2) + 'x' : 'n/a') + '\nCost per click: ' + money(div(total, clicks)) +
+      '\nCost per lead: ' + money(div(total, leads)) + '\nCost per customer: ' + money(div(total, cust)) + '\nBreak-even revenue: ' + money(be);
+  }
+
+  root.querySelectorAll('.seg button').forEach(function (b) {
+    b.addEventListener('click', function () {
+      mode = b.dataset.mode;
+      root.querySelectorAll('.seg button').forEach(function (x) { x.setAttribute('aria-pressed', String(x === b)); });
+      $('#roi-rev-wrap').hidden = mode !== 'revenue';
+      $('#roi-vpl-wrap').hidden = mode === 'revenue';
+      render();
+    });
+  });
+  root.querySelectorAll('input, select').forEach(function (el) { el.addEventListener('input', render); });
+  $('#roi-copy').addEventListener('click', function (e) { if (summary) XTool.copy(summary, e.currentTarget); });
+  render();
+})();</script>
+</body>
+</html>

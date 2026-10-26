@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>X (Twitter) character counter · XVision</title>
-  <meta name="description" content="Count characters the way X does. Links always count as 23, and emoji and many non-Latin characters count as 2." />
+  <title>Free Twitter Character Counter: Count Posts the Way X Does</title>
+  <meta name="description" content="Twitter character counter that checks your post against X&#x27;s 280 limit the way X counts: links as 23, emoji as 2. Live as you type. Free, no sign-up." />
   <meta name="robots" content="index, follow, max-image-preview:large" />
   <link rel="canonical" href="https://kakahaja07.github.io/xvision/tools/post-length.html" />
   <meta name="theme-color" content="#f6f6f8" media="(prefers-color-scheme: light)" />
@@ -12,14 +12,14 @@
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="XVision" />
   <meta property="og:url" content="https://kakahaja07.github.io/xvision/tools/post-length.html" />
-  <meta property="og:title" content="Post length checker" />
-  <meta property="og:description" content="Count characters the way X does. Links always count as 23, and emoji and many non-Latin characters count as 2." />
+  <meta property="og:title" content="Twitter Character Counter" />
+  <meta property="og:description" content="Twitter character counter that checks your post against X&#x27;s 280 limit the way X counts: links as 23, emoji as 2. Live as you type. Free, no sign-up." />
   <meta property="og:image" content="https://kakahaja07.github.io/xvision/assets/og-card.jpg" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Post length checker" />
-  <meta name="twitter:description" content="Count characters the way X does. Links always count as 23, and emoji and many non-Latin characters count as 2." />
+  <meta name="twitter:title" content="Twitter Character Counter" />
+  <meta name="twitter:description" content="Twitter character counter that checks your post against X&#x27;s 280 limit the way X counts: links as 23, emoji as 2. Live as you type. Free, no sign-up." />
   <meta name="twitter:image" content="https://kakahaja07.github.io/xvision/assets/og-card.jpg" />
   <link rel="icon" type="image/png" href="../assets/logo-64.png" />
   <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png" />
@@ -31,8 +31,8 @@
   "@graph": [
     {
       "@type": "WebApplication",
-      "name": "Post length checker",
-      "description": "Count characters the way X does. Links always count as 23, and emoji and many non-Latin characters count as 2.",
+      "name": "Twitter Character Counter",
+      "description": "Twitter character counter that checks your post against X's 280 limit the way X counts: links as 23, emoji as 2. Live as you type. Free, no sign-up.",
       "url": "https://kakahaja07.github.io/xvision/tools/post-length.html",
       "applicationCategory": "UtilitiesApplication",
       "operatingSystem": "Any",
@@ -68,10 +68,64 @@
         {
           "@type": "ListItem",
           "position": 3,
-          "name": "Post length checker",
+          "name": "Twitter Character Counter",
           "item": "https://kakahaja07.github.io/xvision/tools/post-length.html"
         }
       ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How does the Twitter character counter count characters?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The Twitter Character Counter counts a post the way X does. The standard limit is 280, every link counts as 23 characters, and emoji plus Chinese, Japanese and Korean characters count as 2. It follows the open-source twitter-text rules that X publishes, so the total matches X closely."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do spaces count as characters on Twitter?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, spaces count as characters on Twitter (X). Each space and each line break uses 1 of your 280 characters, the same as a letter. The Twitter Character Counter includes them in its total. Removing extra double spaces can save a few characters, but keep the spaces that make the post readable."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do emojis count as 2 characters on Twitter?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, most emoji count as 2 characters on X under the open-source twitter-text rules. That includes emoji with a skin tone, which are counted as one emoji. Three emoji in a post use 6 characters. The Twitter Character Counter applies the same weighting so you can see the real cost."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does a link count against the 280 character limit?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, every link counts against the limit, but always as 23 characters, whether the web address is short or very long. X swaps links for a fixed length when it counts. That means you never need a link shortener to save space, and a long link costs the same as a short one."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do photos and GIFs count toward the character limit?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No, photos and GIFs do not count toward the character limit on X. The X Help Center says photo and GIF attachments use none of your characters on iOS, Android, x.com and mobile web, as of October 2026. You can add images and still use all 280 characters for text."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why does my count differ from other character counters?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Your count differs because most counters treat every character the same. X gives links a fixed 23, counts emoji and Chinese, Japanese and Korean characters as 2, and counts photos as 0. A plain counter misses those rules, so it can show a post as too long or short when X disagrees."
+          }
+        }
+      ],
+      "@id": "https://kakahaja07.github.io/xvision/tools/post-length.html#faq"
     }
   ]
 }
@@ -96,11 +150,11 @@
       </div>
     </div>
   </header>
-  <main class="wrap narrow">
+  <main class="wrap tool-page">
     <header class="page-head">
-      <div class="crumbs"><a href="index.html">Tools</a></div>
-      <h1>Post length checker</h1>
-      <p>Count characters the way X does. Links always count as 23, and emoji and many non-Latin characters count as 2.</p>
+      <div class="crumbs"><a href="index.html">Tools</a> › <a href="index.html#media">Media and utilities</a></div>
+      <h1>Twitter Character Counter</h1>
+      <p>Paste or type a post to see how many of X&#x27;s 280 characters you have used, with links counted as 23 and emoji as 2, just like X.</p>
     </header>
     <div class="tool">
       <label class="field" for="src">Your post</label>
@@ -113,7 +167,92 @@
       </div>
       <p class="note" id="detail"></p>
     </div>
-    <p class="note" style="padding-bottom:64px">Runs entirely in your browser. Nothing you type leaves this page.</p>
+    <p class="privacy-note">Runs in your browser. Nothing you enter is uploaded.</p>
+    <article class="tool-article"><h2>How does the Twitter character counter count characters?</h2>
+<p>The Twitter Character Counter counts a post the way X does. The standard limit is 280, every link counts as 23 characters, and emoji plus Chinese, Japanese and Korean characters count as 2. It follows the open-source twitter-text rules that X publishes, so the total matches X closely.</p>
+<p>Here's why that matters. A plain counter might call a post with a long link 290 characters when X counts far fewer. A post full of emoji can look short but run over. Counting the X way avoids both.</p>
+
+<h2>How to use the Twitter Character Counter</h2>
+<ol>
+<li>Type or paste your post into the box at the top of the page.</li>
+<li>Watch the first number. It shows how many of the 280 characters you have used.</li>
+<li>Check characters left. It turns amber when you are close and red when you are over.</li>
+<li>Look at the bar. It fills as you type and turns red past the limit.</li>
+<li>Read the note below the numbers. It tells you how many links it found, each counted as 23.</li>
+<li>Edit until you are under 280, then copy your text into X.</li>
+</ol>
+
+<h2>How does X count characters?</h2>
+<p>X uses weighted counting. Most characters count as 1, some count as 2, and links count as a fixed 23 no matter how long they are. Photos and GIFs count as 0. The rules live in the open-source twitter-text project.</p>
+<p>The exact numbers sit in the <a href="https://github.com/twitter/twitter-text/blob/master/config/v3.json">twitter-text v3 config file</a>. It sets the max weighted length to 280, gives most characters a weight of 2, and lists ranges that weigh 1. Links are swapped for a 23 character length, and emoji are parsed as single units.</p>
+<table>
+<tr><th>What you type</th><th>Counts as</th></tr>
+<tr><td>English letters, numbers, spaces and line breaks</td><td>1 each</td></tr>
+<tr><td>Accented Latin, Greek, Cyrillic, Arabic, Hebrew, Hindi (Devanagari) and Thai letters</td><td>1 each</td></tr>
+<tr><td>Dashes and curly quotes</td><td>1 each</td></tr>
+<tr><td>Chinese, Japanese and Korean characters</td><td>2 each</td></tr>
+<tr><td>Emoji, including ones with a skin tone</td><td>2 each</td></tr>
+<tr><td>Any link, short or long</td><td>23</td></tr>
+<tr><td>Photos and GIFs</td><td>0</td></tr>
+</table>
+<p>So a Japanese post fits about 140 characters, not 280. That is by design. Those scripts pack more meaning into each character.</p>
+
+<h2>What is the character limit on X in 2026?</h2>
+<p>The standard limit on X is 280 characters per post, as of October 2026. Paid subscribers can write longer posts, but X's own help pages disagree on how long. One page says up to 25,000 characters and another still says 4,000.</p>
+<p>X's <a href="https://help.x.com/en/using-x/how-to-post">How to Post page</a> confirms the 280 limit for everyone. Anyone can read a long post, but only subscribers can create one. Because the two help pages give different numbers for long posts, I'd treat "far more than 280" as the safe answer and test it in your own composer.</p>
+<p>This counter checks against 280, the limit every account shares. If you run over without a paid plan, trim the post or turn it into a thread.</p>
+
+<h2>Example: counting a post with a link and an emoji</h2>
+<p>Here's a fictional post from a small app maker:</p>
+<p>"Shipped dark mode for our notes app today 🌙 Full changelog: https://example.com/changelog/dark-mode-launch"</p>
+<p>It has 106 characters if you count them one by one. The counter shows 84. The 46 character link counts as 23, and the moon emoji counts as 2. That leaves 196 characters free for a sentence about why dark mode matters.</p>
+
+<h2>Tips for fitting more into 280 characters</h2>
+<ul>
+<li>Lead with the point. Readers decide fast, and early words carry the post.</li>
+<li>Cut filler like "I just wanted to say" and "really". It rarely adds meaning.</li>
+<li>Paste the full link. Shortening it won't save anything, since X counts every link as 23.</li>
+<li>Use emoji on purpose. Each one costs 2, so three decorative emoji eat 6 characters.</li>
+<li>Use line breaks freely. Each one costs only 1 and makes the post easier to scan.</li>
+</ul>
+
+<h2>Common mistakes to avoid</h2>
+<ul>
+<li>Trusting a plain character counter. It counts a long link at full length and may get emoji wrong.</li>
+<li>Squeezing words together to save spaces. It makes a post harder to read for a tiny gain.</li>
+<li>Assuming every language counts the same. Chinese, Japanese and Korean text uses the limit twice as fast.</li>
+</ul>
+
+<h2>Which related tool should I use next?</h2>
+<p>If your post won't fit, split it with the <a href="thread-maker.html">Twitter Thread Splitter</a> and check the result in the <a href="twitter-thread-preview.html">Twitter Thread Preview</a>. Writing your profile? The <a href="twitter-bio-character-counter.html">Twitter Bio Character Counter</a> checks the 160 character bio limit. To clean up spacing and line breaks, try the <a href="twitter-post-formatter.html">Twitter Post Formatter</a>.</p>
+<p>For help with the words themselves, read <a href="../guides/write-posts-people-read.html">how to write engaging Twitter posts</a>, <a href="../guides/write-viral-twitter-threads.html">how to write viral Twitter threads</a> and <a href="../guides/best-content-formats-for-x-growth.html">the best content formats for X growth</a>.</p>
+
+<h2>Frequently Asked Questions</h2>
+<h3>Do spaces count as characters on Twitter?</h3>
+<p>Yes, spaces count as characters on Twitter (X). Each space and each line break uses 1 of your 280 characters, the same as a letter. The Twitter Character Counter includes them in its total. Removing extra double spaces can save a few characters, but keep the spaces that make the post readable.</p>
+<h3>Do emojis count as 2 characters on Twitter?</h3>
+<p>Yes, most emoji count as 2 characters on X under the open-source twitter-text rules. That includes emoji with a skin tone, which are counted as one emoji. Three emoji in a post use 6 characters. The Twitter Character Counter applies the same weighting so you can see the real cost.</p>
+<h3>Does a link count against the 280 character limit?</h3>
+<p>Yes, every link counts against the limit, but always as 23 characters, whether the web address is short or very long. X swaps links for a fixed length when it counts. That means you never need a link shortener to save space, and a long link costs the same as a short one.</p>
+<h3>Do photos and GIFs count toward the character limit?</h3>
+<p>No, photos and GIFs do not count toward the character limit on X. The X Help Center says photo and GIF attachments use none of your characters on iOS, Android, x.com and mobile web, as of October 2026. You can add images and still use all 280 characters for text.</p>
+<h3>Why does my count differ from other character counters?</h3>
+<p>Your count differs because most counters treat every character the same. X gives links a fixed 23, counts emoji and Chinese, Japanese and Korean characters as 2, and counts photos as 0. A plain counter misses those rules, so it can show a post as too long or short when X disagrees.</p>
+    </article>
+    <aside class="related">
+      <h2>More free tools</h2>
+      <ul>
+        <li><a href="twitter-image-resizer.html">Twitter Image Resizer</a></li>
+        <li><a href="twitter-image-compressor.html">Twitter Image Compressor</a></li>
+        <li><a href="twitter-banner-crop-preview.html">Twitter Banner Crop Preview</a></li>
+        <li><a href="twitter-post-screenshot-maker.html">Twitter Post Screenshot Maker</a></li>
+      </ul>
+    </aside>
+    <aside class="cta">
+      <b>Grow on X with real signals.</b>
+      <span>XVision is a free Chrome extension that shows follower counts, follow-back badges and viral posts right on your timeline.</span>
+      <a class="btn light small" href="../index.html">Get XVision free</a>
+    </aside>
   </main>
   <footer class="site-footer">
     <img class="foot-mark" src="../assets/logo.png" alt="" width="320" height="320" loading="lazy" />
@@ -127,7 +266,7 @@
         <div class="foot-cols">
           <div><h3>Product</h3><ul><li><a href="../index.html#features">Features</a></li><li><a href="../index.html#install">How it works</a></li><li><a href="../index.html#pricing">Pricing</a></li><li><a href="../index.html#faq">FAQ</a></li></ul></div>
           <div><h3>Guides</h3><ul><li><a href="../guides/index.html#grow">Grow on X</a></li><li><a href="../guides/index.html#algorithm">The X algorithm</a></li><li><a href="../guides/index.html#money">Make money on X</a></li><li><a href="../guides/index.html">All guides</a></li></ul></div>
-          <div><h3>Free tools</h3><ul><li><a href="../tools/video-downloader.html">Twitter video downloader</a></li><li><a href="../tools/thread-maker.html">Thread maker</a></li><li><a href="../tools/post-length.html">Post length checker</a></li><li><a href="../tools/engagement-rate.html">Engagement rate</a></li></ul></div>
+          <div><h3>Free tools</h3><ul><li><a href="../tools/twitter-bio-generator.html">Twitter bio generator</a></li><li><a href="../tools/video-downloader.html">Twitter video downloader</a></li><li><a href="../tools/thread-maker.html">Thread splitter</a></li><li><a href="../tools/index.html">All 51 tools</a></li></ul></div>
           <div><h3>Project</h3><ul><li><a href="https://github.com/Kakahaja07/xvision">GitHub</a></li><li><a href="../privacy-policy.html">Privacy policy</a></li><li><a href="../LICENSE">MIT License</a></li><li><a href="../sitemap.xml">Sitemap</a></li></ul></div>
         </div>
       </div>

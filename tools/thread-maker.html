@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Free X (Twitter) thread maker · XVision</title>
-  <meta name="description" content="Paste long writing and split it into a numbered thread. Every post stays under the limit and breaks at sentences where possible." />
+  <title>Twitter Thread Splitter: Free Long Text to Thread Tool</title>
+  <meta name="description" content="Twitter thread splitter: paste long text and split it into a numbered X thread. Every post fits 280 characters and breaks at sentences. Free, no sign-up." />
   <meta name="robots" content="index, follow, max-image-preview:large" />
   <link rel="canonical" href="https://kakahaja07.github.io/xvision/tools/thread-maker.html" />
   <meta name="theme-color" content="#f6f6f8" media="(prefers-color-scheme: light)" />
@@ -12,14 +12,14 @@
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="XVision" />
   <meta property="og:url" content="https://kakahaja07.github.io/xvision/tools/thread-maker.html" />
-  <meta property="og:title" content="Thread maker" />
-  <meta property="og:description" content="Paste long writing and split it into a numbered thread. Every post stays under the limit and breaks at sentences where possible." />
+  <meta property="og:title" content="Twitter Thread Splitter" />
+  <meta property="og:description" content="Twitter thread splitter: paste long text and split it into a numbered X thread. Every post fits 280 characters and breaks at sentences. Free, no sign-up." />
   <meta property="og:image" content="https://kakahaja07.github.io/xvision/assets/og-card.jpg" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Thread maker" />
-  <meta name="twitter:description" content="Paste long writing and split it into a numbered thread. Every post stays under the limit and breaks at sentences where possible." />
+  <meta name="twitter:title" content="Twitter Thread Splitter" />
+  <meta name="twitter:description" content="Twitter thread splitter: paste long text and split it into a numbered X thread. Every post fits 280 characters and breaks at sentences. Free, no sign-up." />
   <meta name="twitter:image" content="https://kakahaja07.github.io/xvision/assets/og-card.jpg" />
   <link rel="icon" type="image/png" href="../assets/logo-64.png" />
   <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png" />
@@ -31,8 +31,8 @@
   "@graph": [
     {
       "@type": "WebApplication",
-      "name": "Thread maker",
-      "description": "Paste long writing and split it into a numbered thread. Every post stays under the limit and breaks at sentences where possible.",
+      "name": "Twitter Thread Splitter",
+      "description": "Twitter thread splitter: paste long text and split it into a numbered X thread. Every post fits 280 characters and breaks at sentences. Free, no sign-up.",
       "url": "https://kakahaja07.github.io/xvision/tools/thread-maker.html",
       "applicationCategory": "UtilitiesApplication",
       "operatingSystem": "Any",
@@ -68,10 +68,56 @@
         {
           "@type": "ListItem",
           "position": 3,
-          "name": "Thread maker",
+          "name": "Twitter Thread Splitter",
           "item": "https://kakahaja07.github.io/xvision/tools/thread-maker.html"
         }
       ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How do you split long text into a Twitter thread?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A Twitter thread splitter cuts long text into numbered posts that each fit X's 280-character limit. Paste your writing into this free tool and it breaks the text at blank lines first, then at sentences, then at words, and adds 1/5-style numbering with room reserved so no post goes over."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How many characters can each post in a thread have?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Each post in a thread can have up to 280 characters on a standard X account, as of October 2026. Links count as 23 characters and emoji count as 2. Subscribers on paid plans can write longer posts, but X's help pages list both 25,000 and 4,000 as the cap."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does the thread splitter cut words in half?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No, the thread splitter only cuts inside a word when that single word is longer than a whole post, such as a very long code string. Otherwise it breaks at blank lines, then at sentence ends, then at spaces, so every post ends on a complete word."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is my text saved or uploaded anywhere?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Your text is never uploaded. The Twitter Thread Splitter runs entirely in your browser and keeps a copy of your draft in your browser's local storage, so it survives a page reload. Clearing your browser data or the text box removes it. No account or sign-up is needed."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Should I put numbers like 1/5 on my thread?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Numbers like 1/5 are optional. They show readers how long the thread is and keep the order clear if one post gets shared alone. They cost about 5 to 7 characters per post. The splitter reserves that space for you, so turning numbering on never pushes a post over the limit."
+          }
+        }
+      ],
+      "@id": "https://kakahaja07.github.io/xvision/tools/thread-maker.html#faq"
     }
   ]
 }
@@ -96,11 +142,11 @@
       </div>
     </div>
   </header>
-  <main class="wrap narrow">
+  <main class="wrap tool-page">
     <header class="page-head">
-      <div class="crumbs"><a href="index.html">Tools</a></div>
-      <h1>Thread maker</h1>
-      <p>Paste long writing and split it into a numbered thread. Every post stays under the limit and breaks at sentences where possible.</p>
+      <div class="crumbs"><a href="index.html">Tools</a> › <a href="index.html#create">Content creation</a></div>
+      <h1>Twitter Thread Splitter</h1>
+      <p>Paste long writing and split it into a numbered X thread. Every post stays under 280 characters and breaks at sentences where possible.</p>
     </header>
     <div class="tool">
       <label class="field" for="src">Your text</label>
@@ -112,7 +158,96 @@
       <div class="meta" id="summary" style="margin-top:14px"></div>
       <div class="posts" id="out"></div>
     </div>
-    <p class="note" style="padding-bottom:64px">Runs entirely in your browser. Nothing you type leaves this page.</p>
+    <p class="privacy-note">Runs in your browser. Nothing you enter is uploaded.</p>
+    <article class="tool-article"><h2>How do you split long text into a Twitter thread?</h2>
+<p>A Twitter thread splitter cuts long text into numbered posts that each fit X's 280-character limit. Paste your writing into this free tool and it breaks the text at blank lines first, then at sentences, then at words, and adds 1/5-style numbering with room reserved so no post goes over.</p>
+<p>I reach for it when a draft started somewhere else, like a blog post or a newsletter. Splitting by hand is slow, and it's easy to end up one character over.</p>
+
+<h2>How to use the Twitter Thread Splitter</h2>
+<ol>
+<li>Paste or type your text into the box.</li>
+<li>Add a blank line wherever you want a new post to start. The splitter always respects blank lines.</li>
+<li>Leave "Add 1/5 numbering" on for numbered posts, or turn it off.</li>
+<li>Tick the long posts option only if your X plan lets you write longer posts.</li>
+<li>Check each post and its count, then copy the posts one by one into X's composer.</li>
+</ol>
+<p>Your draft is kept in your own browser's storage, so it's still there if you reload the page. It is never uploaded.</p>
+
+<h2>How does the splitter decide where to break?</h2>
+<p>The splitter works from the cleanest break to the roughest. It only moves to the next rule when the previous one can't make a post fit.</p>
+<table>
+<thead><tr><th>Order</th><th>Breaks at</th><th>When</th></tr></thead>
+<tbody>
+<tr><td>1</td><td>Blank lines</td><td>Always. Each paragraph starts a new post.</td></tr>
+<tr><td>2</td><td>Sentence ends</td><td>A paragraph is longer than one post</td></tr>
+<tr><td>3</td><td>Spaces between words</td><td>One sentence is longer than one post</td></tr>
+<tr><td>4</td><td>Single characters</td><td>One "word" is longer than a post, like a giant code string</td></tr>
+</tbody>
+</table>
+<p>Inside a paragraph, it packs as many whole sentences as fit before starting the next post, so ideas stay together.</p>
+<p>When numbering is on, the label (like 3/8) sits on its own line at the end of each post. The splitter first works out how much space the longest label needs, then keeps that space free in every post. So numbering never pushes a post past the limit.</p>
+
+<h2>How does X count characters in a thread?</h2>
+<p>X does not count every character the same way. This splitter follows the open-source twitter-text rules, published in the <a href="https://github.com/twitter/twitter-text/blob/master/config/v3.json">twitter-text configuration file</a>, which set a 280 limit with weighted characters.</p>
+<ul>
+<li>Letters, numbers and common punctuation in Latin scripts count as 1.</li>
+<li>Every link counts as 23, however long or short the real URL is.</li>
+<li>Emoji count as 2.</li>
+<li>Most characters in scripts like Chinese, Japanese and Korean count as 2, so those posts fit about 140 characters.</li>
+</ul>
+<p>That's why a post can look short and still show red. A post with three links has already used 69 characters on links alone.</p>
+
+<h2>What about longer posts on paid X plans?</h2>
+<p>Subscribers on paid X plans can write posts far longer than 280 characters, but X's help pages don't agree on the exact cap, as of October 2026. The <a href="https://help.x.com/en/using-x/x-premium">About X Premium page</a> says up to 25,000 characters, while the How to Post page still mentions 4,000.</p>
+<p>The long posts option in this tool uses 25,000, matching the Premium page. Check what your own composer allows before you rely on it. Everyone can read long posts, but only subscribers can create them. In my experience, a short thread is still easier to skim than one giant post.</p>
+
+<h2>Tips for a cleaner thread</h2>
+<p>The splitter handles the counting. You still decide where the ideas go.</p>
+<ul>
+<li><strong>Write the first post separately.</strong> A paragraph from the middle of an article rarely works as a hook. The <a href="twitter-hook-generator.html">Twitter Hook Generator</a> gives you openings to test.</li>
+<li><strong>Put blank lines where ideas change.</strong> You control the breaks; the splitter only fills the gaps.</li>
+<li><strong>Cut before you split.</strong> A 2,000-character draft often says the same thing in 1,200.</li>
+<li><strong>Move links to the post where they matter.</strong> Each one costs 23 characters.</li>
+</ul>
+<p>A fictional example: a 1,400-character newsletter intro about saving for a first car. Pasted as one block, it splits into 6 posts that break wherever sentences happen to end. Add a blank line before each new idea, and every post holds one complete idea instead.</p>
+
+<h2>What mistakes should you avoid when splitting?</h2>
+<p>Most problems come from the text going in, not the splitter.</p>
+<ul>
+<li><strong>No blank lines at all.</strong> Ideas run across post breaks and the thread reads like a chopped-up essay.</li>
+<li><strong>Editing posts after you copy them.</strong> Adding words in X's composer can push a post over. Edit here first.</li>
+<li><strong>A weak first post.</strong> X's <a href="https://help.x.com/en/using-x/create-a-thread">thread help page</a> says threads of 4 or more posts get cut short on timelines with a "Show this thread" link. Post 1 must stand alone.</li>
+<li><strong>Splitting text you don't own.</strong> Copying someone else's article into a thread isn't original content.</li>
+</ul>
+
+<h2>When should you use a related tool?</h2>
+<p>Starting from bullet points instead of finished text? The <a href="twitter-thread-generator.html">Twitter Thread Generator</a> builds the hook and closing post for you. To see your posts the way they will look on X, paste them into the <a href="twitter-thread-preview.html">Twitter Thread Preview</a>. Checking just one post? The <a href="post-length.html">Twitter Character Counter</a> is quicker.</p>
+<p>For more ideas, read <a href="../guides/repurpose-blog-content-into-tweets.html">how to repurpose blog content into tweets</a> and <a href="../guides/write-viral-twitter-threads.html">how to write viral Twitter threads</a>.</p>
+
+<h2>Frequently Asked Questions</h2>
+<h3>How many characters can each post in a thread have?</h3>
+<p>Each post in a thread can have up to 280 characters on a standard X account, as of October 2026. Links count as 23 characters and emoji count as 2. Subscribers on paid plans can write longer posts, but X's help pages list both 25,000 and 4,000 as the cap.</p>
+<h3>Does the thread splitter cut words in half?</h3>
+<p>No, the thread splitter only cuts inside a word when that single word is longer than a whole post, such as a very long code string. Otherwise it breaks at blank lines, then at sentence ends, then at spaces, so every post ends on a complete word.</p>
+<h3>Is my text saved or uploaded anywhere?</h3>
+<p>Your text is never uploaded. The Twitter Thread Splitter runs entirely in your browser and keeps a copy of your draft in your browser's local storage, so it survives a page reload. Clearing your browser data or the text box removes it. No account or sign-up is needed.</p>
+<h3>Should I put numbers like 1/5 on my thread?</h3>
+<p>Numbers like 1/5 are optional. They show readers how long the thread is and keep the order clear if one post gets shared alone. They cost about 5 to 7 characters per post. The splitter reserves that space for you, so turning numbering on never pushes a post over the limit.</p>
+    </article>
+    <aside class="related">
+      <h2>More free tools</h2>
+      <ul>
+        <li><a href="tweet-generator.html">Tweet Generator</a></li>
+        <li><a href="twitter-thread-generator.html">Twitter Thread Generator</a></li>
+        <li><a href="twitter-thread-preview.html">Twitter Thread Preview</a></li>
+        <li><a href="twitter-hook-generator.html">Twitter Hook Generator</a></li>
+      </ul>
+    </aside>
+    <aside class="cta">
+      <b>Grow on X with real signals.</b>
+      <span>XVision is a free Chrome extension that shows follower counts, follow-back badges and viral posts right on your timeline.</span>
+      <a class="btn light small" href="../index.html">Get XVision free</a>
+    </aside>
   </main>
   <footer class="site-footer">
     <img class="foot-mark" src="../assets/logo.png" alt="" width="320" height="320" loading="lazy" />
@@ -126,7 +261,7 @@
         <div class="foot-cols">
           <div><h3>Product</h3><ul><li><a href="../index.html#features">Features</a></li><li><a href="../index.html#install">How it works</a></li><li><a href="../index.html#pricing">Pricing</a></li><li><a href="../index.html#faq">FAQ</a></li></ul></div>
           <div><h3>Guides</h3><ul><li><a href="../guides/index.html#grow">Grow on X</a></li><li><a href="../guides/index.html#algorithm">The X algorithm</a></li><li><a href="../guides/index.html#money">Make money on X</a></li><li><a href="../guides/index.html">All guides</a></li></ul></div>
-          <div><h3>Free tools</h3><ul><li><a href="../tools/video-downloader.html">Twitter video downloader</a></li><li><a href="../tools/thread-maker.html">Thread maker</a></li><li><a href="../tools/post-length.html">Post length checker</a></li><li><a href="../tools/engagement-rate.html">Engagement rate</a></li></ul></div>
+          <div><h3>Free tools</h3><ul><li><a href="../tools/twitter-bio-generator.html">Twitter bio generator</a></li><li><a href="../tools/video-downloader.html">Twitter video downloader</a></li><li><a href="../tools/thread-maker.html">Thread splitter</a></li><li><a href="../tools/index.html">All 51 tools</a></li></ul></div>
           <div><h3>Project</h3><ul><li><a href="https://github.com/Kakahaja07/xvision">GitHub</a></li><li><a href="../privacy-policy.html">Privacy policy</a></li><li><a href="../LICENSE">MIT License</a></li><li><a href="../sitemap.xml">Sitemap</a></li></ul></div>
         </div>
       </div>

@@ -1,0 +1,458 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Free Twitter Link Builder: Share, Follow and Search Links</title>
+  <meta name="description" content="Twitter link builder: make X share links with prefilled text, URL, hashtags and via, plus follow, profile and search links and button HTML. Free, no sign-up." />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <link rel="canonical" href="https://kakahaja07.github.io/xvision/tools/twitter-link-builder.html" />
+  <meta name="theme-color" content="#f6f6f8" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#0a0a0c" media="(prefers-color-scheme: dark)" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="XVision" />
+  <meta property="og:url" content="https://kakahaja07.github.io/xvision/tools/twitter-link-builder.html" />
+  <meta property="og:title" content="Twitter Link Builder" />
+  <meta property="og:description" content="Twitter link builder: make X share links with prefilled text, URL, hashtags and via, plus follow, profile and search links and button HTML. Free, no sign-up." />
+  <meta property="og:image" content="https://kakahaja07.github.io/xvision/assets/og-card.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Twitter Link Builder" />
+  <meta name="twitter:description" content="Twitter link builder: make X share links with prefilled text, URL, hashtags and via, plus follow, profile and search links and button HTML. Free, no sign-up." />
+  <meta name="twitter:image" content="https://kakahaja07.github.io/xvision/assets/og-card.jpg" />
+  <link rel="icon" type="image/png" href="../assets/logo-64.png" />
+  <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png" />
+  <script src="../assets/site.js"></script>
+  <link rel="stylesheet" href="../assets/site.css" />
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "name": "Twitter Link Builder",
+      "description": "Twitter link builder: make X share links with prefilled text, URL, hashtags and via, plus follow, profile and search links and button HTML. Free, no sign-up.",
+      "url": "https://kakahaja07.github.io/xvision/tools/twitter-link-builder.html",
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "Any",
+      "browserRequirements": "Requires JavaScript",
+      "isAccessibleForFree": true,
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "author": {
+        "@type": "Person",
+        "@id": "https://kakahaja07.github.io/xvision/#author",
+        "name": "Prashant Sharma",
+        "url": "https://github.com/Kakahaja07"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "XVision",
+          "item": "https://kakahaja07.github.io/xvision/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Free tools",
+          "item": "https://kakahaja07.github.io/xvision/tools/index.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Twitter Link Builder",
+          "item": "https://kakahaja07.github.io/xvision/tools/twitter-link-builder.html"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How do you create a Twitter share link?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "To create a Twitter share link, add your text to X's post intent URL, https://x.com/intent/tweet, with parameters like text, url, hashtags and via. A Twitter link builder does the encoding for you. Anyone who clicks the link sees the X composer with your words already filled in, ready to edit and post."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do Twitter share links still work after the rename to X?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, Twitter share links still work, and X's developer docs now list the post intent at https://x.com/intent/tweet as of October 2026. The path still uses the word \"tweet\". This Twitter link builder uses the x.com format, which opens the X composer on the web or in the X app when it is installed."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does the person need to be logged in to use a share link?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No, they don't need to be logged in before clicking. X's Web Intents overview says a viewer gets the chance to log in or create an account before finishing the action. After that, X shows the composer or follow prompt, and the person still decides whether to post or follow."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can a share link post automatically for someone?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No, a share link never posts by itself. It only opens the X composer with text already filled in. The person can edit or delete every word, and nothing goes live until they press Post. That is why web intents need no app setup, passwords or permissions from the person clicking."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why does my share link show the wrong text?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A share link shows the wrong text when special characters are not URL-encoded. An unencoded ampersand, hash or question mark cuts the text short or breaks the link. The Twitter link builder encodes every character with encodeURIComponent, so copy the link from the tool instead of editing it by hand afterward."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is this Twitter link builder free?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, the Twitter link builder is free and needs no sign-up. It builds share, follow, profile and search links plus HTML snippets right in your browser. Nothing you type is uploaded or stored, and the only time X is contacted is when you click the test link yourself."
+          }
+        }
+      ],
+      "@id": "https://kakahaja07.github.io/xvision/tools/twitter-link-builder.html#faq"
+    }
+  ]
+}
+  </script>
+  <style>
+.t-twitter-link-builder .seg { flex-wrap: wrap; max-width: 100%; justify-self: start; }
+.t-twitter-link-builder textarea { min-height: 110px; }
+.t-twitter-link-builder .out { min-height: 0; font-family: ui-monospace, "Cascadia Mono", Consolas, monospace; font-size: 14px; line-height: 1.5; }
+.t-twitter-link-builder .lb-head { display: flex; align-items: baseline; justify-content: space-between; gap: 10px; margin: 0 0 6px; font-size: 14px; font-weight: 600; }
+.t-twitter-link-builder .lb-head span { color: var(--muted); font-size: 13px; font-weight: 500; font-variant-numeric: tabular-nums; }
+.t-twitter-link-builder .lb-over { color: var(--red); }
+.t-twitter-link-builder .lb-gap { margin-top: 14px; }
+.t-twitter-link-builder .lb-err { min-height: 1.4em; margin: 10px 0 0; color: var(--red); font-size: 14px; }
+.t-twitter-link-builder a.btn[aria-disabled="true"] { opacity: .45; pointer-events: none; }
+.t-twitter-link-builder [hidden] { display: none; }
+</style>
+</head>
+<body>
+  <header class="site-nav">
+    <div class="wrap nav-in">
+      <a class="wordmark" href="../index.html" aria-label="XVision home"><img src="../assets/logo-64.png" alt="" width="26" height="26" />Vision</a>
+      <nav class="navlinks" id="site-menu" aria-label="Main">
+        <a class="opt" href="../index.html#features">Features</a>
+        <a class="opt" href="../index.html#install">How it works</a>
+        <a href="../guides/index.html">Guides</a>
+        <a href="../tools/index.html" aria-current="page">Tools</a>
+        <a class="opt" href="../index.html#faq">FAQ</a>
+      </nav>
+      <div class="nav-cta">
+        <button class="theme-toggle" type="button" aria-label="Dark mode" aria-pressed="false"><svg class="sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.9 4.9l1.4 1.4m11.4 11.4 1.4 1.4M2 12h2m16 0h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg><svg class="moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 14.3A8.5 8.5 0 1 1 9.7 3.5a7 7 0 0 0 10.8 10.8Z"/></svg></button>
+        <a class="btn ghost small" href="https://github.com/Kakahaja07/xvision">GitHub</a>
+        <a class="btn primary small" href="../index.html#install">Get it free</a>
+        <button class="menu-toggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="site-menu"><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+  <main class="wrap tool-page">
+    <header class="page-head">
+      <div class="crumbs"><a href="index.html">Tools</a> › <a href="index.html#media">Media and utilities</a></div>
+      <h1>Twitter Link Builder</h1>
+      <p>Build X share links with prefilled text, follow links, profile links and search links. See the encoded link live, copy it, test it and grab the button HTML.</p>
+    </header>
+    <section class="tool t-twitter-link-builder">
+  <div class="tool-grid">
+    <div class="fields">
+      <div class="field-group">
+        <span class="field-label" id="lb-mode-l">Link type</span>
+        <div class="seg" role="group" aria-labelledby="lb-mode-l" id="lb-mode">
+          <button type="button" data-v="post" aria-pressed="true">Share post</button>
+          <button type="button" data-v="follow" aria-pressed="false">Follow</button>
+          <button type="button" data-v="profile" aria-pressed="false">Profile</button>
+          <button type="button" data-v="search" aria-pressed="false">Search</button>
+        </div>
+      </div>
+      <div class="fields" data-for="post">
+        <div class="field-group">
+          <label for="lb-text">Post text</label>
+          <textarea id="lb-text" maxlength="1000">Just found a free tool that builds share links for X. Worth a bookmark.</textarea>
+        </div>
+        <div class="field-group">
+          <label for="lb-url">Link to share (optional)</label>
+          <input type="url" id="lb-url" placeholder="https://example.com/your-page" autocomplete="off" spellcheck="false">
+        </div>
+        <div class="fields-2">
+          <div class="field-group">
+            <label for="lb-tags">Hashtags (optional)</label>
+            <input type="text" id="lb-tags" placeholder="buildinpublic, saas" autocomplete="off" spellcheck="false">
+          </div>
+          <div class="field-group">
+            <label for="lb-via">Via account (optional)</label>
+            <input type="text" id="lb-via" placeholder="@yourbrand" maxlength="16" autocomplete="off" spellcheck="false">
+          </div>
+        </div>
+      </div>
+      <div class="field-group" data-for="follow profile" hidden>
+        <label for="lb-handle">X handle</label>
+        <input type="text" id="lb-handle" placeholder="@yourhandle" maxlength="16" autocomplete="off" spellcheck="false">
+      </div>
+      <div class="field-group" data-for="search" hidden>
+        <label for="lb-query">Search words</label>
+        <input type="text" id="lb-query" placeholder="#buildinpublic launch" maxlength="300" autocomplete="off">
+        <span class="hint">Opens X search for these words. Advanced search operators are typed the same way you would type them on x.com.</span>
+      </div>
+    </div>
+    <div>
+      <p class="lb-head"><span class="lb-label">Your link</span><span id="lb-len"></span></p>
+      <div class="out" id="lb-link" aria-live="polite" data-empty="Fill in the fields to build your link."></div>
+      <div class="row">
+        <button type="button" class="btn primary small" data-copy-from="#lb-link">Copy link</button>
+        <a class="btn ghost small" id="lb-open" href="#" target="_blank" rel="noopener noreferrer">Open test link</a>
+      </div>
+      <p class="lb-err" id="lb-err" aria-live="polite"></p>
+      <hr>
+      <div class="field-group" id="lb-style-wrap">
+        <label for="lb-style">HTML style</label>
+        <select id="lb-style">
+          <option value="plain">Plain text link (no script)</option>
+          <option value="widget">X button (loads X's widgets.js)</option>
+        </select>
+      </div>
+      <p class="lb-head lb-gap"><span class="lb-label">HTML for your site</span></p>
+      <div class="out" id="lb-html" data-empty="The HTML snippet appears here."></div>
+      <div class="row">
+        <button type="button" class="btn ghost small" data-copy-from="#lb-html">Copy HTML</button>
+      </div>
+    </div>
+  </div>
+</section>
+    <p class="privacy-note">Runs in your browser. Nothing you enter is uploaded.</p>
+    <article class="tool-article"><h2>How do you create a Twitter share link?</h2>
+<p>To create a Twitter share link, add your text to X's post intent URL, https://x.com/intent/tweet, with parameters like text, url, hashtags and via. A Twitter link builder does the encoding for you. Anyone who clicks the link sees the X composer with your words already filled in, ready to edit and post.</p>
+<p>I first needed one of these for a newsletter footer. Hand-typing %20 for every space got old fast, and one missed ampersand broke the whole link. The builder above shows the encoded link as you type, so you can test it before it goes anywhere.</p>
+
+<h2>How to use the Twitter link builder</h2>
+<ol>
+<li>Pick a link type: Share post, Follow, Profile or Search.</li>
+<li>For a share link, type the post text, then add an optional link, hashtags and a via account.</li>
+<li>For follow or profile links, type the handle, with or without the @.</li>
+<li>For a search link, type the words people should see results for.</li>
+<li>Check the live link and the character estimate. Red text means something needs fixing.</li>
+<li>Click Open test link to try it in a new tab, then Copy link.</li>
+<li>For a website, choose the HTML style and click Copy HTML.</li>
+</ol>
+
+<h2>What are the X web intent link formats?</h2>
+<p>X web intents are plain links that open an X action, like writing a post or following an account, without any app setup. X's developer docs list these formats in the <a href="https://docs.x.com/x-for-websites/web-intents/overview">Web Intents overview</a> (checked in October 2026):</p>
+<table>
+<thead><tr><th>Link</th><th>Format</th></tr></thead>
+<tbody>
+<tr><td>Share post</td><td>x.com/intent/tweet?text=...&amp;url=...&amp;hashtags=...&amp;via=...</td></tr>
+<tr><td>Follow</td><td>x.com/intent/follow?screen_name=handle</td></tr>
+<tr><td>Profile</td><td>x.com/handle</td></tr>
+<tr><td>Search</td><td>x.com/search?q=words</td></tr>
+</tbody>
+</table>
+<p>The <a href="https://docs.x.com/x-for-websites/post-button/guides/web-intent">post web intent docs</a> explain each share parameter. Text must be URL-encoded. The url must be a full http or https address, and X shortens it with t.co. Hashtags are a comma-separated list without the # sign. The via account is added as "via @username". X also says the combined text, link, hashtags and via should stay within 280 characters, or people must edit before posting. The profile and search links are simply X's normal page addresses, not intents.</p>
+
+<h2>Plain link or X button: which HTML should you use?</h2>
+<p>Use the plain link if you want speed and privacy, and the X button if you want X's familiar styled button. The plain link is just an anchor tag. It loads nothing from X until someone clicks.</p>
+<p>The button version adds the twitter-share-button or twitter-follow-button class and loads X's widgets.js script, which turns the link into a styled button. That script comes from X's servers, so it adds a request to your page. X's docs also note that web intents can't load inside an iframe, so link to them directly.</p>
+
+<h2>Tips and examples</h2>
+<p>These are made-up examples. Keep the prefilled text short, since people like to add their own words.</p>
+<ul>
+<li><strong>Blog post footer:</strong> text "A useful guide to pricing your first product", your article as the url, via your brand account.</li>
+<li><strong>Event page:</strong> text "I'm going to Demo Night on May 14", the event page as the url, and one event hashtag.</li>
+<li><strong>Email signature:</strong> a follow link for your handle, so readers can follow in one click.</li>
+<li><strong>Launch day:</strong> a search link for your product name, so your team can watch replies in one place.</li>
+</ul>
+<p>If you want to see which share link brought visitors, add UTM tags to your url first with the <a href="twitter-utm-generator.html">Twitter UTM generator</a>, then paste the tagged link here.</p>
+
+<h2>Common link builder mistakes</h2>
+<ul>
+<li><strong>Typing the # in hashtags.</strong> The intent expects names only, like "saas,buildinpublic". The builder strips the # for you.</li>
+<li><strong>Using a link without https.</strong> The url parameter needs a full address.</li>
+<li><strong>Writing a full 280 character post.</strong> Leave room for the link, hashtags and the person's own comment.</li>
+<li><strong>Never testing the link.</strong> Click Open test link once before you publish it anywhere.</li>
+</ul>
+
+<h2>When should you use a related tool?</h2>
+<p>Write the prefilled text with the <a href="twitter-launch-post-generator.html">Twitter launch post generator</a> and check its length with the <a href="post-length.html">Twitter character counter</a>. Pick fitting tags with the <a href="twitter-hashtag-generator.html">Twitter hashtag generator</a>.</p>
+<p>Share links work best as part of a plan. Read <a href="../guides/launch-a-product-on-x.html">how to launch a product on X</a>, <a href="../guides/market-a-startup-on-x.html">how to market a startup on X</a> and <a href="../guides/generate-leads-from-twitter.html">how to generate leads from Twitter</a>.</p>
+
+<h2>Frequently Asked Questions</h2>
+<h3>Do Twitter share links still work after the rename to X?</h3>
+<p>Yes, Twitter share links still work, and X's developer docs now list the post intent at https://x.com/intent/tweet as of October 2026. The path still uses the word "tweet". This Twitter link builder uses the x.com format, which opens the X composer on the web or in the X app when it is installed.</p>
+<h3>Does the person need to be logged in to use a share link?</h3>
+<p>No, they don't need to be logged in before clicking. X's Web Intents overview says a viewer gets the chance to log in or create an account before finishing the action. After that, X shows the composer or follow prompt, and the person still decides whether to post or follow.</p>
+<h3>Can a share link post automatically for someone?</h3>
+<p>No, a share link never posts by itself. It only opens the X composer with text already filled in. The person can edit or delete every word, and nothing goes live until they press Post. That is why web intents need no app setup, passwords or permissions from the person clicking.</p>
+<h3>Why does my share link show the wrong text?</h3>
+<p>A share link shows the wrong text when special characters are not URL-encoded. An unencoded ampersand, hash or question mark cuts the text short or breaks the link. The Twitter link builder encodes every character with encodeURIComponent, so copy the link from the tool instead of editing it by hand afterward.</p>
+<h3>Is this Twitter link builder free?</h3>
+<p>Yes, the Twitter link builder is free and needs no sign-up. It builds share, follow, profile and search links plus HTML snippets right in your browser. Nothing you type is uploaded or stored, and the only time X is contacted is when you click the test link yourself.</p>
+    </article>
+    <aside class="related">
+      <h2>More free tools</h2>
+      <ul>
+        <li><a href="post-length.html">Twitter Character Counter</a></li>
+        <li><a href="twitter-image-resizer.html">Twitter Image Resizer</a></li>
+        <li><a href="twitter-image-compressor.html">Twitter Image Compressor</a></li>
+        <li><a href="twitter-banner-crop-preview.html">Twitter Banner Crop Preview</a></li>
+      </ul>
+    </aside>
+    <aside class="cta">
+      <b>Grow on X with real signals.</b>
+      <span>XVision is a free Chrome extension that shows follower counts, follow-back badges and viral posts right on your timeline.</span>
+      <a class="btn light small" href="../index.html">Get XVision free</a>
+    </aside>
+  </main>
+  <footer class="site-footer">
+    <img class="foot-mark" src="../assets/logo.png" alt="" width="320" height="320" loading="lazy" />
+    <div class="wrap">
+      <div class="foot-top">
+        <div class="foot-brand">
+          <a class="wordmark" href="../index.html"><img src="../assets/logo-64.png" alt="" width="26" height="26" />Vision</a>
+          <p>A free Chrome extension, guides and tools for growing on X. Private by design.</p>
+          <div class="foot-social"><a href="https://github.com/Kakahaja07/xvision" aria-label="XVision on GitHub"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.9 1.2 1.9 1.2 1.1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-6 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17.3 4.7 18.3 5 18.3 5c.7 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .5Z"/></svg></a></div>
+        </div>
+        <div class="foot-cols">
+          <div><h3>Product</h3><ul><li><a href="../index.html#features">Features</a></li><li><a href="../index.html#install">How it works</a></li><li><a href="../index.html#pricing">Pricing</a></li><li><a href="../index.html#faq">FAQ</a></li></ul></div>
+          <div><h3>Guides</h3><ul><li><a href="../guides/index.html#grow">Grow on X</a></li><li><a href="../guides/index.html#algorithm">The X algorithm</a></li><li><a href="../guides/index.html#money">Make money on X</a></li><li><a href="../guides/index.html">All guides</a></li></ul></div>
+          <div><h3>Free tools</h3><ul><li><a href="../tools/twitter-bio-generator.html">Twitter bio generator</a></li><li><a href="../tools/video-downloader.html">Twitter video downloader</a></li><li><a href="../tools/thread-maker.html">Thread splitter</a></li><li><a href="../tools/index.html">All 51 tools</a></li></ul></div>
+          <div><h3>Project</h3><ul><li><a href="https://github.com/Kakahaja07/xvision">GitHub</a></li><li><a href="../privacy-policy.html">Privacy policy</a></li><li><a href="../LICENSE">MIT License</a></li><li><a href="../sitemap.xml">Sitemap</a></li></ul></div>
+        </div>
+      </div>
+      <div class="foot-bottom">
+        <span>© 2026 XVision · Built by Prashant Sharma · Inspired by XRay by fayazara</span>
+        <span>Not affiliated with X Corp.</span>
+      </div>
+    </div>
+  </footer>
+  <script src="../assets/x-text.js"></script>
+  <script src="../assets/tool-kit.js"></script>
+  <script>(function () {
+  var $ = function (id) { return document.getElementById(id); };
+  var mode = 'post';
+  var HANDLE = /^[A-Za-z0-9_]{1,15}$/;
+  var enc = encodeURIComponent;
+  var esc = XTool.escapeHtml;
+  var WIDGET = '<script async src="https://platform.x.com/widgets.js" charset="utf-8"><\/script>';
+
+  function handleOf(id) { return $(id).value.trim().replace(/^@+/, ''); }
+
+  // Accept "example.com/page" by adding https://, reject anything that isn't http(s).
+  function cleanUrl(v) {
+    v = v.trim();
+    if (!v) return { url: '' };
+    if (!/^[a-z][a-z0-9+.-]*:/i.test(v) && /^[\w-]+(\.[\w-]+)+/.test(v)) v = 'https://' + v;
+    try {
+      var u = new URL(v);
+      if (u.protocol !== 'https:' && u.protocol !== 'http:') return { error: 'The link must start with http:// or https://.' };
+      return { url: u.href };
+    } catch (e) {
+      return { error: 'That link does not look like a full web address. Try https://example.com/page.' };
+    }
+  }
+
+  function tagsOf(v) {
+    var tags = v.split(/[\s,]+/).map(function (t) { return t.replace(/^#+/, ''); }).filter(Boolean);
+    var bad = tags.filter(function (t) { return !/^[\p{L}\p{N}_]+$/u.test(t); });
+    return { tags: tags, bad: bad };
+  }
+
+  function build() {
+    var errs = [], link = '', html = '', len = '';
+    if (mode === 'post') {
+      var text = $('lb-text').value.trim();
+      var u = cleanUrl($('lb-url').value);
+      var t = tagsOf($('lb-tags').value);
+      var via = handleOf('lb-via');
+      if (u.error) errs.push(u.error);
+      if (t.bad.length) errs.push('Hashtags can only use letters, numbers and underscores: ' + t.bad.join(', '));
+      if (via && !HANDLE.test(via)) errs.push('The via handle can only use letters, numbers and underscores, up to 15 characters.');
+      var params = [];
+      if (text) params.push('text=' + enc(text));
+      if (u.url) params.push('url=' + enc(u.url));
+      if (t.tags.length && !t.bad.length) params.push('hashtags=' + enc(t.tags.join(',')));
+      if (via && HANDLE.test(via)) params.push('via=' + enc(via));
+      if (!params.length) errs.push('Add some post text or a link to share.');
+      link = 'https://x.com/intent/tweet' + (params.length ? '?' + params.join('&') : '');
+      // Rough preview of the post X will prefill: text, link, hashtags, via.
+      var preview = [text, u.url || '', t.bad.length ? '' : t.tags.map(function (x) { return '#' + x; }).join(' '), via && HANDLE.test(via) ? 'via @' + via : '']
+        .filter(Boolean).join(' ');
+      var n = XText.weightedLength(preview);
+      len = '<span class="' + (n > XText.LIMIT ? 'lb-over' : '') + '">About ' + n + ' / ' + XText.LIMIT + ' characters</span>';
+      if (n > XText.LIMIT) errs.push('The prefilled post is over ' + XText.LIMIT + ' characters, so people would have to edit it before posting.');
+      html = $('lb-style').value === 'widget'
+        ? '<a class="twitter-share-button" href="' + esc(link) + '" data-size="large">Post</a>\n' + WIDGET
+        : '<a href="' + esc(link) + '" target="_blank" rel="noopener">Share on X</a>';
+    } else if (mode === 'follow' || mode === 'profile') {
+      var h = handleOf('lb-handle');
+      if (!h) errs.push('Add an X handle.');
+      else if (!HANDLE.test(h)) errs.push('Handles use letters, numbers and underscores only, up to 15 characters.');
+      else if (mode === 'follow') {
+        link = 'https://x.com/intent/follow?screen_name=' + enc(h);
+        html = $('lb-style').value === 'widget'
+          ? '<a class="twitter-follow-button" href="https://x.com/' + esc(h) + '" data-size="large">Follow @' + esc(h) + '</a>\n' + WIDGET
+          : '<a href="' + esc(link) + '" target="_blank" rel="noopener">Follow @' + esc(h) + ' on X</a>';
+      } else {
+        link = 'https://x.com/' + enc(h);
+        html = '<a href="' + esc(link) + '" target="_blank" rel="noopener">@' + esc(h) + ' on X</a>';
+      }
+    } else {
+      var q = $('lb-query').value.trim();
+      if (!q) errs.push('Add the words you want to search for.');
+      else {
+        link = 'https://x.com/search?q=' + enc(q);
+        html = '<a href="' + esc(link) + '" target="_blank" rel="noopener">Search X for ' + esc(q) + '</a>';
+      }
+    }
+    if (errs.length && mode !== 'post') { link = ''; html = ''; }
+    return { link: link, html: html, errs: errs, len: len };
+  }
+
+  function render() {
+    var r = build();
+    $('lb-link').textContent = r.link;
+    $('lb-html').textContent = r.html;
+    $('lb-len').innerHTML = r.len;
+    $('lb-err').textContent = r.errs.join(' ');
+    var open = $('lb-open');
+    if (r.link && r.link.indexOf('?') > 0 || (r.link && mode === 'profile')) {
+      open.href = r.link;
+      open.removeAttribute('aria-disabled');
+    } else {
+      open.removeAttribute('href');
+      open.setAttribute('aria-disabled', 'true');
+    }
+    $('lb-style-wrap').hidden = mode === 'profile' || mode === 'search';
+  }
+
+  $('lb-mode').addEventListener('click', function (e) {
+    var b = e.target.closest('button');
+    if (!b) return;
+    mode = b.dataset.v;
+    $('lb-mode').querySelectorAll('button').forEach(function (x) { x.setAttribute('aria-pressed', String(x === b)); });
+    document.querySelectorAll('.t-twitter-link-builder [data-for]').forEach(function (el) {
+      el.hidden = el.dataset.for.split(' ').indexOf(mode) < 0;
+    });
+    render();
+  });
+  ['lb-text', 'lb-url', 'lb-tags', 'lb-via', 'lb-handle', 'lb-query'].forEach(function (id) {
+    $(id).addEventListener('input', XTool.debounce(render, 100));
+  });
+  $('lb-style').addEventListener('change', render);
+  render();
+})();</script>
+</body>
+</html>

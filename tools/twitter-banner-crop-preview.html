@@ -1,0 +1,563 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Free Twitter Banner Crop Preview: Check Your X Header</title>
+  <meta name="description" content="Twitter banner crop preview that shows your X header at 1500x500 with photo and crop guides for desktop and phone, and saves a clean copy. Free, no sign-up." />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <link rel="canonical" href="https://kakahaja07.github.io/xvision/tools/twitter-banner-crop-preview.html" />
+  <meta name="theme-color" content="#f6f6f8" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#0a0a0c" media="(prefers-color-scheme: dark)" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="XVision" />
+  <meta property="og:url" content="https://kakahaja07.github.io/xvision/tools/twitter-banner-crop-preview.html" />
+  <meta property="og:title" content="Twitter Banner Crop Preview" />
+  <meta property="og:description" content="Twitter banner crop preview that shows your X header at 1500x500 with photo and crop guides for desktop and phone, and saves a clean copy. Free, no sign-up." />
+  <meta property="og:image" content="https://kakahaja07.github.io/xvision/assets/og-card.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Twitter Banner Crop Preview" />
+  <meta name="twitter:description" content="Twitter banner crop preview that shows your X header at 1500x500 with photo and crop guides for desktop and phone, and saves a clean copy. Free, no sign-up." />
+  <meta name="twitter:image" content="https://kakahaja07.github.io/xvision/assets/og-card.jpg" />
+  <link rel="icon" type="image/png" href="../assets/logo-64.png" />
+  <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png" />
+  <script src="../assets/site.js"></script>
+  <link rel="stylesheet" href="../assets/site.css" />
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "name": "Twitter Banner Crop Preview",
+      "description": "Twitter banner crop preview that shows your X header at 1500x500 with photo and crop guides for desktop and phone, and saves a clean copy. Free, no sign-up.",
+      "url": "https://kakahaja07.github.io/xvision/tools/twitter-banner-crop-preview.html",
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "Any",
+      "browserRequirements": "Requires JavaScript",
+      "isAccessibleForFree": true,
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "author": {
+        "@type": "Person",
+        "@id": "https://kakahaja07.github.io/xvision/#author",
+        "name": "Prashant Sharma",
+        "url": "https://github.com/Kakahaja07"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "XVision",
+          "item": "https://kakahaja07.github.io/xvision/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Free tools",
+          "item": "https://kakahaja07.github.io/xvision/tools/index.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Twitter Banner Crop Preview",
+          "item": "https://kakahaja07.github.io/xvision/tools/twitter-banner-crop-preview.html"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How do I check how my Twitter banner will be cropped?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "To check your Twitter banner crop, upload your header to the free Twitter Banner Crop Preview. It shows the image at X's recommended 1500 x 500 size with guides for your profile photo circle and the roughly 60 pixel bands that X says can be trimmed from the top and bottom."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What size should a Twitter header be?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A Twitter header should be 1500 x 500 pixels, which is X's recommended size as of October 2026. That is a 3:1 shape, three times wider than it is tall. X accepts JPG, GIF or PNG for headers but not animated GIFs. The Twitter Banner Crop Preview warns you when an image is not 3:1."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why is my Twitter header cut off?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A Twitter header gets cut off when the image is not 3:1, because X trims it to fill the frame. X's help page also says a header can lose about 60 pixels at the top and bottom, depending on the screen and browser. Keep important content away from those edges."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Where does my profile photo cover the header?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Your profile photo covers the lower left corner of the header and hangs over its bottom edge, on both desktop and phone. The circles in the Twitter Banner Crop Preview are estimates based on X's current web layout. X can change the exact position, so leave a generous margin around them."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I use an animated GIF as my Twitter header?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No, X's help page says animated GIFs are not supported for the profile photo or the header, as of October 2026. You can upload a JPG, PNG or still GIF. If you drop a GIF into the Twitter Banner Crop Preview, it uses the first frame and reminds you to save a JPG or PNG."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does the banner preview upload my image?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No, the Twitter Banner Crop Preview never uploads your header. The image is drawn on a canvas inside your browser, the guides are painted on top, and both downloads are created on your own device. Nothing is stored, so you can check unreleased designs or client work safely."
+          }
+        }
+      ],
+      "@id": "https://kakahaja07.github.io/xvision/tools/twitter-banner-crop-preview.html#faq"
+    }
+  ]
+}
+  </script>
+  <style>
+.t-twitter-banner-crop-preview .drop { min-height: 110px; }
+.t-twitter-banner-crop-preview .bc-file { max-width: 100%; overflow-wrap: anywhere; }
+.t-twitter-banner-crop-preview .btn:disabled { opacity: .45; cursor: not-allowed; }
+.t-twitter-banner-crop-preview .seg { justify-self: start; }
+.t-twitter-banner-crop-preview .bc-main { margin: 16px 0 6px; }
+.t-twitter-banner-crop-preview .bc-main canvas { width: 100%; }
+.t-twitter-banner-crop-preview .bc-legend { margin: 0 0 18px; color: var(--muted); font-size: 13.5px; }
+.t-twitter-banner-crop-preview .bc-phone { display: grid; gap: 8px; justify-items: center; }
+.t-twitter-banner-crop-preview .bc-phone canvas { display: block; width: 100%; max-width: 390px; height: auto; border: 1px solid var(--line); border-radius: 18px; background: var(--bg); }
+.t-twitter-banner-crop-preview .bc-phone .hint { justify-self: start; }
+.t-twitter-banner-crop-preview .row { margin-top: 0; }
+.t-twitter-banner-crop-preview .note { margin-top: 0; }
+.t-twitter-banner-crop-preview .note:empty { display: none; }
+.t-twitter-banner-crop-preview .note.ok-note { color: var(--green); }
+.t-twitter-banner-crop-preview .tool-title { margin: 0; font-size: 15px; }
+</style>
+</head>
+<body>
+  <header class="site-nav">
+    <div class="wrap nav-in">
+      <a class="wordmark" href="../index.html" aria-label="XVision home"><img src="../assets/logo-64.png" alt="" width="26" height="26" />Vision</a>
+      <nav class="navlinks" id="site-menu" aria-label="Main">
+        <a class="opt" href="../index.html#features">Features</a>
+        <a class="opt" href="../index.html#install">How it works</a>
+        <a href="../guides/index.html">Guides</a>
+        <a href="../tools/index.html" aria-current="page">Tools</a>
+        <a class="opt" href="../index.html#faq">FAQ</a>
+      </nav>
+      <div class="nav-cta">
+        <button class="theme-toggle" type="button" aria-label="Dark mode" aria-pressed="false"><svg class="sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.9 4.9l1.4 1.4m11.4 11.4 1.4 1.4M2 12h2m16 0h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg><svg class="moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 14.3A8.5 8.5 0 1 1 9.7 3.5a7 7 0 0 0 10.8 10.8Z"/></svg></button>
+        <a class="btn ghost small" href="https://github.com/Kakahaja07/xvision">GitHub</a>
+        <a class="btn primary small" href="../index.html#install">Get it free</a>
+        <button class="menu-toggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="site-menu"><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+  <main class="wrap tool-page">
+    <header class="page-head">
+      <div class="crumbs"><a href="index.html">Tools</a> › <a href="index.html#media">Media and utilities</a></div>
+      <h1>Twitter Banner Crop Preview</h1>
+      <p>Upload your header to see where X may trim it and where your profile photo covers it, on desktop and at phone width, before you post it.</p>
+    </header>
+    <section class="tool t-twitter-banner-crop-preview">
+  <div class="drop" id="bc-drop">
+    <input type="file" id="bc-file" accept="image/*" aria-label="Choose your header image">
+    <b id="bc-drop-title">Drop your header image here</b>
+    <span class="bc-file" id="bc-drop-sub">or click to choose a JPG or PNG. Best at 1500 x 500.</span>
+  </div>
+  <div class="canvas-wrap bc-main"><canvas id="bc-canvas" width="1500" height="500" aria-label="Header preview at 1500 by 500 with guides"></canvas></div>
+  <p class="bc-legend">Red bands: about 60px X says can be trimmed on some screens. Circles: approximate profile photo spots on desktop and phone width.</p>
+  <div class="tool-grid">
+    <div class="fields">
+      <div class="field-group">
+        <span class="field-label" id="bc-ov-label">Guides</span>
+        <div class="chips" id="bc-overlays" role="group" aria-labelledby="bc-ov-label">
+          <button type="button" class="chip" data-ov="bands" aria-pressed="true">Crop bands</button>
+          <button type="button" class="chip" data-ov="desktop" aria-pressed="true">Desktop photo</button>
+          <button type="button" class="chip" data-ov="phone" aria-pressed="true">Phone photo</button>
+          <button type="button" class="chip" data-ov="thirds" aria-pressed="false">Thirds grid</button>
+        </div>
+      </div>
+      <div class="field-group">
+        <label for="bc-pos" id="bc-pos-label">Crop position</label>
+        <input type="range" id="bc-pos" min="0" max="100" value="50" disabled>
+        <p class="hint" id="bc-pos-hint">Only needed when your image is not 3:1.</p>
+      </div>
+      <p class="note" id="bc-warn" aria-live="polite"></p>
+      <div class="field-group">
+        <span class="field-label" id="bc-fmt-label">Download format</span>
+        <div class="seg" id="bc-fmt" role="group" aria-labelledby="bc-fmt-label">
+          <button type="button" data-v="image/jpeg" aria-pressed="true">JPEG</button>
+          <button type="button" data-v="image/png" aria-pressed="false">PNG</button>
+        </div>
+      </div>
+      <div class="row">
+        <button type="button" class="btn primary" id="bc-dl" disabled>Download 1500 x 500</button>
+        <button type="button" class="btn ghost" id="bc-dl-guides">Download with guides</button>
+      </div>
+      <p class="privacy-note">Runs in your browser. Your image is never uploaded.</p>
+    </div>
+    <div class="bc-phone">
+      <p class="tool-title">Phone width preview (390px)</p>
+      <canvas id="bc-phone" width="780" height="520" aria-label="How the header looks on a phone-width profile"></canvas>
+      <label class="check" for="bc-worst"><input type="checkbox" id="bc-worst"> Show with 60px trimmed top and bottom</label>
+      <p class="hint">Gray shapes stand in for your photo, name and bio. Positions are approximate and X can change its layout.</p>
+    </div>
+  </div>
+</section>
+    
+    <article class="tool-article"><h2>How do I check how my Twitter banner will be cropped?</h2>
+<p>To check your Twitter banner crop, upload your header to the free Twitter Banner Crop Preview. It shows the image at X's recommended 1500 x 500 size with guides for your profile photo circle and the roughly 60 pixel bands that X says can be trimmed from the top and bottom.</p>
+<p>Here's the problem it solves. You design a header, upload it, and your logo ends up hidden behind your own profile photo. Or a line of text gets sliced off on a friend's laptop. A two-minute check before you post saves that redo.</p>
+
+<h2>How to use the Twitter Banner Crop Preview</h2>
+<ol>
+<li>Drop your header image on the box, or click it to choose a file.</li>
+<li>Read the note under the guides. It tells you if the image is not 3:1, is smaller than 1500 x 500, or is a GIF.</li>
+<li>If your image is not 3:1, drag the crop position slider until the part you want is in the frame.</li>
+<li>Switch guides on and off: crop bands, desktop photo, phone photo and a thirds grid.</li>
+<li>Look at the phone width preview, then tick the 60px option to see the tightest crop.</li>
+<li>Download a clean 1500 x 500 JPEG or PNG to upload, or a copy with the guides to send to a designer.</li>
+</ol>
+
+<h2>What do the guides mean?</h2>
+<p>The red bands mark the top and bottom 60 pixels, which X's help page says a header can lose depending on the screen and browser. The circles show roughly where your profile photo sits over the header on desktop and at phone width. Keep faces, logos and text out of both.</p>
+<table>
+<tr><th>Guide</th><th>What it shows</th><th>Where it comes from</th></tr>
+<tr><td>Frame</td><td>1500 x 500 pixels, a 3:1 shape</td><td>X Help Center recommendation</td></tr>
+<tr><td>Red bands</td><td>About 60px top and bottom that may be trimmed</td><td>X Help Center upload tips</td></tr>
+<tr><td>Desktop circle</td><td>Profile photo spot in a 600px profile column</td><td>Approximate, based on X's web layout</td></tr>
+<tr><td>Phone circle</td><td>Profile photo spot at 390px phone width</td><td>Approximate, based on X's web layout</td></tr>
+</table>
+<p>The size comes from X's page on <a href="https://help.x.com/en/managing-your-account/how-to-customize-your-profile">how to customize your profile</a>. The 60 pixel note is on its page about <a href="https://help.x.com/en/managing-your-account/common-issues-when-uploading-profile-photo">profile and header upload issues</a>. The photo circles are estimates based on X's current web layout, not an official X spec, so treat them as a safe zone, not an exact line.</p>
+
+<h2>Why does my header look different on phone and desktop?</h2>
+<p>Your header looks different because each screen shows the same 3:1 image at a different width, and the profile photo covers a different share of it. Some screens also trim the top and bottom. The photo always sits on the lower left.</p>
+<p>On a wide desktop column, the photo covers a small corner. On a narrow phone, the same corner looks bigger compared with the screen. That's why the phone preview matters. Text that feels roomy on a monitor can feel cramped next to the photo at 390 pixels.</p>
+
+<h2>Tips for a header that survives every crop</h2>
+<ul>
+<li>Design at exactly 1500 x 500 so nothing is cut on the sides.</li>
+<li>Keep key text in the middle band, between the red guides.</li>
+<li>Push words and logos toward the center or right. The lower left belongs to your photo.</li>
+<li>Use big, simple shapes. Fine print turns to mush on a phone.</li>
+<li>Save as JPG or PNG. X's help page says animated GIFs are not allowed for headers.</li>
+</ul>
+<p>Here's a quick example. Priya, a fictional UX designer, puts "I design calm apps" on the left of her header. The preview shows the desktop circle covering "I des". She moves the line to the right third, checks the phone view, and downloads a clean JPEG.</p>
+
+<h2>Common mistakes to avoid</h2>
+<ul>
+<li>Using a 16:9 photo. A big slice of the height gets cut to reach 3:1.</li>
+<li>Placing a logo in the bottom left corner, right behind the profile photo.</li>
+<li>Running text to the very top or bottom edge, inside the trim zone.</li>
+<li>Uploading a small image. Anything under 1500 x 500 gets stretched and looks soft.</li>
+</ul>
+
+<h2>Which related tool should I use next?</h2>
+<p>Need a header from scratch? The <a href="twitter-header-maker.html">Twitter Header Maker</a> builds one at the right size. To change the shape of any image, use the <a href="twitter-image-resizer.html">Twitter Image Resizer</a>. For the round photo on top, try the <a href="twitter-profile-picture-resizer.html">Twitter Profile Picture Resizer</a>, then see the whole page in the <a href="twitter-profile-preview.html">Twitter Profile Preview</a>.</p>
+<p>For ideas and a full checklist, read <a href="../guides/best-twitter-header-ideas-for-businesses.html">header ideas for businesses</a>, <a href="../guides/make-your-x-profile-stand-out.html">how to make your X profile stand out</a> and the <a href="../guides/twitter-profile-optimization-checklist.html">profile optimization checklist</a>.</p>
+
+<h2>Frequently Asked Questions</h2>
+<h3>What size should a Twitter header be?</h3>
+<p>A Twitter header should be 1500 x 500 pixels, which is X's recommended size as of October 2026. That is a 3:1 shape, three times wider than it is tall. X accepts JPG, GIF or PNG for headers but not animated GIFs. The Twitter Banner Crop Preview warns you when an image is not 3:1.</p>
+<h3>Why is my Twitter header cut off?</h3>
+<p>A Twitter header gets cut off when the image is not 3:1, because X trims it to fill the frame. X's help page also says a header can lose about 60 pixels at the top and bottom, depending on the screen and browser. Keep important content away from those edges.</p>
+<h3>Where does my profile photo cover the header?</h3>
+<p>Your profile photo covers the lower left corner of the header and hangs over its bottom edge, on both desktop and phone. The circles in the Twitter Banner Crop Preview are estimates based on X's current web layout. X can change the exact position, so leave a generous margin around them.</p>
+<h3>Can I use an animated GIF as my Twitter header?</h3>
+<p>No, X's help page says animated GIFs are not supported for the profile photo or the header, as of October 2026. You can upload a JPG, PNG or still GIF. If you drop a GIF into the Twitter Banner Crop Preview, it uses the first frame and reminds you to save a JPG or PNG.</p>
+<h3>Does the banner preview upload my image?</h3>
+<p>No, the Twitter Banner Crop Preview never uploads your header. The image is drawn on a canvas inside your browser, the guides are painted on top, and both downloads are created on your own device. Nothing is stored, so you can check unreleased designs or client work safely.</p>
+    </article>
+    <aside class="related">
+      <h2>More free tools</h2>
+      <ul>
+        <li><a href="post-length.html">Twitter Character Counter</a></li>
+        <li><a href="twitter-image-resizer.html">Twitter Image Resizer</a></li>
+        <li><a href="twitter-image-compressor.html">Twitter Image Compressor</a></li>
+        <li><a href="twitter-post-screenshot-maker.html">Twitter Post Screenshot Maker</a></li>
+      </ul>
+    </aside>
+    <aside class="cta">
+      <b>Grow on X with real signals.</b>
+      <span>XVision is a free Chrome extension that shows follower counts, follow-back badges and viral posts right on your timeline.</span>
+      <a class="btn light small" href="../index.html">Get XVision free</a>
+    </aside>
+  </main>
+  <footer class="site-footer">
+    <img class="foot-mark" src="../assets/logo.png" alt="" width="320" height="320" loading="lazy" />
+    <div class="wrap">
+      <div class="foot-top">
+        <div class="foot-brand">
+          <a class="wordmark" href="../index.html"><img src="../assets/logo-64.png" alt="" width="26" height="26" />Vision</a>
+          <p>A free Chrome extension, guides and tools for growing on X. Private by design.</p>
+          <div class="foot-social"><a href="https://github.com/Kakahaja07/xvision" aria-label="XVision on GitHub"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.9 1.2 1.9 1.2 1.1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-6 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17.3 4.7 18.3 5 18.3 5c.7 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .5Z"/></svg></a></div>
+        </div>
+        <div class="foot-cols">
+          <div><h3>Product</h3><ul><li><a href="../index.html#features">Features</a></li><li><a href="../index.html#install">How it works</a></li><li><a href="../index.html#pricing">Pricing</a></li><li><a href="../index.html#faq">FAQ</a></li></ul></div>
+          <div><h3>Guides</h3><ul><li><a href="../guides/index.html#grow">Grow on X</a></li><li><a href="../guides/index.html#algorithm">The X algorithm</a></li><li><a href="../guides/index.html#money">Make money on X</a></li><li><a href="../guides/index.html">All guides</a></li></ul></div>
+          <div><h3>Free tools</h3><ul><li><a href="../tools/twitter-bio-generator.html">Twitter bio generator</a></li><li><a href="../tools/video-downloader.html">Twitter video downloader</a></li><li><a href="../tools/thread-maker.html">Thread splitter</a></li><li><a href="../tools/index.html">All 51 tools</a></li></ul></div>
+          <div><h3>Project</h3><ul><li><a href="https://github.com/Kakahaja07/xvision">GitHub</a></li><li><a href="../privacy-policy.html">Privacy policy</a></li><li><a href="../LICENSE">MIT License</a></li><li><a href="../sitemap.xml">Sitemap</a></li></ul></div>
+        </div>
+      </div>
+      <div class="foot-bottom">
+        <span>© 2026 XVision · Built by Prashant Sharma · Inspired by XRay by fayazara</span>
+        <span>Not affiliated with X Corp.</span>
+      </div>
+    </div>
+  </footer>
+  <script src="../assets/x-text.js"></script>
+  <script src="../assets/tool-kit.js"></script>
+  <script>(function () {
+  const $ = (id) => document.getElementById(id);
+  const root = document.querySelector('.t-twitter-banner-crop-preview');
+  const W = 1500, H = 500, BAND = 60; // X help: header 1500x500; about 60px can be lost top and bottom
+  const main = $('bc-canvas'), g = main.getContext('2d');
+  const phone = $('bc-phone'), pg = phone.getContext('2d');
+  const pos = $('bc-pos'), warn = $('bc-warn'), dl = $('bc-dl'), worst = $('bc-worst');
+  const chips = [...root.querySelectorAll('#bc-overlays .chip')];
+  const fmtBtns = [...root.querySelectorAll('#bc-fmt button')];
+  const show = { bands: true, desktop: true, phone: true, thirds: false };
+  let img = null, name = 'header', type = 'image/jpeg', gif = false;
+
+  const css = (n) => getComputedStyle(root).getPropertyValue(n).trim() || '#888';
+
+  // Profile photo spot for a profile column of `col` CSS pixels (16px side padding,
+  // photo 25% of the inner width, pulled up by 15% of the inner width). Approximate.
+  function avatar(col) {
+    const inner = col - 32, d = inner * 0.25, bannerH = col / 3;
+    const k = W / col;
+    return { x: 16 * k, y: (bannerH - inner * 0.15) * k, d: d * k };
+  }
+
+  function drawHQ(ctx, src, sx, sy, sw, sh, dx, dy, dw, dh) {
+    let cur = src, cx = sx, cy = sy, cw = sw, ch = sh;
+    while (cw > dw * 2 && ch > dh * 2) {
+      const nw = Math.round(cw / 2), nh = Math.round(ch / 2);
+      const step = document.createElement('canvas');
+      step.width = nw; step.height = nh;
+      const s = step.getContext('2d');
+      s.imageSmoothingQuality = 'high';
+      s.drawImage(cur, cx, cy, cw, ch, 0, 0, nw, nh);
+      cur = step; cx = 0; cy = 0; cw = nw; ch = nh;
+    }
+    ctx.imageSmoothingQuality = 'high';
+    ctx.drawImage(cur, cx, cy, cw, ch, dx, dy, dw, dh);
+  }
+
+  // Draw the header the way X fills a 3:1 frame: scaled to cover, trimmed on the long side.
+  function drawHeader(ctx) {
+    if (!img) {
+      const grad = ctx.createLinearGradient(0, 0, W, H);
+      grad.addColorStop(0, css('--line-strong'));
+      grad.addColorStop(1, css('--soft'));
+      ctx.fillStyle = grad;
+      ctx.fillRect(0, 0, W, H);
+      ctx.fillStyle = css('--muted');
+      ctx.font = '600 44px system-ui, sans-serif';
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
+      ctx.fillText('Your header, 1500 x 500', W / 2, H / 2);
+      return;
+    }
+    const iw = img.naturalWidth, ih = img.naturalHeight;
+    const s = Math.max(W / iw, H / ih), sw = W / s, sh = H / s, p = pos.value / 100;
+    drawHQ(ctx, img, (iw - sw) * p, (ih - sh) * p, sw, sh, 0, 0, W, H);
+  }
+
+  // Small dark pill with white text. align: left, center or right (x is that edge or the middle).
+  function label(ctx, text, x, y, align) {
+    ctx.font = '600 32px system-ui, sans-serif';
+    ctx.textAlign = 'left';
+    ctx.textBaseline = 'middle';
+    const w = ctx.measureText(text).width + 20;
+    const left = align === 'center' ? x - w / 2 : align === 'right' ? x - w : x;
+    ctx.fillStyle = 'rgba(0, 0, 0, .62)';
+    ctx.beginPath();
+    ctx.roundRect(left, y - 22, w, 44, 10);
+    ctx.fill();
+    ctx.fillStyle = '#fff';
+    ctx.fillText(text, left + 10, y);
+  }
+
+  function circle(ctx, a, dashed, text, ty) {
+    ctx.save();
+    ctx.beginPath();
+    ctx.arc(a.x + a.d / 2, a.y + a.d / 2, a.d / 2, 0, Math.PI * 2);
+    ctx.fillStyle = dashed ? 'rgba(255, 255, 255, .12)' : 'rgba(0, 0, 0, .28)';
+    ctx.fill();
+    ctx.lineWidth = 6;
+    ctx.strokeStyle = '#fff';
+    if (dashed) ctx.setLineDash([18, 12]);
+    ctx.stroke();
+    ctx.restore();
+    label(ctx, text, a.x + a.d / 2, ty, 'center');
+  }
+
+  function drawGuides(ctx) {
+    if (show.thirds) {
+      ctx.save();
+      ctx.strokeStyle = 'rgba(255, 255, 255, .7)';
+      ctx.lineWidth = 2;
+      ctx.setLineDash([10, 10]);
+      [W / 3, (2 * W) / 3].forEach((x) => { ctx.beginPath(); ctx.moveTo(x, 0); ctx.lineTo(x, H); ctx.stroke(); });
+      [H / 3, (2 * H) / 3].forEach((y) => { ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(W, y); ctx.stroke(); });
+      ctx.restore();
+    }
+    if (show.bands) {
+      ctx.fillStyle = 'rgba(220, 38, 38, .38)';
+      ctx.fillRect(0, 0, W, BAND);
+      ctx.fillRect(0, H - BAND, W, BAND);
+      label(ctx, 'May be trimmed', W - 16, BAND / 2, 'right');
+      label(ctx, 'May be trimmed', W - 16, H - BAND / 2, 'right');
+    }
+    const desk = avatar(600), mob = avatar(390);
+    if (show.desktop) circle(ctx, desk, false, 'Desktop', desk.y + 70);
+    if (show.phone) circle(ctx, mob, true, 'Phone', mob.y + 125);
+  }
+
+  function drawPhone() {
+    const S = 2, col = 390;
+    const bannerH = worst.checked ? (col * (H - 2 * BAND)) / W : col / 3;
+    const inner = col - 32, d = inner * 0.25, top = bannerH - inner * 0.15;
+    const total = Math.ceil(top + d + 112);
+    phone.width = col * S;
+    phone.height = total * S;
+    pg.setTransform(S, 0, 0, S, 0, 0);
+    pg.fillStyle = css('--surface');
+    pg.fillRect(0, 0, col, total);
+    // Banner: the same 1500x500 header, trimmed when the worst-case box is ticked.
+    const full = document.createElement('canvas');
+    full.width = W; full.height = H;
+    drawHeader(full.getContext('2d'));
+    const sy = worst.checked ? BAND : 0;
+    pg.imageSmoothingQuality = 'high';
+    pg.drawImage(full, 0, sy, W, H - 2 * sy, 0, 0, col, bannerH);
+    // Profile photo stand-in with a ring in the page color.
+    pg.beginPath();
+    pg.arc(16 + d / 2, top + d / 2, d / 2, 0, Math.PI * 2);
+    pg.fillStyle = css('--line-strong');
+    pg.fill();
+    pg.lineWidth = 4;
+    pg.strokeStyle = css('--surface');
+    pg.stroke();
+    // Edit profile button and text lines.
+    pg.strokeStyle = css('--line-strong');
+    pg.lineWidth = 1;
+    pg.beginPath();
+    pg.roundRect(col - 16 - 104, bannerH + 12, 104, 34, 17);
+    pg.stroke();
+    pg.fillStyle = css('--soft');
+    const bar = (x, y, w, h) => { pg.beginPath(); pg.roundRect(x, y, w, h, h / 2); pg.fill(); };
+    const y0 = top + d + 14;
+    pg.fillStyle = css('--line-strong');
+    bar(16, y0, 150, 16);
+    pg.fillStyle = css('--line');
+    bar(16, y0 + 26, 96, 11);
+    bar(16, y0 + 50, 300, 11);
+    bar(16, y0 + 70, 230, 11);
+  }
+
+  function render() {
+    g.clearRect(0, 0, W, H);
+    drawHeader(g);
+    drawGuides(g);
+    drawPhone();
+  }
+
+  function check() {
+    const msgs = [];
+    let good = false;
+    if (!img) {
+      pos.disabled = true;
+      warn.textContent = '';
+      return;
+    }
+    const iw = img.naturalWidth, ih = img.naturalHeight, r = iw / ih;
+    const off = Math.abs(r - 3) / 3;
+    pos.disabled = off < 0.005;
+    $('bc-pos-label').textContent = r > 3 ? 'Horizontal crop position' : 'Vertical crop position';
+    $('bc-pos-hint').textContent = pos.disabled
+      ? 'Your image is already 3:1, so nothing extra is cut.'
+      : r > 3 ? 'Slide to choose which part of the width stays.' : 'Slide to choose which part of the height stays.';
+    if (off >= 0.005) {
+      const lost = Math.round((1 - Math.min(r / 3, 3 / r)) * 100);
+      msgs.push(`Your image is ${iw} x ${ih}, about ${XTool.fmt(r, 2)}:1. X headers are 3:1, so about ${lost}% of it is cut off. Use the crop position slider to pick what stays.`);
+    }
+    if (iw < W || ih < H) msgs.push(`It is smaller than 1500 x 500, so it gets stretched and may look soft.`);
+    if (gif) msgs.push('X does not allow animated GIFs as a header. Only the first frame is used here, so save it as JPEG or PNG.');
+    if (!msgs.length) { good = true; msgs.push('Looks good: a 3:1 image at full size. Check the circles and red bands for text or faces.'); }
+    warn.textContent = msgs.join(' ');
+    warn.classList.toggle('ok-note', good);
+  }
+
+  chips.forEach((c) => c.addEventListener('click', () => {
+    const on = c.getAttribute('aria-pressed') !== 'true';
+    c.setAttribute('aria-pressed', String(on));
+    show[c.dataset.ov] = on;
+    render();
+  }));
+  fmtBtns.forEach((b) => b.addEventListener('click', () => {
+    type = b.dataset.v;
+    fmtBtns.forEach((x) => x.setAttribute('aria-pressed', String(x === b)));
+  }));
+  pos.addEventListener('input', render);
+  worst.addEventListener('change', drawPhone);
+
+  XTool.dropZone($('bc-drop'), async (files) => {
+    const file = files.find((f) => f.type.startsWith('image/')) || files[0];
+    try {
+      img = await XTool.loadImage(file);
+      gif = file.type === 'image/gif';
+      name = (file.name || 'header').replace(/\.[^.]+$/, '').replace(/[^\w-]+/g, '-').slice(0, 60) || 'header';
+      $('bc-drop-title').textContent = 'Header loaded';
+      $('bc-drop-sub').textContent = file.name;
+      pos.value = 50;
+      dl.disabled = false;
+      check();
+      render();
+    } catch (e) {
+      warn.classList.remove('ok-note');
+      warn.textContent = 'That file could not be read as an image. Try a JPG or PNG.';
+    }
+  });
+
+  dl.addEventListener('click', async () => {
+    if (!img) return;
+    const c = document.createElement('canvas');
+    c.width = W; c.height = H;
+    const ctx = c.getContext('2d');
+    ctx.fillStyle = '#ffffff';
+    ctx.fillRect(0, 0, W, H);
+    drawHeader(ctx);
+    const blob = await XTool.canvasToBlob(c, type, 0.92);
+    XTool.download(blob, `${name}-1500x500.${type === 'image/png' ? 'png' : 'jpg'}`);
+    XTool.flash(dl, 'Downloaded');
+  });
+
+  $('bc-dl-guides').addEventListener('click', async (e) => {
+    const btn = e.currentTarget;
+    const blob = await XTool.canvasToBlob(main, 'image/png');
+    XTool.download(blob, `${name}-crop-guides.png`);
+    XTool.flash(btn, 'Downloaded');
+  });
+
+  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', render);
+  render();
+})();</script>
+</body>
+</html>

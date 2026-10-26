@@ -9,7 +9,8 @@
   // Code point ranges that count as 1; everything else counts as 2.
   const LIGHT = [[0x0000, 0x10ff], [0x2000, 0x200d], [0x2010, 0x201f], [0x2032, 0x2037]];
   const URL_RE = /\bhttps?:\/\/[^\s]+|\b(?:[a-z0-9-]+\.)+(?:com|org|net|io|co|dev|app|ai|me|xyz|gg|so|ly|in|uk)(?:\/[^\s]*)?/gi;
-  const EMOJI = /\p{Extended_Pictographic}/u;
+  // Flags are a pair of regional indicator symbols; twitter-text counts them as one emoji.
+  const EMOJI = /\p{Extended_Pictographic}|\p{Regional_Indicator}{2}/u;
   const graphemes = new Intl.Segmenter(undefined, { granularity: 'grapheme' });
 
   function charWeight(cp) {

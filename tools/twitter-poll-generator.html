@@ -1,0 +1,553 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Free Twitter Poll Generator: Questions and 25-Char Choices</title>
+  <meta name="description" content="Twitter poll generator that writes poll questions and up to 4 choices that fit X&#x27;s 25-character limit. Edit, preview and copy. Free, no sign-up." />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <link rel="canonical" href="https://kakahaja07.github.io/xvision/tools/twitter-poll-generator.html" />
+  <meta name="theme-color" content="#f6f6f8" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#0a0a0c" media="(prefers-color-scheme: dark)" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="XVision" />
+  <meta property="og:url" content="https://kakahaja07.github.io/xvision/tools/twitter-poll-generator.html" />
+  <meta property="og:title" content="Twitter Poll Generator" />
+  <meta property="og:description" content="Twitter poll generator that writes poll questions and up to 4 choices that fit X&#x27;s 25-character limit. Edit, preview and copy. Free, no sign-up." />
+  <meta property="og:image" content="https://kakahaja07.github.io/xvision/assets/og-card.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Twitter Poll Generator" />
+  <meta name="twitter:description" content="Twitter poll generator that writes poll questions and up to 4 choices that fit X&#x27;s 25-character limit. Edit, preview and copy. Free, no sign-up." />
+  <meta name="twitter:image" content="https://kakahaja07.github.io/xvision/assets/og-card.jpg" />
+  <link rel="icon" type="image/png" href="../assets/logo-64.png" />
+  <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png" />
+  <script src="../assets/site.js"></script>
+  <link rel="stylesheet" href="../assets/site.css" />
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "name": "Twitter Poll Generator",
+      "description": "Twitter poll generator that writes poll questions and up to 4 choices that fit X's 25-character limit. Edit, preview and copy. Free, no sign-up.",
+      "url": "https://kakahaja07.github.io/xvision/tools/twitter-poll-generator.html",
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "Any",
+      "browserRequirements": "Requires JavaScript",
+      "isAccessibleForFree": true,
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "author": {
+        "@type": "Person",
+        "@id": "https://kakahaja07.github.io/xvision/#author",
+        "name": "Prashant Sharma",
+        "url": "https://github.com/Kakahaja07"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "XVision",
+          "item": "https://kakahaja07.github.io/xvision/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Free tools",
+          "item": "https://kakahaja07.github.io/xvision/tools/index.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Twitter Poll Generator",
+          "item": "https://kakahaja07.github.io/xvision/tools/twitter-poll-generator.html"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How do you make a good poll on X?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A good poll on X asks one clear question and offers 2 to 4 short choices that cover the real options. X polls allow up to 4 choices of 25 characters each and can run from 5 minutes to 7 days. This free Twitter poll generator writes the question and choices for you, already inside those limits."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is this Twitter poll generator free?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, the XVision Twitter Poll Generator is free with no sign-up and no limit on how many polls you create. It runs in your browser, so your topics and choices are never uploaded. Generate as many ideas as you like, edit one, and copy it into X when it looks right."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How many characters can a poll choice have on X?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A poll choice on X can have up to 25 characters, according to X's help page as of October 2026. That includes spaces and punctuation. This poll generator counts every choice live, shortens generated choices at a word break, and stops you from typing past 25 characters in the editor."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I add a photo to an X poll?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No, X's help page says photos can't be included in a poll. If you need a visual, post the image first and add the poll in a reply, or describe the options in the question text. Keep the choices themselves short, because each one is limited to 25 characters."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can people see how I voted in a poll?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No, votes in X polls are private. X's help page says neither the poll creator nor other voters can see who voted or how they voted. People see the current results after they vote, and the winning choice is shown in bold when the poll ends."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How long should an X poll run?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "An X poll can run anywhere from 5 minutes to 7 days, and it defaults to 1 day. There is no official best length. A short poll fits a live moment, like an event you're watching. A longer poll gives people in other time zones a chance to see it and vote."
+          }
+        }
+      ],
+      "@id": "https://kakahaja07.github.io/xvision/tools/twitter-poll-generator.html#faq"
+    }
+  ]
+}
+  </script>
+  <style>
+.t-twitter-poll-generator .pg-choice { display: flex; align-items: center; gap: 8px; }
+.t-twitter-poll-generator .pg-choice input { flex: 1; min-width: 0; }
+.t-twitter-poll-generator .pg-n { flex: none; width: 44px; text-align: right; color: var(--muted); font-size: 13px; font-variant-numeric: tabular-nums; }
+.t-twitter-poll-generator .pg-n.full { color: var(--amber); }
+.t-twitter-poll-generator .pg-card { padding: 14px 16px; border: 1px solid var(--line); border-radius: 16px; background: var(--bg); }
+.t-twitter-poll-generator .pg-q { margin: 0 0 12px; white-space: pre-wrap; overflow-wrap: anywhere; font-size: 16px; }
+.t-twitter-poll-generator .pg-opts { display: grid; gap: 8px; }
+.t-twitter-poll-generator .pg-opt { padding: 8px 14px; border: 1px solid var(--line-strong); border-radius: 999px; text-align: center; font-weight: 600; font-size: 15px; overflow-wrap: anywhere; }
+.t-twitter-poll-generator .pg-meta { margin-top: 10px; color: var(--muted); font-size: 13.5px; }
+.t-twitter-poll-generator .pg-ideas { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 10px; }
+.t-twitter-poll-generator .pg-ideas ol { margin: 8px 0 0; padding-left: 20px; color: var(--muted); font-size: 14.5px; }
+.t-twitter-poll-generator .over { color: var(--red); }
+.t-twitter-poll-generator .pg-act { display: flex; gap: 6px; }
+.t-twitter-poll-generator #pg-question { min-height: 84px; }
+.t-twitter-poll-generator #pg-status:empty { display: none; }
+.t-twitter-poll-generator .fields > .row { margin-top: 0; }
+</style>
+</head>
+<body>
+  <header class="site-nav">
+    <div class="wrap nav-in">
+      <a class="wordmark" href="../index.html" aria-label="XVision home"><img src="../assets/logo-64.png" alt="" width="26" height="26" />Vision</a>
+      <nav class="navlinks" id="site-menu" aria-label="Main">
+        <a class="opt" href="../index.html#features">Features</a>
+        <a class="opt" href="../index.html#install">How it works</a>
+        <a href="../guides/index.html">Guides</a>
+        <a href="../tools/index.html" aria-current="page">Tools</a>
+        <a class="opt" href="../index.html#faq">FAQ</a>
+      </nav>
+      <div class="nav-cta">
+        <button class="theme-toggle" type="button" aria-label="Dark mode" aria-pressed="false"><svg class="sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.9 4.9l1.4 1.4m11.4 11.4 1.4 1.4M2 12h2m16 0h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg><svg class="moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 14.3A8.5 8.5 0 1 1 9.7 3.5a7 7 0 0 0 10.8 10.8Z"/></svg></button>
+        <a class="btn ghost small" href="https://github.com/Kakahaja07/xvision">GitHub</a>
+        <a class="btn primary small" href="../index.html#install">Get it free</a>
+        <button class="menu-toggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="site-menu"><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+  <main class="wrap tool-page">
+    <header class="page-head">
+      <div class="crumbs"><a href="index.html">Tools</a> › <a href="index.html#create">Content creation</a></div>
+      <h1>Twitter Poll Generator</h1>
+      <p>Pick a topic and a poll type to get ready-to-post X polls, with every choice kept under 25 characters and a live preview before you copy.</p>
+    </header>
+    <section class="tool t-twitter-poll-generator">
+  <div class="tool-grid">
+    <div class="fields">
+      <div class="field-group">
+        <label for="pg-topic">Topic</label>
+        <input type="text" id="pg-topic" value="remote work" autocomplete="off">
+      </div>
+      <div class="field-group">
+        <label for="pg-type">Poll type</label>
+        <select id="pg-type">
+          <option value="pair">This or that</option>
+          <option value="scale">Opinion scale</option>
+          <option value="predict">Prediction</option>
+          <option value="prefer" selected>Preference</option>
+        </select>
+      </div>
+      <div class="field-group">
+        <label for="pg-items">Choices you want (optional)</label>
+        <input type="text" id="pg-items" placeholder="e.g. Slack, Teams, Discord" autocomplete="off">
+        <span class="hint">Comma-separated. Used for This or that and Preference polls.</span>
+      </div>
+      <div class="field-group">
+        <label for="pg-time">Poll length</label>
+        <select id="pg-time">
+          <option>5 minutes</option>
+          <option>30 minutes</option>
+          <option>1 hour</option>
+          <option>6 hours</option>
+          <option>12 hours</option>
+          <option selected>1 day</option>
+          <option>3 days</option>
+          <option>7 days</option>
+        </select>
+      </div>
+      <div class="row">
+        <button type="button" class="btn primary small" id="pg-go">Generate polls</button>
+        <button type="button" class="btn ghost small" id="pg-again">Generate again</button>
+      </div>
+    </div>
+    <div class="fields">
+      <div class="field-group">
+        <label for="pg-question">Question</label>
+        <textarea id="pg-question" rows="3"></textarea>
+        <span class="hint" id="pg-qcount">0 / 280</span>
+      </div>
+      <div class="field-group">
+        <span class="field-label">Choices (2 to 4, max 25 characters each)</span>
+        <div class="pg-choice"><input type="text" id="pg-c1" aria-label="Choice 1"><span class="pg-n" id="pg-n1">0/25</span></div>
+        <div class="pg-choice"><input type="text" id="pg-c2" aria-label="Choice 2"><span class="pg-n" id="pg-n2">0/25</span></div>
+        <div class="pg-choice"><input type="text" id="pg-c3" aria-label="Choice 3 (optional)" placeholder="Choice 3 (optional)"><span class="pg-n" id="pg-n3">0/25</span></div>
+        <div class="pg-choice"><input type="text" id="pg-c4" aria-label="Choice 4 (optional)" placeholder="Choice 4 (optional)"><span class="pg-n" id="pg-n4">0/25</span></div>
+      </div>
+      <div class="pg-card" aria-live="polite">
+        <p class="pg-q" id="pg-pq"></p>
+        <div class="pg-opts" id="pg-popts"></div>
+        <div class="pg-meta" id="pg-pmeta"></div>
+      </div>
+      <p class="hint" id="pg-status" role="status"></p>
+      <div class="row">
+        <button type="button" class="btn primary small" id="pg-copy">Copy full poll</button>
+        <button type="button" class="btn ghost small" id="pg-copy-q">Copy question</button>
+      </div>
+    </div>
+  </div>
+  <hr>
+  <p class="tool-title">More poll ideas</p>
+  <div class="pg-ideas results" id="pg-ideas" aria-live="polite"></div>
+</section>
+    <p class="privacy-note">Runs in your browser. Nothing you enter is uploaded.</p>
+    <article class="tool-article"><h2>How do you make a good poll on X?</h2>
+<p>A good poll on X asks one clear question and offers 2 to 4 short choices that cover the real options. X polls allow up to 4 choices of 25 characters each and can run from 5 minutes to 7 days. This free Twitter poll generator writes the question and choices for you, already inside those limits.</p>
+<p>Polls are one of the easiest posts to answer. Nobody has to think of a reply, they just tap. But I've seen plenty of polls fall flat because the choices were vague or cut off. Most of the work is in the wording, and that's the part this tool speeds up.</p>
+
+<h2>How to use the Twitter Poll Generator</h2>
+<ol>
+<li>Type your topic, like "remote work" or "home espresso". For a this-or-that poll you can also type "Notion vs Obsidian".</li>
+<li>Pick a poll type: This or that, Opinion scale, Prediction or Preference.</li>
+<li>Add your own choices, separated by commas, if you already know them.</li>
+<li>Choose how long the poll should run.</li>
+<li>Press Generate polls. The first poll loads into the editor, and six more ideas appear underneath.</li>
+<li>Edit the question and choices. Each choice shows a live count and stops at 25 characters.</li>
+<li>Copy the full poll, then paste the question into X's compose box and each choice into its own field.</li>
+</ol>
+
+<h2>What are the X poll limits?</h2>
+<p>X polls have three main limits, as of October 2026. These come from X's <a href="https://help.x.com/en/using-x/x-polls">About X Polls help page</a>.</p>
+<table>
+<thead><tr><th>Part of the poll</th><th>Limit</th></tr></thead>
+<tbody>
+<tr><td>Choices</td><td>2 to 4</td></tr>
+<tr><td>Characters per choice</td><td>25</td></tr>
+<tr><td>Poll length</td><td>5 minutes to 7 days (1 day by default)</td></tr>
+<tr><td>Question</td><td>Written in the main compose box, so the normal post limit applies</td></tr>
+<tr><td>Photos</td><td>Not allowed in a poll</td></tr>
+</tbody>
+</table>
+<p>The same page says each person can vote once, results show right after voting, and votes are private. Neither you nor other voters can see who picked what.</p>
+
+<h2>Which poll type should you pick?</h2>
+<p>Pick the poll type that matches what you want to learn. Each type asks a different kind of question.</p>
+<ul>
+<li><strong>This or that:</strong> two clear options, like two tools or two habits. Fast to answer and easy to argue about in the replies.</li>
+<li><strong>Opinion scale:</strong> agree or disagree in steps. Good for testing a take before you write a full post about it.</li>
+<li><strong>Prediction:</strong> where people think a topic is going. Fun to quote later when you know the answer.</li>
+<li><strong>Preference:</strong> how people actually do something, like when they work or how they learn. This is the most useful type for research.</li>
+</ul>
+
+<h2>Poll tips and examples</h2>
+<p>Write choices that don't overlap. Here is a made-up example from a fictional coffee account. Weak: "How often do you drink coffee?" with "A lot", "Sometimes", "Daily", "Rarely". "A lot" and "Daily" overlap. Better: "None", "1 cup a day", "2 to 3 cups", "4 or more".</p>
+<ul>
+<li><strong>Use the fourth choice wisely.</strong> "Something else (reply)" turns quiet voters into repliers.</li>
+<li><strong>Match the length to the question.</strong> A quick reaction poll can run a few hours. A research poll you want many people to see can run longer.</li>
+<li><strong>Reply with the results.</strong> When the poll ends, share what you learned. It gives voters a reason to come back.</li>
+</ul>
+
+<h2>Common poll mistakes</h2>
+<p>The most common mistake is a choice that gets cut off or reads oddly because it was squeezed into 25 characters at the last second. Write short choices first, then the question.</p>
+<ul>
+<li><strong>Leading questions.</strong> "Isn't it obvious that remote work is better?" tells people the answer you want.</li>
+<li><strong>Missing options.</strong> If a common answer isn't listed, people skip the poll.</li>
+<li><strong>Two questions in one.</strong> "Do you like coffee and tea?" can't be answered with one tap.</li>
+</ul>
+
+<h2>When should you use a related tool?</h2>
+<p>Use a related tool when you need ideas or want to measure results. The <a href="twitter-content-ideas-generator.html">Twitter Content Ideas Generator</a> suggests what to post about, and the <a href="twitter-reply-idea-generator.html">Twitter Reply Idea Generator</a> helps you answer the replies your poll gets. To see how a poll did compared with your other posts, use the <a href="engagement-rate.html">Twitter Engagement Rate Calculator</a>.</p>
+<p>For more on starting conversations, read <a href="../guides/best-questions-to-ask-on-x-for-engagement.html">the best questions to ask on X for engagement</a> and <a href="../guides/get-more-replies-on-x.html">how to get more replies on X</a>.</p>
+
+<h2>Frequently Asked Questions</h2>
+<h3>Is this Twitter poll generator free?</h3>
+<p>Yes, the XVision Twitter Poll Generator is free with no sign-up and no limit on how many polls you create. It runs in your browser, so your topics and choices are never uploaded. Generate as many ideas as you like, edit one, and copy it into X when it looks right.</p>
+<h3>How many characters can a poll choice have on X?</h3>
+<p>A poll choice on X can have up to 25 characters, according to X's help page as of October 2026. That includes spaces and punctuation. This poll generator counts every choice live, shortens generated choices at a word break, and stops you from typing past 25 characters in the editor.</p>
+<h3>Can I add a photo to an X poll?</h3>
+<p>No, X's help page says photos can't be included in a poll. If you need a visual, post the image first and add the poll in a reply, or describe the options in the question text. Keep the choices themselves short, because each one is limited to 25 characters.</p>
+<h3>Can people see how I voted in a poll?</h3>
+<p>No, votes in X polls are private. X's help page says neither the poll creator nor other voters can see who voted or how they voted. People see the current results after they vote, and the winning choice is shown in bold when the poll ends.</p>
+<h3>How long should an X poll run?</h3>
+<p>An X poll can run anywhere from 5 minutes to 7 days, and it defaults to 1 day. There is no official best length. A short poll fits a live moment, like an event you're watching. A longer poll gives people in other time zones a chance to see it and vote.</p>
+    </article>
+    <aside class="related">
+      <h2>More free tools</h2>
+      <ul>
+        <li><a href="tweet-generator.html">Tweet Generator</a></li>
+        <li><a href="twitter-thread-generator.html">Twitter Thread Generator</a></li>
+        <li><a href="thread-maker.html">Twitter Thread Splitter</a></li>
+        <li><a href="twitter-thread-preview.html">Twitter Thread Preview</a></li>
+      </ul>
+    </aside>
+    <aside class="cta">
+      <b>Grow on X with real signals.</b>
+      <span>XVision is a free Chrome extension that shows follower counts, follow-back badges and viral posts right on your timeline.</span>
+      <a class="btn light small" href="../index.html">Get XVision free</a>
+    </aside>
+  </main>
+  <footer class="site-footer">
+    <img class="foot-mark" src="../assets/logo.png" alt="" width="320" height="320" loading="lazy" />
+    <div class="wrap">
+      <div class="foot-top">
+        <div class="foot-brand">
+          <a class="wordmark" href="../index.html"><img src="../assets/logo-64.png" alt="" width="26" height="26" />Vision</a>
+          <p>A free Chrome extension, guides and tools for growing on X. Private by design.</p>
+          <div class="foot-social"><a href="https://github.com/Kakahaja07/xvision" aria-label="XVision on GitHub"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.9 1.2 1.9 1.2 1.1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-6 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17.3 4.7 18.3 5 18.3 5c.7 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .5Z"/></svg></a></div>
+        </div>
+        <div class="foot-cols">
+          <div><h3>Product</h3><ul><li><a href="../index.html#features">Features</a></li><li><a href="../index.html#install">How it works</a></li><li><a href="../index.html#pricing">Pricing</a></li><li><a href="../index.html#faq">FAQ</a></li></ul></div>
+          <div><h3>Guides</h3><ul><li><a href="../guides/index.html#grow">Grow on X</a></li><li><a href="../guides/index.html#algorithm">The X algorithm</a></li><li><a href="../guides/index.html#money">Make money on X</a></li><li><a href="../guides/index.html">All guides</a></li></ul></div>
+          <div><h3>Free tools</h3><ul><li><a href="../tools/twitter-bio-generator.html">Twitter bio generator</a></li><li><a href="../tools/video-downloader.html">Twitter video downloader</a></li><li><a href="../tools/thread-maker.html">Thread splitter</a></li><li><a href="../tools/index.html">All 51 tools</a></li></ul></div>
+          <div><h3>Project</h3><ul><li><a href="https://github.com/Kakahaja07/xvision">GitHub</a></li><li><a href="../privacy-policy.html">Privacy policy</a></li><li><a href="../LICENSE">MIT License</a></li><li><a href="../sitemap.xml">Sitemap</a></li></ul></div>
+        </div>
+      </div>
+      <div class="foot-bottom">
+        <span>© 2026 XVision · Built by Prashant Sharma · Inspired by XRay by fayazara</span>
+        <span>Not affiliated with X Corp.</span>
+      </div>
+    </div>
+  </footer>
+  <script src="../assets/x-text.js"></script>
+  <script src="../assets/tool-kit.js"></script>
+  <script>(function () {
+  const root = document.querySelector('.t-twitter-poll-generator');
+  const $ = (id) => root.querySelector('#' + id);
+  const LIMIT = XText.LIMIT;
+  const MAX = 25;
+  const len = (s) => XText.weightedLength(s);
+  const choiceInputs = [1, 2, 3, 4].map((i) => $('pg-c' + i));
+  let ideas = [];
+
+  // Shorten text to fit 25 weighted characters, cutting at a word where possible.
+  function fit(s) {
+    s = s.trim().replace(/\s+/g, ' ');
+    if (len(s) <= MAX) return s;
+    let out = '';
+    for (const ch of s) {
+      if (len(out + ch) > MAX) break;
+      out += ch;
+    }
+    const cut = out.lastIndexOf(' ');
+    out = cut > 8 ? out.slice(0, cut) : out;
+    // Don't leave a dangling "for", "and" or "the" at the end.
+    while (/\s(?:for|and|or|the|a|an|of|to|with|in|on|by)$/i.test(out)) out = out.replace(/\s\S+$/, '');
+    return out.replace(/[\s,.;:-]+$/, '');
+  }
+  // While typing, cut hard at 25 so a half-typed word is never thrown away.
+  function clip(s) {
+    let out = '';
+    for (const ch of s) {
+      if (len(out + ch) > MAX) break;
+      out += ch;
+    }
+    return out;
+  }
+  const lcFirst = (s) => s.charAt(0).toLowerCase() + s.slice(1);
+  const capFirst = (s) => s.charAt(0).toUpperCase() + s.slice(1);
+
+  const PAIRS = [
+    ['Free tools', 'Paid tools'], ['Learn alone', 'Learn with others'], ['Early morning', 'Late night'],
+    ['Go fast', 'Slow and steady'], ['Go deep on one thing', 'Try a bit of everything'], ['Courses', 'Trial and error'],
+    ['Plan first', 'Start right now'], ['Quality', 'Quantity'], ['Solo', 'With a team'], ['The old way', 'The new way']
+  ];
+  const PAIR_Q = [
+    (t, a, b) => a + ' or ' + b + '?',
+    (t, a, b) => 'Be honest: ' + a + ' or ' + b + '?',
+    (t, a, b) => 'You can only keep one. ' + a + ' or ' + b + '?',
+    (t, a, b) => 'For ' + t + ', which wins: ' + a + ' or ' + b + '?',
+    (t, a, b) => 'Starting ' + t + ' from zero today, would you pick ' + a + ' or ' + b + '?',
+    (t, a, b) => 'Settle this for me. When it comes to ' + t + ': ' + a + ' or ' + b + '?',
+    (t, a, b) => 'Which works better for you: ' + a + ' or ' + b + '?'
+  ];
+  const USES_TOPIC = new Set([3, 4, 5]);
+  const PAIR_EXTRA = [[], ['Depends (I\'ll reply)'], ['Both, honestly'], ['Neither']];
+
+  const year = new Date().getFullYear() + 1;
+  const SCALE = [
+    [(t) => capFirst(t) + ' is overrated. Agree?', ['Strongly agree', 'Somewhat agree', 'Somewhat disagree', 'Strongly disagree']],
+    [(t) => 'How do you feel about ' + t + ' right now?', ['Love it', 'It\'s fine', 'Not for me', 'Haven\'t tried it']],
+    [(t) => 'Is ' + t + ' worth the hype?', ['Yes, totally', 'Mostly', 'Not really', 'No idea yet']],
+    [(t) => 'Rate ' + t + ' honestly:', ['5/5, must have', '3/5, it\'s okay', '1/5, skip it', 'Never tried it']],
+    [(t) => 'Is ' + t + ' underrated or overrated?', ['Underrated', 'Overrated', 'Fairly rated', 'Never thought about it']],
+    [(t) => 'Would you recommend ' + t + ' to a beginner?', ['Yes, right away', 'Yes, with a warning', 'Not yet', 'No']],
+    [(t) => 'How confident are you with ' + t + '?', ['Very confident', 'Getting there', 'Just starting', 'Not at all']]
+  ];
+  const PREDICT = [
+    [(t) => 'Will ' + t + ' be bigger a year from now?', ['Much bigger', 'A bit bigger', 'About the same', 'Smaller']],
+    [(t) => 'When will ' + t + ' go mainstream?', ['Within a year', 'In 2 to 3 years', '5+ years', 'It already has']],
+    [(t) => 'In 5 years, ' + t + ' will be...', ['Everywhere', 'Still a niche', 'Replaced by something', 'Exactly the same']],
+    [(t) => 'Prediction time. By the end of ' + year + ', ' + t + ' will...', ['Grow fast', 'Grow slowly', 'Stay flat', 'Shrink']],
+    [(t) => 'Will you still care about ' + t + ' next year?', ['Definitely', 'Probably', 'Probably not', 'No']],
+    [(t) => 'What happens to ' + t + ' next?', ['It keeps growing', 'It levels off', 'It fades out', 'Something new wins']]
+  ];
+  const PREFER_ITEMS = [
+    (t) => 'Which ' + t + ' option do you use most?',
+    (t) => 'You can keep only one for ' + t + '. Which?',
+    (t) => 'What\'s your go-to for ' + t + '?',
+    (t) => 'Quick check: what do you use for ' + t + '?',
+    (t) => 'If you started ' + t + ' over, which would you pick?'
+  ];
+  const PREFER = [
+    [(t) => 'How do you prefer to learn ' + t + '?', ['Videos', 'Books or articles', 'Courses', 'Trial and error']],
+    [(t) => 'What time of day works best for ' + t + '?', ['Early morning', 'During the day', 'Evening', 'Late at night']],
+    [(t) => 'What\'s the hardest part of ' + t + '?', ['Getting started', 'Staying consistent', 'Finding time', 'Seeing results']],
+    [(t) => 'How much do you spend on ' + t + ' each month?', ['Nothing', 'Under $20', '$20 to $100', 'Over $100']],
+    [(t) => 'Where do you learn about ' + t + '?', ['Here on X', 'YouTube', 'Newsletters', 'Friends and coworkers']],
+    [(t) => 'How long have you been into ' + t + '?', ['Under a year', '1 to 3 years', '3 to 5 years', '5+ years']],
+    [(t) => 'What would make ' + t + ' easier for you?', ['Better tools', 'More time', 'A clear plan', 'Someone to ask']]
+  ];
+
+  function userItems() {
+    const raw = $('pg-items').value.split(',').map((s) => s.trim()).filter(Boolean);
+    const topic = $('pg-topic').value.trim();
+    const vs = topic.match(/^(.+?)\s+(?:vs\.?|versus|or)\s+(.+)$/i);
+    return raw.length ? raw : vs ? [vs[1], vs[2]] : [];
+  }
+
+  function generate() {
+    let topic = $('pg-topic').value.trim().replace(/[?.!]+$/, '');
+    if (!topic) topic = 'your topic';
+    const type = $('pg-type').value;
+    const items = userItems().map(fit);
+    const polls = [];
+    if (type === 'pair') {
+      const own = items.length >= 2;
+      const pairs = own ? [[items[0], items[1]]] : XTool.shuffle(PAIRS);
+      // If the topic itself is "A vs B", skip questions that would repeat it.
+      const fromTopic = own && !$('pg-items').value.trim();
+      const qs = XTool.shuffle(PAIR_Q.filter((q, i) => !(fromTopic && USES_TOPIC.has(i))));
+      qs.forEach((q, i) => {
+        const [a, b] = pairs[i % pairs.length];
+        const extra = XTool.pick(PAIR_EXTRA);
+        const text = own ? q(topic, a, b) : capFirst(q(topic, lcFirst(a), lcFirst(b))).replace(/([.!?]\s+)([a-z])/g, (m, p, c) => p + c.toUpperCase());
+        polls.push({ q: text, c: [a, b, ...extra] });
+      });
+    } else if (type === 'prefer' && items.length >= 2) {
+      const picked = items.slice(0, 4);
+      XTool.shuffle(PREFER_ITEMS).forEach((q) => {
+        const c = XTool.shuffle(picked);
+        polls.push({ q: q(topic), c: c.length < 4 ? [...c, 'Something else'] : c });
+      });
+      XTool.shuffle(PREFER).slice(0, 2).forEach(([q, c]) => polls.push({ q: q(topic), c }));
+    } else {
+      const bank = type === 'scale' ? SCALE : type === 'predict' ? PREDICT : PREFER;
+      XTool.shuffle(bank).forEach(([q, c]) => polls.push({ q: q(topic), c }));
+    }
+    ideas = polls.slice(0, 7).map((p) => ({ q: p.q, c: p.c.map(fit).filter(Boolean).slice(0, 4) }));
+    load(ideas[0]);
+    renderIdeas();
+    const longOnes = userItems().filter((s) => len(s) > MAX);
+    $('pg-status').textContent = longOnes.length ? 'Shortened to fit 25 characters: ' + longOnes.join(', ') : '';
+  }
+
+  function load(p) {
+    $('pg-question').value = p.q;
+    choiceInputs.forEach((el, i) => { el.value = p.c[i] || ''; });
+    update();
+  }
+
+  const current = () => ({
+    q: $('pg-question').value.trim(),
+    c: choiceInputs.map((el) => el.value.trim()).filter(Boolean)
+  });
+  const pollText = (p) => p.q + '\n\n' + p.c.map((c, i) => (i + 1) + '. ' + c).join('\n') + '\n\nPoll length: ' + $('pg-time').value;
+
+  function update() {
+    // Enforce the 25-character limit as you type.
+    choiceInputs.forEach((el, i) => {
+      if (len(el.value) > MAX) el.value = clip(el.value);
+      const n = len(el.value);
+      const tag = $('pg-n' + (i + 1));
+      tag.textContent = n + '/' + MAX;
+      tag.classList.toggle('full', n === MAX);
+    });
+    const p = current();
+    const qn = len(p.q);
+    const qc = $('pg-qcount');
+    qc.textContent = XTool.fmt(qn) + ' / ' + LIMIT + (qn > LIMIT ? ' · over by ' + XTool.fmt(qn - LIMIT) : '');
+    qc.classList.toggle('over', qn > LIMIT);
+    $('pg-pq').textContent = p.q || 'Your question';
+    $('pg-popts').innerHTML = (p.c.length ? p.c : ['Choice 1', 'Choice 2']).map((c) => '<div class="pg-opt">' + XTool.escapeHtml(c) + '</div>').join('');
+    $('pg-pmeta').textContent = '0 votes · ' + $('pg-time').value + ' left';
+    const status = $('pg-status');
+    if (p.c.length < 2) status.textContent = 'Add at least 2 choices. X polls need 2 to 4.';
+    else if (/^Add at least/.test(status.textContent)) status.textContent = '';
+  }
+
+  function renderIdeas() {
+    $('pg-ideas').innerHTML = ideas.slice(1).map((p, i) =>
+      '<div class="result"><p>' + XTool.escapeHtml(p.q) + '</p><ol>' + p.c.map((c) => '<li>' + XTool.escapeHtml(c) + '</li>').join('') + '</ol>' +
+      '<div class="result-foot"><span>' + len(p.q) + ' / ' + LIMIT + '</span><span class="pg-act">' +
+      '<button type="button" class="btn ghost small" data-use="' + (i + 1) + '">Use this</button>' +
+      '<button type="button" class="btn ghost small" data-copy="' + (i + 1) + '">Copy</button></span></div></div>').join('');
+  }
+
+  $('pg-ideas').addEventListener('click', (e) => {
+    const use = e.target.closest('[data-use]');
+    const copy = e.target.closest('[data-copy]');
+    if (use) {
+      load(ideas[+use.dataset.use]);
+      $('pg-question').focus();
+      $('pg-question').scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+    }
+    if (copy) XTool.copy(pollText(ideas[+copy.dataset.copy]), copy);
+  });
+  [$('pg-question'), ...choiceInputs].forEach((el) => el.addEventListener('input', update));
+  $('pg-time').addEventListener('change', update);
+  $('pg-go').addEventListener('click', generate);
+  $('pg-again').addEventListener('click', generate);
+  ['pg-topic', 'pg-items'].forEach((id) => $(id).addEventListener('keydown', (e) => { if (e.key === 'Enter') generate(); }));
+  $('pg-type').addEventListener('change', generate);
+  $('pg-copy').addEventListener('click', (e) => {
+    const p = current();
+    if (p.c.length < 2) return XTool.flash(e.currentTarget, 'Add 2 choices');
+    XTool.copy(pollText(p), e.currentTarget);
+  });
+  $('pg-copy-q').addEventListener('click', (e) => XTool.copy(current().q, e.currentTarget));
+  generate();
+})();</script>
+</body>
+</html>

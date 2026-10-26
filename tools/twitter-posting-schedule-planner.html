@@ -1,0 +1,534 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Free Twitter Posting Schedule Planner with Calendar Export</title>
+  <meta name="description" content="Twitter posting schedule planner: set posts, replies, active hours and time zone to get an evenly spaced weekly plan. Export .ics or CSV. Free, no sign-up." />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <link rel="canonical" href="https://kakahaja07.github.io/xvision/tools/twitter-posting-schedule-planner.html" />
+  <meta name="theme-color" content="#f6f6f8" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#0a0a0c" media="(prefers-color-scheme: dark)" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="XVision" />
+  <meta property="og:url" content="https://kakahaja07.github.io/xvision/tools/twitter-posting-schedule-planner.html" />
+  <meta property="og:title" content="Twitter Posting Schedule Planner" />
+  <meta property="og:description" content="Twitter posting schedule planner: set posts, replies, active hours and time zone to get an evenly spaced weekly plan. Export .ics or CSV. Free, no sign-up." />
+  <meta property="og:image" content="https://kakahaja07.github.io/xvision/assets/og-card.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Twitter Posting Schedule Planner" />
+  <meta name="twitter:description" content="Twitter posting schedule planner: set posts, replies, active hours and time zone to get an evenly spaced weekly plan. Export .ics or CSV. Free, no sign-up." />
+  <meta name="twitter:image" content="https://kakahaja07.github.io/xvision/assets/og-card.jpg" />
+  <link rel="icon" type="image/png" href="../assets/logo-64.png" />
+  <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png" />
+  <script src="../assets/site.js"></script>
+  <link rel="stylesheet" href="../assets/site.css" />
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "name": "Twitter Posting Schedule Planner",
+      "description": "Twitter posting schedule planner: set posts, replies, active hours and time zone to get an evenly spaced weekly plan. Export .ics or CSV. Free, no sign-up.",
+      "url": "https://kakahaja07.github.io/xvision/tools/twitter-posting-schedule-planner.html",
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "Any",
+      "browserRequirements": "Requires JavaScript",
+      "isAccessibleForFree": true,
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "author": {
+        "@type": "Person",
+        "@id": "https://kakahaja07.github.io/xvision/#author",
+        "name": "Prashant Sharma",
+        "url": "https://github.com/Kakahaja07"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "XVision",
+          "item": "https://kakahaja07.github.io/xvision/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Free tools",
+          "item": "https://kakahaja07.github.io/xvision/tools/index.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Twitter Posting Schedule Planner",
+          "item": "https://kakahaja07.github.io/xvision/tools/twitter-posting-schedule-planner.html"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is a good Twitter posting schedule?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A good Twitter posting schedule spreads your posts evenly across the hours you are really online, leaves time for replies, and repeats each week so it becomes a habit. The free Twitter Posting Schedule Planner builds one from your posts per day, active hours and time zone, then exports it as a calendar file."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I import the .ics file into Google Calendar or Outlook?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, the .ics file uses the standard iCalendar format, so Google Calendar, Outlook and Apple Calendar can import it. In Google Calendar, open Settings, choose Import and export, and pick the file. Consider importing into a new, separate calendar so you can hide or delete the whole schedule in one step later."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does the planner post or schedule tweets for me?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No, the Twitter Posting Schedule Planner only creates reminders in your own calendar. It never connects to X. To schedule real posts, use X Pro, which X lists under the Premium+ tier as of October 2026, the scheduler in ads.x.com, or a third-party tool such as Buffer."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What happens when daylight saving time changes?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Each event in the .ics file is converted to UTC for its own date, using your chosen time zone's rules. So a 9:20 a.m. post stays at 9:20 a.m. local time on both sides of a daylight saving change. If you move to another time zone, build a new file for the new zone."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Should I post at exactly the same time every day?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Not exactly the same, but close is good for building a habit. Same slots make posting automatic. Once a month, shift one slot by an hour or two and compare impressions in X analytics, which is a paid feature as of October 2026. Keep the times that work and drop the rest."
+          }
+        }
+      ],
+      "@id": "https://kakahaja07.github.io/xvision/tools/twitter-posting-schedule-planner.html#faq"
+    }
+  ]
+}
+  </script>
+  <style>
+.t-twitter-posting-schedule-planner .field-group { align-content: start; }
+.t-twitter-posting-schedule-planner .ps-out { margin-top: 20px; }
+.t-twitter-posting-schedule-planner .ps-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 10px; }
+.t-twitter-posting-schedule-planner .ps-day { min-width: 0; padding: 12px 14px; border: 1px solid var(--line); border-radius: 14px; background: var(--bg); }
+.t-twitter-posting-schedule-planner .ps-day.off { background: transparent; border-style: dashed; }
+.t-twitter-posting-schedule-planner .ps-day > b { display: block; margin-bottom: 8px; font-size: 14.5px; }
+.t-twitter-posting-schedule-planner .ps-day ul { display: grid; gap: 6px; margin: 0; padding: 0; list-style: none; }
+.t-twitter-posting-schedule-planner .ps-day li { display: flex; gap: 8px; font-size: 14px; line-height: 1.4; }
+.t-twitter-posting-schedule-planner .ps-day time { flex: none; min-width: 64px; font-weight: 600; font-variant-numeric: tabular-nums; }
+.t-twitter-posting-schedule-planner .ps-reply { color: var(--muted); }
+.t-twitter-posting-schedule-planner .ps-day .hint { margin: 0; }
+.t-twitter-posting-schedule-planner .ps-warn { margin: 12px 0 0; color: var(--amber); font-size: 14.5px; }
+.t-twitter-posting-schedule-planner .ps-warn:empty { display: none; }
+</style>
+</head>
+<body>
+  <header class="site-nav">
+    <div class="wrap nav-in">
+      <a class="wordmark" href="../index.html" aria-label="XVision home"><img src="../assets/logo-64.png" alt="" width="26" height="26" />Vision</a>
+      <nav class="navlinks" id="site-menu" aria-label="Main">
+        <a class="opt" href="../index.html#features">Features</a>
+        <a class="opt" href="../index.html#install">How it works</a>
+        <a href="../guides/index.html">Guides</a>
+        <a href="../tools/index.html" aria-current="page">Tools</a>
+        <a class="opt" href="../index.html#faq">FAQ</a>
+      </nav>
+      <div class="nav-cta">
+        <button class="theme-toggle" type="button" aria-label="Dark mode" aria-pressed="false"><svg class="sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.9 4.9l1.4 1.4m11.4 11.4 1.4 1.4M2 12h2m16 0h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg><svg class="moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 14.3A8.5 8.5 0 1 1 9.7 3.5a7 7 0 0 0 10.8 10.8Z"/></svg></button>
+        <a class="btn ghost small" href="https://github.com/Kakahaja07/xvision">GitHub</a>
+        <a class="btn primary small" href="../index.html#install">Get it free</a>
+        <button class="menu-toggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="site-menu"><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+  <main class="wrap tool-page">
+    <header class="page-head">
+      <div class="crumbs"><a href="index.html">Tools</a> › <a href="index.html#plan">Planning and marketing</a></div>
+      <h1>Twitter Posting Schedule Planner</h1>
+      <p>Spread your daily posts and reply sessions evenly across your active hours, then add the weekly schedule to your calendar as an .ics file.</p>
+    </header>
+    <section class="tool t-twitter-posting-schedule-planner">
+  <div class="fields">
+    <div class="fields-2">
+      <div class="field-group">
+        <label for="ps-posts">Posts per day</label>
+        <input type="number" id="ps-posts" value="3" min="1" max="12" step="1" inputmode="numeric">
+      </div>
+      <div class="field-group">
+        <label for="ps-replies">Replies per day</label>
+        <input type="number" id="ps-replies" value="10" min="0" max="100" step="1" inputmode="numeric">
+        <span class="hint">Grouped into 15-minute sessions of about 5 replies.</span>
+      </div>
+    </div>
+    <div class="fields-2">
+      <div class="field-group">
+        <label for="ps-from">Active from</label>
+        <input type="time" id="ps-from" value="08:00" step="300">
+      </div>
+      <div class="field-group">
+        <label for="ps-to">Active until</label>
+        <input type="time" id="ps-to" value="21:00" step="300">
+      </div>
+    </div>
+    <div class="field-group">
+      <label for="ps-tz">Your time zone</label>
+      <select id="ps-tz"></select>
+    </div>
+    <div class="field-group">
+      <span class="field-label" id="ps-off-label">Days off (no posts)</span>
+      <div class="chips" id="ps-off" role="group" aria-labelledby="ps-off-label"></div>
+    </div>
+    <div class="fields-2">
+      <div class="field-group">
+        <label for="ps-start">Calendar file starts on</label>
+        <input type="date" id="ps-start">
+      </div>
+      <div class="field-group">
+        <label for="ps-weeks">Weeks in calendar file</label>
+        <select id="ps-weeks">
+          <option value="1">1 week</option>
+          <option value="2">2 weeks</option>
+          <option value="4" selected>4 weeks</option>
+          <option value="8">8 weeks</option>
+        </select>
+      </div>
+    </div>
+    <label class="check" for="ps-alarm"><input type="checkbox" id="ps-alarm" checked> Add a reminder 5 minutes before each event</label>
+  </div>
+  <div class="row">
+    <button type="button" class="btn primary" id="ps-go">Build schedule</button>
+    <button type="button" class="btn ghost" id="ps-ics">Download .ics</button>
+    <button type="button" class="btn ghost" id="ps-csv">Download CSV</button>
+  </div>
+  <p class="ps-warn" id="ps-warn" role="status"></p>
+  <div class="stats" id="ps-stats"></div>
+  <div class="ps-out" id="ps-out" aria-live="polite"></div>
+  <p class="note">This planner adds reminders to your own calendar. It does not post or schedule anything on X.</p>
+  <p class="privacy-note">Runs in your browser. The calendar file is made on your device.</p>
+</section>
+    
+    <article class="tool-article"><h2>What is a good Twitter posting schedule?</h2>
+<p>A good Twitter posting schedule spreads your posts evenly across the hours you are really online, leaves time for replies, and repeats each week so it becomes a habit. The free Twitter Posting Schedule Planner builds one from your posts per day, active hours and time zone, then exports it as a calendar file.</p>
+<p>Here's the thing. Posting "whenever I have something" tends to bunch posts up in the evening, followed by days of silence. A fixed schedule spreads them out so your followers see you regularly.</p>
+
+<h2>How to use the Twitter Posting Schedule Planner</h2>
+<p>It takes about a minute. The defaults give you a sensible starting plan.</p>
+<ol>
+<li>Enter how many posts you want per day and how many replies you aim to write.</li>
+<li>Set the hours you are usually awake and able to check X, such as 8:00 to 21:00.</li>
+<li>Pick your time zone. It starts on the zone your device reports.</li>
+<li>Tap the days you want off. Sunday is off by default.</li>
+<li>Click Build schedule and check the weekly grid.</li>
+<li>Download the .ics file to add reminders to Google Calendar, Outlook or Apple Calendar, or the CSV for a spreadsheet.</li>
+</ol>
+
+<h2>How does the planner choose the times?</h2>
+<p>The planner splits your active hours into equal slots and puts one activity in the middle of each slot. Posts take evenly spaced slots, and reply sessions fill the gaps, so nothing clusters.</p>
+<p>The formula is simple. Slot time = start + window × (slot number + 0.5) ÷ total slots, rounded to the nearest 5 minutes. Replies are grouped into 15-minute sessions of about 5 replies each.</p>
+<p>Example: 8:00 to 21:00 is 780 minutes. With 3 posts and 10 replies, you get 3 posts plus 2 reply sessions, so 5 slots that are 156 minutes apart. The planner gives you:</p>
+<div class="table-scroll">
+<table>
+<thead><tr><th>Time</th><th>Activity</th></tr></thead>
+<tbody>
+<tr><td>9:20</td><td>Post 1</td></tr>
+<tr><td>11:55</td><td>Reply session (5 replies)</td></tr>
+<tr><td>14:30</td><td>Post 2</td></tr>
+<tr><td>17:05</td><td>Reply session (5 replies)</td></tr>
+<tr><td>19:40</td><td>Post 3</td></tr>
+</tbody>
+</table>
+</div>
+
+<h2>Why should you spread posts out?</h2>
+<p>Spacing helps each post get its own moment. X's open-source <a href="https://github.com/xai-org/x-algorithm">For You algorithm</a> applies an author diversity rule: in a viewer's feed, each post after an author's first is multiplied by a decaying factor. Three posts in ten minutes mostly compete with each other.</p>
+<p>The same repo says For You drops posts older than 48 hours, so a steady daily rhythm keeps fresh posts in the pool. That's my reading of the code, not an X statement about schedules. Your own results matter more.</p>
+<p>Reply sessions matter too. They keep you in conversations between posts, and they are often how small accounts get found.</p>
+
+<h2>How do you actually schedule posts on X?</h2>
+<p>XVision does not schedule or publish posts. This planner only creates calendar reminders. To schedule real posts, you have three main options as of October 2026.</p>
+<ul>
+<li><strong>X Pro.</strong> X's <a href="https://help.x.com/en/using-x/how-to-use-x-pro">guide to X Pro</a> says you can schedule posts for the future and view them in a Scheduled column. X lists X Pro access under the Premium+ tier.</li>
+<li><strong>The ads.x.com composer.</strong> It can schedule posts, though X's help page frames these as Promoted-only posts.</li>
+<li><strong>Third-party schedulers.</strong> Buffer, for example, offers a free plan with up to 3 channels and 10 scheduled posts per channel.</li>
+</ul>
+<p>Or keep it simple: let the calendar ping you, then post by hand. The guide on <a href="../guides/schedule-twitter-posts-in-advance.html">how to schedule Twitter posts in advance</a> walks through each option.</p>
+
+<h2>Tips and a quick example</h2>
+<p>Start with fewer posts than you think you can handle. You can always add a slot next month.</p>
+<p>Fictional example: Tom is a nurse who posts study tips. He works day shifts, so he sets 2 posts a day, 5 replies, active hours of 18:00 to 22:00, and Sunday off. His posts land at 18:40 and 21:20, with a reply session at 20:00. It fits his real life, so he sticks with it.</p>
+<ul>
+<li>Import the .ics into a separate calendar so you can hide it in one click.</li>
+<li>Write posts in a batch, then use the reminders only to publish and reply.</li>
+<li>Recheck your schedule each season, since your routine changes.</li>
+</ul>
+
+<h2>Common mistakes to avoid</h2>
+<ul>
+<li>Setting active hours you are not really online. A reminder at 7:00 a.m. is useless if you wake at 9:00.</li>
+<li>Posting and leaving. Stay a few minutes to answer early replies.</li>
+<li>Copying someone else's posting times without testing them on your audience.</li>
+</ul>
+
+<h2>Related tools and guides</h2>
+<p>If your followers live in another time zone, run the <a href="twitter-best-time-planner.html">Twitter Best Time Planner</a> first and use its windows as your active hours. Not sure how many posts to plan? The <a href="twitter-posting-frequency-calculator.html">Twitter Posting Frequency Calculator</a> helps. To fill each slot, use the <a href="twitter-content-calendar-generator.html">Twitter Content Calendar Generator</a>, and for reply sessions, the <a href="twitter-reply-idea-generator.html">Twitter Reply Idea Generator</a>.</p>
+<p>For more context, read the <a href="../guides/best-twitter-posting-schedule-for-beginners.html">best Twitter posting schedule for beginners</a>.</p>
+
+<h2>Frequently Asked Questions</h2>
+<h3>Can I import the .ics file into Google Calendar or Outlook?</h3>
+<p>Yes, the .ics file uses the standard iCalendar format, so Google Calendar, Outlook and Apple Calendar can import it. In Google Calendar, open Settings, choose Import and export, and pick the file. Consider importing into a new, separate calendar so you can hide or delete the whole schedule in one step later.</p>
+<h3>Does the planner post or schedule tweets for me?</h3>
+<p>No, the Twitter Posting Schedule Planner only creates reminders in your own calendar. It never connects to X. To schedule real posts, use X Pro, which X lists under the Premium+ tier as of October 2026, the scheduler in ads.x.com, or a third-party tool such as Buffer.</p>
+<h3>What happens when daylight saving time changes?</h3>
+<p>Each event in the .ics file is converted to UTC for its own date, using your chosen time zone's rules. So a 9:20 a.m. post stays at 9:20 a.m. local time on both sides of a daylight saving change. If you move to another time zone, build a new file for the new zone.</p>
+<h3>Should I post at exactly the same time every day?</h3>
+<p>Not exactly the same, but close is good for building a habit. Same slots make posting automatic. Once a month, shift one slot by an hour or two and compare impressions in X analytics, which is a paid feature as of October 2026. Keep the times that work and drop the rest.</p>
+    </article>
+    <aside class="related">
+      <h2>More free tools</h2>
+      <ul>
+        <li><a href="twitter-content-calendar-generator.html">Twitter Content Calendar Generator</a></li>
+        <li><a href="twitter-best-time-planner.html">Twitter Best Time Planner</a></li>
+        <li><a href="twitter-audience-persona-generator.html">Twitter Audience Persona Generator</a></li>
+        <li><a href="twitter-content-pillar-generator.html">Twitter Content Pillar Generator</a></li>
+      </ul>
+    </aside>
+    <aside class="cta">
+      <b>Grow on X with real signals.</b>
+      <span>XVision is a free Chrome extension that shows follower counts, follow-back badges and viral posts right on your timeline.</span>
+      <a class="btn light small" href="../index.html">Get XVision free</a>
+    </aside>
+  </main>
+  <footer class="site-footer">
+    <img class="foot-mark" src="../assets/logo.png" alt="" width="320" height="320" loading="lazy" />
+    <div class="wrap">
+      <div class="foot-top">
+        <div class="foot-brand">
+          <a class="wordmark" href="../index.html"><img src="../assets/logo-64.png" alt="" width="26" height="26" />Vision</a>
+          <p>A free Chrome extension, guides and tools for growing on X. Private by design.</p>
+          <div class="foot-social"><a href="https://github.com/Kakahaja07/xvision" aria-label="XVision on GitHub"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.9 1.2 1.9 1.2 1.1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-6 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17.3 4.7 18.3 5 18.3 5c.7 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .5Z"/></svg></a></div>
+        </div>
+        <div class="foot-cols">
+          <div><h3>Product</h3><ul><li><a href="../index.html#features">Features</a></li><li><a href="../index.html#install">How it works</a></li><li><a href="../index.html#pricing">Pricing</a></li><li><a href="../index.html#faq">FAQ</a></li></ul></div>
+          <div><h3>Guides</h3><ul><li><a href="../guides/index.html#grow">Grow on X</a></li><li><a href="../guides/index.html#algorithm">The X algorithm</a></li><li><a href="../guides/index.html#money">Make money on X</a></li><li><a href="../guides/index.html">All guides</a></li></ul></div>
+          <div><h3>Free tools</h3><ul><li><a href="../tools/twitter-bio-generator.html">Twitter bio generator</a></li><li><a href="../tools/video-downloader.html">Twitter video downloader</a></li><li><a href="../tools/thread-maker.html">Thread splitter</a></li><li><a href="../tools/index.html">All 51 tools</a></li></ul></div>
+          <div><h3>Project</h3><ul><li><a href="https://github.com/Kakahaja07/xvision">GitHub</a></li><li><a href="../privacy-policy.html">Privacy policy</a></li><li><a href="../LICENSE">MIT License</a></li><li><a href="../sitemap.xml">Sitemap</a></li></ul></div>
+        </div>
+      </div>
+      <div class="foot-bottom">
+        <span>© 2026 XVision · Built by Prashant Sharma · Inspired by XRay by fayazara</span>
+        <span>Not affiliated with X Corp.</span>
+      </div>
+    </div>
+  </footer>
+  <script src="../assets/x-text.js"></script>
+  <script src="../assets/tool-kit.js"></script>
+  <script>(function () {
+  const root = document.querySelector('.t-twitter-posting-schedule-planner');
+  const $ = (s) => root.querySelector(s);
+  const esc = XTool.escapeHtml;
+  const DAYS = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+  const ICS_DAY = ['MO', 'TU', 'WE', 'TH', 'FR', 'SA', 'SU'];
+  const POST_MIN = 10;
+  const REPLY_MIN = 15;
+  const PER_SESSION = 5;
+  let sched = null;
+
+  // Time zones (Chromium still lists a few old names, so show the current ones)
+  const RENAMED = { 'Asia/Calcutta': 'Asia/Kolkata', 'Asia/Saigon': 'Asia/Ho_Chi_Minh', 'Europe/Kiev': 'Europe/Kyiv', 'Asia/Katmandu': 'Asia/Kathmandu', 'Asia/Rangoon': 'Asia/Yangon', 'America/Buenos_Aires': 'America/Argentina/Buenos_Aires' };
+  const zname = (z) => (RENAMED[z] || z).replace(/_/g, ' ');
+  const here = Intl.DateTimeFormat().resolvedOptions().timeZone || 'UTC';
+  let zones = [];
+  try { zones = Intl.supportedValuesOf('timeZone'); } catch { zones = []; }
+  if (!zones.length) zones = ['UTC', 'America/Los_Angeles', 'America/Chicago', 'America/New_York', 'America/Sao_Paulo', 'Europe/London', 'Europe/Berlin', 'Africa/Lagos', 'Asia/Dubai', 'Asia/Kolkata', 'Asia/Singapore', 'Asia/Tokyo', 'Australia/Sydney'];
+  if (!zones.includes(here)) zones.unshift(here);
+  if (!zones.includes('UTC')) zones.push('UTC');
+  $('#ps-tz').innerHTML = zones.map((z) => `<option value="${esc(z)}"${z === here ? ' selected' : ''}>${esc(zname(z))}</option>`).join('');
+
+  // Days off chips (Sunday off by default)
+  $('#ps-off').innerHTML = DAYS.map((d, i) => `<button type="button" class="chip" data-d="${i}" aria-pressed="${i === 6}">${d.slice(0, 3)}</button>`).join('');
+  $('#ps-off').addEventListener('click', (e) => {
+    const b = e.target.closest('.chip');
+    if (!b) return;
+    b.setAttribute('aria-pressed', b.getAttribute('aria-pressed') === 'true' ? 'false' : 'true');
+    build();
+  });
+
+  const pad = (n) => String(n).padStart(2, '0');
+  const isoDate = (d) => `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}`;
+  function nextMonday() {
+    const d = new Date();
+    d.setHours(0, 0, 0, 0);
+    d.setDate(d.getDate() + ((8 - d.getDay()) % 7 || 7));
+    return d;
+  }
+  $('#ps-start').value = isoDate(nextMonday());
+
+  const toMin = (v) => { const m = /^(\d{1,2}):(\d{2})/.exec(v || ''); return m ? Number(m[1]) * 60 + Number(m[2]) : NaN; };
+  const hm = (min) => `${pad(Math.floor(min / 60))}:${pad(min % 60)}`;
+  const clock = new Intl.DateTimeFormat(undefined, { hour: 'numeric', minute: '2-digit', timeZone: 'UTC' });
+  const label = (min) => clock.format(new Date(Date.UTC(2026, 0, 5, 0, min)));
+  const intIn = (el, lo, hi, dflt) => {
+    const n = Math.round(Number(el.value));
+    const v = Number.isFinite(n) ? Math.min(hi, Math.max(lo, n)) : dflt;
+    el.value = v;
+    return v;
+  };
+  function dur(min) {
+    const h = Math.floor(min / 60);
+    const m = Math.round(min % 60);
+    return h ? `${h}h${m ? ' ' + m + 'm' : ''}` : `${m}m`;
+  }
+
+  // Evenly spaced slots; posts take evenly spaced positions among them, replies fill the gaps.
+  function plan(posts, sessions, replies, from, to) {
+    const total = posts + sessions;
+    const span = to - from;
+    const postAt = new Set();
+    for (let i = 0; i < posts; i++) postAt.add(Math.round(((i + 0.5) * total) / posts - 0.5));
+    let p = 0;
+    let r = 0;
+    const out = [];
+    for (let j = 0; j < total; j++) {
+      const min = from + Math.round((span * (j + 0.5)) / total / 5) * 5;
+      if (postAt.has(j)) { out.push({ min, kind: 'post', label: `Post ${++p} of ${posts}` }); continue; }
+      const n = Math.floor(replies / sessions) + (r < replies % sessions ? 1 : 0);
+      out.push({ min, kind: 'reply', label: `Reply session ${++r} (about ${n} replies)` });
+    }
+    return out;
+  }
+
+  function build() {
+    const posts = intIn($('#ps-posts'), 1, 12, 3);
+    const replies = intIn($('#ps-replies'), 0, 100, 10);
+    const sessions = Math.min(8, Math.ceil(replies / PER_SESSION));
+    const from = toMin($('#ps-from').value);
+    const to = toMin($('#ps-to').value);
+    const off = new Set([...root.querySelectorAll('#ps-off .chip[aria-pressed="true"]')].map((b) => Number(b.dataset.d)));
+    const warn = [];
+    if (!Number.isFinite(from) || !Number.isFinite(to) || to - from < 60) {
+      sched = null;
+      $('#ps-warn').textContent = 'Set an active window of at least 1 hour, with the end time later than the start time (same day).';
+      $('#ps-stats').innerHTML = '';
+      $('#ps-out').innerHTML = '';
+      return;
+    }
+    if (off.size === 7) {
+      sched = null;
+      $('#ps-warn').textContent = 'Every day is marked as a day off. Unselect at least one day.';
+      $('#ps-stats').innerHTML = '';
+      $('#ps-out').innerHTML = '';
+      return;
+    }
+    if (sessions * PER_SESSION < replies) warn.push(`Replies are capped at ${sessions} sessions a day, so plan for longer sessions.`);
+    const events = plan(posts, sessions, replies, from, to);
+    const gap = (to - from) / posts;
+    const slotGap = (to - from) / events.length;
+    if (slotGap < 20) warn.push(`Slots are only about ${Math.round(slotGap)} minutes apart. Widen your active hours or plan fewer posts.`);
+    sched = { posts, replies, sessions, from, to, off, events, tz: $('#ps-tz').value };
+    $('#ps-warn').textContent = warn.join(' ');
+
+    const active = 7 - off.size;
+    $('#ps-stats').innerHTML = `<div class="stat"><b>${posts * active}</b><span>posts per week</span></div><div class="stat"><b>${sessions * active}</b><span>reply sessions per week</span></div><div class="stat"><b>${dur(gap)}</b><span>between posts</span></div>`;
+    const list = events.map((e) => `<li class="${e.kind === 'reply' ? 'ps-reply' : ''}"><time>${esc(label(e.min))}</time><span>${esc(e.kind === 'post' ? 'Post' : 'Replies')}</span></li>`).join('');
+    $('#ps-out').innerHTML = `<p class="tool-title">Your week <span class="hint">(${esc(zname(sched.tz))})</span></p><div class="ps-grid">${DAYS.map((d, i) => off.has(i)
+      ? `<div class="ps-day off"><b>${d}</b><p class="hint">Day off</p></div>`
+      : `<div class="ps-day"><b>${d}</b><ul>${list}</ul></div>`).join('')}</div>`;
+  }
+
+  // Minutes the zone is ahead of UTC at a given instant.
+  const partsFmt = {};
+  function tzOffset(ms, tz) {
+    const f = partsFmt[tz] || (partsFmt[tz] = new Intl.DateTimeFormat('en-US', { timeZone: tz, hourCycle: 'h23', year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit', second: '2-digit' }));
+    const p = Object.fromEntries(f.formatToParts(new Date(ms)).map((x) => [x.type, x.value]));
+    return (Date.UTC(+p.year, +p.month - 1, +p.day, +p.hour % 24, +p.minute, +p.second) - Math.floor(ms / 1000) * 1000) / 60000;
+  }
+  // Wall-clock time in a zone -> UTC milliseconds.
+  function zonedToUtc(y, mo, d, min, tz) {
+    const guess = Date.UTC(y, mo, d, 0, min);
+    const first = guess - tzOffset(guess, tz) * 60000;
+    return guess - tzOffset(first, tz) * 60000;
+  }
+  const stamp = (ms) => new Date(ms).toISOString().replace(/[-:]/g, '').replace(/\.\d{3}/, '');
+  const icsText = (s) => s.replace(/\\/g, '\\\\').replace(/;/g, '\\;').replace(/,/g, '\\,').replace(/\n/g, '\\n');
+  // Fold lines longer than 75 octets (RFC 5545).
+  function fold(line) {
+    const enc = new TextEncoder();
+    let out = '';
+    let cur = '';
+    let limit = 75;
+    for (const ch of line) {
+      if (enc.encode(cur + ch).length > limit) {
+        out += cur + '\r\n ';
+        cur = '';
+        limit = 74;
+      }
+      cur += ch;
+    }
+    return out + cur;
+  }
+
+  function occurrences() {
+    const [y, m, d] = ($('#ps-start').value || isoDate(nextMonday())).split('-').map(Number);
+    const weeks = Number($('#ps-weeks').value) || 4;
+    const out = [];
+    for (let i = 0; i < weeks * 7; i++) {
+      const date = new Date(y, m - 1, d + i);
+      const dow = (date.getDay() + 6) % 7;
+      if (sched.off.has(dow)) continue;
+      sched.events.forEach((e) => out.push({ date, dow, e, utc: zonedToUtc(date.getFullYear(), date.getMonth(), date.getDate(), e.min, sched.tz) }));
+    }
+    return out;
+  }
+
+  $('#ps-ics').addEventListener('click', () => {
+    if (!sched) return;
+    const now = stamp(Date.now());
+    const seed = Date.now().toString(36);
+    const alarm = $('#ps-alarm').checked;
+    const lines = ['BEGIN:VCALENDAR', 'VERSION:2.0', 'PRODID:-//XVision//Twitter Posting Schedule Planner//EN', 'CALSCALE:GREGORIAN', 'METHOD:PUBLISH', 'X-WR-CALNAME:X posting schedule'];
+    occurrences().forEach((o, n) => {
+      const len = o.e.kind === 'post' ? POST_MIN : REPLY_MIN;
+      const summary = o.e.kind === 'post' ? `Post on X (${o.e.label.replace('Post ', '')})` : `Reply on X: ${o.e.label.toLowerCase()}`;
+      const desc = `${o.e.kind === 'post' ? 'Planned post' : 'Planned reply session'} at ${hm(o.e.min)} ${sched.tz} on ${DAYS[o.dow]}. Reminder only: this calendar does not post anything for you.`;
+      lines.push('BEGIN:VEVENT', `UID:${seed}-${n + 1}@xvision-posting-schedule`, `DTSTAMP:${now}`, `DTSTART:${stamp(o.utc)}`, `DTEND:${stamp(o.utc + len * 60000)}`,
+        `SUMMARY:${icsText(summary)}`, `DESCRIPTION:${icsText(desc)}`, 'TRANSP:TRANSPARENT', `CATEGORIES:${o.e.kind === 'post' ? 'X post' : 'X replies'}`);
+      if (alarm) lines.push('BEGIN:VALARM', 'ACTION:DISPLAY', `DESCRIPTION:${icsText(summary)}`, 'TRIGGER:-PT5M', 'END:VALARM');
+      lines.push('END:VEVENT');
+    });
+    lines.push('END:VCALENDAR');
+    XTool.download(lines.map(fold).join('\r\n') + '\r\n', 'x-posting-schedule.ics', 'text/calendar');
+  });
+
+  $('#ps-csv').addEventListener('click', () => {
+    if (!sched) return;
+    const rows = [['Day', 'Time', 'Time zone', 'Activity', 'Details']];
+    DAYS.forEach((d, i) => {
+      if (sched.off.has(i)) { rows.push([d, '', sched.tz, 'Day off', '']); return; }
+      sched.events.forEach((e) => rows.push([d, hm(e.min), sched.tz, e.kind === 'post' ? 'Post' : 'Replies', e.label]));
+    });
+    const cell = (v) => (/[",\n]/.test(String(v)) ? `"${String(v).replace(/"/g, '""')}"` : String(v));
+    XTool.download(rows.map((r) => r.map(cell).join(',')).join('\r\n') + '\r\n', 'x-posting-schedule.csv', 'text/csv');
+  });
+
+  ['#ps-posts', '#ps-replies', '#ps-from', '#ps-to', '#ps-tz'].forEach((s) => $(s).addEventListener('change', build));
+  $('#ps-go').addEventListener('click', build);
+  build();
+})();</script>
+</body>
+</html>

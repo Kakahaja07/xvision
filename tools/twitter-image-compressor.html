@@ -1,0 +1,553 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Free Twitter Image Compressor: Shrink Photos Under 5MB</title>
+  <meta name="description" content="Twitter image compressor that shrinks JPEG, PNG and WebP photos in your browser, shows the size saved and flags files over X&#x27;s 5MB limit. Free, no sign-up." />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <link rel="canonical" href="https://kakahaja07.github.io/xvision/tools/twitter-image-compressor.html" />
+  <meta name="theme-color" content="#f6f6f8" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#0a0a0c" media="(prefers-color-scheme: dark)" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="XVision" />
+  <meta property="og:url" content="https://kakahaja07.github.io/xvision/tools/twitter-image-compressor.html" />
+  <meta property="og:title" content="Twitter Image Compressor" />
+  <meta property="og:description" content="Twitter image compressor that shrinks JPEG, PNG and WebP photos in your browser, shows the size saved and flags files over X&#x27;s 5MB limit. Free, no sign-up." />
+  <meta property="og:image" content="https://kakahaja07.github.io/xvision/assets/og-card.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Twitter Image Compressor" />
+  <meta name="twitter:description" content="Twitter image compressor that shrinks JPEG, PNG and WebP photos in your browser, shows the size saved and flags files over X&#x27;s 5MB limit. Free, no sign-up." />
+  <meta name="twitter:image" content="https://kakahaja07.github.io/xvision/assets/og-card.jpg" />
+  <link rel="icon" type="image/png" href="../assets/logo-64.png" />
+  <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png" />
+  <script src="../assets/site.js"></script>
+  <link rel="stylesheet" href="../assets/site.css" />
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "name": "Twitter Image Compressor",
+      "description": "Twitter image compressor that shrinks JPEG, PNG and WebP photos in your browser, shows the size saved and flags files over X's 5MB limit. Free, no sign-up.",
+      "url": "https://kakahaja07.github.io/xvision/tools/twitter-image-compressor.html",
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "Any",
+      "browserRequirements": "Requires JavaScript",
+      "isAccessibleForFree": true,
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "author": {
+        "@type": "Person",
+        "@id": "https://kakahaja07.github.io/xvision/#author",
+        "name": "Prashant Sharma",
+        "url": "https://github.com/Kakahaja07"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "XVision",
+          "item": "https://kakahaja07.github.io/xvision/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Free tools",
+          "item": "https://kakahaja07.github.io/xvision/tools/index.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Twitter Image Compressor",
+          "item": "https://kakahaja07.github.io/xvision/tools/twitter-image-compressor.html"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How do I compress an image for Twitter?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "To compress an image for Twitter (X), drop it into the free Twitter Image Compressor, set quality around 80%, cap the width if the photo is huge, and download the smaller JPEG, WebP or PNG. X's help page says photos can be up to 5MB, so the tool flags any file above that."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the maximum image size for Twitter?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The maximum photo size on X is 5MB per image, according to the X Help Center as of October 2026. Animated GIFs can be 5MB on mobile and 15MB on the web, and profile photos are limited to 2MB. The Twitter Image Compressor marks every file as under or over 5MB."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does compressing an image reduce its quality?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, JPEG and WebP compression removes some detail, but at around 80 percent quality many photos look very close to the original at normal size. PNG output is lossless, so it keeps every pixel. Use the Before and After preview in the compressor and zoom in on faces and text before you download."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why did my PNG file get bigger after compression?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A PNG gets bigger when the original was already well compressed or when a photo is saved as PNG, because PNG keeps every pixel. If the format and size match, the Twitter Image Compressor keeps your smaller original. For photos, switch to JPEG or set a max width to cut the size."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Are my images uploaded to a server?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No, the Twitter Image Compressor never uploads your images. Each file is decoded, redrawn and re-encoded on a canvas inside your browser, and the download is created on your own device. That keeps private photos private and lets the tool work even when your connection is slow."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I compress several images at once?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, you can drop up to 20 images at once into the Twitter Image Compressor. All files use the same format, quality and max width settings. Each one gets its own row with sizes and a Download button, and Download all saves every compressed file one after another."
+          }
+        }
+      ],
+      "@id": "https://kakahaja07.github.io/xvision/tools/twitter-image-compressor.html#faq"
+    }
+  ]
+}
+  </script>
+  <style>
+.t-twitter-image-compressor .drop { min-height: 120px; }
+.t-twitter-image-compressor .cp-side { display: grid; gap: 12px; }
+.t-twitter-image-compressor .cp-side .stats { margin-top: 0; }
+.t-twitter-image-compressor .cp-side .stat b { font-size: 20px; white-space: nowrap; }
+.t-twitter-image-compressor .cp-side .stat { padding: 12px 14px; }
+.t-twitter-image-compressor .canvas-wrap { display: grid; place-items: center; min-height: 200px; max-height: 420px; }
+.t-twitter-image-compressor .canvas-wrap img { max-height: 418px; width: auto; }
+.t-twitter-image-compressor .cp-empty { padding: 24px; color: var(--faint); font-size: 14px; text-align: center; }
+.t-twitter-image-compressor .cp-cap { color: var(--muted); font-size: 13.5px; font-variant-numeric: tabular-nums; overflow-wrap: anywhere; }
+.t-twitter-image-compressor .results { margin-top: 18px; }
+.t-twitter-image-compressor .results:empty { display: none; }
+.t-twitter-image-compressor .cp-item { display: grid; grid-template-columns: 52px minmax(0, 1fr) auto; align-items: center; gap: 12px; }
+.t-twitter-image-compressor .cp-item[aria-current="true"] { border-color: var(--fg); }
+.t-twitter-image-compressor .cp-thumb { width: 52px; height: 52px; border-radius: 10px; object-fit: cover; background: var(--soft); }
+.t-twitter-image-compressor .cp-item p.cp-name { overflow: hidden; white-space: nowrap; text-overflow: ellipsis; font-size: 15px; font-weight: 600; }
+.t-twitter-image-compressor .cp-meta { margin-top: 2px; color: var(--muted); font-size: 13.5px; font-variant-numeric: tabular-nums; }
+.t-twitter-image-compressor .cp-acts { display: flex; gap: 6px; }
+.t-twitter-image-compressor .row { margin-top: 0; }
+.t-twitter-image-compressor .cp-side p { margin: 0; }
+.t-twitter-image-compressor .seg { justify-self: start; }
+.t-twitter-image-compressor .btn:disabled { opacity: .45; cursor: not-allowed; }
+.t-twitter-image-compressor .note { margin-top: 0; }
+.t-twitter-image-compressor .note:empty { display: none; }
+@media (max-width: 520px) {
+  .t-twitter-image-compressor .cp-item { grid-template-columns: 44px minmax(0, 1fr); }
+  .t-twitter-image-compressor .cp-thumb { width: 44px; height: 44px; }
+  .t-twitter-image-compressor .cp-acts { grid-column: 1 / -1; }
+  .t-twitter-image-compressor .cp-acts .btn { flex: 1 1 0; }
+}
+</style>
+</head>
+<body>
+  <header class="site-nav">
+    <div class="wrap nav-in">
+      <a class="wordmark" href="../index.html" aria-label="XVision home"><img src="../assets/logo-64.png" alt="" width="26" height="26" />Vision</a>
+      <nav class="navlinks" id="site-menu" aria-label="Main">
+        <a class="opt" href="../index.html#features">Features</a>
+        <a class="opt" href="../index.html#install">How it works</a>
+        <a href="../guides/index.html">Guides</a>
+        <a href="../tools/index.html" aria-current="page">Tools</a>
+        <a class="opt" href="../index.html#faq">FAQ</a>
+      </nav>
+      <div class="nav-cta">
+        <button class="theme-toggle" type="button" aria-label="Dark mode" aria-pressed="false"><svg class="sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.9 4.9l1.4 1.4m11.4 11.4 1.4 1.4M2 12h2m16 0h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg><svg class="moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 14.3A8.5 8.5 0 1 1 9.7 3.5a7 7 0 0 0 10.8 10.8Z"/></svg></button>
+        <a class="btn ghost small" href="https://github.com/Kakahaja07/xvision">GitHub</a>
+        <a class="btn primary small" href="../index.html#install">Get it free</a>
+        <button class="menu-toggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="site-menu"><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+  <main class="wrap tool-page">
+    <header class="page-head">
+      <div class="crumbs"><a href="index.html">Tools</a> › <a href="index.html#media">Media and utilities</a></div>
+      <h1>Twitter Image Compressor</h1>
+      <p>Drop one or more images, set quality and max width, and see each file&#x27;s before and after size before you download the smaller version.</p>
+    </header>
+    <section class="tool t-twitter-image-compressor">
+  <div class="tool-grid">
+    <div class="fields">
+      <div class="drop" id="cp-drop">
+        <input type="file" id="cp-file" accept="image/*" multiple aria-label="Choose images to compress">
+        <b>Drop images here</b>
+        <span>or click to choose. Up to 20 at a time.</span>
+      </div>
+      <div class="fields-2">
+        <div class="field-group">
+          <label for="cp-format">Save as</label>
+          <select id="cp-format">
+            <option value="image/jpeg">JPEG (photos)</option>
+            <option value="image/webp">WebP (web)</option>
+            <option value="image/png">PNG (lossless)</option>
+          </select>
+        </div>
+        <div class="field-group">
+          <label for="cp-max">Max width (px)</label>
+          <input type="number" id="cp-max" min="16" max="8000" step="1" placeholder="Keep original" inputmode="numeric">
+        </div>
+      </div>
+      <div class="field-group">
+        <label for="cp-q">Quality: <span id="cp-qv">80</span>%</label>
+        <input type="range" id="cp-q" min="30" max="100" value="80">
+        <p class="hint" id="cp-hint">80% is a good start for photos. Lower means smaller files and softer detail.</p>
+      </div>
+      <div class="cp-side">
+        <div class="stats">
+          <div class="stat"><b id="cp-before">0 KB</b><span>Before</span></div>
+          <div class="stat"><b id="cp-after">0 KB</b><span>After</span></div>
+          <div class="stat"><b id="cp-saved">0%</b><span>Saved</span></div>
+        </div>
+        <div class="row">
+          <button type="button" class="btn primary" id="cp-all" disabled>Download all</button>
+          <button type="button" class="btn ghost" id="cp-clear" disabled>Clear</button>
+        </div>
+      </div>
+    </div>
+    <div class="cp-side">
+      <div class="seg" id="cp-view" role="group" aria-label="Preview">
+        <button type="button" data-v="after" aria-pressed="true">After</button>
+        <button type="button" data-v="before" aria-pressed="false">Before</button>
+      </div>
+      <div class="canvas-wrap" id="cp-stage"><p class="cp-empty">Your compressed image shows here.</p></div>
+      <p class="cp-cap" id="cp-cap" aria-live="polite"></p>
+      <p class="note" id="cp-note" aria-live="polite"></p>
+      <p class="privacy-note">Runs in your browser. Your images are never uploaded.</p>
+    </div>
+  </div>
+  <div class="results" id="cp-list" aria-live="polite"></div>
+</section>
+    
+    <article class="tool-article"><h2>How do I compress an image for Twitter?</h2>
+<p>To compress an image for Twitter (X), drop it into the free Twitter Image Compressor, set quality around 80%, cap the width if the photo is huge, and download the smaller JPEG, WebP or PNG. X's help page says photos can be up to 5MB, so the tool flags any file above that.</p>
+<p>A photo straight off a modern phone can be several megabytes, and a long PNG screenshot can be bigger still. Compressing first means fewer failed uploads.</p>
+
+<h2>How to use the Twitter Image Compressor</h2>
+<ol>
+<li>Drop one or more images on the box, or click it to pick files. You can add up to 20 at a time.</li>
+<li>Choose a format. JPEG suits photos, PNG suits screenshots and graphics, and WebP is handy for websites.</li>
+<li>Move the quality slider. Every file is compressed again a moment after you let go.</li>
+<li>Type a max width if your photos are very large. Leave it empty to keep the original width.</li>
+<li>Check the Before and After numbers, then tap Preview and flip between After and Before to compare.</li>
+<li>Press Download on a single file, or Download all to save every file one by one.</li>
+</ol>
+
+<h2>What do the numbers mean?</h2>
+<p>Each file shows its original size, its new size, the percent saved and its pixel size. Percent saved is (original size minus new size) divided by original size, times 100. The totals add up every file in the list.</p>
+<p>So a 4.2 MB photo that comes out at 840 KB was cut by 80 percent. If the result is bigger than the original in the same format and size, the tool keeps your original file instead, because a bigger "compressed" file helps no one. Each row also says whether the file is under or over X's 5MB photo limit.</p>
+
+<h2>What are X's image size limits?</h2>
+<p>X's help pages list a 5MB limit for photos in posts and a 2MB limit for profile photos, as of October 2026. Animated GIFs can be 5MB on mobile and 15MB on the web. X accepts GIF, JPEG and PNG and does not accept BMP or TIFF.</p>
+<table>
+<tr><th>Image type</th><th>Limit on X</th><th>Source</th></tr>
+<tr><td>Photo in a post</td><td>5MB</td><td>X Help Center</td></tr>
+<tr><td>Animated GIF</td><td>5MB mobile, 15MB web</td><td>X Help Center</td></tr>
+<tr><td>Profile photo</td><td>2MB</td><td>X Help Center</td></tr>
+<tr><td>Accepted formats</td><td>GIF, JPEG, PNG</td><td>X Help Center</td></tr>
+</table>
+<p>The post limits come from X's page on <a href="https://help.x.com/en/using-x/posting-gifs-and-pictures">posting photos and GIFs</a>. The 2MB profile photo limit is on its page about <a href="https://help.x.com/en/managing-your-account/common-issues-when-uploading-profile-photo">profile photo upload issues</a>. This tool does not compress animated GIFs. It saves the first frame as a still image.</p>
+
+<h2>JPEG, WebP or PNG: which should I pick?</h2>
+<p>Pick JPEG for photos, PNG for screenshots, charts and anything with small text, and WebP only for your own website or blog. X's help page lists JPEG and PNG for uploads, not WebP.</p>
+<p>JPEG throws away detail your eye barely notices, which is why it shrinks photos so well. PNG keeps every pixel, so its quality slider does nothing here. To shrink a PNG, lower the max width or switch to JPEG. JPEG has no transparency, so the tool puts transparent areas on white.</p>
+
+<h2>Tips for small files that still look good</h2>
+<ul>
+<li>Start at 80 percent. Then zoom in on faces, hair and text before you download.</li>
+<li>For big phone photos, a max width of about 2048 pixels is a sensible cap.</li>
+<li>Always compress from the original file. Squeezing an already compressed JPEG again adds blocky marks.</li>
+<li>For screenshots with words, try PNG first. If it is still too big, use JPEG at 90 percent.</li>
+</ul>
+<p>Here's a quick example. Jonah, a fictional hiking blogger, has ten trail photos at around 6 MB each. He sets JPEG, quality 80 and max width 2048. Every row turns to "under 5MB", he previews the sunrise shot, and he saves the whole set with Download all.</p>
+
+<h2>Common mistakes to avoid</h2>
+<ul>
+<li>Saving photos as PNG. They often grow instead of shrinking.</li>
+<li>Dropping quality to 30 percent to hit a tiny size. Smooth skies turn into bands and blocks.</li>
+<li>Resizing below the size people view it at. A 600 pixel photo looks soft on a phone.</li>
+<li>Posting WebP to X when the help page lists only GIF, JPEG and PNG.</li>
+</ul>
+
+<h2>Which tool should I use next?</h2>
+<p>If the shape is wrong, not just the weight, crop it first with the <a href="twitter-image-resizer.html">Twitter Image Resizer</a>. Turning a quote or tip into a picture? Try the <a href="twitter-text-to-image-converter.html">Twitter Text to Image Converter</a> or the <a href="twitter-quote-card-generator.html">Twitter Quote Card Generator</a>. Then describe the image for screen readers with the <a href="twitter-alt-text-generator.html">Twitter Alt Text Generator</a>.</p>
+<p>Images are only one part of a good post. Read <a href="../guides/best-content-formats-for-x-growth.html">the best content formats for X growth</a> and <a href="../guides/increase-twitter-post-views.html">how to increase Twitter post views</a> for the bigger picture.</p>
+
+<h2>Frequently Asked Questions</h2>
+<h3>What is the maximum image size for Twitter?</h3>
+<p>The maximum photo size on X is 5MB per image, according to the X Help Center as of October 2026. Animated GIFs can be 5MB on mobile and 15MB on the web, and profile photos are limited to 2MB. The Twitter Image Compressor marks every file as under or over 5MB.</p>
+<h3>Does compressing an image reduce its quality?</h3>
+<p>Yes, JPEG and WebP compression removes some detail, but at around 80 percent quality many photos look very close to the original at normal size. PNG output is lossless, so it keeps every pixel. Use the Before and After preview in the compressor and zoom in on faces and text before you download.</p>
+<h3>Why did my PNG file get bigger after compression?</h3>
+<p>A PNG gets bigger when the original was already well compressed or when a photo is saved as PNG, because PNG keeps every pixel. If the format and size match, the Twitter Image Compressor keeps your smaller original. For photos, switch to JPEG or set a max width to cut the size.</p>
+<h3>Are my images uploaded to a server?</h3>
+<p>No, the Twitter Image Compressor never uploads your images. Each file is decoded, redrawn and re-encoded on a canvas inside your browser, and the download is created on your own device. That keeps private photos private and lets the tool work even when your connection is slow.</p>
+<h3>Can I compress several images at once?</h3>
+<p>Yes, you can drop up to 20 images at once into the Twitter Image Compressor. All files use the same format, quality and max width settings. Each one gets its own row with sizes and a Download button, and Download all saves every compressed file one after another.</p>
+    </article>
+    <aside class="related">
+      <h2>More free tools</h2>
+      <ul>
+        <li><a href="post-length.html">Twitter Character Counter</a></li>
+        <li><a href="twitter-image-resizer.html">Twitter Image Resizer</a></li>
+        <li><a href="twitter-banner-crop-preview.html">Twitter Banner Crop Preview</a></li>
+        <li><a href="twitter-post-screenshot-maker.html">Twitter Post Screenshot Maker</a></li>
+      </ul>
+    </aside>
+    <aside class="cta">
+      <b>Grow on X with real signals.</b>
+      <span>XVision is a free Chrome extension that shows follower counts, follow-back badges and viral posts right on your timeline.</span>
+      <a class="btn light small" href="../index.html">Get XVision free</a>
+    </aside>
+  </main>
+  <footer class="site-footer">
+    <img class="foot-mark" src="../assets/logo.png" alt="" width="320" height="320" loading="lazy" />
+    <div class="wrap">
+      <div class="foot-top">
+        <div class="foot-brand">
+          <a class="wordmark" href="../index.html"><img src="../assets/logo-64.png" alt="" width="26" height="26" />Vision</a>
+          <p>A free Chrome extension, guides and tools for growing on X. Private by design.</p>
+          <div class="foot-social"><a href="https://github.com/Kakahaja07/xvision" aria-label="XVision on GitHub"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.9 1.2 1.9 1.2 1.1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-6 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17.3 4.7 18.3 5 18.3 5c.7 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .5Z"/></svg></a></div>
+        </div>
+        <div class="foot-cols">
+          <div><h3>Product</h3><ul><li><a href="../index.html#features">Features</a></li><li><a href="../index.html#install">How it works</a></li><li><a href="../index.html#pricing">Pricing</a></li><li><a href="../index.html#faq">FAQ</a></li></ul></div>
+          <div><h3>Guides</h3><ul><li><a href="../guides/index.html#grow">Grow on X</a></li><li><a href="../guides/index.html#algorithm">The X algorithm</a></li><li><a href="../guides/index.html#money">Make money on X</a></li><li><a href="../guides/index.html">All guides</a></li></ul></div>
+          <div><h3>Free tools</h3><ul><li><a href="../tools/twitter-bio-generator.html">Twitter bio generator</a></li><li><a href="../tools/video-downloader.html">Twitter video downloader</a></li><li><a href="../tools/thread-maker.html">Thread splitter</a></li><li><a href="../tools/index.html">All 51 tools</a></li></ul></div>
+          <div><h3>Project</h3><ul><li><a href="https://github.com/Kakahaja07/xvision">GitHub</a></li><li><a href="../privacy-policy.html">Privacy policy</a></li><li><a href="../LICENSE">MIT License</a></li><li><a href="../sitemap.xml">Sitemap</a></li></ul></div>
+        </div>
+      </div>
+      <div class="foot-bottom">
+        <span>© 2026 XVision · Built by Prashant Sharma · Inspired by XRay by fayazara</span>
+        <span>Not affiliated with X Corp.</span>
+      </div>
+    </div>
+  </footer>
+  <script src="../assets/x-text.js"></script>
+  <script src="../assets/tool-kit.js"></script>
+  <script>(function () {
+  const $ = (id) => document.getElementById(id);
+  const fmt = $('cp-format'), maxIn = $('cp-max'), q = $('cp-q'), list = $('cp-list');
+  const allBtn = $('cp-all'), clearBtn = $('cp-clear'), note = $('cp-note');
+  const viewBtns = [...document.querySelectorAll('#cp-view button')];
+  const LIMIT = 5 * 1000 * 1000; // X help: photos up to 5MB
+  const MAX_FILES = 20;
+  const EXT = { 'image/jpeg': 'jpg', 'image/png': 'png', 'image/webp': 'webp' };
+  let items = [], run = 0, active = null, view = 'after', nextId = 1;
+
+  function bytes(n) {
+    if (n < 1000) return `${n} B`;
+    if (n < 1000 * 1000) return `${XTool.fmt(n / 1000, 0)} KB`;
+    return `${XTool.fmt(n / 1000 / 1000, n < 10 * 1000 * 1000 ? 2 : 1)} MB`;
+  }
+
+  function drawHQ(g, src, sw, sh, dw, dh) {
+    let cur = src, cw = sw, ch = sh;
+    while (cw > dw * 2 && ch > dh * 2) {
+      const nw = Math.round(cw / 2), nh = Math.round(ch / 2);
+      const step = document.createElement('canvas');
+      step.width = nw; step.height = nh;
+      const sg = step.getContext('2d');
+      sg.imageSmoothingQuality = 'high';
+      sg.drawImage(cur, 0, 0, cw, ch, 0, 0, nw, nh);
+      cur = step; cw = nw; ch = nh;
+    }
+    g.imageSmoothingQuality = 'high';
+    g.drawImage(cur, 0, 0, cw, ch, 0, 0, dw, dh);
+  }
+
+  function maxWidth() {
+    const v = Math.round(Number(maxIn.value));
+    const ok = maxIn.value === '' || (Number.isFinite(v) && v >= 16 && v <= 8000);
+    maxIn.setAttribute('aria-invalid', ok ? 'false' : 'true');
+    return ok && maxIn.value !== '' ? v : 0;
+  }
+
+  async function compress(item, r) {
+    if (!item.img) item.img = await XTool.loadImage(item.file);
+    const img = item.img, type = fmt.value, cap = maxWidth();
+    const iw = img.naturalWidth, ih = img.naturalHeight;
+    let w = iw, h = ih;
+    if (cap && iw > cap) { w = cap; h = Math.max(1, Math.round(ih * cap / iw)); }
+    const c = document.createElement('canvas');
+    c.width = w; c.height = h;
+    const g = c.getContext('2d');
+    if (type === 'image/jpeg') { g.fillStyle = '#ffffff'; g.fillRect(0, 0, w, h); }
+    drawHQ(g, img, iw, ih, w, h);
+    let blob = await XTool.canvasToBlob(c, type, type === 'image/png' ? undefined : q.value / 100);
+    if (r !== run) return false;
+    item.kept = false;
+    item.fallback = blob && blob.type !== type;
+    // Never hand back a bigger file in the same format and size: keep the original instead.
+    if (blob && blob.size >= item.file.size && blob.type === item.file.type && w === iw) {
+      blob = item.file;
+      item.kept = true;
+    }
+    item.blob = blob; item.w = w; item.h = h; item.iw = iw; item.ih = ih;
+    if (item.outUrl) URL.revokeObjectURL(item.outUrl);
+    item.outUrl = URL.createObjectURL(blob);
+    return true;
+  }
+
+  function outName(item) {
+    const base = item.file.name.replace(/\.[^.]+$/, '').replace(/[^\w-]+/g, '-').slice(0, 60) || 'image';
+    const ext = EXT[item.blob.type] || 'img';
+    return item.kept ? item.file.name : `${base}-compressed.${ext}`;
+  }
+
+  function paint(item) {
+    const meta = item.el.querySelector('.cp-meta');
+    const dl = item.el.querySelector('[data-act="dl"]');
+    if (item.error) { meta.textContent = item.error; dl.disabled = true; item.el.querySelector('[data-act="view"]').disabled = true; return; }
+    if (!item.blob) { meta.textContent = 'Compressing...'; dl.disabled = true; return; }
+    const diff = item.file.size - item.blob.size;
+    const pct = item.file.size ? Math.round((diff / item.file.size) * 100) : 0;
+    const change = item.kept ? 'original kept (already smaller)' : pct >= 0 ? `${pct}% smaller` : `${-pct}% bigger`;
+    const limit = item.blob.size > LIMIT ? 'over 5MB' : 'under 5MB';
+    meta.textContent = `${bytes(item.file.size)} to ${bytes(item.blob.size)}, ${change}. ${item.w} x ${item.h}, ${limit}.`;
+    dl.disabled = false;
+  }
+
+  function totals() {
+    const done = items.filter((i) => i.blob);
+    const before = done.reduce((s, i) => s + i.file.size, 0);
+    const after = done.reduce((s, i) => s + i.blob.size, 0);
+    $('cp-before').textContent = bytes(before);
+    $('cp-after').textContent = bytes(after);
+    $('cp-saved').textContent = before ? `${Math.max(0, Math.round((1 - after / before) * 100))}%` : '0%';
+    allBtn.disabled = !done.length;
+    clearBtn.disabled = !items.length;
+    const notes = [];
+    if (maxIn.getAttribute('aria-invalid') === 'true') notes.push('Max width must be a whole number from 16 to 8000. Leave it empty to keep the original width.');
+    if (done.some((i) => i.fallback)) notes.push('This browser cannot save that format, so it saved PNG instead. Try JPEG.');
+    if (done.some((i) => !i.kept && i.blob.size > i.file.size)) notes.push('Some files got bigger. That happens with PNG photos or files that were already compressed. Try JPEG or a lower quality.');
+    if (done.some((i) => i.blob.size > LIMIT)) notes.push('Files over 5MB are above X\'s photo limit. Lower the quality or set a max width such as 2048.');
+    if (fmt.value === 'image/webp') notes.push('X\'s help page lists JPEG, PNG and GIF for photos. Use WebP for websites, not X uploads.');
+    note.textContent = notes.join(' ');
+  }
+
+  function show(item) {
+    active = item;
+    items.forEach((i) => i.el.setAttribute('aria-current', String(i === item)));
+    const stage = $('cp-stage');
+    if (!item || !item.blob) {
+      stage.innerHTML = '<p class="cp-empty">Your compressed image shows here.</p>';
+      $('cp-cap').textContent = '';
+      return;
+    }
+    const url = view === 'after' ? item.outUrl : item.srcUrl;
+    let im = stage.querySelector('img');
+    if (!im) { stage.innerHTML = ''; im = document.createElement('img'); stage.append(im); }
+    im.src = url;
+    im.alt = `${view === 'after' ? 'Compressed' : 'Original'} preview of ${item.file.name}`;
+    $('cp-cap').textContent = view === 'after'
+      ? `After: ${item.w} x ${item.h}, ${bytes(item.blob.size)}. Zoom in to check faces and text.`
+      : `Before: ${item.iw} x ${item.ih}, ${bytes(item.file.size)}.`;
+  }
+
+  async function processAll() {
+    const r = ++run;
+    items.forEach((i) => { if (!i.error) { i.blob = null; paint(i); } });
+    for (const item of items) {
+      if (item.error) { paint(item); continue; }
+      try {
+        if (!(await compress(item, r))) return;
+      } catch (e) {
+        item.error = 'Could not read this file as an image.';
+      }
+      paint(item);
+      if (item === active || !active) show(item);
+      totals();
+    }
+    totals();
+  }
+
+  function addFiles(files) {
+    const room = MAX_FILES - items.length;
+    const picked = files.slice(0, Math.max(0, room));
+    for (const file of picked) {
+      const el = document.createElement('div');
+      el.className = 'result cp-item';
+      const item = { id: nextId++, file, el, srcUrl: URL.createObjectURL(file) };
+      el.innerHTML = `<img class="cp-thumb" alt="" src="${item.srcUrl}"><div><p class="cp-name"></p><div class="cp-meta">Waiting...</div></div>
+        <div class="cp-acts"><button type="button" class="btn ghost small" data-act="view">Preview</button><button type="button" class="btn primary small" data-act="dl" disabled>Download</button></div>`;
+      el.querySelector('.cp-name').textContent = file.name;
+      el.querySelector('.cp-thumb').addEventListener('error', function () { this.style.visibility = 'hidden'; });
+      el.querySelector('[data-act="view"]').addEventListener('click', () => show(item));
+      el.querySelector('[data-act="dl"]').addEventListener('click', (e) => {
+        if (!item.blob) return;
+        XTool.download(item.blob, outName(item));
+        XTool.flash(e.currentTarget, 'Saved');
+      });
+      if (!file.type.startsWith('image/')) item.error = 'Not an image file, skipped.';
+      list.append(el);
+      items.push(item);
+    }
+    if (files.length > picked.length) note.textContent = `Only ${MAX_FILES} images at a time. The rest were skipped.`;
+    processAll();
+  }
+
+  XTool.dropZone($('cp-drop'), (files) => addFiles(files));
+
+  const rerun = XTool.debounce(processAll, 250);
+  q.addEventListener('input', () => { $('cp-qv').textContent = q.value; rerun(); });
+  maxIn.addEventListener('input', rerun);
+  fmt.addEventListener('change', () => {
+    const png = fmt.value === 'image/png';
+    q.disabled = png;
+    $('cp-qv').textContent = png ? 'lossless' : q.value;
+    $('cp-hint').textContent = png
+      ? 'PNG ignores quality. Shrink PNGs with Max width, or switch to JPEG for photos.'
+      : '80% is a good start for photos. Lower means smaller files and softer detail.';
+    rerun();
+  });
+
+  viewBtns.forEach((b) => b.addEventListener('click', () => {
+    view = b.dataset.v;
+    viewBtns.forEach((x) => x.setAttribute('aria-pressed', String(x === b)));
+    show(active);
+  }));
+
+  allBtn.addEventListener('click', async () => {
+    const ready = items.filter((i) => i.blob);
+    for (let k = 0; k < ready.length; k++) {
+      XTool.download(ready[k].blob, outName(ready[k]));
+      await new Promise((res) => setTimeout(res, 350));
+    }
+    XTool.flash(allBtn, `Saved ${ready.length}`);
+  });
+
+  clearBtn.addEventListener('click', () => {
+    run++;
+    items.forEach((i) => { URL.revokeObjectURL(i.srcUrl); if (i.outUrl) URL.revokeObjectURL(i.outUrl); });
+    items = [];
+    list.innerHTML = '';
+    $('cp-file').value = '';
+    show(null);
+    totals();
+  });
+
+  totals();
+})();</script>
+</body>
+</html>

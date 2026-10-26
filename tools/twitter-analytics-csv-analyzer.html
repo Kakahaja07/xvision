@@ -1,0 +1,733 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Free Twitter Analytics CSV Analyzer: Top Posts, Best Times</title>
+  <meta name="description" content="Twitter analytics CSV analyzer: drop your X export to see totals, engagement rate, top 10 posts and best day and hour, all in your browser. Free, no sign-up." />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <link rel="canonical" href="https://kakahaja07.github.io/xvision/tools/twitter-analytics-csv-analyzer.html" />
+  <meta name="theme-color" content="#f6f6f8" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#0a0a0c" media="(prefers-color-scheme: dark)" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="XVision" />
+  <meta property="og:url" content="https://kakahaja07.github.io/xvision/tools/twitter-analytics-csv-analyzer.html" />
+  <meta property="og:title" content="Twitter Analytics CSV Analyzer" />
+  <meta property="og:description" content="Twitter analytics CSV analyzer: drop your X export to see totals, engagement rate, top 10 posts and best day and hour, all in your browser. Free, no sign-up." />
+  <meta property="og:image" content="https://kakahaja07.github.io/xvision/assets/og-card.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Twitter Analytics CSV Analyzer" />
+  <meta name="twitter:description" content="Twitter analytics CSV analyzer: drop your X export to see totals, engagement rate, top 10 posts and best day and hour, all in your browser. Free, no sign-up." />
+  <meta name="twitter:image" content="https://kakahaja07.github.io/xvision/assets/og-card.jpg" />
+  <link rel="icon" type="image/png" href="../assets/logo-64.png" />
+  <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png" />
+  <script src="../assets/site.js"></script>
+  <link rel="stylesheet" href="../assets/site.css" />
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "name": "Twitter Analytics CSV Analyzer",
+      "description": "Twitter analytics CSV analyzer: drop your X export to see totals, engagement rate, top 10 posts and best day and hour, all in your browser. Free, no sign-up.",
+      "url": "https://kakahaja07.github.io/xvision/tools/twitter-analytics-csv-analyzer.html",
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "Any",
+      "browserRequirements": "Requires JavaScript",
+      "isAccessibleForFree": true,
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "author": {
+        "@type": "Person",
+        "@id": "https://kakahaja07.github.io/xvision/#author",
+        "name": "Prashant Sharma",
+        "url": "https://github.com/Kakahaja07"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "XVision",
+          "item": "https://kakahaja07.github.io/xvision/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Free tools",
+          "item": "https://kakahaja07.github.io/xvision/tools/index.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Twitter Analytics CSV Analyzer",
+          "item": "https://kakahaja07.github.io/xvision/tools/twitter-analytics-csv-analyzer.html"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How do I analyze my Twitter analytics CSV export?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Drop the file into the Twitter Analytics CSV Analyzer. It reads the CSV in your browser, finds the impressions, engagements and time columns, and shows totals, engagement rate, your top 10 posts and your best weekday and hour. X's post activity export covers up to 30 days and 3,000 posts per file."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why can't the analyzer find my columns?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The Twitter Analytics CSV Analyzer matches column names like \"impressions,\" \"engagements\" and \"time,\" and X has renamed columns over the years. If a column is missing or wrong, open \"Column mapping\" and pick it from the list. Only the impressions column is required. The rest add more detail when present."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I analyze more than 30 days at once?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, if you combine files first. X's post activity export covers up to 30 days per file, so export several months, paste them into one spreadsheet with a single header row, and save it as CSV. The analyzer handles thousands of rows without trouble, all inside your browser."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do I need X Premium to export my analytics?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It depends on where you export from. X's ads help page describes the post activity dashboards at ads.x.com as free features, while reports from June 2024 say account analytics on x.com became paid-only. As of October 2026, check what your own account shows before paying for anything."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why is my engagement rate different from other tools?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Engagement rate changes with the formula. This analyzer divides engagements by impressions, which matches X's own definition. Benchmark reports like Rival IQ divide interactions by follower count, which gives much smaller numbers. Compare rates only when both use the same formula and the same kind of engagements."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does the analyzer work with exports from other tools?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Often, yes. Any CSV with one row per post and an impressions or views column will work. Tools like Buffer or Typefully use their own column names, so check the mapping panel after loading. Comma, semicolon and tab separated files are all detected automatically."
+          }
+        }
+      ],
+      "@id": "https://kakahaja07.github.io/xvision/tools/twitter-analytics-csv-analyzer.html#faq"
+    }
+  ]
+}
+  </script>
+  <style>
+.t-twitter-analytics-csv-analyzer [hidden] { display: none !important; }
+.t-twitter-analytics-csv-analyzer .drop { position: relative; min-height: 130px; }
+.t-twitter-analytics-csv-analyzer .ca-msg { margin: 14px 0 0; color: var(--muted); }
+.t-twitter-analytics-csv-analyzer .ca-msg.err { color: var(--red); }
+.t-twitter-analytics-csv-analyzer .ca-meta { margin: 18px 0 0; color: var(--muted); font-size: 14px; line-height: 1.5; overflow-wrap: anywhere; }
+.t-twitter-analytics-csv-analyzer details { margin-top: 14px; padding: 12px 14px; border: 1px solid var(--line); border-radius: 14px; background: var(--bg); }
+.t-twitter-analytics-csv-analyzer summary { cursor: pointer; font-size: 14.5px; font-weight: 600; }
+.t-twitter-analytics-csv-analyzer details .fields-2 { margin-top: 12px; }
+.t-twitter-analytics-csv-analyzer .stats { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.t-twitter-analytics-csv-analyzer .stat b { font-size: 22px; overflow-wrap: anywhere; }
+.t-twitter-analytics-csv-analyzer .kv { margin-top: 12px; }
+.t-twitter-analytics-csv-analyzer .ca-head { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px; margin-bottom: 12px; }
+.t-twitter-analytics-csv-analyzer .ca-head .tool-title { margin: 0; }
+.t-twitter-analytics-csv-analyzer .ca-sub { margin: 0 0 8px; font-size: 14px; font-weight: 600; }
+.t-twitter-analytics-csv-analyzer .ca-best { margin: 10px 0 0; font-size: 14.5px; line-height: 1.5; }
+.t-twitter-analytics-csv-analyzer .ca-wd { display: grid; gap: 6px; }
+.t-twitter-analytics-csv-analyzer .ca-wd-row { display: grid; grid-template-columns: 36px minmax(0, 1fr) 92px; align-items: center; gap: 10px; font-size: 13.5px; font-variant-numeric: tabular-nums; }
+.t-twitter-analytics-csv-analyzer .ca-wd-row span:last-child { color: var(--muted); text-align: right; white-space: nowrap; }
+.t-twitter-analytics-csv-analyzer .ca-track { height: 10px; border-radius: 999px; background: var(--soft); overflow: hidden; }
+.t-twitter-analytics-csv-analyzer .ca-track i { display: block; height: 100%; border-radius: inherit; background: var(--fg); }
+.t-twitter-analytics-csv-analyzer .low { opacity: .4; }
+.t-twitter-analytics-csv-analyzer .ca-hours { display: grid; grid-template-columns: repeat(24, minmax(0, 1fr)); align-items: end; gap: 2px; height: 120px; padding-bottom: 2px; border-bottom: 1px solid var(--line); }
+.t-twitter-analytics-csv-analyzer .ca-hours i { display: block; min-height: 2px; border-radius: 3px 3px 0 0; background: var(--fg); }
+.t-twitter-analytics-csv-analyzer .ca-hlabels { display: grid; grid-template-columns: repeat(8, minmax(0, 1fr)); margin-top: 4px; color: var(--muted); font-size: 11.5px; font-variant-numeric: tabular-nums; }
+.t-twitter-analytics-csv-analyzer .ca-top { display: grid; gap: 8px; margin: 0; padding: 0; list-style: none; counter-reset: ca; }
+.t-twitter-analytics-csv-analyzer .ca-top li { position: relative; padding: 12px 14px 12px 44px; border: 1px solid var(--line); border-radius: 14px; background: var(--bg); counter-increment: ca; }
+.t-twitter-analytics-csv-analyzer .ca-top li::before { content: counter(ca); position: absolute; top: 12px; left: 14px; width: 20px; color: var(--muted); font-weight: 600; font-variant-numeric: tabular-nums; }
+.t-twitter-analytics-csv-analyzer .ca-top p { margin: 0; font-size: 15px; line-height: 1.45; overflow-wrap: anywhere; }
+.t-twitter-analytics-csv-analyzer .ca-top .ca-m { margin-top: 6px; color: var(--muted); font-size: 13px; font-variant-numeric: tabular-nums; }
+.t-twitter-analytics-csv-analyzer .ca-top a { color: inherit; }
+.t-twitter-analytics-csv-analyzer .ca-min { display: flex; align-items: center; gap: 8px; margin: 0 0 10px; color: var(--muted); font-size: 14px; }
+.t-twitter-analytics-csv-analyzer .ca-min input { width: 110px; height: 38px; }
+@media (max-width: 560px) {
+  .t-twitter-analytics-csv-analyzer .stats { grid-template-columns: 1fr 1fr; }
+}
+</style>
+</head>
+<body>
+  <header class="site-nav">
+    <div class="wrap nav-in">
+      <a class="wordmark" href="../index.html" aria-label="XVision home"><img src="../assets/logo-64.png" alt="" width="26" height="26" />Vision</a>
+      <nav class="navlinks" id="site-menu" aria-label="Main">
+        <a class="opt" href="../index.html#features">Features</a>
+        <a class="opt" href="../index.html#install">How it works</a>
+        <a href="../guides/index.html">Guides</a>
+        <a href="../tools/index.html" aria-current="page">Tools</a>
+        <a class="opt" href="../index.html#faq">FAQ</a>
+      </nav>
+      <div class="nav-cta">
+        <button class="theme-toggle" type="button" aria-label="Dark mode" aria-pressed="false"><svg class="sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.9 4.9l1.4 1.4m11.4 11.4 1.4 1.4M2 12h2m16 0h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg><svg class="moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 14.3A8.5 8.5 0 1 1 9.7 3.5a7 7 0 0 0 10.8 10.8Z"/></svg></button>
+        <a class="btn ghost small" href="https://github.com/Kakahaja07/xvision">GitHub</a>
+        <a class="btn primary small" href="../index.html#install">Get it free</a>
+        <button class="menu-toggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="site-menu"><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+  <main class="wrap tool-page">
+    <header class="page-head">
+      <div class="crumbs"><a href="index.html">Tools</a> › <a href="index.html#analytics">Analytics and growth</a></div>
+      <h1>Twitter Analytics CSV Analyzer</h1>
+      <p>Drop your X analytics CSV export to see totals, engagement rate, your top 10 posts and your best weekday and hour, all inside your browser.</p>
+    </header>
+    <section class="tool t-twitter-analytics-csv-analyzer">
+  <div class="drop" id="ca-drop">
+    <input type="file" id="ca-file" accept=".csv,.tsv,.txt,text/csv,text/plain" aria-label="Choose an analytics CSV file">
+    <b>Drop your analytics CSV here</b>
+    <span>or click to choose a file</span>
+  </div>
+  <div class="row">
+    <button type="button" class="btn primary small" id="ca-sample">Load sample data</button>
+    <button type="button" class="btn ghost small" id="ca-clear" hidden>Clear</button>
+  </div>
+  <p class="privacy-note">Your file is read inside this browser tab. It is never uploaded anywhere.</p>
+
+  <div aria-live="polite">
+    <p class="ca-msg" id="ca-msg" hidden></p>
+    <div id="ca-out" hidden>
+      <p class="ca-meta" id="ca-meta"></p>
+      <details id="ca-map">
+        <summary>Column mapping</summary>
+        <p class="hint" style="margin:8px 0 0">Columns are matched by name. If a guess is wrong, pick the right column here.</p>
+        <div class="fields-2" id="ca-map-fields"></div>
+      </details>
+      <div id="ca-res">
+        <div class="stats" id="ca-stats"></div>
+        <table class="kv" id="ca-kv"></table>
+        <hr>
+        <div class="ca-head">
+          <p class="tool-title">Best weekday and hour</p>
+          <div class="seg" role="group" aria-label="Rank times by">
+            <button type="button" data-metric="imp" aria-pressed="true">Avg impressions</button>
+            <button type="button" data-metric="er" aria-pressed="false">Engagement rate</button>
+          </div>
+        </div>
+        <div class="tool-grid">
+          <div>
+            <p class="ca-sub">By weekday</p>
+            <div class="ca-wd" id="ca-wd"></div>
+            <p class="ca-best" id="ca-wd-best"></p>
+          </div>
+          <div>
+            <p class="ca-sub">By hour</p>
+            <div id="ca-hr-wrap">
+              <div class="ca-hours" id="ca-hours" role="img"></div>
+              <div class="ca-hlabels"><span>0</span><span>3</span><span>6</span><span>9</span><span>12</span><span>15</span><span>18</span><span>21</span></div>
+            </div>
+            <p class="ca-best" id="ca-hr-best"></p>
+          </div>
+        </div>
+        <p class="hint" id="ca-tz" style="margin:12px 0 0"></p>
+        <hr>
+        <div class="ca-head">
+          <p class="tool-title">Top 10 posts</p>
+          <div class="seg" role="group" aria-label="Sort top posts by">
+            <button type="button" data-top="imp" aria-pressed="true">By impressions</button>
+            <button type="button" data-top="er" aria-pressed="false">By engagement rate</button>
+          </div>
+        </div>
+        <p class="ca-min" id="ca-min-wrap" hidden><label for="ca-min">Only posts with at least</label><input type="number" id="ca-min" min="0" step="10" value="100" inputmode="numeric"><span>impressions</span></p>
+        <ol class="ca-top" id="ca-top"></ol>
+      </div>
+    </div>
+  </div>
+</section>
+    
+    <article class="tool-article"><h2>How do I analyze my Twitter analytics CSV export?</h2>
+<p>Drop the file into the Twitter Analytics CSV Analyzer. It reads the CSV in your browser, finds the impressions, engagements and time columns, and shows totals, engagement rate, your top 10 posts and your best weekday and hour. X's post activity export covers up to 30 days and 3,000 posts per file.</p>
+<p>You can do this with spreadsheet pivot tables, but it's slow, and the time zone math is easy to get wrong because the export uses UTC. A CSV export is just text, so a browser can do the boring part in a second.</p>
+
+<h2>How to use the Twitter Analytics CSV Analyzer</h2>
+<ol>
+<li>Export your post data from X analytics as a CSV. Choose a date range first, then use the Export option.</li>
+<li>Drop the file on the box, or click it to pick the file. You can also press "Load sample data" to try it with made-up posts.</li>
+<li>Open "Column mapping" if a number looks wrong, and pick the right column.</li>
+<li>Read the totals and engagement rate at the top.</li>
+<li>Switch the best-time charts between average impressions and engagement rate.</li>
+<li>Sort the top 10 posts by impressions or by engagement rate, and set a minimum impressions filter for the rate view.</li>
+</ol>
+
+<h2>What does X's analytics export contain?</h2>
+<p>X's export is a CSV with one row per post and one column per metric. According to X's <a href="https://business.x.com/en/help/campaign-measurement-and-analytics/tweet-activity-dashboard">post activity dashboard help page</a>, you can export up to 30 days at a time, each file holds up to 3,000 posts, and times are in UTC. The same page says metrics can take up to 36 hours to settle.</p>
+<p>Column names have changed over the years ("Tweet text" in older files, "Post text" in newer ones, and so on). That's why the analyzer matches names loosely and ignores case. It skips promoted columns, so paid numbers don't mix into your organic results. If it guesses wrong, fix it in the mapping panel.</p>
+<p>As of October 2026, access depends on your account. Reports from June 2024 say X made account analytics paid-only, and x.ai lists Advanced Analytics on the Plus plan and above.</p>
+
+<h2>What do the numbers mean?</h2>
+<p>The analyzer uses X's own definition of engagement rate: engagements divided by impressions. X's <a href="https://help.x.com/en/business-and-advertising/export-csv-definitions">CSV definitions page</a> says engagements include reposts, replies, follows, likes, link clicks, hashtag clicks, media clicks, username and profile photo clicks, and post expansions. That's why engagements are usually much bigger than likes plus replies.</p>
+<p>If your file has no engagements column, the analyzer adds up the columns it can find and labels the total "estimated." The result will undercount, because things like post expansions are missing.</p>
+<div class="table-scroll"><table>
+<thead><tr><th>Number</th><th>How it's worked out</th></tr></thead>
+<tbody>
+<tr><td>Engagement rate</td><td>Total engagements / total impressions</td></tr>
+<tr><td>Avg impressions</td><td>Total impressions / posts</td></tr>
+<tr><td>Median impressions</td><td>The middle post when sorted by impressions</td></tr>
+<tr><td>Best weekday or hour</td><td>Highest average among slots with 3 or more posts</td></tr>
+</tbody>
+</table></div>
+<p>Watch the median. One viral post can pull the average way up, while the median shows what a normal post does.</p>
+
+<h2>Why are the best times shown in my local time?</h2>
+<p>X exports times in UTC, but your audience lives in real time zones. The analyzer converts each post's time to your browser's time zone before grouping by weekday and hour. A post at 14:00 UTC shows up at 19:30 if you're in India.</p>
+<p>Treat the result as a hint, not a rule. Big studies disagree too: Sprout Social's 2026 data favors afternoons, while Buffer's favors weekday mornings. Your own data beats both, but only once a slot has enough posts. Slots with fewer than 3 posts are faded and never picked as "best."</p>
+
+<h2>Is my analytics file private?</h2>
+<p>Yes. The file is read with your browser's file reader and analyzed on this page. Nothing is uploaded, stored or sent anywhere, and the page makes no network requests with your data. Close the tab and it's gone.</p>
+
+<h2>Tips and common mistakes</h2>
+<ul>
+<li><strong>Export the same window each month.</strong> Comparing 30 days to 30 days keeps the numbers fair.</li>
+<li><strong>Use the minimum impressions filter.</strong> A post with 40 impressions and 4 likes has a 10% rate, but it tells you little.</li>
+<li><strong>Don't judge yesterday's posts.</strong> Numbers can take up to 36 hours to settle.</li>
+<li><strong>Don't compare rates across tools blindly.</strong> Some tools divide by followers instead of impressions.</li>
+</ul>
+
+<h2>When should you use a different tool?</h2>
+<p>For one post, the <a href="engagement-rate.html">Twitter Engagement Rate Calculator</a> is quicker. To put a few posts or accounts side by side, use the <a href="twitter-engagement-comparison-tool.html">Twitter Engagement Comparison Tool</a>. Turn your best hours into a weekly plan with the <a href="twitter-best-time-planner.html">Twitter Best Time Planner</a>. For more on the export itself, read <a href="../guides/export-twitter-analytics-data.html">how to export Twitter analytics data</a> and <a href="../guides/find-your-best-performing-tweets.html">how to find your best performing tweets</a>.</p>
+
+<h2>Frequently Asked Questions</h2>
+<h3>Why can't the analyzer find my columns?</h3>
+<p>The Twitter Analytics CSV Analyzer matches column names like "impressions," "engagements" and "time," and X has renamed columns over the years. If a column is missing or wrong, open "Column mapping" and pick it from the list. Only the impressions column is required. The rest add more detail when present.</p>
+<h3>Can I analyze more than 30 days at once?</h3>
+<p>Yes, if you combine files first. X's post activity export covers up to 30 days per file, so export several months, paste them into one spreadsheet with a single header row, and save it as CSV. The analyzer handles thousands of rows without trouble, all inside your browser.</p>
+<h3>Do I need X Premium to export my analytics?</h3>
+<p>It depends on where you export from. X's ads help page describes the post activity dashboards at ads.x.com as free features, while reports from June 2024 say account analytics on x.com became paid-only. As of October 2026, check what your own account shows before paying for anything.</p>
+<h3>Why is my engagement rate different from other tools?</h3>
+<p>Engagement rate changes with the formula. This analyzer divides engagements by impressions, which matches X's own definition. Benchmark reports like Rival IQ divide interactions by follower count, which gives much smaller numbers. Compare rates only when both use the same formula and the same kind of engagements.</p>
+<h3>Does the analyzer work with exports from other tools?</h3>
+<p>Often, yes. Any CSV with one row per post and an impressions or views column will work. Tools like Buffer or Typefully use their own column names, so check the mapping panel after loading. Comma, semicolon and tab separated files are all detected automatically.</p>
+    </article>
+    <aside class="related">
+      <h2>More free tools</h2>
+      <ul>
+        <li><a href="engagement-rate.html">Twitter Engagement Rate Calculator</a></li>
+        <li><a href="twitter-follower-growth-calculator.html">Twitter Follower Growth Calculator</a></li>
+        <li><a href="twitter-impressions-calculator.html">Twitter Impressions Calculator</a></li>
+        <li><a href="twitter-post-performance-score.html">Twitter Post Performance Score</a></li>
+      </ul>
+    </aside>
+    <aside class="cta">
+      <b>Grow on X with real signals.</b>
+      <span>XVision is a free Chrome extension that shows follower counts, follow-back badges and viral posts right on your timeline.</span>
+      <a class="btn light small" href="../index.html">Get XVision free</a>
+    </aside>
+  </main>
+  <footer class="site-footer">
+    <img class="foot-mark" src="../assets/logo.png" alt="" width="320" height="320" loading="lazy" />
+    <div class="wrap">
+      <div class="foot-top">
+        <div class="foot-brand">
+          <a class="wordmark" href="../index.html"><img src="../assets/logo-64.png" alt="" width="26" height="26" />Vision</a>
+          <p>A free Chrome extension, guides and tools for growing on X. Private by design.</p>
+          <div class="foot-social"><a href="https://github.com/Kakahaja07/xvision" aria-label="XVision on GitHub"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.9 1.2 1.9 1.2 1.1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-6 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17.3 4.7 18.3 5 18.3 5c.7 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .5Z"/></svg></a></div>
+        </div>
+        <div class="foot-cols">
+          <div><h3>Product</h3><ul><li><a href="../index.html#features">Features</a></li><li><a href="../index.html#install">How it works</a></li><li><a href="../index.html#pricing">Pricing</a></li><li><a href="../index.html#faq">FAQ</a></li></ul></div>
+          <div><h3>Guides</h3><ul><li><a href="../guides/index.html#grow">Grow on X</a></li><li><a href="../guides/index.html#algorithm">The X algorithm</a></li><li><a href="../guides/index.html#money">Make money on X</a></li><li><a href="../guides/index.html">All guides</a></li></ul></div>
+          <div><h3>Free tools</h3><ul><li><a href="../tools/twitter-bio-generator.html">Twitter bio generator</a></li><li><a href="../tools/video-downloader.html">Twitter video downloader</a></li><li><a href="../tools/thread-maker.html">Thread splitter</a></li><li><a href="../tools/index.html">All 51 tools</a></li></ul></div>
+          <div><h3>Project</h3><ul><li><a href="https://github.com/Kakahaja07/xvision">GitHub</a></li><li><a href="../privacy-policy.html">Privacy policy</a></li><li><a href="../LICENSE">MIT License</a></li><li><a href="../sitemap.xml">Sitemap</a></li></ul></div>
+        </div>
+      </div>
+      <div class="foot-bottom">
+        <span>© 2026 XVision · Built by Prashant Sharma · Inspired by XRay by fayazara</span>
+        <span>Not affiliated with X Corp.</span>
+      </div>
+    </div>
+  </footer>
+  <script src="../assets/x-text.js"></script>
+  <script src="../assets/tool-kit.js"></script>
+  <script>(function () {
+  var root = document.querySelector('.t-twitter-analytics-csv-analyzer');
+  var $ = function (s) { return root.querySelector(s); };
+  var fmt = function (n, d) { return XTool.fmt(n, d || 0); };
+  var esc = XTool.escapeHtml;
+  var DAYS = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+  var LONG_DAYS = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+  var FIELDS = [
+    { key: 'impressions', label: 'Impressions', exact: ['impressions', 'views', 'impression count', 'organic impressions'], has: ['impression', 'views'] },
+    { key: 'engagements', label: 'Engagements', exact: ['engagements', 'total engagements', 'organic engagements'], has: ['engagements'] },
+    { key: 'likes', label: 'Likes', exact: ['likes', 'favorites', 'favourites', 'like count'], has: ['like', 'favorite', 'favourite'] },
+    { key: 'replies', label: 'Replies', exact: ['replies', 'reply count'], has: ['repl'] },
+    { key: 'reposts', label: 'Reposts', exact: ['retweets', 'reposts', 'retweet count', 'repost count'], has: ['retweet', 'repost'] },
+    { key: 'profile', label: 'Profile clicks', exact: ['user profile clicks', 'profile clicks', 'profile visits'], has: ['profile'] },
+    { key: 'url', label: 'Link clicks', exact: ['url clicks', 'link clicks', 'url link clicks'], has: ['url click', 'link click'] },
+    { key: 'time', label: 'Time or date', exact: ['time', 'date', 'created at', 'post time', 'timestamp', 'date time', 'datetime', 'posted at', 'posted', 'published'], has: ['time', 'date'], text: true },
+    { key: 'text', label: 'Post text', exact: ['tweet text', 'post text', 'text', 'post', 'tweet', 'content'], has: ['text'], text: true },
+    { key: 'link', label: 'Permalink', exact: ['tweet permalink', 'post permalink', 'permalink', 'post link', 'link', 'url', 'post url', 'tweet url'], has: ['permalink'], text: true }
+  ];
+  var state = { headers: [], rows: [], map: {}, name: '', metric: 'imp', top: 'imp' };
+
+  // ---------- CSV parsing (BOM, quoted fields, escaped quotes, CRLF, newlines inside quotes) ----------
+  function detectDelimiter(text) {
+    var counts = { ',': 0, ';': 0, '\t': 0 }, q = false;
+    for (var i = 0; i < text.length && i < 20000; i++) {
+      var c = text[i];
+      if (c === '"') q = !q;
+      else if (!q && (c === '\n' || c === '\r')) break;
+      else if (!q && c in counts) counts[c]++;
+    }
+    var best = ',';
+    if (counts['\t'] > counts[best]) best = '\t';
+    if (counts[';'] > counts[best]) best = ';';
+    return best;
+  }
+
+  function parseCSV(text) {
+    if (text.charCodeAt(0) === 0xFEFF) text = text.slice(1);
+    var d = detectDelimiter(text);
+    var rows = [], row = [], field = '', inQ = false, i = 0, n = text.length;
+    while (i < n) {
+      var c = text[i];
+      if (inQ) {
+        if (c === '"') {
+          if (text[i + 1] === '"') { field += '"'; i += 2; continue; }
+          inQ = false; i++; continue;
+        }
+        field += c; i++; continue;
+      }
+      if (c === '"' && field.trim() === '') { field = ''; inQ = true; i++; continue; }
+      if (c === d) { row.push(field); field = ''; i++; continue; }
+      if (c === '\r' || c === '\n') {
+        row.push(field); rows.push(row); row = []; field = '';
+        i += (c === '\r' && text[i + 1] === '\n') ? 2 : 1;
+        continue;
+      }
+      field += c; i++;
+    }
+    if (field !== '' || row.length) { row.push(field); rows.push(row); }
+    return rows.filter(function (r) { return r.some(function (v) { return v.trim() !== ''; }); });
+  }
+
+  function norm(h) { return String(h).toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim(); }
+
+  function guessMap(headers) {
+    var h = headers.map(norm), used = {}, map = {};
+    function take(f, test) {
+      for (var i = 0; i < h.length; i++) {
+        if (used[i] || /promoted|paid/.test(h[i])) continue;
+        if (!f.text && / rate|rate /.test(' ' + h[i] + ' ')) continue;
+        if (f.key === 'link' && /click/.test(h[i])) continue;
+        if (f.key === 'engagements' && /media/.test(h[i])) continue;
+        if (test(h[i])) { used[i] = true; map[f.key] = i; return true; }
+      }
+      return false;
+    }
+    FIELDS.forEach(function (f) { take(f, function (x) { return f.exact.indexOf(x) >= 0; }); });
+    FIELDS.forEach(function (f) {
+      if (map[f.key] === undefined) take(f, function (x) { return f.has.some(function (s) { return x.indexOf(s) >= 0; }); });
+    });
+    return map;
+  }
+
+  function parseNum(s) {
+    if (s === undefined) return NaN;
+    var t = String(s).trim().replace(/[\s,%]/g, '');
+    if (!t) return NaN;
+    var m = /^(-?\d*\.?\d+)([kKmM])?$/.exec(t);
+    if (!m) return NaN;
+    var v = parseFloat(m[1]);
+    if (m[2]) v *= /k/i.test(m[2]) ? 1e3 : 1e6;
+    return v;
+  }
+
+  // X exports use UTC. Returns { ts, hasTime } or null.
+  function parseTime(s) {
+    s = String(s || '').trim();
+    if (!s) return null;
+    var m = /^(\d{4})-(\d{1,2})-(\d{1,2})(?:[ T](\d{1,2}):(\d{2})(?::(\d{2}))?(?:\.\d+)?)?\s*(Z|UTC|GMT|[+-]\d{2}:?\d{2})?$/i.exec(s);
+    if (m) {
+      var ts = Date.UTC(+m[1], +m[2] - 1, +m[3], +(m[4] || 0), +(m[5] || 0), +(m[6] || 0));
+      var tz = m[7];
+      if (tz && /^[+-]/.test(tz)) {
+        var sign = tz[0] === '-' ? -1 : 1, digits = tz.replace(/[^0-9]/g, '');
+        ts -= sign * (+digits.slice(0, 2) * 60 + +digits.slice(2, 4)) * 60000;
+      }
+      return isFinite(ts) ? { ts: ts, hasTime: m[4] !== undefined } : null;
+    }
+    var hasTime = /\d{1,2}:\d{2}/.test(s);
+    var hasZone = /(Z|UTC|GMT|[+-]\d{2}:?\d{2})\s*$/i.test(s);
+    var t = Date.parse(hasZone ? s : s + ' UTC');
+    if (!isFinite(t)) t = Date.parse(s);
+    return isFinite(t) ? { ts: t, hasTime: hasTime } : null;
+  }
+
+  // ---------- Loading ----------
+  function message(text, isErr) {
+    var el = $('#ca-msg');
+    el.textContent = text;
+    el.className = 'ca-msg' + (isErr ? ' err' : '');
+    el.hidden = !text;
+  }
+
+  function load(text, name) {
+    var rows = parseCSV(text);
+    if (rows.length < 2) { $('#ca-out').hidden = true; return message('That file has no data rows. Export a CSV from X analytics and try again.', true); }
+    state.headers = rows[0].map(function (h, i) { return String(h).trim() || 'Column ' + (i + 1); });
+    state.rows = rows.slice(1);
+    state.map = guessMap(state.headers);
+    state.name = name;
+    message('');
+    buildMapUI();
+    $('#ca-out').hidden = false;
+    $('#ca-clear').hidden = false;
+    analyze();
+  }
+
+  function readFile(file) {
+    if (!file) return;
+    if (file.size > 25 * 1024 * 1024) return message('That file is over 25 MB. Export a shorter date range and try again.', true);
+    var r = new FileReader();
+    r.onload = function () { load(String(r.result), file.name); };
+    r.onerror = function () { message('That file could not be read.', true); };
+    r.readAsText(file);
+  }
+
+  function buildMapUI() {
+    var opts = '<option value="">(none)</option>' + state.headers.map(function (h, i) { return '<option value="' + i + '">' + esc(h) + '</option>'; }).join('');
+    $('#ca-map-fields').innerHTML = FIELDS.map(function (f) {
+      return '<div class="field-group"><label for="ca-m-' + f.key + '">' + esc(f.label) + '</label><select id="ca-m-' + f.key + '" data-key="' + f.key + '">' + opts + '</select></div>';
+    }).join('');
+    FIELDS.forEach(function (f) {
+      var sel = $('#ca-m-' + f.key);
+      sel.value = state.map[f.key] === undefined ? '' : String(state.map[f.key]);
+      sel.addEventListener('change', function () {
+        if (sel.value === '') delete state.map[f.key]; else state.map[f.key] = +sel.value;
+        analyze();
+      });
+    });
+    $('#ca-map').open = state.map.impressions === undefined;
+  }
+
+  // ---------- Analysis ----------
+  function analyze() {
+    var map = state.map;
+    if (map.impressions === undefined) {
+      $('#ca-res').hidden = true;
+      $('#ca-meta').textContent = state.name + ': ' + fmt(state.rows.length) + ' rows. No impressions column found. Pick it in Column mapping.';
+      $('#ca-map').open = true;
+      return;
+    }
+    $('#ca-res').hidden = false;
+    var parts = ['likes', 'replies', 'reposts', 'profile', 'url'].filter(function (k) { return map[k] !== undefined; });
+    var estimated = map.engagements === undefined;
+    var posts = [], skipped = 0;
+    state.rows.forEach(function (r) {
+      var imp = parseNum(r[map.impressions]);
+      if (!(imp >= 0)) { skipped++; return; }
+      var p = { imp: imp, text: map.text !== undefined ? String(r[map.text] || '').trim() : '', link: map.link !== undefined ? String(r[map.link] || '').trim() : '' };
+      parts.forEach(function (k) { var v = parseNum(r[map[k]]); p[k] = v >= 0 ? v : 0; });
+      if (estimated) p.eng = parts.reduce(function (a, k) { return a + p[k]; }, 0);
+      else { var e = parseNum(r[map.engagements]); p.eng = e >= 0 ? e : 0; }
+      var t = map.time !== undefined ? parseTime(r[map.time]) : null;
+      if (t) { p.ts = t.ts; p.hasTime = t.hasTime; }
+      p.er = imp > 0 ? p.eng / imp : NaN;
+      posts.push(p);
+    });
+    if (!posts.length) {
+      $('#ca-res').hidden = true;
+      $('#ca-meta').textContent = 'No rows with a number in the impressions column. Check Column mapping.';
+      $('#ca-map').open = true;
+      return;
+    }
+    state.posts = posts;
+
+    var sum = function (k) { return posts.reduce(function (a, p) { return a + (p[k] || 0); }, 0); };
+    var imp = sum('imp'), eng = sum('eng');
+    var sorted = posts.map(function (p) { return p.imp; }).sort(function (a, b) { return a - b; });
+    var mid = Math.floor(sorted.length / 2);
+    var median = sorted.length % 2 ? sorted[mid] : (sorted[mid - 1] + sorted[mid]) / 2;
+    var timed = posts.filter(function (p) { return p.ts !== undefined; });
+    var range = '';
+    if (timed.length) {
+      var min = Math.min.apply(null, timed.map(function (p) { return p.ts; })), max = Math.max.apply(null, timed.map(function (p) { return p.ts; }));
+      var o = { year: 'numeric', month: 'short', day: 'numeric' };
+      range = ', ' + new Date(min).toLocaleDateString(undefined, o) + ' to ' + new Date(max).toLocaleDateString(undefined, o);
+    }
+    $('#ca-meta').textContent = state.name + ': ' + fmt(posts.length) + ' posts' + range + (skipped ? '. Skipped ' + fmt(skipped) + ' rows without impressions.' : '.');
+
+    var stats = [
+      [fmt(posts.length), 'Posts'],
+      [fmt(imp), 'Impressions'],
+      [fmt(eng), 'Engagements' + (estimated ? ' (estimated)' : '')],
+      [imp > 0 ? fmt(eng / imp * 100, 2) + '%' : 'n/a', 'Engagement rate'],
+      [fmt(imp / posts.length), 'Avg impressions'],
+      [fmt(median), 'Median impressions']
+    ];
+    $('#ca-stats').innerHTML = stats.map(function (s) { return '<div class="stat"><b>' + esc(s[0]) + '</b><span>' + esc(s[1]) + '</span></div>'; }).join('');
+    var labels = { likes: 'Likes', replies: 'Replies', reposts: 'Reposts', profile: 'Profile clicks', url: 'Link clicks' };
+    var kv = parts.map(function (k) { var t = sum(k); return '<tr><td>' + labels[k] + '</td><td>' + fmt(t) + ' total, ' + fmt(t / posts.length, 1) + ' per post</td></tr>'; });
+    if (estimated) kv.push('<tr><td>Engagements</td><td>Sum of the columns above</td></tr>');
+    $('#ca-kv').innerHTML = kv.join('');
+    renderTimes();
+    renderTop();
+  }
+
+  function bucketValue(b) {
+    if (!b.n) return NaN;
+    return state.metric === 'imp' ? b.imp / b.n : (b.imp > 0 ? b.eng / b.imp : NaN);
+  }
+  function nPosts(n) { return n + (n === 1 ? ' post' : ' posts'); }
+  function showValue(v) { return !isFinite(v) ? '' : state.metric === 'imp' ? fmt(v) : fmt(v * 100, 2) + '%'; }
+  function bestOf(buckets) {
+    var minN = buckets.some(function (b) { return b.n >= 3; }) ? 3 : 1, best = -1;
+    buckets.forEach(function (b, i) { if (b.n >= minN && isFinite(bucketValue(b)) && (best < 0 || bucketValue(b) > bucketValue(buckets[best]))) best = i; });
+    return best;
+  }
+
+  function renderTimes() {
+    var posts = state.posts.filter(function (p) { return p.ts !== undefined; });
+    var tz = Intl.DateTimeFormat().resolvedOptions().timeZone || 'your local time';
+    var what = state.metric === 'imp' ? 'avg impressions' : 'engagement rate';
+    if (!posts.length) {
+      $('#ca-wd').innerHTML = '';
+      $('#ca-hours').innerHTML = '';
+      $('#ca-wd-best').textContent = 'No readable dates found. Pick the time or date column in Column mapping.';
+      $('#ca-hr-best').textContent = '';
+      $('#ca-hr-wrap').hidden = true;
+      $('#ca-tz').textContent = '';
+      return;
+    }
+    var wd = [0, 1, 2, 3, 4, 5, 6].map(function () { return { n: 0, imp: 0, eng: 0 }; });
+    var hr = []; for (var h = 0; h < 24; h++) hr.push({ n: 0, imp: 0, eng: 0 });
+    var withTime = 0;
+    posts.forEach(function (p) {
+      var d = new Date(p.ts);
+      var day = p.hasTime ? d.getDay() : d.getUTCDay();
+      wd[day].n++; wd[day].imp += p.imp; wd[day].eng += p.eng;
+      if (p.hasTime) { var b = hr[d.getHours()]; b.n++; b.imp += p.imp; b.eng += p.eng; withTime++; }
+    });
+    var order = [1, 2, 3, 4, 5, 6, 0];
+    var wdMax = Math.max.apply(null, wd.map(bucketValue).filter(isFinite).concat([0]));
+    $('#ca-wd').innerHTML = order.map(function (i) {
+      var v = bucketValue(wd[i]), w = wdMax > 0 && isFinite(v) ? v / wdMax * 100 : 0;
+      return '<div class="ca-wd-row' + (wd[i].n < 3 ? ' low' : '') + '"><span>' + DAYS[i] + '</span><span class="ca-track"><i style="width:' + w.toFixed(1) + '%"></i></span><span>' +
+        (wd[i].n ? showValue(v) + ' · ' + wd[i].n : 'no posts') + '</span></div>';
+    }).join('');
+    var bw = bestOf(wd);
+    $('#ca-wd-best').textContent = bw < 0 ? '' : 'Best weekday by ' + what + ': ' + LONG_DAYS[bw] + ' (' + showValue(bucketValue(wd[bw])) + ', ' + nPosts(wd[bw].n) + '). Faded days have fewer than 3 posts.';
+
+    if (!withTime) {
+      $('#ca-hr-wrap').hidden = true;
+      $('#ca-hr-best').textContent = 'Your file has dates but no times, so there is no hour chart.';
+    } else {
+      $('#ca-hr-wrap').hidden = false;
+      var hrMax = Math.max.apply(null, hr.map(bucketValue).filter(isFinite).concat([0]));
+      $('#ca-hours').innerHTML = hr.map(function (b, i) {
+        var v = bucketValue(b), ht = hrMax > 0 && isFinite(v) ? Math.max(2, v / hrMax * 100) : 0;
+        var tip = String(i).padStart(2, '0') + ':00, ' + (b.n ? showValue(v) + ', ' + nPosts(b.n) : 'no posts');
+        return '<i class="' + (b.n < 3 ? 'low' : '') + '" style="height:' + ht.toFixed(1) + '%" title="' + esc(tip) + '"></i>';
+      }).join('');
+      var bh = bestOf(hr);
+      var label = bh < 0 ? '' : String(bh).padStart(2, '0') + ':00 to ' + String((bh + 1) % 24).padStart(2, '0') + ':00';
+      $('#ca-hours').setAttribute('aria-label', 'Bar chart of ' + what + ' by hour.' + (label ? ' Best hour ' + label + '.' : ''));
+      $('#ca-hr-best').textContent = bh < 0 ? '' : 'Best hour by ' + what + ': ' + label + ' (' + showValue(bucketValue(hr[bh])) + ', ' + nPosts(hr[bh].n) + ').';
+    }
+    $('#ca-tz').textContent = 'Times are converted from UTC (how X exports them) to your time zone: ' + tz + '. Few posts in a slot make it unreliable, so treat this as a hint to test.';
+  }
+
+  function renderTop() {
+    var list = state.posts.slice();
+    var byEr = state.top === 'er';
+    $('#ca-min-wrap').hidden = !byEr;
+    if (byEr) {
+      var minImp = parseFloat($('#ca-min').value);
+      if (!(minImp >= 0)) minImp = 0;
+      list = list.filter(function (p) { return p.imp >= minImp && isFinite(p.er); }).sort(function (a, b) { return b.er - a.er; });
+    } else {
+      list.sort(function (a, b) { return b.imp - a.imp; });
+    }
+    list = list.slice(0, 10);
+    if (!list.length) { $('#ca-top').innerHTML = '<li><p>No posts match. Lower the minimum impressions.</p></li>'; return; }
+    $('#ca-top').innerHTML = list.map(function (p) {
+      var text = p.text ? (p.text.length > 180 ? p.text.slice(0, 177) + '...' : p.text) : '(no post text column)';
+      var when = p.ts !== undefined ? new Date(p.ts).toLocaleString(undefined, p.hasTime ? { month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit' } : { month: 'short', day: 'numeric', timeZone: 'UTC' }) + ' · ' : '';
+      var link = /^https?:\/\//i.test(p.link) ? ' · <a href="' + esc(p.link) + '" target="_blank" rel="noopener noreferrer">Open</a>' : '';
+      return '<li><p>' + esc(text) + '</p><p class="ca-m">' + esc(when) + fmt(p.imp) + ' impressions · ' + fmt(p.eng) + ' engagements · ' +
+        (isFinite(p.er) ? fmt(p.er * 100, 2) + '%' : 'n/a') + ' rate' + link + '</p></li>';
+    }).join('');
+  }
+
+  // ---------- Sample data (fictional) ----------
+  function sampleCSV() {
+    var seed = 20261026;
+    function rnd() { seed |= 0; seed = seed + 0x6D2B79F5 | 0; var t = Math.imul(seed ^ seed >>> 15, 1 | seed); t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t; return ((t ^ t >>> 14) >>> 0) / 4294967296; }
+    var lines = [
+      'Sample post: 3 things I learned shipping a side project, in one thread',
+      'Sample post: "Ship small, ship often" is still the best advice I got this year',
+      'Sample post: Tools I use daily: a notes app, a timer, and a very patient cat',
+      'Sample post: Hot take, most landing pages need fewer words, not more',
+      'Sample post: Week 6 of building in public. Revenue: $0, lessons: plenty',
+      'Sample post: What is one habit that made you better at writing? Replies welcome',
+      'Sample post: Before and after of my onboarding screen, "simple" took 4 tries',
+      'Sample post: Quick tip: write the hook last, then cut it in half',
+      'Sample post: Reading list for the weekend, three essays on focus',
+      'Sample post: The bug that took 2 days was a missing comma, of course'
+    ];
+    var q = function (s) { return '"' + String(s).replace(/"/g, '""') + '"'; };
+    var out = ['"Tweet id","Tweet text","time","impressions","engagements","engagement rate","retweets","replies","likes","user profile clicks","url clicks"'];
+    var now = Date.UTC(new Date().getUTCFullYear(), new Date().getUTCMonth(), new Date().getUTCDate());
+    for (var i = 0; i < 64; i++) {
+      var day = Math.floor(rnd() * 30) + 1;
+      var hour = [8, 9, 11, 13, 14, 15, 16, 17, 19, 21][Math.floor(rnd() * 10)];
+      var ts = new Date(now - day * 86400000 + hour * 3600000 + Math.floor(rnd() * 60) * 60000);
+      var dow = ts.getUTCDay();
+      var base = 600 * (hour >= 13 && hour <= 17 ? 1.7 : 1) * (dow >= 2 && dow <= 4 ? 1.35 : dow === 6 ? 0.7 : 1);
+      var imp = Math.round(base * (0.35 + rnd() * rnd() * 4));
+      var eng = Math.round(imp * (0.008 + rnd() * 0.04));
+      var likes = Math.round(eng * 0.45), replies = Math.round(eng * 0.12), reposts = Math.round(eng * 0.08), profile = Math.round(eng * 0.12), url = Math.round(eng * 0.09);
+      var stamp = ts.toISOString().slice(0, 16).replace('T', ' ') + ' +0000';
+      out.push([q('10000000' + (1000 + i)), q(lines[i % lines.length] + ' (#' + (i + 1) + ')'), q(stamp), imp, eng, (eng / imp).toFixed(4), reposts, replies, likes, profile, url].join(','));
+    }
+    return '﻿' + out.join('\r\n') + '\r\n';
+  }
+
+  // ---------- Events ----------
+  XTool.dropZone($('#ca-drop'), function (files) { readFile(files[0]); });
+  $('#ca-sample').addEventListener('click', function () { load(sampleCSV(), 'Sample data (fictional)'); });
+  $('#ca-clear').addEventListener('click', function () {
+    state = { headers: [], rows: [], map: {}, name: '', metric: state.metric, top: state.top };
+    $('#ca-out').hidden = true;
+    $('#ca-clear').hidden = true;
+    $('#ca-file').value = '';
+    message('');
+  });
+  root.querySelectorAll('[data-metric]').forEach(function (b) {
+    b.addEventListener('click', function () {
+      state.metric = b.dataset.metric;
+      root.querySelectorAll('[data-metric]').forEach(function (x) { x.setAttribute('aria-pressed', String(x === b)); });
+      if (state.posts) renderTimes();
+    });
+  });
+  root.querySelectorAll('[data-top]').forEach(function (b) {
+    b.addEventListener('click', function () {
+      state.top = b.dataset.top;
+      root.querySelectorAll('[data-top]').forEach(function (x) { x.setAttribute('aria-pressed', String(x === b)); });
+      if (state.posts) renderTop();
+    });
+  });
+  $('#ca-min').addEventListener('input', function () { if (state.posts) renderTop(); });
+})();</script>
+</body>
+</html>

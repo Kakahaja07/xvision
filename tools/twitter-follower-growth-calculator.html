@@ -1,0 +1,412 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Free Twitter Follower Growth Calculator with Goal Projection</title>
+  <meta name="description" content="Twitter follower growth calculator: get your growth rate, average new followers per day, week and month, and a projection to your goal. Free, no sign-up." />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <link rel="canonical" href="https://kakahaja07.github.io/xvision/tools/twitter-follower-growth-calculator.html" />
+  <meta name="theme-color" content="#f6f6f8" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#0a0a0c" media="(prefers-color-scheme: dark)" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="XVision" />
+  <meta property="og:url" content="https://kakahaja07.github.io/xvision/tools/twitter-follower-growth-calculator.html" />
+  <meta property="og:title" content="Twitter Follower Growth Calculator" />
+  <meta property="og:description" content="Twitter follower growth calculator: get your growth rate, average new followers per day, week and month, and a projection to your goal. Free, no sign-up." />
+  <meta property="og:image" content="https://kakahaja07.github.io/xvision/assets/og-card.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Twitter Follower Growth Calculator" />
+  <meta name="twitter:description" content="Twitter follower growth calculator: get your growth rate, average new followers per day, week and month, and a projection to your goal. Free, no sign-up." />
+  <meta name="twitter:image" content="https://kakahaja07.github.io/xvision/assets/og-card.jpg" />
+  <link rel="icon" type="image/png" href="../assets/logo-64.png" />
+  <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png" />
+  <script src="../assets/site.js"></script>
+  <link rel="stylesheet" href="../assets/site.css" />
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "name": "Twitter Follower Growth Calculator",
+      "description": "Twitter follower growth calculator: get your growth rate, average new followers per day, week and month, and a projection to your goal. Free, no sign-up.",
+      "url": "https://kakahaja07.github.io/xvision/tools/twitter-follower-growth-calculator.html",
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "Any",
+      "browserRequirements": "Requires JavaScript",
+      "isAccessibleForFree": true,
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "author": {
+        "@type": "Person",
+        "@id": "https://kakahaja07.github.io/xvision/#author",
+        "name": "Prashant Sharma",
+        "url": "https://github.com/Kakahaja07"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "XVision",
+          "item": "https://kakahaja07.github.io/xvision/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Free tools",
+          "item": "https://kakahaja07.github.io/xvision/tools/index.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Twitter Follower Growth Calculator",
+          "item": "https://kakahaja07.github.io/xvision/tools/twitter-follower-growth-calculator.html"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How do you calculate Twitter follower growth rate?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A Twitter follower growth calculator subtracts your starting follower count from your current count, divides by the starting count and multiplies by 100. Going from 1,200 to 1,380 followers in 30 days is 15% growth, or 6 new followers per day. This free tool also projects when you could reach a goal."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is a good follower growth rate on Twitter?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "There is no official good follower growth rate on Twitter, and X does not publish one. The useful comparison is your own history. If your monthly growth rate is higher than last month at a similar posting pace, you are improving. Track it every 30 days to see the trend clearly."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I find my follower count from a month ago?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "X's profile only shows your current follower count, so you need your own record. Check old screenshots, a note, or a spreadsheet. From now on, write the count down on the same day each month. Two dated counts are all this follower growth calculator needs to work out your rate."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why does the compound projection reach my goal sooner?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The compound projection assumes you grow by the same percentage every day, so each day adds slightly more followers than the last. The linear projection adds the same number every day. With positive growth, compound always arrives sooner, but it is the more optimistic estimate and rarely holds for months."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can my follower growth rate be negative?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, a negative follower growth rate means you have fewer followers now than at the start date. It can come from unfollows or from X removing locked accounts from counts. When growth is negative, the calculator shows that the goal is not reached at this pace rather than giving a date."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does this calculator connect to my X account?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No, this follower growth calculator never connects to X or asks you to log in. You type two follower counts and two dates, and the math runs in your browser. Nothing is uploaded, so your numbers stay on your device and disappear when you close the page."
+          }
+        }
+      ],
+      "@id": "https://kakahaja07.github.io/xvision/tools/twitter-follower-growth-calculator.html#faq"
+    }
+  ]
+}
+  </script>
+  <style>
+.t-twitter-follower-growth-calculator .fg-head { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 14px; }
+.t-twitter-follower-growth-calculator .fg-head .tool-title { margin: 0; }
+.t-twitter-follower-growth-calculator .fg-big { margin: 4px 0 6px; }
+.t-twitter-follower-growth-calculator .kv { margin-top: 10px; }
+.t-twitter-follower-growth-calculator .seg { max-width: 100%; }
+.t-twitter-follower-growth-calculator [hidden] { display: none; }
+@media (max-width: 420px) { .t-twitter-follower-growth-calculator .seg button { padding: 0 10px; } }
+</style>
+</head>
+<body>
+  <header class="site-nav">
+    <div class="wrap nav-in">
+      <a class="wordmark" href="../index.html" aria-label="XVision home"><img src="../assets/logo-64.png" alt="" width="26" height="26" />Vision</a>
+      <nav class="navlinks" id="site-menu" aria-label="Main">
+        <a class="opt" href="../index.html#features">Features</a>
+        <a class="opt" href="../index.html#install">How it works</a>
+        <a href="../guides/index.html">Guides</a>
+        <a href="../tools/index.html" aria-current="page">Tools</a>
+        <a class="opt" href="../index.html#faq">FAQ</a>
+      </nav>
+      <div class="nav-cta">
+        <button class="theme-toggle" type="button" aria-label="Dark mode" aria-pressed="false"><svg class="sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.9 4.9l1.4 1.4m11.4 11.4 1.4 1.4M2 12h2m16 0h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg><svg class="moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 14.3A8.5 8.5 0 1 1 9.7 3.5a7 7 0 0 0 10.8 10.8Z"/></svg></button>
+        <a class="btn ghost small" href="https://github.com/Kakahaja07/xvision">GitHub</a>
+        <a class="btn primary small" href="../index.html#install">Get it free</a>
+        <button class="menu-toggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="site-menu"><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+  <main class="wrap tool-page">
+    <header class="page-head">
+      <div class="crumbs"><a href="index.html">Tools</a> › <a href="index.html#analytics">Analytics and growth</a></div>
+      <h1>Twitter Follower Growth Calculator</h1>
+      <p>Enter your follower count at two dates to get your growth rate, daily and monthly averages, and when you could reach a goal at your current pace.</p>
+    </header>
+    <section class="tool t-twitter-follower-growth-calculator">
+  <div class="tool-grid">
+    <div class="fields">
+      <div class="fields-2">
+        <div class="field-group"><label for="fg-start">Followers at start</label><input id="fg-start" type="number" min="0" step="1" inputmode="numeric" value="1200"></div>
+        <div class="field-group"><label for="fg-end">Followers now</label><input id="fg-end" type="number" min="0" step="1" inputmode="numeric" value="1380"></div>
+        <div class="field-group"><label for="fg-from">Start date</label><input id="fg-from" type="date"></div>
+        <div class="field-group"><label for="fg-to">End date</label><input id="fg-to" type="date"></div>
+      </div>
+      <p class="hint">Use counts from the same time of day if you can. Your count can shift a little when X removes locked accounts.</p>
+    </div>
+    <div aria-live="polite">
+      <div class="big-number fg-big" id="fg-rate">–</div>
+      <div class="hint" id="fg-rate-label">growth over the period</div>
+      <table class="kv"><tbody id="fg-kv"></tbody></table>
+    </div>
+  </div>
+  <hr>
+  <div class="fg-head">
+    <p class="tool-title">Projection</p>
+    <div class="seg" role="group" aria-label="Projection type">
+      <button type="button" data-mode="count" aria-pressed="true">Reach a count</button>
+      <button type="button" data-mode="date" aria-pressed="false">Count on a date</button>
+    </div>
+  </div>
+  <div class="tool-grid">
+    <div class="fields">
+      <div class="field-group" id="fg-goal-wrap"><label for="fg-goal">Follower goal</label><input id="fg-goal" type="number" min="1" step="1" inputmode="numeric" value="2000"></div>
+      <div class="field-group" id="fg-date-wrap" hidden><label for="fg-date">Goal date</label><input id="fg-date" type="date"></div>
+    </div>
+    <div aria-live="polite">
+      <table class="kv"><tbody id="fg-proj"></tbody></table>
+    </div>
+  </div>
+  <p class="note">Formula: growth % = (followers now − followers at start) ÷ followers at start × 100. Linear keeps the same number of new followers per day. Compound keeps the same percentage per day, so it speeds up over time. Both are projections from your past pace, not a promise.</p>
+</section>
+    <p class="privacy-note">Runs in your browser. Nothing you enter is uploaded.</p>
+    <article class="tool-article"><h2>How do you calculate Twitter follower growth rate?</h2>
+<p>A Twitter follower growth calculator subtracts your starting follower count from your current count, divides by the starting count and multiplies by 100. Going from 1,200 to 1,380 followers in 30 days is 15% growth, or 6 new followers per day. This free tool also projects when you could reach a goal.</p>
+
+<p>The growth rate tells you how fast you are growing. The daily and monthly averages tell you what that means in real people, which is often easier to plan around.</p>
+
+<h2>How to use the follower growth calculator</h2>
+<ol>
+<li>Type your follower count from the start of the period. An old screenshot or a note works.</li>
+<li>Type your follower count now.</li>
+<li>Set the start and end dates. The tool fills in the last 30 days for you.</li>
+<li>Read your growth %, net change and averages per day, week and month.</li>
+<li>Under Projection, enter a follower goal to see when you might reach it, or switch to "Count on a date" to see where you might be by a certain day.</li>
+</ol>
+<p>Everything runs in your browser. Nothing you type is saved or sent anywhere.</p>
+
+<h2>The formulas behind the numbers</h2>
+<p>Every number comes from three inputs: two follower counts and the number of days between them.</p>
+<ul>
+<li><strong>Growth %</strong> = (followers now − followers at start) ÷ followers at start × 100</li>
+<li><strong>Average per day</strong> = net change ÷ days. Per week multiplies by 7, per month by 30.4 (the average month length).</li>
+<li><strong>Compound daily rate</strong> = (followers now ÷ followers at start) raised to the power of 1 ÷ days, minus 1</li>
+</ul>
+<p>Here is a worked example for a made-up account that went from 1,200 to 1,380 followers in 30 days, with a goal of 2,000.</p>
+<div class="table-scroll"><table>
+<thead><tr><th>Measure</th><th>Result</th></tr></thead>
+<tbody>
+<tr><td>Net change</td><td>+180 followers</td></tr>
+<tr><td>Growth rate</td><td>15.0% in 30 days</td></tr>
+<tr><td>Average per day</td><td>6.0</td></tr>
+<tr><td>Average per month</td><td>183</td></tr>
+<tr><td>Days to 2,000, linear</td><td>104</td></tr>
+<tr><td>Days to 2,000, compound</td><td>80</td></tr>
+</tbody>
+</table></div>
+
+<h2>Linear or compound: which projection should you trust?</h2>
+<p>Trust the linear projection for planning and treat the compound one as a best case. Linear assumes you keep adding the same number of followers each day. Compound assumes you keep growing by the same percentage, so the daily number keeps rising.</p>
+<p>Compound growth can happen when a bigger audience brings more reach. But it rarely holds for long. A good month is often followed by a flat one, and compound math turns one lucky streak into a very big number. That is why the tool labels both lines as projections. Your real path will be bumpier than either one.</p>
+<p>If you want to work backwards from a goal and see what you would need to change, the <a href="twitter-growth-goal-planner.html">growth goal planner</a> is built for that.</p>
+
+<h2>Why does your follower count move on its own?</h2>
+<p>Your count can change even when nobody new follows or unfollows you. X's <a href="https://help.x.com/en/using-x/following-faqs">Following FAQs</a> say that when accounts are locked, X removes them from follower counts, so your number may go down.</p>
+<p>This is one reason to measure over at least a few weeks. A small drop on one day can be cleanup, not a sign that people are leaving. If drops keep happening, the guide on <a href="../guides/why-am-i-losing-followers-on-twitter.html">why you might be losing followers on Twitter</a> walks through the usual causes.</p>
+<p>Also note that this calculator shows net growth. If you gained 220 and lost 40, it shows +180. You can't see the churn from two counts alone.</p>
+
+<h2>Tips and common mistakes</h2>
+<ul>
+<li><strong>Measure the same way each time.</strong> Same day of the week, same time of day. Write the count down.</li>
+<li><strong>Use periods of 28 to 30 days.</strong> A single week can be skewed by one popular post.</li>
+<li><strong>Don't project from a viral week.</strong> A spike makes both projections look far better than your normal pace.</li>
+<li><strong>Look at growth next to activity.</strong> If you posted twice as often this month, check whether growth rose too. The <a href="twitter-posting-frequency-calculator.html">posting frequency calculator</a> helps you find a pace you can keep.</li>
+<li><strong>Don't buy followers.</strong> X's <a href="https://help.x.com/en/rules-and-policies/authenticity">authenticity policy</a> bans buying followers and follow trading, and penalties can include limited reach or suspension.</li>
+</ul>
+<p>If profile visits are high but growth is slow, your profile may be the bottleneck. The <a href="twitter-profile-conversion-calculator.html">profile conversion calculator</a> shows what share of visitors follow you. If growth is slow because few people see your posts, start with the <a href="twitter-impressions-calculator.html">impressions calculator</a>.</p>
+<p>For a simple tracking routine, read how to <a href="../guides/track-twitter-follower-growth.html">track Twitter follower growth</a>, and for reading trends over months, see how to <a href="../guides/analyze-twitter-audience-growth.html">analyze Twitter audience growth</a>. The free <a href="../index.html">XVision Chrome extension</a> includes a growth dashboard if you want counts recorded for you.</p>
+
+<h2>Frequently Asked Questions</h2>
+<h3>What is a good follower growth rate on Twitter?</h3>
+<p>There is no official good follower growth rate on Twitter, and X does not publish one. The useful comparison is your own history. If your monthly growth rate is higher than last month at a similar posting pace, you are improving. Track it every 30 days to see the trend clearly.</p>
+<h3>How do I find my follower count from a month ago?</h3>
+<p>X's profile only shows your current follower count, so you need your own record. Check old screenshots, a note, or a spreadsheet. From now on, write the count down on the same day each month. Two dated counts are all this follower growth calculator needs to work out your rate.</p>
+<h3>Why does the compound projection reach my goal sooner?</h3>
+<p>The compound projection assumes you grow by the same percentage every day, so each day adds slightly more followers than the last. The linear projection adds the same number every day. With positive growth, compound always arrives sooner, but it is the more optimistic estimate and rarely holds for months.</p>
+<h3>Can my follower growth rate be negative?</h3>
+<p>Yes, a negative follower growth rate means you have fewer followers now than at the start date. It can come from unfollows or from X removing locked accounts from counts. When growth is negative, the calculator shows that the goal is not reached at this pace rather than giving a date.</p>
+<h3>Does this calculator connect to my X account?</h3>
+<p>No, this follower growth calculator never connects to X or asks you to log in. You type two follower counts and two dates, and the math runs in your browser. Nothing is uploaded, so your numbers stay on your device and disappear when you close the page.</p>
+    </article>
+    <aside class="related">
+      <h2>More free tools</h2>
+      <ul>
+        <li><a href="engagement-rate.html">Twitter Engagement Rate Calculator</a></li>
+        <li><a href="twitter-impressions-calculator.html">Twitter Impressions Calculator</a></li>
+        <li><a href="twitter-post-performance-score.html">Twitter Post Performance Score</a></li>
+        <li><a href="twitter-profile-conversion-calculator.html">Twitter Profile Conversion Calculator</a></li>
+      </ul>
+    </aside>
+    <aside class="cta">
+      <b>Grow on X with real signals.</b>
+      <span>XVision is a free Chrome extension that shows follower counts, follow-back badges and viral posts right on your timeline.</span>
+      <a class="btn light small" href="../index.html">Get XVision free</a>
+    </aside>
+  </main>
+  <footer class="site-footer">
+    <img class="foot-mark" src="../assets/logo.png" alt="" width="320" height="320" loading="lazy" />
+    <div class="wrap">
+      <div class="foot-top">
+        <div class="foot-brand">
+          <a class="wordmark" href="../index.html"><img src="../assets/logo-64.png" alt="" width="26" height="26" />Vision</a>
+          <p>A free Chrome extension, guides and tools for growing on X. Private by design.</p>
+          <div class="foot-social"><a href="https://github.com/Kakahaja07/xvision" aria-label="XVision on GitHub"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.9 1.2 1.9 1.2 1.1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-6 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17.3 4.7 18.3 5 18.3 5c.7 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .5Z"/></svg></a></div>
+        </div>
+        <div class="foot-cols">
+          <div><h3>Product</h3><ul><li><a href="../index.html#features">Features</a></li><li><a href="../index.html#install">How it works</a></li><li><a href="../index.html#pricing">Pricing</a></li><li><a href="../index.html#faq">FAQ</a></li></ul></div>
+          <div><h3>Guides</h3><ul><li><a href="../guides/index.html#grow">Grow on X</a></li><li><a href="../guides/index.html#algorithm">The X algorithm</a></li><li><a href="../guides/index.html#money">Make money on X</a></li><li><a href="../guides/index.html">All guides</a></li></ul></div>
+          <div><h3>Free tools</h3><ul><li><a href="../tools/twitter-bio-generator.html">Twitter bio generator</a></li><li><a href="../tools/video-downloader.html">Twitter video downloader</a></li><li><a href="../tools/thread-maker.html">Thread splitter</a></li><li><a href="../tools/index.html">All 51 tools</a></li></ul></div>
+          <div><h3>Project</h3><ul><li><a href="https://github.com/Kakahaja07/xvision">GitHub</a></li><li><a href="../privacy-policy.html">Privacy policy</a></li><li><a href="../LICENSE">MIT License</a></li><li><a href="../sitemap.xml">Sitemap</a></li></ul></div>
+        </div>
+      </div>
+      <div class="foot-bottom">
+        <span>© 2026 XVision · Built by Prashant Sharma · Inspired by XRay by fayazara</span>
+        <span>Not affiliated with X Corp.</span>
+      </div>
+    </div>
+  </footer>
+  <script src="../assets/x-text.js"></script>
+  <script src="../assets/tool-kit.js"></script>
+  <script>(function () {
+  const $ = (id) => document.getElementById(id);
+  const DAY = 86400000;
+  let mode = 'count';
+
+  const num = (id) => {
+    const v = $(id).value.trim();
+    const n = v === '' ? NaN : Number(v);
+    return Number.isFinite(n) && n >= 0 ? n : NaN;
+  };
+  const parseDate = (v) => (v ? Date.parse(v + 'T00:00:00Z') : NaN);
+  const localIso = (d) => [d.getFullYear(), String(d.getMonth() + 1).padStart(2, '0'), String(d.getDate()).padStart(2, '0')].join('-');
+  const showDate = (t) => new Date(t).toLocaleDateString(undefined, { year: 'numeric', month: 'short', day: 'numeric', timeZone: 'UTC' });
+  const fmt = (n, d = 0) => XTool.fmt(n, d);
+  const signed = (n, d = 0) => (n > 0 ? '+' : n < 0 ? '−' : '') + fmt(Math.abs(n), d);
+  const pct = (x) => signed(x * 100, Math.abs(x) < 0.001 && x !== 0 ? 3 : Math.abs(x) < 0.1 ? 2 : 1) + '%';
+  const span = (d) => d < 120 ? `${d} day${d === 1 ? '' : 's'}` : d < 730 ? `about ${Math.round(d / 30.44)} months` : `about ${(d / 365.25).toFixed(1)} years`;
+  const rows = (list) => list.map(([k, v]) => `<tr><td>${XTool.escapeHtml(k)}</td><td>${XTool.escapeHtml(v)}</td></tr>`).join('');
+
+  const today = new Date();
+  const back = new Date(today); back.setDate(back.getDate() - 30);
+  const ahead = new Date(today); ahead.setDate(ahead.getDate() + 180);
+  $('fg-from').value = localIso(back);
+  $('fg-to').value = localIso(today);
+  $('fg-date').value = localIso(ahead);
+
+  function when(days, endT) {
+    if (days > 36500) return 'More than 100 years away';
+    return `${showDate(endT + days * DAY)} (${span(days)})`;
+  }
+
+  function render() {
+    const start = num('fg-start'), end = num('fg-end');
+    const from = parseDate($('fg-from').value), to = parseDate($('fg-to').value);
+    const fail = (msg) => {
+      $('fg-rate').textContent = '–';
+      $('fg-rate-label').textContent = msg;
+      $('fg-kv').innerHTML = '';
+      $('fg-proj').innerHTML = rows([['Projection', 'Fix the inputs above first']]);
+    };
+    if (Number.isNaN(start) || Number.isNaN(end)) return fail('Enter both follower counts (0 or more).');
+    if (Number.isNaN(from) || Number.isNaN(to)) return fail('Pick a start date and an end date.');
+    if (to <= from) return fail('The end date must be after the start date.');
+
+    const days = Math.round((to - from) / DAY);
+    const net = end - start;
+    const perDay = net / days;
+    const growth = start > 0 ? net / start : NaN;
+    const r = start > 0 && end > 0 ? Math.pow(end / start, 1 / days) - 1 : NaN;
+
+    $('fg-rate').textContent = Number.isNaN(growth) ? '–' : pct(growth);
+    $('fg-rate-label').textContent = Number.isNaN(growth)
+      ? 'A growth % needs a starting count above 0.'
+      : `growth in ${days} day${days === 1 ? '' : 's'}`;
+    $('fg-kv').innerHTML = rows([
+      ['Net change', `${signed(net)} followers`],
+      ['Average per day', signed(perDay, 1)],
+      ['Average per week', signed(perDay * 7, 1)],
+      ['Average per month (30.4 days)', signed(perDay * 30.44, 0)],
+      ['Compound rate per month', Number.isNaN(r) ? '–' : pct(Math.pow(1 + r, 30.44) - 1)],
+    ]);
+
+    let lin, comp;
+    if (mode === 'count') {
+      const goal = num('fg-goal');
+      if (Number.isNaN(goal) || goal < 1) {
+        lin = comp = 'Enter a follower goal';
+      } else if (goal <= end) {
+        lin = comp = 'Already reached';
+      } else {
+        lin = perDay > 0 ? when(Math.ceil((goal - end) / perDay), to) : 'Not at this pace';
+        comp = r > 0 ? when(Math.ceil(Math.log(goal / end) / Math.log(1 + r)), to) : 'Not at this pace';
+      }
+    } else {
+      const goalT = parseDate($('fg-date').value);
+      const d = (goalT - to) / DAY;
+      if (Number.isNaN(goalT) || d <= 0) {
+        lin = comp = 'Pick a date after the end date';
+      } else {
+        lin = `${fmt(Math.max(0, Math.round(end + perDay * d)))} followers`;
+        const c = Number.isNaN(r) ? NaN : end * Math.pow(1 + r, d);
+        comp = Number.isNaN(c) ? '–' : c > 1e9 ? 'Over 1 billion (this pace cannot last)' : `${fmt(Math.round(c))} followers`;
+      }
+    }
+    $('fg-proj').innerHTML = rows([['Linear pace', lin], ['Compound pace', comp]]);
+  }
+
+  document.querySelectorAll('.t-twitter-follower-growth-calculator .seg button').forEach((b) => {
+    b.addEventListener('click', () => {
+      mode = b.dataset.mode;
+      document.querySelectorAll('.t-twitter-follower-growth-calculator .seg button').forEach((x) => x.setAttribute('aria-pressed', String(x === b)));
+      $('fg-goal-wrap').hidden = mode !== 'count';
+      $('fg-date-wrap').hidden = mode !== 'date';
+      render();
+    });
+  });
+  ['fg-start', 'fg-end', 'fg-from', 'fg-to', 'fg-goal', 'fg-date'].forEach((id) => $(id).addEventListener('input', render));
+  render();
+})();</script>
+</body>
+</html>
