@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>X video downloader · XVision</title>
+  <meta name="description" content="Download videos and GIFs from public X posts as MP4, in the quality you choose." />
+  <meta property="og:title" content="X video downloader" />
+  <meta property="og:description" content="Download videos and GIFs from public X posts as MP4, in the quality you choose." />
+  <meta property="og:image" content="https://kakahaja07.github.io/xvision/assets/og-image.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="icon" href="../assets/logo.png" />
+  <link rel="stylesheet" href="../assets/site.css" />
+</head>
+<body>
+  <div class="wrap">
+    <nav>
+      <a class="wordmark" href="../index.html" aria-label="XVision home"><img src="../assets/logo.png" alt="" width="28" height="28" />Vision</a>
+      <div class="navlinks">
+        <a href="../guides/index.html">Guides</a>
+        <a href="../tools/index.html" aria-current="page">Tools</a>
+        <a class="opt" href="../index.html#install">Install</a>
+        <a href="https://github.com/Kakahaja07/xvision">GitHub</a>
+      </div>
+    </nav>
+  </div>
+
+  <style>
+    .dl-form { display: flex; gap: 10px; }
+    .dl-form input { flex: 1; min-width: 0; }
+    @media (max-width: 520px) { .dl-form { flex-direction: column; } }
+    .dl-head { margin-top: 22px; }
+    .dl-head p { margin: 4px 0 0; color: var(--muted); font-size: 15.5px; }
+    .dl-card { display: grid; grid-template-columns: 220px 1fr; gap: 18px; margin-top: 16px; padding: 14px; border: 1px solid var(--line); border-radius: 14px; background: var(--bg); }
+    @media (max-width: 600px) { .dl-card { grid-template-columns: 1fr; } }
+    .dl-card img { width: 100%; border-radius: 10px; aspect-ratio: 16 / 9; object-fit: cover; background: var(--line); }
+    .dl-list { display: grid; gap: 8px; align-content: start; }
+    .dl-row { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 8px 10px; border: 1px solid var(--line); border-radius: 10px; background: var(--card); font-variant-numeric: tabular-nums; }
+    .setup { margin-top: 16px; padding: 14px 16px; border: 1px dashed var(--line); border-radius: 12px; color: var(--muted); font-size: 15px; }
+  </style>
+  <main class="wrap narrow">
+    <header class="page-head">
+      <div class="crumbs"><a href="index.html">Tools</a></div>
+      <h1>X video downloader</h1>
+      <p>Save the video or GIF from a public X post as an MP4, in the quality you choose.</p>
+    </header>
+    <div class="tool">
+      <form id="form" class="dl-form">
+        <input id="link" type="text" inputmode="url" autocomplete="off" placeholder="Paste a post link, e.g. https://x.com/name/status/123…" aria-label="Post link" />
+        <button class="btn primary" type="submit">Get video</button>
+      </form>
+      <div class="setup" id="setup" hidden>The downloader service isn't connected yet. The site owner needs to set up the free Cloudflare Worker described in <a href="https://github.com/Kakahaja07/xvision/tree/main/worker">worker/README.md</a>.</div>
+      <p class="note" id="status"></p>
+      <div id="result"></div>
+    </div>
+    <p class="note">Only download videos you made or have permission to use, and respect creators' rights. Works with public posts only; private, deleted or age-restricted posts can't be downloaded.</p>
+    <p class="note" style="padding-bottom:64px">The post link is sent to the downloader service to look up the video. Nothing is stored.</p>
+  </main>
+  <footer>
+    <div class="wrap">
+      <span>Built by Prashant Sharma · Inspired by XRay by fayazara · <a href="../privacy-policy.html">Privacy</a></span>
+      <span>Not affiliated with X Corp.</span>
+    </div>
+  </footer>
+  <script src="../assets/downloader-config.js"></script>
+  <script>
+const WORKER = (window.XV_WORKER_URL || '').replace(/\/+$/, '');
+const form = document.getElementById('form'), input = document.getElementById('link');
+const status = document.getElementById('status'), result = document.getElementById('result');
+const setup = document.getElementById('setup');
+if (!WORKER) { setup.hidden = false; form.querySelector('button').disabled = true; }
+
+function quality(file) {
+  const [w, h] = (file.resolution || '').split('x').map(Number);
+  const p = Math.min(w || 0, h || 0);
+  return p ? `${p}p` : 'MP4';
+}
+function seconds(ms) {
+  if (!ms) return '';
+  const s = Math.round(ms / 1000);
+  return `${Math.floor(s / 60)}:${String(s % 60).padStart(2, '0')}`;
+}
+
+form.addEventListener('submit', async (event) => {
+  event.preventDefault();
+  if (!WORKER) return;
+  const link = input.value.trim();
+  if (!link) return;
+  result.replaceChildren();
+  status.className = 'note';
+  status.textContent = 'Looking up the post…';
+  try {
+    const res = await fetch(`${WORKER}/info?url=${encodeURIComponent(link)}`);
+    const data = await res.json();
+    if (!res.ok) throw new Error(data.error || 'Could not load this post.');
+    status.textContent = '';
+    render(data);
+  } catch (err) {
+    status.className = 'note over';
+    status.textContent = err.message === 'Failed to fetch' ? 'Could not reach the downloader service. Try again in a moment.' : err.message;
+  }
+});
+
+function render(data) {
+  const head = document.createElement('div');
+  head.className = 'dl-head';
+  const who = document.createElement('b');
+  who.textContent = `${data.author.name} @${data.author.handle}`;
+  const text = document.createElement('p');
+  text.textContent = data.text.replace(/\s*https:\/\/t\.co\/\w+$/, '');
+  head.append(who, text);
+  result.append(head);
+
+  for (const video of data.videos) {
+    const card = document.createElement('div');
+    card.className = 'dl-card';
+    if (video.poster) {
+      const img = document.createElement('img');
+      img.src = video.poster;
+      img.alt = '';
+      img.loading = 'lazy';
+      card.append(img);
+    }
+    const list = document.createElement('div');
+    list.className = 'dl-list';
+    const label = document.createElement('div');
+    label.className = 'meta';
+    label.textContent = [data.videos.length > 1 ? `Video ${video.index}` : '', video.kind === 'gif' ? 'GIF' : 'Video', seconds(video.durationMs)].filter(Boolean).join(' · ');
+    list.append(label);
+    for (const file of video.files) {
+      const row = document.createElement('div');
+      row.className = 'dl-row';
+      const q = document.createElement('span');
+      q.innerHTML = `<b>${quality(file)}</b> <span class="meta">${file.resolution ? file.resolution.replace('x', '×') : ''}</span>`;
+      const a = document.createElement('a');
+      a.className = 'btn primary small';
+      const name = `xvision-${data.id}-${quality(file)}${data.videos.length > 1 ? `-${video.index}` : ''}.mp4`;
+      a.href = `${WORKER}/download?src=${encodeURIComponent(file.url)}&name=${encodeURIComponent(name)}`;
+      a.textContent = 'Download';
+      row.append(q, a);
+      list.append(row);
+    }
+    card.append(list);
+    result.append(card);
+  }
+}
+</script>
+</body>
+</html>

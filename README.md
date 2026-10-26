@@ -42,7 +42,8 @@ Full details: [privacy policy](privacy-policy.html).
 | `downloads/` | The same extension as a zip |
 | `index.html` | The demo page |
 | `guides/` | Growth guides for X |
-| `tools/` | Free browser tools: thread maker, post length checker, engagement rate calculator |
+| `tools/` | Free tools: X video downloader, thread maker, post length checker, engagement rate calculator |
+| `worker/` | The free Cloudflare Worker behind the video downloader, with [setup steps](worker/README.md) |
 | `privacy-policy.html` | Privacy policy |
 | `assets/` | Images and fonts for the demo page |
 
