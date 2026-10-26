@@ -1,6 +1,6 @@
 # Video downloader Worker
 
-The [X video downloader](https://kakahaja07.github.io/xvision/tools/video-downloader.html) needs a tiny helper, because X only lets its own embed site read video data from a browser. This folder holds that helper: a free [Cloudflare Worker](https://workers.cloudflare.com/).
+The [Twitter video downloader](https://kakahaja07.github.io/xvision/tools/video-downloader.html) needs a tiny helper, because X only lets its own embed site read video data from a browser. This folder holds that helper: a free [Cloudflare Worker](https://workers.cloudflare.com/).
 
 It does two things and nothing else:
 
