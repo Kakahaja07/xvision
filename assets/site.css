@@ -155,3 +155,25 @@ textarea:focus, input:focus { border-color: var(--accent); box-shadow: 0 0 0 3px
 footer { padding: 40px 0 56px; border-top: 1px solid var(--line); color: var(--muted); font-size: 14.5px; }
 footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px 24px; }
 footer a { color: var(--fg); }
+.footlinks { display: flex; flex-wrap: wrap; gap: 8px 18px; }
+.footlinks a { color: var(--muted); text-decoration: none; }
+@media (hover: hover) { .footlinks a:hover { color: var(--fg); } }
+
+/* Phones: tighter rhythm and compact cards */
+@media (max-width: 640px) {
+  .wrap { padding: 0 16px; }
+  nav { padding: 16px 0; }
+  .page-head { padding: 20px 0 22px; }
+  .page-head h1 { font-size: 34px; }
+  .page-head p { font-size: 17px; }
+  .grid { gap: 10px; padding-bottom: 48px; }
+  .card { padding: 18px; border-radius: 14px; }
+  .card h2, .card h3 { margin: 8px 0 4px; font-size: 18px; }
+  .card p { font-size: 15px; }
+  article h2 { margin-top: 36px; font-size: 24px; }
+  article p, article li { font-size: 17px; }
+  .tool { padding: 16px; border-radius: 16px; }
+  .row .btn { flex: 1 1 auto; justify-content: center; }
+  footer { padding: 28px 0 40px; }
+  footer .wrap { flex-direction: column; }
+}
