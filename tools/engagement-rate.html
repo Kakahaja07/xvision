@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Engagement rate calculator · XVision</title>
+  <meta name="description" content="Enter a post's numbers to see what share of viewers interacted, and compare it with the author's follower count." />
+  <meta property="og:title" content="Engagement rate calculator" />
+  <meta property="og:description" content="Enter a post's numbers to see what share of viewers interacted, and compare it with the author's follower count." />
+  <meta property="og:image" content="https://kakahaja07.github.io/xvision/assets/og-image.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="icon" href="../assets/logo.png" />
+  <link rel="stylesheet" href="../assets/site.css" />
+</head>
+<body>
+  <div class="wrap">
+    <nav>
+      <a class="wordmark" href="../index.html" aria-label="XVision home"><img src="../assets/logo.png" alt="" width="28" height="28" />Vision</a>
+      <div class="navlinks">
+        <a href="../guides/index.html">Guides</a>
+        <a href="../tools/index.html" aria-current="page">Tools</a>
+        <a class="opt" href="../index.html#install">Install</a>
+        <a href="https://github.com/Kakahaja07/xvision">GitHub</a>
+      </div>
+    </nav>
+  </div>
+  <main class="wrap narrow">
+    <header class="page-head">
+      <div class="crumbs"><a href="index.html">Tools</a></div>
+      <h1>Engagement rate calculator</h1>
+      <p>Enter a post's numbers to see what share of viewers interacted, and compare it with the author's follower count.</p>
+    </header>
+    <div class="tool">
+      <div class="inputs">
+        <div><label class="field" for="views">Views</label><input id="views" type="number" min="0" inputmode="numeric" placeholder="12000" /></div>
+        <div><label class="field" for="likes">Likes</label><input id="likes" type="number" min="0" inputmode="numeric" placeholder="240" /></div>
+        <div><label class="field" for="replies">Replies</label><input id="replies" type="number" min="0" inputmode="numeric" placeholder="30" /></div>
+        <div><label class="field" for="reposts">Reposts</label><input id="reposts" type="number" min="0" inputmode="numeric" placeholder="18" /></div>
+      </div>
+      <div style="margin-top:12px;max-width:260px"><label class="field" for="followers">Author's followers (optional)</label><input id="followers" type="number" min="0" inputmode="numeric" placeholder="3000" /></div>
+      <div class="stats">
+        <div class="stat"><b id="rate">–</b><span>engagement rate</span></div>
+        <div class="stat"><b id="reach">–</b><span>reach vs followers</span></div>
+        <div class="stat"><b id="replyShare">–</b><span>of interactions are replies</span></div>
+      </div>
+      <p class="note" id="verdict"></p>
+    </div>
+    <p class="note" style="padding-bottom:64px">Runs entirely in your browser. Nothing you type leaves this page.</p>
+  </main>
+  <footer>
+    <div class="wrap">
+      <span>Built by Prashant Sharma · Inspired by XRay by fayazara · <a href="../privacy-policy.html">Privacy</a></span>
+      <span>Not affiliated with X Corp.</span>
+    </div>
+  </footer>
+  <script src="../assets/x-text.js"></script>
+  <script>
+const ids = ['views', 'likes', 'replies', 'reposts', 'followers'];
+const el = Object.fromEntries(ids.map((id) => [id, document.getElementById(id)]));
+const num = (id) => Math.max(0, Number(el[id].value) || 0);
+const pct = (x) => `${(x * 100).toFixed(x < 0.1 ? 2 : 1)}%`;
+function render() {
+  const views = num('views'), followers = num('followers');
+  const interactions = num('likes') + num('replies') + num('reposts');
+  const rate = views ? interactions / views : 0;
+  document.getElementById('rate').textContent = views ? pct(rate) : '–';
+  document.getElementById('reach').textContent = views && followers ? `${(views / followers).toFixed(1)}×` : '–';
+  document.getElementById('replyShare').textContent = interactions ? pct(num('replies') / interactions) : '–';
+  const verdict = document.getElementById('verdict');
+  if (!views) { verdict.textContent = 'Enter the views and interactions from a post.'; return; }
+  const reach = followers ? views / followers : 0;
+  verdict.textContent = [
+    `${interactions.toLocaleString()} interactions from ${views.toLocaleString()} views.`,
+    followers ? (reach >= 3 ? 'Reach was far beyond the follower count: this post travelled.' : reach >= 1 ? 'Reach went beyond the follower count.' : 'Most views likely came from existing followers.') : '',
+    'Compare against your own usual posts rather than a universal benchmark.',
+  ].filter(Boolean).join(' ');
+}
+for (const id of ids) el[id].addEventListener('input', render);
+render();</script>
+</body>
+</html>

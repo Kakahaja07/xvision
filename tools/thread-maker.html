@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Thread maker · XVision</title>
+  <meta name="description" content="Paste long writing and split it into a numbered thread. Every post stays under the limit and breaks at sentences where possible." />
+  <meta property="og:title" content="Thread maker" />
+  <meta property="og:description" content="Paste long writing and split it into a numbered thread. Every post stays under the limit and breaks at sentences where possible." />
+  <meta property="og:image" content="https://kakahaja07.github.io/xvision/assets/og-image.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="icon" href="../assets/logo.png" />
+  <link rel="stylesheet" href="../assets/site.css" />
+</head>
+<body>
+  <div class="wrap">
+    <nav>
+      <a class="wordmark" href="../index.html" aria-label="XVision home"><img src="../assets/logo.png" alt="" width="28" height="28" />Vision</a>
+      <div class="navlinks">
+        <a href="../guides/index.html">Guides</a>
+        <a href="../tools/index.html" aria-current="page">Tools</a>
+        <a class="opt" href="../index.html#install">Install</a>
+        <a href="https://github.com/Kakahaja07/xvision">GitHub</a>
+      </div>
+    </nav>
+  </div>
+  <main class="wrap narrow">
+    <header class="page-head">
+      <div class="crumbs"><a href="index.html">Tools</a></div>
+      <h1>Thread maker</h1>
+      <p>Paste long writing and split it into a numbered thread. Every post stays under the limit and breaks at sentences where possible.</p>
+    </header>
+    <div class="tool">
+      <label class="field" for="src">Your text</label>
+      <textarea id="src" placeholder="Paste or write your thread here. Blank lines start a new post."></textarea>
+      <div class="row">
+        <label class="check"><input type="checkbox" id="numbers" checked /> Add 1/5 numbering</label>
+        <label class="check"><input type="checkbox" id="premium" /> Long posts (Premium, 25,000)</label>
+      </div>
+      <div class="meta" id="summary" style="margin-top:14px"></div>
+      <div class="posts" id="out"></div>
+    </div>
+    <p class="note" style="padding-bottom:64px">Runs entirely in your browser. Nothing you type leaves this page.</p>
+  </main>
+  <footer>
+    <div class="wrap">
+      <span>Built by Prashant Sharma · Inspired by XRay by fayazara · <a href="../privacy-policy.html">Privacy</a></span>
+      <span>Not affiliated with X Corp.</span>
+    </div>
+  </footer>
+  <script src="../assets/x-text.js"></script>
+  <script>
+const src = document.getElementById('src'), out = document.getElementById('out');
+const numbers = document.getElementById('numbers'), premium = document.getElementById('premium');
+const summary = document.getElementById('summary');
+try { src.value = localStorage.getItem('xv-thread') ?? ''; } catch {}
+
+function render() {
+  try { localStorage.setItem('xv-thread', src.value); } catch {}
+  const limit = premium.checked ? XText.PREMIUM_LIMIT : XText.LIMIT;
+  const posts = XText.splitThread(src.value, limit, numbers.checked);
+  out.replaceChildren();
+  summary.textContent = posts.length ? `${posts.length} ${posts.length === 1 ? 'post' : 'posts'}` : '';
+  posts.forEach((text, i) => {
+    const card = document.createElement('div');
+    card.className = 'post';
+    const p = document.createElement('p');
+    p.textContent = text;
+    const foot = document.createElement('div');
+    foot.className = 'post-foot';
+    const count = document.createElement('span');
+    count.textContent = `Post ${i + 1} · ${XText.weightedLength(text)} / ${limit}`;
+    const copy = document.createElement('button');
+    copy.className = 'btn ghost small';
+    copy.type = 'button';
+    copy.textContent = 'Copy';
+    copy.addEventListener('click', async () => {
+      try { await navigator.clipboard.writeText(text); copy.textContent = 'Copied'; }
+      catch { copy.textContent = 'Select and copy'; }
+      setTimeout(() => (copy.textContent = 'Copy'), 1500);
+    });
+    foot.append(count, copy);
+    card.append(p, foot);
+    out.append(card);
+  });
+}
+for (const el of [src, numbers, premium]) el.addEventListener('input', render);
+render();</script>
+</body>
+</html>

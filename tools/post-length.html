@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Post length checker · XVision</title>
+  <meta name="description" content="Count characters the way X does. Links always count as 23, and emoji and many non-Latin characters count as 2." />
+  <meta property="og:title" content="Post length checker" />
+  <meta property="og:description" content="Count characters the way X does. Links always count as 23, and emoji and many non-Latin characters count as 2." />
+  <meta property="og:image" content="https://kakahaja07.github.io/xvision/assets/og-image.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="icon" href="../assets/logo.png" />
+  <link rel="stylesheet" href="../assets/site.css" />
+</head>
+<body>
+  <div class="wrap">
+    <nav>
+      <a class="wordmark" href="../index.html" aria-label="XVision home"><img src="../assets/logo.png" alt="" width="28" height="28" />Vision</a>
+      <div class="navlinks">
+        <a href="../guides/index.html">Guides</a>
+        <a href="../tools/index.html" aria-current="page">Tools</a>
+        <a class="opt" href="../index.html#install">Install</a>
+        <a href="https://github.com/Kakahaja07/xvision">GitHub</a>
+      </div>
+    </nav>
+  </div>
+  <main class="wrap narrow">
+    <header class="page-head">
+      <div class="crumbs"><a href="index.html">Tools</a></div>
+      <h1>Post length checker</h1>
+      <p>Count characters the way X does. Links always count as 23, and emoji and many non-Latin characters count as 2.</p>
+    </header>
+    <div class="tool">
+      <label class="field" for="src">Your post</label>
+      <textarea id="src" placeholder="Write or paste a post"></textarea>
+      <div class="bar" id="bar"><i></i></div>
+      <div class="stats">
+        <div class="stat"><b id="used">0</b><span>of 280 used</span></div>
+        <div class="stat"><b id="left">280</b><span>characters left</span></div>
+        <div class="stat"><b id="words">0</b><span>words</span></div>
+      </div>
+      <p class="note" id="detail"></p>
+    </div>
+    <p class="note" style="padding-bottom:64px">Runs entirely in your browser. Nothing you type leaves this page.</p>
+  </main>
+  <footer>
+    <div class="wrap">
+      <span>Built by Prashant Sharma · Inspired by XRay by fayazara · <a href="../privacy-policy.html">Privacy</a></span>
+      <span>Not affiliated with X Corp.</span>
+    </div>
+  </footer>
+  <script src="../assets/x-text.js"></script>
+  <script>
+const src = document.getElementById('src'), bar = document.getElementById('bar');
+const used = document.getElementById('used'), left = document.getElementById('left');
+const words = document.getElementById('words'), detail = document.getElementById('detail');
+function render() {
+  const n = XText.weightedLength(src.value);
+  const remaining = XText.LIMIT - n;
+  used.textContent = n;
+  left.textContent = remaining;
+  left.className = remaining < 0 ? 'over' : remaining <= 20 ? 'warn' : 'ok';
+  words.textContent = (src.value.trim().match(/\S+/g) ?? []).length;
+  bar.classList.toggle('full', remaining < 0);
+  bar.firstElementChild.style.width = `${Math.min(100, (n / XText.LIMIT) * 100)}%`;
+  const links = XText.urls(src.value).length;
+  detail.textContent = remaining < 0
+    ? `${-remaining} characters over the 280 limit. Premium accounts can post up to 25,000.`
+    : links ? `Includes ${links} ${links === 1 ? 'link' : 'links'}, counted as 23 characters each.` : '';
+}
+src.addEventListener('input', render);
+render();</script>
+</body>
+</html>

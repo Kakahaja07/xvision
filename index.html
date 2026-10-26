@@ -134,6 +134,12 @@
     .copy { margin-left: 6px; padding: 2px 10px; border: 1px solid var(--line); border-radius: 6px; background: var(--card); color: var(--fg); font: 600 13px Familjen, sans-serif; cursor: pointer; transition: transform 160ms var(--ease-out); }
     .copy:active { transform: scale(.96); }
 
+    .link-card { display: block; text-decoration: none; transition: transform 160ms var(--ease-out), border-color 150ms ease; }
+    .link-card:active { transform: scale(.985); }
+    @media (hover: hover) { .link-card:hover { border-color: color-mix(in srgb, var(--accent) 40%, var(--line)); } }
+    .link-card h3 { margin-top: 10px; }
+    .tag { color: var(--accent); font-size: 13px; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; }
+
     .privacy { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
     @media (max-width: 880px) { .privacy { grid-template-columns: repeat(2, 1fr); } }
     @media (max-width: 480px) { .privacy { grid-template-columns: 1fr; } }
@@ -150,9 +156,10 @@
       <a class="wordmark" href="#" aria-label="XVision home"><img src="assets/logo.png" alt="" width="28" height="28" />Vision</a>
       <div class="navlinks">
         <a class="opt" href="#features">Features</a>
-        <a href="#install">Install</a>
-        <a class="opt" href="privacy-policy.html">Privacy</a>
-        <a href="https://github.com/Kakahaja07/xvision">GitHub</a>
+        <a href="guides/index.html">Guides</a>
+        <a href="tools/index.html">Tools</a>
+        <a class="opt" href="#install">Install</a>
+        <a class="opt" href="https://github.com/Kakahaja07/xvision">GitHub</a>
       </div>
     </nav>
 
@@ -248,6 +255,48 @@
           <img src="assets/screens/screenshot-5-privacy.png" alt="Private tags and notes manager" width="1280" height="800" loading="lazy" />
           <figcaption>Private tags and notes, stored only in your browser.</figcaption>
         </figure>
+      </div>
+    </div>
+  </section>
+
+  <section id="learn">
+    <div class="wrap">
+      <div class="head">
+        <div class="kicker">Guides &amp; free tools</div>
+        <h2>Learn what works, then write better posts</h2>
+        <p>Practical playbooks for growing on X, and small tools that run right in your browser.</p>
+      </div>
+      <div class="grid">
+        <a class="card link-card" href="guides/grow-from-zero.html">
+          <span class="tag">Guide · 7 min</span>
+          <h3>How to grow on X from your first 100 followers</h3>
+          <p>A clear profile, a narrow niche, and replies before posts.</p>
+        </a>
+        <a class="card link-card" href="guides/reply-strategy.html">
+          <span class="tag">Guide · 6 min</span>
+          <h3>The reply-first playbook</h3>
+          <p>Which posts to reply to, and how to write replies people click.</p>
+        </a>
+        <a class="card link-card" href="guides/best-time-to-post.html">
+          <span class="tag">Guide · 5 min</span>
+          <h3>Find your best time to post</h3>
+          <p>Why generic charts mislead, and how to find your own window.</p>
+        </a>
+        <a class="card link-card" href="tools/thread-maker.html">
+          <span class="tag">Tool</span>
+          <h3>Thread maker</h3>
+          <p>Split long writing into a numbered thread under the limit.</p>
+        </a>
+        <a class="card link-card" href="tools/post-length.html">
+          <span class="tag">Tool</span>
+          <h3>Post length checker</h3>
+          <p>Count characters the way X does, links and emoji included.</p>
+        </a>
+        <a class="card link-card" href="tools/engagement-rate.html">
+          <span class="tag">Tool</span>
+          <h3>Engagement rate calculator</h3>
+          <p>See what share of viewers interacted with a post.</p>
+        </a>
       </div>
     </div>
   </section>

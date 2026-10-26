@@ -4,7 +4,7 @@
 
 XVision is a free Chrome extension that adds follower counts, reach signals, the best time to post and a calmer feed to X (x.com). Everything is worked out from what X already shows you, and stays in your browser.
 
-**Demo page:** https://kakahaja07.github.io/xvision/
+**Demo page:** https://kakahaja07.github.io/xvision/ · [Guides](https://kakahaja07.github.io/xvision/guides/) · [Free tools](https://kakahaja07.github.io/xvision/tools/)
 
 ![XVision dashboard](assets/screens/screenshot-1-dashboard.png)
 
@@ -41,6 +41,8 @@ Full details: [privacy policy](privacy-policy.html).
 | `extension/` | The ready-to-load Chrome extension |
 | `downloads/` | The same extension as a zip |
 | `index.html` | The demo page |
+| `guides/` | Growth guides for X |
+| `tools/` | Free browser tools: thread maker, post length checker, engagement rate calculator |
 | `privacy-policy.html` | Privacy policy |
 | `assets/` | Images and fonts for the demo page |
 
