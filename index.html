@@ -66,443 +66,468 @@
     ]
   }
   </script>
-  <style>
-    @font-face { font-family: Geomini; src: url('assets/fonts/Geomini_latin-s.p.2j58wcs7_aiaj.woff2') format('woff2'); font-weight: 200 800; font-display: swap; }
-    @font-face { font-family: Familjen; src: url('assets/fonts/f5edcc6a132fb1ad-s.p.3ii__yurxaf4q.woff2') format('woff2'); font-weight: 400 700; font-display: swap; }
-
-    :root {
-      --bg: #f6f6f8;
-      --card: #ffffff;
-      --fg: #0a0a0a;
-      --muted: #5f6573;
-      --line: rgba(0, 0, 0, .08);
-      --accent: #6556e3;
-      --accent-soft: rgba(101, 86, 227, .1);
-      --shadow: 0 1px 2px rgba(0,0,0,.05), 0 24px 60px -24px rgba(15,15,40,.3);
-      --grain-op: .05;
-      --ease-out: cubic-bezier(.23, 1, .32, 1);
-      color-scheme: light dark;
-    }
-    @media (prefers-color-scheme: dark) {
-      :root {
-        --bg: #0a0a0c;
-        --card: #121216;
-        --fg: #f2f2f3;
-        --muted: #a1a1aa;
-        --line: rgba(255, 255, 255, .09);
-        --accent: #8b7ff5;
-        --accent-soft: rgba(139, 127, 245, .14);
-        --shadow: 0 30px 70px -24px rgba(0,0,0,.8), 0 0 0 1px rgba(255,255,255,.06);
-        --grain-op: .07;
-      }
-    }
-
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
-    body {
-      margin: 0;
-      background:
-        radial-gradient(1000px 600px at 85% -10%, var(--accent-soft), transparent 60%),
-        var(--bg);
-      color: var(--fg);
-      font: 17px/1.55 Familjen, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-      -webkit-font-smoothing: antialiased;
-    }
-    body::before {
-      content: '';
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
-      opacity: var(--grain-op);
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-    }
-    a { color: inherit; }
-    img { display: block; max-width: 100%; height: auto; }
-    .wrap { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
-
-    h1, h2, h3, .wordmark { font-family: Geomini, Familjen, sans-serif; letter-spacing: -.03em; }
-
-    /* Nav */
-    nav { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 22px 0; }
-    .wordmark { display: inline-flex; align-items: center; gap: 4px; font-size: 22px; font-weight: 650; text-decoration: none; }
-    .wordmark img { width: 28px; height: 28px; }
-    .navlinks { display: flex; gap: 24px; font-size: 15px; }
-    .navlinks a { color: var(--muted); text-decoration: none; transition: color 150ms ease; }
-    @media (hover: hover) { .navlinks a:hover { color: var(--fg); } }
-    @media (max-width: 640px) { .navlinks .opt { display: none; } }
-
-    /* Hero */
-    .hero { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; padding: 56px 0 72px; }
-    .eyebrow { display: inline-flex; align-items: center; gap: 8px; padding: 5px 12px; border: 1px solid var(--line); border-radius: 999px; background: var(--card); color: var(--muted); font-size: 14px; font-weight: 500; }
-    .eyebrow b { color: var(--accent); font-weight: 600; }
-    h1 { margin: 20px 0 0; font-size: clamp(44px, 6vw, 72px); line-height: 1; font-weight: 650; }
-    .lead { margin: 22px 0 0; max-width: 520px; color: var(--muted); font-size: 20px; }
-    .ctas { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 30px; }
-    .btn {
-      display: inline-flex; align-items: center; gap: 8px; height: 48px; padding: 0 22px;
-      border-radius: 12px; font-weight: 600; font-size: 16px; text-decoration: none;
-      transition: transform 160ms var(--ease-out), opacity 150ms ease;
-    }
-    .btn:active { transform: scale(.97); }
-    .btn.primary { color: #fff; background: linear-gradient(180deg, #3a3a3a, #0a0a0a); box-shadow: inset 0 1px 0 rgba(255,255,255,.14), 0 8px 20px -8px rgba(0,0,0,.5); }
-    @media (prefers-color-scheme: dark) { .btn.primary { color: #0a0a0a; background: linear-gradient(180deg, #fff, #d4d4d4); } }
-    .btn.ghost { border: 1px solid var(--line); background: var(--card); }
-    @media (hover: hover) { .btn:hover { opacity: .88; } }
-    .trust { display: flex; flex-wrap: wrap; gap: 8px 18px; margin-top: 22px; color: var(--muted); font-size: 14px; }
-    .trust span { display: inline-flex; align-items: center; gap: 6px; }
-    .trust span::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: #16a34a; }
-    .hero > * { min-width: 0; }
-    .hero-shot { justify-self: center; width: min(100%, 440px); border-radius: 20px; overflow: hidden; box-shadow: var(--shadow); }
-    @media (max-width: 880px) { .hero { grid-template-columns: 1fr; gap: 40px; padding-top: 28px; } }
-
-    /* Sections */
-    section { padding: 72px 0; }
-    .head { max-width: 640px; margin-bottom: 36px; }
-    .kicker { color: var(--accent); font-size: 14px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; }
-    h2 { margin: 10px 0 0; font-size: clamp(32px, 4vw, 44px); line-height: 1.08; font-weight: 650; }
-    .head p { margin: 14px 0 0; color: var(--muted); font-size: 18px; }
-
-    .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
-    @media (max-width: 880px) { .grid { grid-template-columns: repeat(2, 1fr); } }
-    @media (max-width: 560px) { .grid { grid-template-columns: 1fr; } }
-    .card { padding: 24px; border: 1px solid var(--line); border-radius: 16px; background: var(--card); }
-    .icon { display: grid; place-items: center; width: 36px; height: 36px; border: 1px solid var(--line); border-radius: 10px; color: var(--accent); background: var(--accent-soft); }
-    .card h3 { margin: 16px 0 6px; font-size: 19px; font-weight: 600; letter-spacing: -.015em; }
-    .card p { margin: 0; color: var(--muted); font-size: 15.5px; }
-
-    .gallery { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
-    @media (max-width: 720px) { .gallery { grid-template-columns: 1fr; } }
-    figure { margin: 0; }
-    figure img { border-radius: 14px; border: 1px solid var(--line); box-shadow: var(--shadow); }
-    figcaption { margin-top: 10px; color: var(--muted); font-size: 15px; }
-
-    .steps { display: grid; gap: 12px; counter-reset: step; max-width: 720px; padding: 0; list-style: none; }
-    .steps li { display: flex; gap: 16px; padding: 18px 20px; border: 1px solid var(--line); border-radius: 14px; background: var(--card); }
-    .steps li::before {
-      counter-increment: step; content: counter(step);
-      flex: none; display: grid; place-items: center; width: 28px; height: 28px; border-radius: 50%;
-      background: var(--accent); color: #fff; font: 600 14px Familjen, sans-serif;
-    }
-    .steps b { display: block; }
-    .steps span { color: var(--muted); font-size: 15.5px; }
-    code { padding: 2px 7px; border: 1px solid var(--line); border-radius: 6px; background: var(--bg); font: 14px ui-monospace, 'SF Mono', Consolas, monospace; }
-    .copy { margin-left: 6px; padding: 2px 10px; border: 1px solid var(--line); border-radius: 6px; background: var(--card); color: var(--fg); font: 600 13px Familjen, sans-serif; cursor: pointer; transition: transform 160ms var(--ease-out); }
-    .copy:active { transform: scale(.96); }
-
-    .link-card { display: block; text-decoration: none; transition: transform 160ms var(--ease-out), border-color 150ms ease; }
-    .link-card:active { transform: scale(.985); }
-    @media (hover: hover) { .link-card:hover { border-color: color-mix(in srgb, var(--accent) 40%, var(--line)); } }
-    .link-card h3 { margin-top: 10px; }
-    .tag { color: var(--accent); font-size: 13px; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; }
-
-    .privacy { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
-    @media (max-width: 880px) { .privacy { grid-template-columns: repeat(2, 1fr); } }
-    @media (max-width: 480px) { .privacy { grid-template-columns: 1fr; } }
-    .privacy .card h3 { margin-top: 0; }
-
-    /* Feature spotlights: image beside text */
-    .spot { display: grid; grid-template-columns: 1.2fr 1fr; gap: 56px; align-items: center; }
-    .spot > * { min-width: 0; }
-    .spot.flip .spot-media { order: 2; }
-    .spot-media img { width: 100%; border-radius: 20px; box-shadow: var(--shadow); }
-    .spot .head { margin-bottom: 0; }
-    .legend { display: grid; gap: 14px; margin: 26px 0 0; padding: 0; list-style: none; }
-    .legend li { display: flex; align-items: baseline; gap: 12px; color: var(--muted); font-size: 16px; }
-    .legend li > span:first-child { flex: none; display: flex; gap: 6px; }
-    /* Same colours as the badges the extension draws on x.com */
-    .pill { display: inline-flex; align-items: center; gap: 4px; height: 24px; padding: 0 8px; border-radius: 6px; font-size: 13px; font-weight: 600; white-space: nowrap; }
-    .pill.viral { color: #f91880; background: rgba(249, 24, 128, .12); }
-    .pill.rising, .pill.age { color: #1d9bf0; background: rgba(29, 155, 240, .12); }
-    .pill.back { color: #00a86b; background: rgba(0, 186, 124, .12); }
-    .pill.follows, .pill.count { color: var(--fg); background: rgba(127, 127, 127, .16); }
-    .reasons { display: flex; flex-wrap: wrap; gap: 8px; margin: 24px 0 0; padding: 0; list-style: none; }
-    .reasons li { padding: 6px 12px; border: 1px solid var(--line); border-radius: 999px; background: var(--card); font-size: 14.5px; font-weight: 500; }
-    .fine { margin: 18px 0 0; color: var(--muted); font-size: 14.5px; }
-    @media (max-width: 880px) {
-      .spot { grid-template-columns: 1fr; gap: 28px; }
-      .spot.flip .spot-media, .spot .spot-media { order: 2; }
-    }
-
-    footer { padding: 40px 0 56px; border-top: 1px solid var(--line); color: var(--muted); font-size: 14.5px; }
-    footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px 24px; }
-    footer a { color: var(--fg); }
-    .footlinks { display: flex; flex-wrap: wrap; gap: 8px 18px; }
-    .footlinks a { color: var(--muted); text-decoration: none; }
-    @media (hover: hover) { .footlinks a:hover { color: var(--fg); } }
-
-    /* Phones: tighter rhythm, compact cards, swipeable screenshots */
-    @media (max-width: 640px) {
-      .wrap { padding: 0 16px; }
-      nav { padding: 16px 0; }
-      .hero { padding: 16px 0 48px; gap: 32px; }
-      h1 { margin-top: 16px; font-size: 44px; }
-      .lead { margin-top: 16px; font-size: 18px; }
-      .ctas { margin-top: 24px; }
-      .ctas .btn { flex: 1 1 100%; justify-content: center; }
-      .hero-shot { width: min(100%, 360px); }
-      section { padding: 40px 0; }
-      .head { margin-bottom: 24px; }
-      h2 { font-size: 30px; }
-      .head p { font-size: 16.5px; }
-      .grid { gap: 10px; }
-      .card { padding: 18px; border-radius: 14px; }
-      .features-grid .card { display: grid; grid-template-columns: 36px 1fr; column-gap: 14px; }
-      .features-grid .icon { grid-row: span 2; }
-      .features-grid .card h3 { margin: 6px 0 4px; font-size: 17.5px; }
-      .card p { font-size: 15px; }
-      .link-card h3 { margin: 6px 0 4px; font-size: 17.5px; }
-      .gallery {
-        display: flex; gap: 12px; margin: 0 -16px; padding: 0 16px 6px;
-        overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none;
-      }
-      .gallery::-webkit-scrollbar { display: none; }
-      .gallery figure { flex: 0 0 88%; scroll-snap-align: center; }
-      .gallery figcaption { font-size: 14px; }
-      .privacy { grid-template-columns: 1fr 1fr; gap: 10px; }
-      .privacy .card h3 { font-size: 16.5px; }
-      .privacy .card p { font-size: 14px; }
-      .steps li { padding: 14px 16px; }
-      .legend li { font-size: 15px; }
-      footer { padding: 28px 0 40px; }
-      footer .wrap { flex-direction: column; }
-    }
-  </style>
+  <link rel="stylesheet" href="assets/site.css" />
+  <link rel="stylesheet" href="assets/home.css" />
 </head>
 <body>
-  <div class="wrap">
-    <nav>
-      <a class="wordmark" href="./" aria-label="XVision home"><img src="assets/logo-64.png" alt="" width="28" height="28" />Vision</a>
-      <div class="navlinks">
+  <header class="site-nav">
+    <div class="wrap nav-in">
+      <a class="wordmark" href="./" aria-label="XVision home"><img src="assets/logo-64.png" alt="" width="26" height="26" />Vision</a>
+      <nav class="navlinks" aria-label="Main">
         <a class="opt" href="#features">Features</a>
+        <a class="opt" href="#install">How it works</a>
         <a href="guides/index.html">Guides</a>
         <a href="tools/index.html">Tools</a>
-        <a class="opt" href="#install">Install</a>
-        <a class="opt" href="https://github.com/Kakahaja07/xvision">GitHub</a>
+        <a class="opt" href="#faq">FAQ</a>
+      </nav>
+      <div class="nav-cta">
+        <a class="btn ghost small" href="https://github.com/Kakahaja07/xvision">GitHub</a>
+        <a class="btn primary small" href="#install">Get it free</a>
       </div>
-    </nav>
+    </div>
+  </header>
 
-    <header class="hero">
-      <div>
-        <span class="eyebrow"><b>Free</b> Chrome extension for X (Twitter)</span>
-        <h1>Grow on X<br />with clarity</h1>
-        <p class="lead">Follower and follow-back badges, viral post signals, your best time to post and a feed without AI slop, right inside X. Private by design: everything stays in your browser.</p>
-        <div class="ctas">
-          <a class="btn primary" href="downloads/xvision-1.0.0.zip" download>
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0-5-5m5 5 5-5M5 21h14"/></svg>
-            Download for Chrome
-          </a>
-          <a class="btn ghost" href="#install">How to install</a>
+  <main>
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div>
+          <span class="eyebrow green">Free Chrome extension for X (Twitter)</span>
+          <h1>Grow on X with <span class="chip-icon"><img src="assets/logo-64.png" alt="" width="40" height="40" /></span> Real Signals, Not Guesswork</h1>
+          <p class="lead">See follower counts, follow-back badges and viral posts right on your timeline. Find your best time to post and hide the AI slop. Everything stays in your browser.</p>
+          <div class="ctas">
+            <a class="btn primary" href="downloads/xvision-1.0.0.zip" download>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0-5-5m5 5 5-5M5 21h14"/></svg>
+              Download for Chrome
+            </a>
+            <a class="btn ghost" href="#install">How to install</a>
+          </div>
+          <div class="hero-stats">
+            <div><span class="i"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5V5a2 2 0 0 1 2-2h14v16H6a2 2 0 0 0-2 2Zm0 0A2 2 0 0 0 6 22h14"/></svg></span><b>120</b><span>Free growth guides</span></div>
+            <div><span class="i"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.6 2.6-2.4-.6-.6-2.4 2.6-2.6Z"/></svg></span><b>4</b><span>Free web tools</span></div>
+            <div><span class="i"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg></span><b>0</b><span>Data sent anywhere</span></div>
+          </div>
         </div>
+        <div class="hero-visual">
+          <div class="device">
+            <picture>
+              <source srcset="assets/popup-dark.webp" media="(prefers-color-scheme: dark)" />
+              <img src="assets/popup-light.webp" alt="XVision popup showing follower growth, best day, best views and daily gains" width="880" height="1249" fetchpriority="high" />
+            </picture>
+          </div>
+          <div class="float f1" aria-hidden="true"><span class="pill viral">Viral</span>7.3× reach</div>
+          <div class="float f2" aria-hidden="true"><span class="pill back">↔ 1.0</span>Likely follows back</div>
+          <div class="float f3" aria-hidden="true"><span class="pill reply">Reply early</span>12 min old</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="strip" aria-label="What XVision adds to X">
+      <div class="marquee">
+        <div class="marquee-track">
+          <span>Follower counts</span><span>Viral and Rising badges</span><span>Follow-back ratio</span><span>Reply early</span><span>Best time to post</span><span>AI slop filter</span><span>Growth dashboard</span><span>Private tags and notes</span><span>New account age</span><span>Who doesn't follow back</span>
+          <span aria-hidden="true">Follower counts</span><span aria-hidden="true">Viral and Rising badges</span><span aria-hidden="true">Follow-back ratio</span><span aria-hidden="true">Reply early</span><span aria-hidden="true">Best time to post</span><span aria-hidden="true">AI slop filter</span><span aria-hidden="true">Growth dashboard</span><span aria-hidden="true">Private tags and notes</span><span aria-hidden="true">New account age</span><span aria-hidden="true">Who doesn't follow back</span>
+        </div>
+      </div>
+      <div class="wrap">
         <div class="trust">
-          <span>Works only on x.com</span>
-          <span>No sign-in</span>
-          <span>No tracking</span>
+          <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Works only on x.com</span>
+          <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>No sign-in</span>
+          <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>No tracking</span>
+          <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Open source, MIT</span>
+        </div>
+        <div class="statbar">
+          <div><b>Free</b><span>No paid plan, ever</span></div>
+          <div><b>~1 min</b><span>To install</span></div>
+          <div><b>0</b><span>Servers or sign-ins</span></div>
+          <div><b>120</b><span>Free growth guides</span></div>
         </div>
       </div>
-      <div class="hero-shot">
-        <picture>
-          <source srcset="assets/popup-dark.webp" media="(prefers-color-scheme: dark)" />
-          <img src="assets/popup-light.webp" alt="XVision popup showing follower growth, best day, best views and daily gains" width="880" height="1249" fetchpriority="high" />
-        </picture>
-      </div>
-    </header>
-  </div>
+    </section>
 
-  <section id="features">
+    <section id="features">
+      <div class="wrap">
+        <div class="sec-head">
+          <span class="eyebrow">Features</span>
+          <h2>Everything You Need to Grow <span class="soft">Your Account on X</span></h2>
+          <p>XVision works it all out from what X already shows you, and puts it right where you scroll.</p>
+        </div>
+        <div class="bento">
+          <div class="bcard wide">
+            <h3>Growth dashboard</h3>
+            <p>Daily follower gains over 7 and 30 days, your best day, and every post rated against your usual views.</p>
+            <div class="viz">
+              <div class="viz-legend"><span><i class="c1"></i>Best day</span><span><i class="c3"></i>Daily gains</span><span class="example">Example data</span></div>
+              <div class="bars">
+                <span class="tip-chip">+16 · Best day</span>
+                <div class="col"><i class="c3" style="height:42%"></i><em>Mon</em></div>
+                <div class="col"><i class="c3" style="height:30%"></i><em>Tue</em></div>
+                <div class="col"><i class="c3" style="height:58%"></i><em>Wed</em></div>
+                <div class="col"><i class="c3" style="height:46%"></i><em>Thu</em></div>
+                <div class="col"><i class="c3" style="height:26%"></i><em>Fri</em></div>
+                <div class="col"><i class="c3" style="height:52%"></i><em>Sat</em></div>
+                <div class="col"><i class="c1" style="height:82%"></i><em>Sun</em></div>
+              </div>
+            </div>
+          </div>
+          <div class="bcard wide">
+            <h3>Viral signals</h3>
+            <p>A Viral or Rising badge when a post reaches far beyond its author's followers, with every number on hover.</p>
+            <div class="viz">
+              <div class="viz-legend"><span class="pill viral">Viral</span><span>7.3× the author's followers</span><span class="example">Example post</span></div>
+              <div class="funnel">
+                <div><i>61.2K</i><span>Views</span></div>
+                <div><i>1.8K</i><span>Likes</span></div>
+                <div><i>203</i><span>Reposts</span></div>
+                <div><i>48</i><span>Replies</span></div>
+              </div>
+            </div>
+          </div>
+          <div class="bcard">
+            <h3>Who follows back</h3>
+            <p>See who follows you, who likely follows back, and who never does.</p>
+            <div class="viz">
+              <div class="donut-row">
+                <div class="donut"><b>58%</b></div>
+                <div class="donut-legend">
+                  <span><i style="background:var(--fg)"></i>Mutual</span>
+                  <span><i style="background:#a8a8b0"></i>Likely back</span>
+                  <span><i style="background:var(--line-strong)"></i>Never back</span>
+                  <span class="example">Example data</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="bcard">
+            <h3>Reply early</h3>
+            <p>Fresh posts from bigger accounts that still have few replies, queued for you.</p>
+            <div class="viz">
+              <div class="queue">
+                <div><i style="width:82%"></i><span><b>@lena · 6 min</b><em style="font-style:normal">2 replies</em></span></div>
+                <div><i style="width:58%"></i><span><b>@ravi · 14 min</b><em style="font-style:normal">5 replies</em></span></div>
+                <div><i style="width:34%"></i><span><b>@maya · 22 min</b><em style="font-style:normal">9 replies</em></span></div>
+              </div>
+            </div>
+          </div>
+          <div class="bcard">
+            <h3>Best time to post</h3>
+            <p>Learns which hours reach furthest from the posts in your own feed.</p>
+            <div class="viz">
+              <div class="heat" aria-hidden="true">
+                <i class="l0"></i><i class="l1"></i><i class="l2"></i><i class="l1"></i><i class="l0"></i><i class="l1"></i><i class="l2"></i><i class="l1"></i>
+                <i class="l1"></i><i class="l2"></i><i class="l4"></i><i class="l3"></i><i class="l1"></i><i class="l2"></i><i class="l3"></i><i class="l1"></i>
+                <i class="l0"></i><i class="l2"></i><i class="l3"></i><i class="l4"></i><i class="l2"></i><i class="l1"></i><i class="l2"></i><i class="l0"></i>
+                <i class="l0"></i><i class="l1"></i><i class="l1"></i><i class="l2"></i><i class="l1"></i><i class="l0"></i><i class="l1"></i><i class="l0"></i>
+              </div>
+            </div>
+          </div>
+          <div class="bcard wide">
+            <h3>A calmer feed</h3>
+            <p>AI slop, engagement bait, crypto spam and sensitive media collapse into one quiet line. Tap Show to read one anyway.</p>
+            <div class="viz">
+              <div class="hidden-list">
+                <div><span>Hidden by XVision · <b>AI slop</b></span><span class="show">Show</span></div>
+                <div><span>Hidden by XVision · <b>Engagement bait</b></span><span class="show">Show</span></div>
+                <div><span>Hidden by XVision · <b>Crypto spam</b></span><span class="show">Show</span></div>
+              </div>
+            </div>
+          </div>
+          <div class="bcard wide">
+            <h3>Account badges and private notes</h3>
+            <p>Follower counts, account age and follow-back ratio next to every name, plus your own tags that only you can see.</p>
+            <div class="viz">
+              <div class="hidden-list">
+                <div><span><b>Dev Mehta</b> · 1.4K followers</span><span class="pill viral">Viral</span></div>
+                <div><span><b>Asha Singh</b> · 56 followers</span><span class="pill age">2mo</span></div>
+                <div><span><b>Tom Ochoa</b> · 3.2K followers</span><span class="pill gray">Tag: designer</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="see">
+      <div class="wrap">
+        <div class="sec-head">
+          <span class="eyebrow">See it in action</span>
+          <h2>From Busy Timeline to Clear Signal, <span class="soft">Watch It Happen</span></h2>
+          <p>XVision draws small badges right inside x.com, and folds away the posts you don't want to see.</p>
+        </div>
+        <div class="minis">
+          <div><b>Viral</b><span>Post badges</span></div>
+          <div><b>↔ 1.0</b><span>Follow-back ratio</span></div>
+          <div><b>1 tap</b><span>To show a hidden post</span></div>
+        </div>
+        <div class="browser">
+          <div class="browser-bar"><div class="dots" aria-hidden="true"><i></i><i></i><i></i></div><div class="address">x.com/home</div></div>
+          <div class="browser-body">
+            <img src="assets/features/badges.webp" alt="X timeline with XVision badges next to each name: follower count, Viral and Rising post tags, a 2mo new-account tag, a follow-back ratio and Follows you" width="920" height="636" loading="lazy" />
+            <img src="assets/features/clean-feed.webp" alt="X timeline where XVision has collapsed posts labelled AI slop, Engagement bait and Crypto spam, each with a Show button" width="860" height="730" loading="lazy" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="install">
+      <div class="wrap">
+        <div class="sec-head">
+          <span class="eyebrow">How it works</span>
+          <h2>From Download to Insight <span class="soft">in 3 Simple Steps</span></h2>
+          <p>Until XVision is on the Chrome Web Store, install it directly. Works in Chrome, Edge, Brave and Arc.</p>
+        </div>
+        <div class="steps3">
+          <div class="step">
+            <span class="num">1</span>
+            <h3>Download XVision</h3>
+            <p>Get the free zip, then unzip it anywhere on your computer.</p>
+            <div class="mock">
+              <div class="mock-row">
+                <span class="file"><i aria-hidden="true">📦</i><span><b>xvision-1.0.0.zip</b><br /><span class="meta">230 KB</span></span></span>
+                <a class="btn primary small" href="downloads/xvision-1.0.0.zip" download>Download</a>
+              </div>
+            </div>
+          </div>
+          <div class="step">
+            <span class="num">2</span>
+            <h3>Load it in Chrome</h3>
+            <p>Open your extensions page, switch on Developer mode, then click Load unpacked and pick the folder.</p>
+            <div class="mock">
+              <div class="mock-row"><span><code>chrome://extensions</code></span><button class="copy" type="button" data-copy="chrome://extensions">Copy</button></div>
+              <div class="mock-row"><span>Developer mode</span><span class="toggle" aria-hidden="true"></span></div>
+              <div class="mock-row"><span>Load unpacked</span><span class="meta">Choose the folder</span></div>
+            </div>
+          </div>
+          <div class="step">
+            <span class="num">3</span>
+            <h3>Open x.com</h3>
+            <p>Pin XVision to your toolbar and open your timeline. Badges appear next to every name.</p>
+            <div class="mock">
+              <div class="mock-row"><span><b>Dev Mehta</b> <span class="meta">· 1.4K</span></span><span class="pill viral">Viral</span></div>
+              <div class="mock-row"><span><b>Asha Singh</b> <span class="meta">· 56</span></span><span class="pill back">↔ 1.0</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="ctastrip">
+          <div><b>Ready to grow on X?</b><span>Free, private and ready in about a minute.</span></div>
+          <div class="btns">
+            <a class="btn primary" href="downloads/xvision-1.0.0.zip" download>Download for Chrome</a>
+            <a class="btn ghost" href="guides/index.html">Read the guides</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="who">
+      <div class="wrap">
+        <div class="sec-head">
+          <span class="eyebrow">Who it's for</span>
+          <h2>Built for Everyone <span class="soft">Growing on X</span></h2>
+          <p>Whether you post for fun, for clients or for your company, the same signals help you decide where to spend your time.</p>
+        </div>
+        <div class="people">
+          <div class="feature-note">
+            <div>
+              <blockquote>"I built XVision because growing on X felt like guessing. I wanted the numbers that matter right next to each name, without handing my account to another app."</blockquote>
+              <div class="who"><span class="av"><img src="assets/logo-64.png" alt="" width="24" height="24" /></span><span><b>Prashant Sharma</b>Maker of XVision</span></div>
+            </div>
+            <div class="note-stats">
+              <div><b>1.0.0</b><span>Current version</span></div>
+              <div><b>MIT</b><span>Open-source license</span></div>
+              <div><b>x.com</b><span>The only site it runs on</span></div>
+              <div><b>0</b><span>Accounts to create</span></div>
+            </div>
+          </div>
+          <div class="person">
+            <div class="person-top"><span class="av" aria-hidden="true">✍️</span><div><b>Creators</b><span>Grow an audience</span></div></div>
+            <p>Spot posts that are taking off early, reply while it still counts, and learn which hours your audience is online.</p>
+            <div class="tags"><span class="pill viral">Viral</span><span class="pill reply">Reply early</span></div>
+          </div>
+          <div class="person">
+            <div class="person-top"><span class="av" aria-hidden="true">🚀</span><div><b>Founders</b><span>Build in public</span></div></div>
+            <p>See who your posts reach, find people worth talking to, and keep private notes on customers and partners.</p>
+            <div class="tags"><span class="pill gray">Tags and notes</span><span class="pill back">↔ 1.0</span></div>
+          </div>
+          <div class="person">
+            <div class="person-top"><span class="av" aria-hidden="true">🏪</span><div><b>Small businesses</b><span>Find customers</span></div></div>
+            <p>Check an account's size and age before you reply, and skip spam and bait so your feed stays useful.</p>
+            <div class="tags"><span class="pill age">2mo</span><span class="pill gray">Filters</span></div>
+          </div>
+          <div class="person">
+            <div class="person-top"><span class="av" aria-hidden="true">📝</span><div><b>Writers</b><span>Find your voice</span></div></div>
+            <p>Rate each post against your usual views to learn what your readers actually want more of.</p>
+            <div class="tags"><span class="pill gray">Post ratings</span><span class="pill rising">Rising</span></div>
+          </div>
+          <div class="person">
+            <div class="person-top"><span class="av" aria-hidden="true">💼</span><div><b>Freelancers</b><span>Land clients</span></div></div>
+            <p>Know who follows you back and who never does, and focus on the conversations that lead somewhere.</p>
+            <div class="tags"><span class="pill gray">Follows you</span><span class="pill back">↔ 1.0</span></div>
+          </div>
+          <div class="person">
+            <div class="person-top"><span class="av" aria-hidden="true">🌱</span><div><b>New accounts</b><span>Get started</span></div></div>
+            <p>Follow a simple plan from the free guides and watch your daily gains on the growth dashboard.</p>
+            <div class="tags"><span class="pill gray">120 guides</span><span class="pill gray">Daily gains</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="pricing">
+      <div class="wrap">
+        <div class="sec-head">
+          <span class="eyebrow">Pricing</span>
+          <h2>Simple, Honest Pricing</h2>
+          <p>Everything on this site is free. No trial, no paid plan, no card.</p>
+        </div>
+        <div class="price-tag"><span class="on">Free forever</span><span>No sign-up</span><span>No card</span></div>
+        <div class="plans">
+          <div class="plan">
+            <h3>Guides</h3>
+            <p>Practical playbooks for growing on X.</p>
+            <div class="amount"><b>$0</b><span>forever</span></div>
+            <a class="btn ghost" href="guides/index.html">Browse guides</a>
+            <ul>
+              <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>120 guides in 12 topics</li>
+              <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Updated for October 2026</li>
+              <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Sources linked in every guide</li>
+              <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Algorithm, reach, money and more</li>
+            </ul>
+          </div>
+          <div class="plan featured">
+            <span class="badge">The extension</span>
+            <h3>XVision for Chrome</h3>
+            <p>Every feature, on your own timeline.</p>
+            <div class="amount"><b>$0</b><span>forever</span></div>
+            <a class="btn light" href="downloads/xvision-1.0.0.zip" download>Download for Chrome</a>
+            <ul>
+              <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Follower counts and account badges</li>
+              <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Viral and Rising post signals</li>
+              <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Growth dashboard and best time to post</li>
+              <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Reply early queue</li>
+              <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Feed filters for AI slop, bait and spam</li>
+              <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Private tags and notes</li>
+              <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>No sign-in, no tracking</li>
+            </ul>
+          </div>
+          <div class="plan">
+            <h3>Free tools</h3>
+            <p>Small tools that run in your browser.</p>
+            <div class="amount"><b>$0</b><span>forever</span></div>
+            <a class="btn ghost" href="tools/index.html">Open tools</a>
+            <ul>
+              <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Twitter video downloader</li>
+              <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Thread maker</li>
+              <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Post length checker</li>
+              <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Engagement rate calculator</li>
+            </ul>
+          </div>
+        </div>
+        <p class="fine">XVision never posts, likes, follows or replies for you. Not affiliated with X Corp.</p>
+      </div>
+    </section>
+
+    <section id="guides">
+      <div class="wrap">
+        <div class="sec-head">
+          <span class="eyebrow">Free guides</span>
+          <h2>Learn What Works <span class="soft">on X in 2026</span></h2>
+          <p>Plain, sourced playbooks for followers, reach, the algorithm and making money on X.</p>
+        </div>
+        <div class="learn">
+          <a href="guides/how-does-the-x-algorithm-work-in-2026.html"><span class="tag">The X algorithm · 6 min</span><h3>How Does the X Algorithm Work in 2026?</h3><p>A plain walkthrough of the open-source ranking code, its weights and what X hasn't confirmed.</p></a>
+          <a href="guides/grow-on-x-in-2026.html"><span class="tag">Grow on X · 6 min</span><h3>How to Grow on X in 2026</h3><p>What changed, what still works for new accounts, and a simple daily plan.</p></a>
+          <a href="guides/why-are-my-twitter-impressions-so-low.html"><span class="tag">Reach · 6 min</span><h3>Why Are My Twitter Impressions So Low?</h3><p>The 8 most common causes on X in 2026, and the fix for each one.</p></a>
+          <a href="guides/make-money-on-x-in-2026.html"><span class="tag">Make money · 6 min</span><h3>How to Make Money on X in 2026</h3><p>Original Content Rewards, Subscriptions and more. Real requirements, no hype.</p></a>
+          <a href="guides/best-time-to-post.html"><span class="tag">Content · 6 min</span><h3>The Best Time to Post on X</h3><p>What the 2026 data says, and a two-week test to find your own hours.</p></a>
+          <a href="guides/see-who-unfollowed-me-on-x.html"><span class="tag">Followers · 6 min</span><h3>How to See Who Unfollowed Me on X</h3><p>What X shows and hides, manual checks that work, and the risks of unfollow apps.</p></a>
+        </div>
+        <div class="learn-more"><a class="btn ghost" href="guides/index.html">Browse all 120 guides</a></div>
+      </div>
+    </section>
+
+    <section id="faq">
+      <div class="wrap">
+        <div class="sec-head">
+          <span class="eyebrow">FAQ</span>
+          <h2>Questions? <span class="soft">We've Got Answers.</span></h2>
+        </div>
+        <div class="faq">
+          <details>
+            <summary>Is XVision really free?</summary>
+            <p>Yes. There's no paid plan, no trial and no ads. XVision is open source under the MIT license, and the guides and tools on this site are free too.</p>
+          </details>
+          <details>
+            <summary>Is my data safe?</summary>
+            <p>XVision runs only on x.com. Your stats, settings and notes are stored in your own browser, and it makes no network requests of its own. There's no account to create. Remove the extension and its data goes with it. Read the full <a href="privacy-policy.html">privacy policy</a>.</p>
+          </details>
+          <details>
+            <summary>Can XVision get my X account restricted?</summary>
+            <p>XVision only reads what X already shows you. It never posts, likes, follows or replies for you, so it doesn't automate anything on your account.</p>
+          </details>
+          <details>
+            <summary>Is it on the Chrome Web Store?</summary>
+            <p>Not yet. Until it is, download the zip and load it in Chrome. The <a href="#install">three steps above</a> take about a minute.</p>
+          </details>
+          <details>
+            <summary>Which browsers does it work in?</summary>
+            <p>Chrome, Edge, Brave and Arc on desktop. It doesn't run in the X app on your phone.</p>
+          </details>
+          <details>
+            <summary>Does it show who unfollowed me?</summary>
+            <p>No. It shows who doesn't follow you back and your daily follower gains. This guide explains <a href="guides/see-who-unfollowed-me-on-x.html">what actually works for tracking unfollows</a>.</p>
+          </details>
+          <details>
+            <summary>Where do the numbers come from?</summary>
+            <p>From the data X already loads in your timeline. XVision counts and compares it in your browser. It isn't X's official analytics, so its numbers can differ from X's own dashboard.</p>
+          </details>
+        </div>
+        <p class="faq-foot">Still have a question? <a href="https://github.com/Kakahaja07/xvision/issues">Ask on GitHub</a>.</p>
+      </div>
+    </section>
+
+    <div class="final">
+      <div class="final-panel">
+        <div class="paper p1" aria-hidden="true"><b>Dev Mehta · 1.4K</b><div class="pills"><span class="pill viral">Viral</span><span class="pill gray">21h</span></div></div>
+        <div class="paper p2" aria-hidden="true"><b>Hidden by XVision</b><div class="pills"><span class="pill gray">AI slop</span><span class="pill gray">Show</span></div></div>
+        <div class="paper p3" aria-hidden="true"><b>Asha Singh · 56</b><div class="pills"><span class="pill age">2mo</span><span class="pill back">↔ 1.0</span></div></div>
+        <div class="paper p4" aria-hidden="true"><b>Fresh post · 6 min</b><div class="pills"><span class="pill reply">Reply early</span><span class="pill gray">2 replies</span></div></div>
+        <div class="wrap">
+          <span class="eyebrow">Free · Private · No sign-in</span>
+          <h2>Start Growing on X Today</h2>
+          <p>Download XVision, open your timeline, and see the signals that were always there.</p>
+          <div class="ctas">
+            <a class="btn light" href="downloads/xvision-1.0.0.zip" download>Download for Chrome</a>
+            <a class="btn outline-dark" href="guides/index.html">Read the guides</a>
+          </div>
+          <div class="final-stats">
+            <div><b>Free</b><span>Forever</span></div>
+            <div><b>~1 min</b><span>To install</span></div>
+            <div><b>120</b><span>Guides</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <img class="foot-mark" src="assets/logo.png" alt="" width="320" height="320" loading="lazy" />
     <div class="wrap">
-      <div class="head">
-        <div class="kicker">Features</div>
-        <h2>Everything you need to grow, nothing you don't</h2>
-        <p>XVision works it all out from what X already shows you. No accounts, no servers.</p>
-      </div>
-      <div class="grid features-grid">
-        <div class="card">
-          <div class="icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 17 6-6 4 4 8-8M15 7h6v6"/></svg></div>
-          <h3>Growth dashboard</h3>
-          <p>Daily follower chart for 7 and 30 days, your best days, and every post rated against your usual views.</p>
+      <div class="foot-top">
+        <div class="foot-brand">
+          <a class="wordmark" href="./"><img src="assets/logo-64.png" alt="" width="26" height="26" />Vision</a>
+          <p>A free Chrome extension, guides and tools for growing on X. Private by design.</p>
+          <div class="foot-social"><a href="https://github.com/Kakahaja07/xvision" aria-label="XVision on GitHub"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.9 1.2 1.9 1.2 1.1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-6 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17.3 4.7 18.3 5 18.3 5c.7 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .5Z"/></svg></a></div>
         </div>
-        <div class="card">
-          <div class="icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="2.5" fill="currentColor"/></svg></div>
-          <h3>Signal ring</h3>
-          <p>A small ring next to every name. Hover it for followers, follow-back ratio, account age and post reach.</p>
-        </div>
-        <div class="card">
-          <div class="icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8Z"/></svg></div>
-          <h3>Reply early</h3>
-          <p>Fresh posts from bigger accounts that still have few replies, flagged on your timeline and queued in the popup.</p>
-        </div>
-        <div class="card">
-          <div class="icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/></svg></div>
-          <h3>Calmer feed</h3>
-          <p>Collapse engagement bait, templated posts, crypto spam and sensitive media. Add your own muted words.</p>
-        </div>
-        <div class="card">
-          <div class="icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
-          <h3>Best time to post</h3>
-          <p>Learns which hours and hashtags reach furthest from the posts in your own feed.</p>
-        </div>
-        <div class="card">
-          <div class="icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M20 13 13 20l-9-9V4h7l9 9Z"/><circle cx="8.5" cy="8.5" r="1" fill="currentColor"/></svg></div>
-          <h3>Private notes</h3>
-          <p>Tag people and keep notes on them. Tags show next to their name as you scroll.</p>
+        <div class="foot-cols">
+          <div><h3>Product</h3><ul><li><a href="#features">Features</a></li><li><a href="#install">How it works</a></li><li><a href="#pricing">Pricing</a></li><li><a href="#faq">FAQ</a></li></ul></div>
+          <div><h3>Guides</h3><ul><li><a href="guides/index.html#grow">Grow on X</a></li><li><a href="guides/index.html#algorithm">The X algorithm</a></li><li><a href="guides/index.html#money">Make money on X</a></li><li><a href="guides/index.html">All 120 guides</a></li></ul></div>
+          <div><h3>Free tools</h3><ul><li><a href="tools/video-downloader.html">Twitter video downloader</a></li><li><a href="tools/thread-maker.html">Thread maker</a></li><li><a href="tools/post-length.html">Post length checker</a></li><li><a href="tools/engagement-rate.html">Engagement rate</a></li></ul></div>
+          <div><h3>Project</h3><ul><li><a href="https://github.com/Kakahaja07/xvision">GitHub</a></li><li><a href="privacy-policy.html">Privacy policy</a></li><li><a href="LICENSE">MIT License</a></li><li><a href="sitemap.xml">Sitemap</a></li></ul></div>
         </div>
       </div>
-    </div>
-  </section>
-
-  <section id="badges">
-    <div class="wrap spot">
-      <div class="spot-media">
-        <img src="assets/features/badges.webp" alt="X timeline with XVision badges next to each name: follower count, Viral and Rising post tags, a 2mo new-account tag, a follow-back ratio and Follows you" width="920" height="636" loading="lazy" />
+      <div class="foot-bottom">
+        <span>© 2026 XVision · Built by Prashant Sharma · Inspired by XRay by fayazara</span>
+        <span>Not affiliated with X Corp.</span>
       </div>
-      <div class="head">
-        <div class="kicker">Account badges</div>
-        <h2>Know every account at a glance</h2>
-        <p>Small badges next to every name on your timeline tell you who you're replying to before you click.</p>
-        <ul class="legend">
-          <li><span><span class="pill count">1.4K followers</span></span>Follower count, right after the handle.</li>
-          <li><span><span class="pill viral">Viral</span><span class="pill rising">Rising</span></span>The post is reaching far beyond the author's followers.</li>
-          <li><span><span class="pill age"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4m0-4h.01"/></svg>2mo</span></span>A new account, and how old it is.</li>
-          <li><span><span class="pill back">↔ 1.0</span></span>Follows as many people as follow them, so likely to follow back.</li>
-          <li><span><span class="pill follows">Follows you</span></span>Already follows you.</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <section id="clean-feed">
-    <div class="wrap spot flip">
-      <div class="spot-media">
-        <img src="assets/features/clean-feed.webp" alt="X timeline where XVision has collapsed posts labelled AI slop, Engagement bait and Crypto spam, each with a Show button" width="860" height="730" loading="lazy" />
-      </div>
-      <div class="head">
-        <div class="kicker">Feed filters</div>
-        <h2>Skip the AI slop</h2>
-        <p>Posts that read like AI slop or bait collapse into one quiet line: <em>Hidden by XVision</em>. Tap Show if you still want to read one.</p>
-        <ul class="reasons">
-          <li>AI slop</li>
-          <li>Engagement bait</li>
-          <li>Crypto spam</li>
-          <li>Sensitive media</li>
-          <li>Your muted words</li>
-        </ul>
-        <p class="fine">Turn each filter on or off in Settings. Nothing is deleted, and nothing leaves your browser.</p>
-      </div>
-    </div>
-  </section>
-
-  <section>
-    <div class="wrap">
-      <div class="head">
-        <div class="kicker">See it in action</div>
-        <h2>Built into X, not bolted on</h2>
-      </div>
-      <div class="gallery">
-        <figure>
-          <img src="assets/screens/screenshot-2-timeline.webp" alt="Timeline with a signal ring and hover card showing post reach" width="1280" height="800" loading="lazy" />
-          <figcaption>Hover the ring for every metric on an account and post.</figcaption>
-        </figure>
-        <figure>
-          <img src="assets/screens/screenshot-3-filters.webp" alt="Feed filters collapsing engagement bait and template posts" width="1280" height="800" loading="lazy" />
-          <figcaption>Filtered posts collapse, with a Show button.</figcaption>
-        </figure>
-        <figure>
-          <img src="assets/screens/screenshot-4-timing.webp" alt="Best time to post chart and a reply queue" width="1280" height="800" loading="lazy" />
-          <figcaption>Your best posting window and a live reply queue.</figcaption>
-        </figure>
-        <figure>
-          <img src="assets/screens/screenshot-5-privacy.webp" alt="Private tags and notes manager" width="1280" height="800" loading="lazy" />
-          <figcaption>Private tags and notes, stored only in your browser.</figcaption>
-        </figure>
-      </div>
-    </div>
-  </section>
-
-  <section id="learn">
-    <div class="wrap">
-      <div class="head">
-        <div class="kicker">Guides &amp; free tools</div>
-        <h2>Learn what works, then write better posts</h2>
-        <p>Practical playbooks for growing on X, and small tools that run right in your browser.</p>
-      </div>
-      <div class="grid">
-        <a class="card link-card" href="guides/grow-from-zero.html">
-          <span class="tag">Guide · 7 min</span>
-          <h3>How to grow on X from your first 100 followers</h3>
-          <p>A clear profile, a narrow niche, and replies before posts.</p>
-        </a>
-        <a class="card link-card" href="guides/reply-strategy.html">
-          <span class="tag">Guide · 6 min</span>
-          <h3>The reply-first playbook</h3>
-          <p>Which posts to reply to, and how to write replies people click.</p>
-        </a>
-        <a class="card link-card" href="guides/best-time-to-post.html">
-          <span class="tag">Guide · 5 min</span>
-          <h3>Find your best time to post</h3>
-          <p>Why generic charts mislead, and how to find your own window.</p>
-        </a>
-        <a class="card link-card" href="tools/thread-maker.html">
-          <span class="tag">Tool</span>
-          <h3>Thread maker</h3>
-          <p>Split long writing into a numbered thread under the limit.</p>
-        </a>
-        <a class="card link-card" href="tools/post-length.html">
-          <span class="tag">Tool</span>
-          <h3>Post length checker</h3>
-          <p>Count characters the way X does, links and emoji included.</p>
-        </a>
-        <a class="card link-card" href="tools/video-downloader.html">
-          <span class="tag">Tool</span>
-          <h3>Twitter video downloader</h3>
-          <p>Save a video or GIF from a public post as an MP4.</p>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <section id="install">
-    <div class="wrap">
-      <div class="head">
-        <div class="kicker">Install</div>
-        <h2>Up and running in a minute</h2>
-        <p>Until XVision is on the Chrome Web Store, install it directly. Works in Chrome, Edge, Brave and Arc.</p>
-      </div>
-      <ol class="steps">
-        <li><div><b>Download XVision</b><span><a href="downloads/xvision-1.0.0.zip" download>xvision-1.0.0.zip</a> (230 KB), then unzip it.</span></div></li>
-        <li><div><b>Open your extensions page</b><span>Paste <code>chrome://extensions</code><button class="copy" type="button" data-copy="chrome://extensions">Copy</button> into the address bar.</span></div></li>
-        <li><div><b>Turn on Developer mode</b><span>The switch is in the top-right corner.</span></div></li>
-        <li><div><b>Click "Load unpacked"</b><span>Choose the unzipped folder. Then open x.com and pin XVision to your toolbar.</span></div></li>
-      </ol>
-    </div>
-  </section>
-
-  <section id="privacy">
-    <div class="wrap">
-      <div class="head">
-        <div class="kicker">Privacy</div>
-        <h2>Your data never leaves your browser</h2>
-        <p>Read the full <a href="privacy-policy.html">privacy policy</a>.</p>
-      </div>
-      <div class="privacy">
-        <div class="card"><h3>Only on X</h3><p>Runs on x.com and nowhere else. It can't see your other tabs.</p></div>
-        <div class="card"><h3>No servers</h3><p>No account, no sign-in and no network requests of its own.</p></div>
-        <div class="card"><h3>Stored locally</h3><p>Stats, settings and notes live in your browser. Remove the extension and they're gone.</p></div>
-        <div class="card"><h3>No automation</h3><p>XVision never posts, likes, follows or replies for you.</p></div>
-      </div>
-    </div>
-  </section>
-
-  <footer>
-    <div class="wrap">
-      <div class="footlinks">
-        <a href="guides/index.html">Guides</a>
-        <a href="tools/index.html">Free tools</a>
-        <a href="tools/video-downloader.html">Twitter video downloader</a>
-        <a href="privacy-policy.html">Privacy</a>
-        <a href="https://github.com/Kakahaja07/xvision">GitHub</a>
-      </div>
-      <span>Built by Prashant Sharma · Inspired by XRay by fayazara · <a href="LICENSE">MIT License</a> · Not affiliated with X Corp.</span>
     </div>
   </footer>
 
