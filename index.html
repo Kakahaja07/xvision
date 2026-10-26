@@ -1,0 +1,309 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>XVision: Growth insights for X</title>
+  <meta name="description" content="A free Chrome extension that adds follower counts, reach signals, best times to post and a calmer feed to X. Private: everything stays in your browser." />
+  <meta property="og:title" content="XVision: Growth insights for X" />
+  <meta property="og:description" content="Follower trends, reach signals, best time to post and a calmer feed. Private, in your browser." />
+  <meta property="og:image" content="https://kakahaja07.github.io/xvision/assets/og-image.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="icon" href="assets/logo.png" />
+  <style>
+    @font-face { font-family: Geomini; src: url('assets/fonts/Geomini_latin-s.p.2j58wcs7_aiaj.woff2') format('woff2'); font-weight: 200 800; font-display: swap; }
+    @font-face { font-family: Familjen; src: url('assets/fonts/f5edcc6a132fb1ad-s.p.3ii__yurxaf4q.woff2') format('woff2'); font-weight: 400 700; font-display: swap; }
+
+    :root {
+      --bg: #f6f6f8;
+      --card: #ffffff;
+      --fg: #0a0a0a;
+      --muted: #5f6573;
+      --line: rgba(0, 0, 0, .08);
+      --accent: #6556e3;
+      --accent-soft: rgba(101, 86, 227, .1);
+      --shadow: 0 1px 2px rgba(0,0,0,.05), 0 24px 60px -24px rgba(15,15,40,.3);
+      --grain-op: .05;
+      --ease-out: cubic-bezier(.23, 1, .32, 1);
+      color-scheme: light dark;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0a0a0c;
+        --card: #121216;
+        --fg: #f2f2f3;
+        --muted: #a1a1aa;
+        --line: rgba(255, 255, 255, .09);
+        --accent: #8b7ff5;
+        --accent-soft: rgba(139, 127, 245, .14);
+        --shadow: 0 30px 70px -24px rgba(0,0,0,.8), 0 0 0 1px rgba(255,255,255,.06);
+        --grain-op: .07;
+      }
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+    body {
+      margin: 0;
+      background:
+        radial-gradient(1000px 600px at 85% -10%, var(--accent-soft), transparent 60%),
+        var(--bg);
+      color: var(--fg);
+      font: 17px/1.55 Familjen, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: var(--grain-op);
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    }
+    a { color: inherit; }
+    img { display: block; max-width: 100%; height: auto; }
+    .wrap { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
+
+    h1, h2, h3, .wordmark { font-family: Geomini, Familjen, sans-serif; letter-spacing: -.03em; }
+
+    /* Nav */
+    nav { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 22px 0; }
+    .wordmark { display: inline-flex; align-items: center; gap: 4px; font-size: 22px; font-weight: 650; text-decoration: none; }
+    .wordmark img { width: 28px; height: 28px; }
+    .navlinks { display: flex; gap: 24px; font-size: 15px; }
+    .navlinks a { color: var(--muted); text-decoration: none; transition: color 150ms ease; }
+    @media (hover: hover) { .navlinks a:hover { color: var(--fg); } }
+    @media (max-width: 640px) { .navlinks .opt { display: none; } }
+
+    /* Hero */
+    .hero { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; padding: 56px 0 72px; }
+    .eyebrow { display: inline-flex; align-items: center; gap: 8px; padding: 5px 12px; border: 1px solid var(--line); border-radius: 999px; background: var(--card); color: var(--muted); font-size: 14px; font-weight: 500; }
+    .eyebrow b { color: var(--accent); font-weight: 600; }
+    h1 { margin: 20px 0 0; font-size: clamp(44px, 6vw, 72px); line-height: 1; font-weight: 650; }
+    .lead { margin: 22px 0 0; max-width: 520px; color: var(--muted); font-size: 20px; }
+    .ctas { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 30px; }
+    .btn {
+      display: inline-flex; align-items: center; gap: 8px; height: 48px; padding: 0 22px;
+      border-radius: 12px; font-weight: 600; font-size: 16px; text-decoration: none;
+      transition: transform 160ms var(--ease-out), opacity 150ms ease;
+    }
+    .btn:active { transform: scale(.97); }
+    .btn.primary { color: #fff; background: linear-gradient(180deg, #3a3a3a, #0a0a0a); box-shadow: inset 0 1px 0 rgba(255,255,255,.14), 0 8px 20px -8px rgba(0,0,0,.5); }
+    @media (prefers-color-scheme: dark) { .btn.primary { color: #0a0a0a; background: linear-gradient(180deg, #fff, #d4d4d4); } }
+    .btn.ghost { border: 1px solid var(--line); background: var(--card); }
+    @media (hover: hover) { .btn:hover { opacity: .88; } }
+    .trust { display: flex; flex-wrap: wrap; gap: 8px 18px; margin-top: 22px; color: var(--muted); font-size: 14px; }
+    .trust span { display: inline-flex; align-items: center; gap: 6px; }
+    .trust span::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: #16a34a; }
+    .hero > * { min-width: 0; }
+    .hero-shot { justify-self: center; width: min(100%, 440px); border-radius: 20px; overflow: hidden; box-shadow: var(--shadow); }
+    @media (max-width: 880px) { .hero { grid-template-columns: 1fr; gap: 40px; padding-top: 28px; } }
+
+    /* Sections */
+    section { padding: 72px 0; }
+    .head { max-width: 640px; margin-bottom: 36px; }
+    .kicker { color: var(--accent); font-size: 14px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; }
+    h2 { margin: 10px 0 0; font-size: clamp(32px, 4vw, 44px); line-height: 1.08; font-weight: 650; }
+    .head p { margin: 14px 0 0; color: var(--muted); font-size: 18px; }
+
+    .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    @media (max-width: 880px) { .grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 560px) { .grid { grid-template-columns: 1fr; } }
+    .card { padding: 24px; border: 1px solid var(--line); border-radius: 16px; background: var(--card); }
+    .icon { display: grid; place-items: center; width: 36px; height: 36px; border: 1px solid var(--line); border-radius: 10px; color: var(--accent); background: var(--accent-soft); }
+    .card h3 { margin: 16px 0 6px; font-size: 19px; font-weight: 600; letter-spacing: -.015em; }
+    .card p { margin: 0; color: var(--muted); font-size: 15.5px; }
+
+    .gallery { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+    @media (max-width: 720px) { .gallery { grid-template-columns: 1fr; } }
+    figure { margin: 0; }
+    figure img { border-radius: 14px; border: 1px solid var(--line); box-shadow: var(--shadow); }
+    figcaption { margin-top: 10px; color: var(--muted); font-size: 15px; }
+
+    .steps { display: grid; gap: 12px; counter-reset: step; max-width: 720px; padding: 0; list-style: none; }
+    .steps li { display: flex; gap: 16px; padding: 18px 20px; border: 1px solid var(--line); border-radius: 14px; background: var(--card); }
+    .steps li::before {
+      counter-increment: step; content: counter(step);
+      flex: none; display: grid; place-items: center; width: 28px; height: 28px; border-radius: 50%;
+      background: var(--accent); color: #fff; font: 600 14px Familjen, sans-serif;
+    }
+    .steps b { display: block; }
+    .steps span { color: var(--muted); font-size: 15.5px; }
+    code { padding: 2px 7px; border: 1px solid var(--line); border-radius: 6px; background: var(--bg); font: 14px ui-monospace, 'SF Mono', Consolas, monospace; }
+    .copy { margin-left: 6px; padding: 2px 10px; border: 1px solid var(--line); border-radius: 6px; background: var(--card); color: var(--fg); font: 600 13px Familjen, sans-serif; cursor: pointer; transition: transform 160ms var(--ease-out); }
+    .copy:active { transform: scale(.96); }
+
+    .privacy { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+    @media (max-width: 880px) { .privacy { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 480px) { .privacy { grid-template-columns: 1fr; } }
+    .privacy .card h3 { margin-top: 0; }
+
+    footer { padding: 40px 0 56px; border-top: 1px solid var(--line); color: var(--muted); font-size: 14.5px; }
+    footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px 24px; }
+    footer a { color: var(--fg); }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <nav>
+      <a class="wordmark" href="#" aria-label="XVision home"><img src="assets/logo.png" alt="" width="28" height="28" />Vision</a>
+      <div class="navlinks">
+        <a class="opt" href="#features">Features</a>
+        <a href="#install">Install</a>
+        <a class="opt" href="privacy-policy.html">Privacy</a>
+        <a href="https://github.com/Kakahaja07/xvision">GitHub</a>
+      </div>
+    </nav>
+
+    <header class="hero">
+      <div>
+        <span class="eyebrow"><b>Free</b> Chrome extension for X</span>
+        <h1>Grow on X<br />with clarity</h1>
+        <p class="lead">Follower trends, reach signals, the best time to post and a calmer feed, right inside X. Private by design: everything stays in your browser.</p>
+        <div class="ctas">
+          <a class="btn primary" href="downloads/xvision-1.0.0.zip" download>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0-5-5m5 5 5-5M5 21h14"/></svg>
+            Download for Chrome
+          </a>
+          <a class="btn ghost" href="#install">How to install</a>
+        </div>
+        <div class="trust">
+          <span>Works only on x.com</span>
+          <span>No sign-in</span>
+          <span>No tracking</span>
+        </div>
+      </div>
+      <div class="hero-shot">
+        <picture>
+          <source srcset="assets/popup-dark.png" media="(prefers-color-scheme: dark)" />
+          <img src="assets/popup-light.png" alt="XVision popup showing follower growth, best day, best views and daily gains" width="1040" height="1476" />
+        </picture>
+      </div>
+    </header>
+  </div>
+
+  <section id="features">
+    <div class="wrap">
+      <div class="head">
+        <div class="kicker">Features</div>
+        <h2>Everything you need to grow, nothing you don't</h2>
+        <p>XVision works it all out from what X already shows you. No accounts, no servers.</p>
+      </div>
+      <div class="grid">
+        <div class="card">
+          <div class="icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 17 6-6 4 4 8-8M15 7h6v6"/></svg></div>
+          <h3>Growth dashboard</h3>
+          <p>Daily follower chart for 7 and 30 days, your best days, and every post rated against your usual views.</p>
+        </div>
+        <div class="card">
+          <div class="icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="2.5" fill="currentColor"/></svg></div>
+          <h3>Signal ring</h3>
+          <p>A small ring next to every name. Hover it for followers, follow-back ratio, account age and post reach.</p>
+        </div>
+        <div class="card">
+          <div class="icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8Z"/></svg></div>
+          <h3>Reply early</h3>
+          <p>Fresh posts from bigger accounts that still have few replies, flagged on your timeline and queued in the popup.</p>
+        </div>
+        <div class="card">
+          <div class="icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/></svg></div>
+          <h3>Calmer feed</h3>
+          <p>Collapse engagement bait, templated posts, crypto spam and sensitive media. Add your own muted words.</p>
+        </div>
+        <div class="card">
+          <div class="icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
+          <h3>Best time to post</h3>
+          <p>Learns which hours and hashtags reach furthest from the posts in your own feed.</p>
+        </div>
+        <div class="card">
+          <div class="icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M20 13 13 20l-9-9V4h7l9 9Z"/><circle cx="8.5" cy="8.5" r="1" fill="currentColor"/></svg></div>
+          <h3>Private notes</h3>
+          <p>Tag people and keep notes on them. Tags show next to their name as you scroll.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="head">
+        <div class="kicker">See it in action</div>
+        <h2>Built into X, not bolted on</h2>
+      </div>
+      <div class="gallery">
+        <figure>
+          <img src="assets/screens/screenshot-2-timeline.png" alt="Timeline with a signal ring and hover card showing post reach" width="1280" height="800" loading="lazy" />
+          <figcaption>Hover the ring for every metric on an account and post.</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/screens/screenshot-3-filters.png" alt="Feed filters collapsing engagement bait and template posts" width="1280" height="800" loading="lazy" />
+          <figcaption>Filtered posts collapse, with a Show button.</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/screens/screenshot-4-timing.png" alt="Best time to post chart and a reply queue" width="1280" height="800" loading="lazy" />
+          <figcaption>Your best posting window and a live reply queue.</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/screens/screenshot-5-privacy.png" alt="Private tags and notes manager" width="1280" height="800" loading="lazy" />
+          <figcaption>Private tags and notes, stored only in your browser.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section id="install">
+    <div class="wrap">
+      <div class="head">
+        <div class="kicker">Install</div>
+        <h2>Up and running in a minute</h2>
+        <p>Until XVision is on the Chrome Web Store, install it directly. Works in Chrome, Edge, Brave and Arc.</p>
+      </div>
+      <ol class="steps">
+        <li><div><b>Download XVision</b><span><a href="downloads/xvision-1.0.0.zip" download>xvision-1.0.0.zip</a> (230 KB), then unzip it.</span></div></li>
+        <li><div><b>Open your extensions page</b><span>Paste <code>chrome://extensions</code><button class="copy" type="button" data-copy="chrome://extensions">Copy</button> into the address bar.</span></div></li>
+        <li><div><b>Turn on Developer mode</b><span>The switch is in the top-right corner.</span></div></li>
+        <li><div><b>Click "Load unpacked"</b><span>Choose the unzipped folder. Then open x.com and pin XVision to your toolbar.</span></div></li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="privacy">
+    <div class="wrap">
+      <div class="head">
+        <div class="kicker">Privacy</div>
+        <h2>Your data never leaves your browser</h2>
+        <p>Read the full <a href="privacy-policy.html">privacy policy</a>.</p>
+      </div>
+      <div class="privacy">
+        <div class="card"><h3>Only on X</h3><p>Runs on x.com and nowhere else. It can't see your other tabs.</p></div>
+        <div class="card"><h3>No servers</h3><p>No account, no sign-in and no network requests of its own.</p></div>
+        <div class="card"><h3>Stored locally</h3><p>Stats, settings and notes live in your browser. Remove the extension and they're gone.</p></div>
+        <div class="card"><h3>No automation</h3><p>XVision never posts, likes, follows or replies for you.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">
+      <span>Built by Prashant Sharma · Inspired by XRay by fayazara · <a href="LICENSE">MIT License</a></span>
+      <span>Not affiliated with X Corp.</span>
+    </div>
+  </footer>
+
+  <script>
+    // Browsers block links to chrome:// pages, so offer a copy button instead.
+    for (const button of document.querySelectorAll('[data-copy]')) {
+      button.addEventListener('click', async () => {
+        try {
+          await navigator.clipboard.writeText(button.dataset.copy);
+          button.textContent = 'Copied';
+          setTimeout(() => (button.textContent = 'Copy'), 1600);
+        } catch {
+          button.textContent = 'Select and copy';
+        }
+      });
+    }
+  </script>
+</body>
+</html>
