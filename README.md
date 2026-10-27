@@ -20,7 +20,7 @@ XVision is a free Chrome extension that adds follower counts, reach signals, the
 
 ## Install
 
-1. Download [`downloads/xvision-1.0.0.zip`](downloads/xvision-1.0.0.zip) and unzip it, or clone this repo.
+1. Download [`downloads/xvision-1.1.0.zip`](downloads/xvision-1.1.0.zip) and unzip it, or clone this repo.
 2. Open `chrome://extensions` and turn on **Developer mode** (top right).
 3. Click **Load unpacked** and choose the unzipped folder (or the [`extension`](extension) folder of this repo).
 4. Open x.com and pin XVision to your toolbar.
